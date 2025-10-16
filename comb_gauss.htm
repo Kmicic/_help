@@ -1,0 +1,379 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Kombinacje Gaussa</title>
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+   <style type="text/css">
+   <!--
+   .inline-button {
+   width:auto;
+   font: bold 90%/1 Verdana, sans-serif;
+   margin: 0 0.2em; padding: 0.1em 0; _padding:0;
+   border: 1px solid black;
+   white-space:nowrap;
+   text-decoration: none;
+   vertical-align:middle;
+   background: #ccc;
+   color: black;
+   }
+.inline-button em {
+   cursor:hand;
+   font-style: normal;
+   margin:0; padding: 0.1em 0.5em;
+   background: white;
+   color: black;
+   }
+.inline-button span {
+   cursor:hand;
+   margin:0; padding: 0.1em 0.5em 0.1em 0.3em;
+   }
+.inline-button:hover {
+   background: #666;
+   color: white;
+   }
+.inline-button:hover em {
+   background: black;
+   color: white;
+   }
+.s1 {
+	background-color: #FFFFFF;
+	color: #008000;
+}
+.s2 {
+	background-color: #FF8000;
+	color: #000000;
+}
+.s5 {
+	background-color: #FFFFFF;
+	color: #008000;
+}
+.s6 {
+	background-color: #FFFFFF;
+	color: #FF0000;
+}
+.s7 {
+	background-color: #FFFFFF;
+	color: #FF0000;
+}
+.s8 {
+	background-color: #FFFFFF;
+	color: #FF0000;
+}
+.s9 {
+	background-color: #FFFFFF;
+	color: #008000;
+}
+.s10 {
+	background-color: #FFFFFF;
+	color: #800000;
+}
+.s3 {
+	background-color: #FFFFFF;
+	color: #000000;
+}
+.s4 {
+	background-color: #FFFF00;
+	color: #0000FF;
+}
+.s11 {
+	background-color: #00FF00;
+	color: #000000;   }
+/* Horizontal lists
+----------------------------------------*/
+ul.linklist {
+	display: block;
+	margin: 0;
+}
+
+ul.linklist li {
+	display: block;
+	list-style-type: none;
+	float: left;
+	width: auto;
+	margin-right: 5px;
+	font-size: 1.1em;
+	line-height: 2.2em;
+}
+
+ul.linklist {
+	float: right;
+	margin-right: 0;
+	margin-left: 5px;
+	text-align: right;
+}
+
+ul.navlinks {
+	padding-bottom: 1px;
+	margin-bottom: 1px;
+	border-bottom: 1px solid #FFFFFF;
+	font-weight: bold;
+}
+
+a.flag {color: #AAA; font-size:0.8em;text-decoration:none;}
+a.flag:hover {color:#FFF;text-decoration:underline;}
+a.en-flag {padding-left:21px; background: url(images/flag/en.png) top left no-repeat;}
+a.de-flag {padding-left:21px; background: url(images/flag/de.png) top left no-repeat;}
+a.ru-flag {padding-left:21px; background: url(images/flag/ru.png) top left no-repeat;} 
+a.cs-flag {padding-left:21px; background: url(images/flag/cz.png) top left no-repeat;}
+a.fr-flag {padding-left:21px; background: url(images/flag/fr.png) top left no-repeat;}
+a.es-flag {padding-left:21px; background: url(images/flag/es.png) top left no-repeat;}
+a.it-flag {padding-left:21px; background: url(images/flag/it.png) top left no-repeat;}
+
+-->   
+</style>
+
+<script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+
+<script type="text/javascript">
+function trim11 (str) {
+str = str.replace(/^\s+/, '');
+for (var i = str.length - 1; i >= 0; i--) {
+if (/\S/.test(str.charAt(i))) {
+str = str.substring(0, i + 1);
+break;
+}
+}
+return str;
+}
+
+function _highlight(inp_id,out_id) {
+elm=document.getElementById(out_id);
+var inptxt = trim11(document.getElementById(inp_id).value);
+var inp_arr = inptxt.split(/[ :,;-]+/);
+var html=elm.innerHTML;
+text=trim11(html.replace(/<[^>]+>/g,''));
+lines=text.split(/\r?\n/g);
+
+html="<pre>";
+for (var i in lines) {
+var tic=lines[i];
+var line_arr=tic.split(' ');
+
+var item='';
+for (var j in line_arr) {
+var num=line_arr[j];
+var hits=false;
+for (var k in inp_arr) {
+var hit=inp_arr[k];
+if (hit==num) { 
+hits=true;
+break;
+}
+}
+var pads=(j<(line_arr.length-1)) ? ' ':'';
+item+= hits ? '<span class="s2">'+num+'</span>'+pads : num+pads;
+}
+html+=item+'\r\n';
+}
+elm.innerHTML=html+'</pre>';
+}
+</script>
+      
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?comb_gauss.htm"; }
+  else { parent.quicksync('a3.2.1.4.3.10'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFEF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#000000">
+  <tr valign="middle">
+    <td align="left">
+      <p style="text-indent: 0px; margin: 0px 0px 0px 0px;"><span style="font-size: 12pt; color: #ffffff;">Kombinacje z dystrybucją Gaussa</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a class="inline-button" href="contents.htm"><em>LC</em><span>&lt;&lt;</span></a>&nbsp;
+     <!--<a href="contents.htm">Top</a>-->
+     <a class="inline-button" href="comb_swap.htm"><em>LC</em><span>&lt;</span></a>&nbsp;
+     <!--<a href="comb_swap.htm">Previous</a>&nbsp;-->
+     <a class="inline-button" href="comb_systems.htm"><em>LC</em><span>&gt;</span></a>&nbsp;     
+     <!--<a href="comb_systems.htm">Next</a>-->
+     </span>
+    </td>
+  </tr>
+    
+  <tr><td colspan="2">
+  <script>
+  function switchlang(lang) {
+  $(".goog-te-sectional-gadget-link-text").html('');
+  $.getScript("//translate.google.com/translate_a/element.js?cb=googleSectionalElementInit&ug=section&hl="+lang);
+  }
+  function googleSectionalElementInit() {
+  new google.translate.SectionalElement({
+    sectionalNodeClassName: 'goog-trans-section',
+    controlNodeClassName: 'goog-trans-control',
+    background: '#99ff99'
+  }, 'google_sectional_element');
+  }
+  switchlang ('en');
+  </script>
+<div id="lang-menu">
+<ul class="linklist navlinks" style="font-size:12px";>
+<li class="icon_home"><a class="flag en-flag" href="javascript:void(0)" onclick="return switchlang('en');">English</a> &raquo;</li>
+<li class="icon_home"><a class="flag de-flag" href="javascript:void(0)" onclick="return switchlang('de');">Deutsch</a> &raquo;</li>
+<li class="icon_home"><a class="flag es-flag" href="javascript:void(0)" onclick="return switchlang('es');">Español</a> &raquo;</li>
+<li class="icon_home"><a class="flag fr-flag" href="javascript:void(0)" onclick="return switchlang('fr');">Français</a> &raquo;</li>
+<li class="icon_home"><a class="flag it-flag" href="javascript:void(0)" onclick="return switchlang('it');">Italiano</a> &raquo;</li>
+<li class="icon_home"><a class="flag ru-flag" href="javascript:void(0)" onclick="return switchlang('ru');">Rусский</a> &raquo;</li>
+</ul>
+</div>
+  </td></tr> 
+    
+</table>
+
+
+<!-- Placeholder for topic body begin. -->
+
+<div id="topic_body" class="goog-trans-section" lang="pl">
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<div class="goog-trans-control">
+<a class="goog-te-gadget-link" href="javascript:void(0)"><span class="goog-te-sectional-gadget-link-text"></span></a>
+</div>
+<div class="content">
+<p>Krzywa rozkładu normalnego Gaussa ma charakterystyczny kształt dzwonu. Większość układów losowych w grach liczbowych, powtórzeń, kombinacji układa się właśnie wg krzywej dzwonowej rozkładu normalnego funkcji Gaussa. Kombinacja Gaussa działa podobnie jak funkcja wykładnicza z ta różnicą że w kombinacji wykładniczej liczby dobierane są w zależności od częstości ich występowania w losowaniach z zadanego zakresu dat i przydzielane są im różne przedziały trafień a generator losujący przemiata je w sposób liniowy bez preferencji. Preferencją w kombinacji wykładniczej jest szerokość przydzielonego jej przedziału trafień którego szerokość zależy w sposób liniowy ( kombinacja liniowa) lub w sposób wykładniczy ( kombinacja wykładnicza) od częstości jej występowania w losowaniach w danym okresie. </p>
+<p> W kombinacji Gaussa natomiast przedziały trafień generatora losowego da wszystkich liczb są równe lecz</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>najlepiej różnice i podobieństwa działania kombinacji wykładniczej i kombinacji z dystrybucją wg funkcji Gaussa zilustruje prosty przykład :</p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Najczęściej występujace &nbsp;liczby</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">od losowania nr 1778 z dnia 02-03-18</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">do losowania nr 1787 z dnia 02-03-27</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">==========================================</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 1 wylosowano &nbsp; 4 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 2 wylosowano &nbsp; 2 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 3 wylosowano &nbsp; 3 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 4 wylosowano &nbsp; 1 razy</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p>W kombinacji wykładniczej zadajemy wykładnik równy 2 i zakładając że generator losowy będzie losował &nbsp;0 do 100 z równą szansą trafienia, przydziela się kolejnym liczbom przedziały proporcjonalne do potęgi ich częstości wystąpienia dla 1=4^2=16 dla 2 2^2=4 dla 3 3^2=9 i dla 4 1^2=1 w zakresie 0 100 dla liczby 1 będzie to przediał od 0 do ok.53 dla liczby 2 będzie to przedział od 53 do 66 dla liczby 3 będzie to przedział od 66 do 96 dla liczby 4 pozostanie przedział od 96 do 100. Jeżeli ktoś będzie chciał przećwiczyć ten przykład łatwo zauważy to co może wydawać się pseudo działaniem autora który pseudo-losowość metody sprzedaje pod przykrywką naprawdę dobrej metody która daje efekty ale tylko pod warunkiem umiejętnego jej stosowania. Zauważcie w tym przykładzie że wszystkich kombinacji z 4 liczb jest tylko 6 (sześć) i jeżeli zadamy kombinacji wygenerować 5..6 zakładów efektu działania kombinacji wykładniczej nie zauważymy, po prostu generator będzie generował aż nie wymęczy wszystkich 6 kombinacji lub nie wyczerpie ustawianych limitów prób. Na wybranie jednego zakładu w którym nie będzie powtórzona liczba generator ma ustawiany limit na 10000 prób. Dodatkowo jeżeli duplikaty zakładów nie są dopuszczone opcją generator ma limit 10000 prób czy zakład nie został wcześniej wygenerowany. Jeżeli zadamy trudne parametry wyboru niekorzystny układ występowania liczb, zbyt duża ilość zakładów z małej paczki lub zbyt duży wykładnik przekonamy się że efekt wybiórczości metody będzie żaden. Zauważcie że w metodzie kombinacji wykładniczej przedział trafienia jest proporcjonalny do potęgi ilości wystąpień i w przykładzie dla 4 liczb liczba 1 zajęła 53% całego przedziału trafień czyli ma 53% szans znaleźć się w zakładzie losowanym a liczba 4 ma tylko 1% takiej szansy.</p>
+<p>&nbsp;</p>
+<p>W kombinacji wykładniczej z generatorem z dystrybucją wg funkcji Gaussa jest odwrotnie przedziały dla liczb są równe dla naszego przykładu po 25% dla każdej liczby natomiast możemy sterować gęstością trafień generatora dlatego liczby są rozkładane w ten sposób że najczęściej występujące umieszczane są pośrodku zakresu mniej występujące na zewnątrz po obu stronach. Dla naszego przykładu liczby w przedziałach co 25 jednostek będą ułożone kolejno tak : 4 2 1 3 gdyby do przykładu wziąść 5 liczb liczba najczęstsza umieszczona zostałaby dokładnie pośrodku zakresu : 4 5 1 3 2. ( przyp: liczba 5 w zadanym zakresie wystąpiła 2 razy tak analogicznie jak liczba 2). Generator Gaussa ma tą przewagę nad pozostałymi ze można nim sterować. Zakładając że trafieniem idealnym będzie wylosowanie zakładu 4,5 w każdej z metod mamy marne szanse to osiągnąć również funkcja gaussa zachowuje się ( w standardowych ustawieniach) dokładnie tak jak funkcja kombinacji wykładniczej, dokładnie pod środkiem dzwona funkcji a tym samym w zakresie dużej gęstości trafień znajdują się liczby najczęściej występujące w naszym przykładzie 1,3,5. Jeżeli przesuniemy środek dzwonu funkcji nad liczby 4 i 5 (mean w okolicy 30) na pewno uzyskamy żądaną kombinację 4,5 . Tak przesuwając środek funkcji (mean) i sterując gęstością rozrzutu (odchylenie standardowe) trafień wokół środka można preferować określone układy liczb. Jest to sposób dla tych którzy zarzucają metodzie że jeżeli trafienie przypadnie na 30..35% ale na liczby z dołu kolejki (a przecież można &nbsp;stosować wykładnik ujemny ?) efekt działania kombinacji jest mierny. </p>
+<p>&nbsp;</p>
+<p style="text-align: center; text-indent: -19px; margin: 0px 19px 0px 38px;"><img src="gauss1..png" width="345" height="345" border="0" alt="Gauss1."></p>
+<p style="text-align: center; text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p>Wykres wyraźnie pokazuje krzywą rozkładu normalnego Gaussa w postaci charakterystycznego dzwonu. Jest on wyraźnie widoczny bo jest generowany z 20000 próbek. Wyrażnie widać ze na 20000 próbek w pobliżu centrum dzwonu przypada ok 500 trafień</p>
+<p>Dodatkowym atutem umożliwiającym wpływ na generowane zakresy liczb jest to że, formularz ustawiania parametrów funkcji losującej Gaussa wyposażono w możliwość przemieszczania liczb. Liczby które uważamy za bardziej prawdopodobne można przesunąć bliżej środka dzwonu. Standardowo liczby umieszczane są automatycznie wg ich częstości wystąpień w zadanym zakresie dat. Ale nie zawsze taka kolejność ma swoje odzwierciedlenie w wynikach losowania. Liczby które preferujemy przesuwa się na diagramie za pomocą myszki techniką "ciągnij i upuść". Prosty przykład wyjaśni cel przesuwania : Dnia 20.03.2009 roku na podstawie tabeli podziału na kategorie można stwierdzić ze od kilku losowań korzystnie wychodzą liczby "gorące" na parametrach ostatnie 75 losowań wstecz od ostatniego losowania. Wybieramy te liczby: 37 72 50 54 28 43 57 3 2 11 55 74 65 40 27 21 70 41 42 75 wybieramy kombinację Gaussa z wybranej paczki liczb. Wciskając przycisk "Ustaw gen. Gaussa" wywołujemy dialog narzędziowy. Wybrane liczby zostaną automatycznie rozmieszczone wg ich częstości występowania w poprzednich 75 losowaniach ( lub innym zakresie dat). Liczby zostaną ułożone w ten sposób że, najczęściej występujące będą w środku najmniej na zewnątrz kolejno po obu stronach równomiernie. Liczby wzięte do &nbsp;generacji umieszczane są na panelu poniżej wykresu i są automatycznie rozmieszczone w ten sposób że, liczba najczęściej występująca umieszczana jest dokładnie po środku a pozostałe kolejno wg częstości ich wystąpień umieszczane &nbsp;są po obu jej stronach aż do brzegu zakresu działania generatora. W naszym przykładzie będzie to kolejność: 75 21 41 65 40 74 11 54 43 50 37 72 28 57 2 3 55 27 70 42 Generując zakłady na standardowych ustawieniach otrzymamy :</p>
+<p style="text-indent: 0px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 2 11 21 43 54 57 72 74 &nbsp; &nbsp; Traf. &nbsp;4 z &nbsp;8 liczb Wygr. &nbsp; &nbsp; &nbsp; &nbsp;2 zl</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 2 11 37 43 50 54 57 72 &nbsp; &nbsp; Traf. &nbsp;4 z &nbsp;8 liczb Wygr. &nbsp; &nbsp; &nbsp; &nbsp;2 zl</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 3 11 27 37 41 50 54 57 &nbsp; &nbsp; Traf. &nbsp;5 z &nbsp;8 liczb Wygr. &nbsp; &nbsp; &nbsp; 10 zl</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 3 11 37 40 43 50 54 72 &nbsp; &nbsp; Traf. &nbsp;4 z &nbsp;8 liczb Wygr. &nbsp; &nbsp; &nbsp; &nbsp;2 zl</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 3 28 37 50 54 57 65 72 &nbsp; &nbsp; Traf. &nbsp;4 z &nbsp;8 liczb Wygr. &nbsp; &nbsp; &nbsp; &nbsp;2 zl</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 3 43 50 54 55 57 72 74 &nbsp; &nbsp; Traf. &nbsp;2 z &nbsp;8 liczb</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">11 21 27 37 50 54 65 74 &nbsp; &nbsp; Traf. &nbsp;5 z &nbsp;8 liczb Wygr. &nbsp; &nbsp; &nbsp; 10 zl</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">11 27 28 50 54 55 72 74 &nbsp; &nbsp; Traf. &nbsp;2 z &nbsp;8 liczb</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">11 28 37 42 43 50 54 57 &nbsp; &nbsp; Traf. &nbsp;4 z &nbsp;8 liczb Wygr. &nbsp; &nbsp; &nbsp; &nbsp;2 zl</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">28 37 43 50 54 55 72 74 &nbsp; &nbsp; Traf. &nbsp;2 z &nbsp;8 liczb</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">------------------------</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Suma wygranej= 32,00 zl</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> &nbsp; &nbsp; &nbsp; &nbsp;Koszt= 14,40 zl</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> &nbsp; &nbsp; &nbsp; &nbsp; Zysk= 17,60 zl</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">----------------------------------------------</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Razem na 19 unikalnych liczb trafiono 8 liczb</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Trafione liczby : 11 21 37 40 41 54 57 65</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Uzyte liczby : &nbsp;2 &nbsp;3 11 21 27 28 37 40 41 42 43 50 54 55 57 65 70 72 74</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">&nbsp;</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">75 2 43 72 28 21 50 54 41 11 37 65 40 57 74 3 55 27 70 42. </span></p>
+<p>&nbsp;</p>
+<p>Należy pamiętać że jeżeli zmieniamy przez przeciąganie kolejność liczb i będziemy wracać do ustawiania wielokrotnie nie należy zamykać dialogu. Ponieważ następne otworzenie dialogu spowoduje automatyczne ustawienie kolejności co zburzy nasze poprzeciągane ustawienia. Teraz zapuszczając generację otrzymujemy :</p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 2 &nbsp;3 11 28 37 40 65 74 &nbsp; &nbsp; Traf. &nbsp;4 z &nbsp;8 liczb Wygr. &nbsp; &nbsp; &nbsp; &nbsp;2 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 2 37 40 41 43 54 57 65 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Traf. &nbsp;6 z &nbsp;8 liczb Wygr. &nbsp; &nbsp; &nbsp; 30 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 3 11 21 37 40 50 54 65 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Traf. &nbsp;6 z &nbsp;8 liczb Wygr. &nbsp; &nbsp; &nbsp; 30 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 3 11 37 40 41 54 57 65 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Traf. &nbsp;7 z &nbsp;8 liczb Wygr. &nbsp; &nbsp; &nbsp;300 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 3 11 37 40 50 57 65 74 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Traf. &nbsp;5 z &nbsp;8 liczb Wygr. &nbsp; &nbsp; &nbsp; 10 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">11 28 37 40 41 50 54 74 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Traf. &nbsp;5 z &nbsp;8 liczb Wygr. &nbsp; &nbsp; &nbsp; 10 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">11 28 37 40 41 57 65 72 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Traf. &nbsp;6 z &nbsp;8 liczb Wygr. &nbsp; &nbsp; &nbsp; 30 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">11 28 40 43 54 57 65 74 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Traf. &nbsp;5 z &nbsp;8 liczb Wygr. &nbsp; &nbsp; &nbsp; 10 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">21 27 37 40 41 57 65 74 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Traf. &nbsp;6 z &nbsp;8 liczb Wygr. &nbsp; &nbsp; &nbsp; 30 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">28 37 41 50 55 57 65 72 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Traf. &nbsp;4 z &nbsp;8 liczb Wygr. &nbsp; &nbsp; &nbsp; &nbsp;2 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">------------------------</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Suma wygranej= 466,00 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> &nbsp; &nbsp; &nbsp; &nbsp;Koszt= 14,40 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> &nbsp; &nbsp; &nbsp; &nbsp; Zysk= 451,60 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">----------------------------------------------</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Razem na 17 unikalnych liczb trafiono 8 liczb</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Użyte liczby : &nbsp;2 &nbsp;3 11 21 27 28 37 40 41 43 50 54 55 57 65 72 74</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p>Widać że wynik jest znacznie lepszy.</p>
+<p>Chcąc uzyskać znaczne lepsze rezultaty, możemy zawęzić dzwon generatora przez przesunięcie linii odchylenia standardowego ( linia niebieska ) na wartość odchylenia standardowego std.dev = 8,0 i otrzymamy wynik :</p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 3 11 37 40 41 50 54 65 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Traf. &nbsp;6 z &nbsp;8 liczb Wygr. &nbsp; &nbsp; &nbsp; 30 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 3 11 37 40 41 54 57 65 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Traf. &nbsp;7 z &nbsp;8 liczb Wygr. &nbsp; &nbsp; &nbsp;300 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 3 11 37 40 41 54 65 74 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Traf. &nbsp;6 z &nbsp;8 liczb Wygr. &nbsp; &nbsp; &nbsp; 30 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">11 21 37 40 41 54 57 65 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Traf. &nbsp;8 z &nbsp;8 liczb Wygr. &nbsp; &nbsp;10000 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">11 21 37 40 41 54 57 74 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Traf. &nbsp;7 z &nbsp;8 liczb Wygr. &nbsp; &nbsp; &nbsp;300 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">11 21 37 40 41 54 65 74 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Traf. &nbsp;7 z &nbsp;8 liczb Wygr. &nbsp; &nbsp; &nbsp;300 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">11 21 40 41 50 54 57 65 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Traf. &nbsp;7 z &nbsp;8 liczb Wygr. &nbsp; &nbsp; &nbsp;300 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">11 28 37 40 41 54 57 65 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Traf. &nbsp;7 z &nbsp;8 liczb Wygr. &nbsp; &nbsp; &nbsp;300 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">11 37 40 41 50 54 57 65 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Traf. &nbsp;7 z &nbsp;8 liczb Wygr. &nbsp; &nbsp; &nbsp;300 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">11 37 40 41 50 54 65 74 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Traf. &nbsp;6 z &nbsp;8 liczb Wygr. &nbsp; &nbsp; &nbsp; 30 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">------------------------</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Suma wygranej= 12 490,00 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> &nbsp; &nbsp; &nbsp; &nbsp;Koszt= 14,40 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> &nbsp; &nbsp; &nbsp; &nbsp; Zysk= 12 475,60 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">----------------------------------------------</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Razem na 12 unikalnych liczb trafiono 8 liczb</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Trafione liczby : 11 21 37 40 41 54 57 65</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Użyte liczby : &nbsp;3 11 21 28 37 40 41 50 54 57 65 74</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p>No i poszaleliśmy jest to jednak nieralna sytuacja ponieważ znany był wynik losowania:</p>
+<p>&nbsp;</p>
+<p>Na tym samym przykładzie pokażę jak można manipulować wartością środkową (mean- meander) generatora i zwiększyć efekty generacji bez specjalnego wyczucia które liczby należy przesunąć (nie wiedząc o wynikach losowania). &nbsp;Gasimy okno dialogu ustawień i wrócimy do ustawień automatycznych gdy ponownie wywołamy dialog ustawień przesuwamy środek( mean generatora na wartość ok 32 a odchylenie na wartość ok 12. I otrzymamy po generacji :</p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">11 21 28 37 40 43 50 54 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Traf. &nbsp;5 z &nbsp;8 liczb Wygr. &nbsp; &nbsp; &nbsp; 10 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">11 21 37 40 41 50 54 65 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Traf. &nbsp;7 z &nbsp;8 liczb Wygr. &nbsp; &nbsp; &nbsp;300 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">11 21 37 40 43 65 72 74 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Traf. &nbsp;5 z &nbsp;8 liczb Wygr. &nbsp; &nbsp; &nbsp; 10 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">11 21 40 43 50 54 65 74 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Traf. &nbsp;5 z &nbsp;8 liczb Wygr. &nbsp; &nbsp; &nbsp; 10 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">11 37 40 41 43 50 54 74 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Traf. &nbsp;5 z &nbsp;8 liczb Wygr. &nbsp; &nbsp; &nbsp; 10 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">11 37 40 41 43 50 65 74 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Traf. &nbsp;5 z &nbsp;8 liczb Wygr. &nbsp; &nbsp; &nbsp; 10 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">11 37 40 41 43 54 65 72 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Traf. &nbsp;6 z &nbsp;8 liczb Wygr. &nbsp; &nbsp; &nbsp; 30 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">11 37 40 41 43 54 65 74 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Traf. &nbsp;6 z &nbsp;8 liczb Wygr. &nbsp; &nbsp; &nbsp; 30 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">11 37 40 43 50 54 65 74 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Traf. &nbsp;5 z &nbsp;8 liczb Wygr. &nbsp; &nbsp; &nbsp; 10 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">11 41 43 50 54 65 72 74 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Traf. &nbsp;4 z &nbsp;8 liczb Wygr. &nbsp; &nbsp; &nbsp; &nbsp;2 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">21 28 37 40 43 50 54 65 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Traf. &nbsp;5 z &nbsp;8 liczb Wygr. &nbsp; &nbsp; &nbsp; 10 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">21 37 40 41 50 54 65 74 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Traf. &nbsp;6 z &nbsp;8 liczb Wygr. &nbsp; &nbsp; &nbsp; 30 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">------------------------</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Suma wygranej= 462,00 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> &nbsp; &nbsp; &nbsp; &nbsp;Koszt= 14,40 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> &nbsp; &nbsp; &nbsp; &nbsp; Zysk= 447,60 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">----------------------------------------------</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Razem na 12 unikalnych liczb trafiono 7 liczb</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Trafione liczby : 11 21 37 40 41 54 65</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Użyte liczby : 11 21 28 37 40 41 43 50 54 65 72 74</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p>&nbsp;</p>
+<p>Polując na większe wygrane opłaca się generować trzy, cztery paczki zakładów po niewiele zakładów szukając w en sposób zgrupowań liczb korzystnych. Przy dość wąskim dzwonie generatora (stdev=8..9) przesuwamy kolejno środek dzwonu na np. 32%,50% i 82% generując trzy paczki liczb. Ta która trafi większe zgrupowanie napewno zrekompensuje nam straty z pozostałych paczek.</p>
+
+</div>
+</td></tr></table>
+</div>
+
+<!-- Placeholder for topic body end. -->
+</body>
+</html>

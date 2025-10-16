@@ -1,0 +1,363 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Powtórz i sprawdz w historii losowań</title>
+   <meta name="keywords" content="Powtarzanie kombinacji,kombinacja,kombinacja powtórz i sprawdź w historii" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+   <style type="text/css">
+   <!--
+   .inline-button {
+   width:auto;
+   font: bold 90%/1 Verdana, sans-serif;
+   margin: 0 0.2em; padding: 0.1em 0; _padding:0;
+   border: 1px solid black;
+   white-space:nowrap;
+   text-decoration: none;
+   vertical-align:middle;
+   background: #ccc;
+   color: black;
+   }
+.inline-button em {
+   cursor:hand;
+   font-style: normal;
+   margin:0; padding: 0.1em 0.5em;
+   background: white;
+   color: black;
+   }
+.inline-button span {
+   cursor:hand;
+   margin:0; padding: 0.1em 0.5em 0.1em 0.3em;
+   }
+.inline-button:hover {
+   background: #666;
+   color: white;
+   }
+.inline-button:hover em {
+   background: black;
+   color: white;
+   }
+.s1 {
+	background-color: #FFFFFF;
+	color: #008000;
+}
+.s2 {
+	background-color: #FF8000;
+	color: #000000;
+}
+.s5 {
+	background-color: #FFFFFF;
+	color: #008000;
+}
+.s6 {
+	background-color: #FFFFFF;
+	color: #FF0000;
+}
+.s7 {
+	background-color: #FFFFFF;
+	color: #FF0000;
+}
+.s8 {
+	background-color: #FFFFFF;
+	color: #FF0000;
+}
+.s9 {
+	background-color: #FFFFFF;
+	color: #008000;
+}
+.s10 {
+	background-color: #FFFFFF;
+	color: #800000;
+}
+.s3 {
+	background-color: #FFFFFF;
+	color: #000000;
+}
+.s4 {
+	background-color: #FFFF00;
+	color: #0000FF;
+}
+.s11 {
+	background-color: #00FF00;
+	color: #000000;   }
+/* Horizontal lists
+----------------------------------------*/
+ul.linklist {
+	display: block;
+	margin: 0;
+}
+
+ul.linklist li {
+	display: block;
+	list-style-type: none;
+	float: left;
+	width: auto;
+	margin-right: 5px;
+	font-size: 1.1em;
+	line-height: 2.2em;
+}
+
+ul.linklist {
+	float: right;
+	margin-right: 0;
+	margin-left: 5px;
+	text-align: right;
+}
+
+ul.navlinks {
+	padding-bottom: 1px;
+	margin-bottom: 1px;
+	border-bottom: 1px solid #FFFFFF;
+	font-weight: bold;
+}
+
+a.flag {color: #AAA; font-size:0.8em;text-decoration:none;}
+a.flag:hover {color:#FFF;text-decoration:underline;}
+a.en-flag {padding-left:21px; background: url(images/flag/en.png) top left no-repeat;}
+a.de-flag {padding-left:21px; background: url(images/flag/de.png) top left no-repeat;}
+a.ru-flag {padding-left:21px; background: url(images/flag/ru.png) top left no-repeat;} 
+a.cs-flag {padding-left:21px; background: url(images/flag/cz.png) top left no-repeat;}
+a.fr-flag {padding-left:21px; background: url(images/flag/fr.png) top left no-repeat;}
+a.es-flag {padding-left:21px; background: url(images/flag/es.png) top left no-repeat;}
+a.it-flag {padding-left:21px; background: url(images/flag/it.png) top left no-repeat;}
+
+-->   
+</style>
+
+<script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+
+<script type="text/javascript">
+function trim11 (str) {
+str = str.replace(/^\s+/, '');
+for (var i = str.length - 1; i >= 0; i--) {
+if (/\S/.test(str.charAt(i))) {
+str = str.substring(0, i + 1);
+break;
+}
+}
+return str;
+}
+
+function _highlight(inp_id,out_id) {
+elm=document.getElementById(out_id);
+var inptxt = trim11(document.getElementById(inp_id).value);
+var inp_arr = inptxt.split(/[ :,;-]+/);
+var html=elm.innerHTML;
+text=trim11(html.replace(/<[^>]+>/g,''));
+lines=text.split(/\r?\n/g);
+
+html="<pre>";
+for (var i in lines) {
+var tic=lines[i];
+var line_arr=tic.split(' ');
+
+var item='';
+for (var j in line_arr) {
+var num=line_arr[j];
+var hits=false;
+for (var k in inp_arr) {
+var hit=inp_arr[k];
+if (hit==num) { 
+hits=true;
+break;
+}
+}
+var pads=(j<(line_arr.length-1)) ? ' ':'';
+item+= hits ? '<span class="s2">'+num+'</span>'+pads : num+pads;
+}
+html+=item+'\r\n';
+}
+elm.innerHTML=html+'</pre>';
+}
+</script>
+      
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?again_and_check_history.htm"; }
+  else { parent.quicksync('a3.2.2.2.3'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFEF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#000000">
+  <tr valign="middle">
+    <td align="left">
+      <p style="text-indent: 0px; margin: 0px 0px 0px 0px;"><span style="font-size: 12pt; color: #ffffff;">Powtórz i sprawdź w historii losowań </span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a class="inline-button" href="contents.htm"><em>LC</em><span>&lt;&lt;</span></a>&nbsp;
+     <!--<a href="contents.htm">Top</a>-->
+     <a class="inline-button" href="check_tickets.htm"><em>LC</em><span>&lt;</span></a>&nbsp;
+     <!--<a href="check_tickets.htm">Previous</a>&nbsp;-->
+     <a class="inline-button" href="check_in_history.htm"><em>LC</em><span>&gt;</span></a>&nbsp;     
+     <!--<a href="check_in_history.htm">Next</a>-->
+     </span>
+    </td>
+  </tr>
+    
+  <tr><td colspan="2">
+  <script>
+  function switchlang(lang) {
+  $(".goog-te-sectional-gadget-link-text").html('');
+  $.getScript("//translate.google.com/translate_a/element.js?cb=googleSectionalElementInit&ug=section&hl="+lang);
+  }
+  function googleSectionalElementInit() {
+  new google.translate.SectionalElement({
+    sectionalNodeClassName: 'goog-trans-section',
+    controlNodeClassName: 'goog-trans-control',
+    background: '#99ff99'
+  }, 'google_sectional_element');
+  }
+  switchlang ('en');
+  </script>
+<div id="lang-menu">
+<ul class="linklist navlinks" style="font-size:12px";>
+<li class="icon_home"><a class="flag en-flag" href="javascript:void(0)" onclick="return switchlang('en');">English</a> &raquo;</li>
+<li class="icon_home"><a class="flag de-flag" href="javascript:void(0)" onclick="return switchlang('de');">Deutsch</a> &raquo;</li>
+<li class="icon_home"><a class="flag es-flag" href="javascript:void(0)" onclick="return switchlang('es');">Español</a> &raquo;</li>
+<li class="icon_home"><a class="flag fr-flag" href="javascript:void(0)" onclick="return switchlang('fr');">Français</a> &raquo;</li>
+<li class="icon_home"><a class="flag it-flag" href="javascript:void(0)" onclick="return switchlang('it');">Italiano</a> &raquo;</li>
+<li class="icon_home"><a class="flag ru-flag" href="javascript:void(0)" onclick="return switchlang('ru');">Rусский</a> &raquo;</li>
+</ul>
+</div>
+  </td></tr> 
+    
+</table>
+
+
+<!-- Placeholder for topic body begin. -->
+
+<div id="topic_body" class="goog-trans-section" lang="pl">
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<div class="goog-trans-control">
+<a class="goog-te-gadget-link" href="javascript:void(0)"><span class="goog-te-sectional-gadget-link-text"></span></a>
+</div>
+<div class="content">
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">Opcja powoduje powtórzenie kombinacji z opcjami ostatnio wybranymi z formularza "kombinacje" i sprawdzenie wyników w historii losowań przy czym formularz wyboru dat nie jest pokazywany a zakres dat sprawdzenia będzie taki jaki ostatnio był ustawiany w tym formularzu.</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">Jeżeli chcesz szybko sprawdzać efekty kolejnych kombinacji w interesującym cię zakresie dat historii losowań to po pierwszej kombinacji użyj przycisku "sprawdź w historii" (pokaże się wówczas formularz wyboru daty ) a potem już możesz używać wielokrotnie przycisku "powtórz i sprawdź w historii" formularz daty nie będzie się ukazywał a zakres wyboru losowań będzie taki jaki ustawiłeś w opcji "sprawdź w historii". </span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Przykład: &nbsp;opcja wszystkie XX liczb i zakres losowań 18-02-2000 do 22-03-2000.</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">POLE ZAKŁADY</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 1 &nbsp;6 34 38 45 49 56 58 68 75</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 2 &nbsp;4 &nbsp;5 10 16 24 26 41 42 47</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 3 11 23 39 40 43 46 48 57 59</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 7 21 22 32 35 50 52 69 70 80</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 8 29 36 55 62 64 67 73 77 79</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 9 14 19 31 33 53 54 65 66 76</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">12 18 20 25 27 28 51 71 72 74</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">13 15 17 30 37 44 60 61 63 78</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">POLE WYNIKI</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Sprawdzenie wyników zakładów w historii</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">losowań od losowania nr 1019</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> &nbsp; &nbsp; &nbsp; &nbsp;do losowania nr 1052</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">---------------------------------</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">------------------------------------------------------------</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Zakład 10 liczb : &nbsp;1 &nbsp;6 34 38 45 49 56 58 68 75</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">------------------------------------------------------------</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">00-02-18 Traf &nbsp;4 z 10 Wygr &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">00-02-21 Traf &nbsp;4 z 10 Wygr &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">00-02-27 Traf &nbsp;4 z 10 Wygr &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">00-02-28 Traf &nbsp;6 z 10 Wygr &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;6 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">00-03-02 Traf &nbsp;4 z 10 Wygr &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">00-03-06 Traf &nbsp;4 z 10 Wygr &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">00-03-13 Traf &nbsp;6 z 10 Wygr &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;6 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">00-03-14 Traf &nbsp;4 z 10 Wygr &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Zakład 10 liczb : &nbsp;2 &nbsp;4 &nbsp;5 10 16 24 26 41 42 47</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">------------------------------------------------------------</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">00-02-19 Traf &nbsp;4 z 10 Wygr &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">00-02-24 Traf &nbsp;4 z 10 Wygr &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">00-02-29 Traf &nbsp;4 z 10 Wygr &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">00-03-03 Traf &nbsp;5 z 10 Wygr &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;2 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">00-03-05 Traf &nbsp;4 z 10 Wygr &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">00-03-18 Traf &nbsp;5 z 10 Wygr &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;2 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">00-03-19 Traf &nbsp;5 z 10 Wygr &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;2 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">------------------------------------------------------------</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Zakład 10 liczb : &nbsp;3 11 23 39 40 43 46 48 57 59</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">------------------------------------------------------------</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">00-02-29 Traf &nbsp;4 z 10 Wygr &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">00-03-04 Traf &nbsp;4 z 10 Wygr &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">00-03-05 Traf &nbsp;4 z 10 Wygr &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">00-03-15 Traf &nbsp;4 z 10 Wygr &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">------------------------------------------------------------</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Zakład 10 liczb : &nbsp;7 21 22 32 35 50 52 69 70 80</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">------------------------------------------------------------</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">00-02-18 Traf &nbsp;4 z 10 Wygr &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">00-02-19 Traf &nbsp;4 z 10 Wygr &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">00-02-26 Traf &nbsp;4 z 10 Wygr &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">00-03-08 Traf &nbsp;6 z 10 Wygr &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;6 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">00-03-13 Traf &nbsp;4 z 10 Wygr &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">00-03-14 Traf &nbsp;4 z 10 Wygr &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">00-03-16 Traf &nbsp;5 z 10 Wygr &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;2 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">------------------------------------------------------------</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Zakład 10 liczb : &nbsp;8 29 36 55 62 64 67 73 77 79</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">------------------------------------------------------------</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">00-02-21 Traf &nbsp;5 z 10 Wygr &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;2 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">00-02-24 Traf &nbsp;4 z 10 Wygr &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">00-02-26 Traf &nbsp;4 z 10 Wygr &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">00-03-06 Traf &nbsp;4 z 10 Wygr &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">00-03-22 Traf &nbsp;5 z 10 Wygr &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;2 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">------------------------------------------------------------</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Zakład 10 liczb : &nbsp;9 14 19 31 33 53 54 65 66 76</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">------------------------------------------------------------</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">00-02-20 Traf &nbsp;5 z 10 Wygr &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;2 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">00-02-22 Traf &nbsp;4 z 10 Wygr &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">00-03-02 Traf &nbsp;4 z 10 Wygr &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">00-03-03 Traf &nbsp;4 z 10 Wygr &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">00-03-08 Traf &nbsp;4 z 10 Wygr &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">00-03-09 Traf &nbsp;8 z 10 Wygr &nbsp; &nbsp; &nbsp; &nbsp;260 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">00-03-10 Traf &nbsp;5 z 10 Wygr &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;2 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">00-03-12 Traf &nbsp;5 z 10 Wygr &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;2 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">00-03-16 Traf &nbsp;6 z 10 Wygr &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;6 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">00-03-17 Traf &nbsp;4 z 10 Wygr &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">00-03-20 Traf &nbsp;4 z 10 Wygr &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">00-03-21 Traf &nbsp;4 z 10 Wygr &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">00-03-22 Traf &nbsp;4 z 10 Wygr &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">------------------------------------------------------------</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Zakład 10 liczb : 12 18 20 25 27 28 51 71 72 74</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">------------------------------------------------------------</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">00-02-24 Traf &nbsp;4 z 10 Wygr &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">00-02-25 Traf &nbsp;4 z 10 Wygr &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">00-03-04 Traf &nbsp;4 z 10 Wygr &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">00-03-15 Traf &nbsp;4 z 10 Wygr &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">00-03-21 Traf &nbsp;4 z 10 Wygr &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">------------------------------------------------------------</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Zakład 10 liczb : 13 15 17 30 37 44 60 61 63 78</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">------------------------------------------------------------</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">00-02-22 Traf &nbsp;5 z 10 Wygr &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;2 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">00-03-01 Traf &nbsp;4 z 10 Wygr &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">00-03-20 Traf &nbsp;6 z 10 Wygr &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;6 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">RAZEM :</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">------------------------------------------------------------</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Zakładów &nbsp; &nbsp; &nbsp;272 Koszt = 326.40 zł Wygrana = 350.00 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">------------------------------------------------------------</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> &nbsp;38 razy trafiono &nbsp;4 z 10 liczb,suma wygranej &nbsp; 38.00 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> &nbsp;11 razy trafiono &nbsp;5 z 10 liczb,suma wygranej &nbsp; 22.00 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> &nbsp; 5 razy trafiono &nbsp;6 z 10 liczb,suma wygranej &nbsp; 30.00 zł</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> &nbsp; 1 razy trafiono &nbsp;8 z 10 liczb,suma wygranej &nbsp;260.00 zł</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+
+</div>
+</td></tr></table>
+</div>
+
+<!-- Placeholder for topic body end. -->
+</body>
+</html>

@@ -1,0 +1,318 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>jak wybierać prognozy&nbsp;</title>
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+   <style type="text/css">
+   <!--
+   .inline-button {
+   width:auto;
+   font: bold 90%/1 Verdana, sans-serif;
+   margin: 0 0.2em; padding: 0.1em 0; _padding:0;
+   border: 1px solid black;
+   white-space:nowrap;
+   text-decoration: none;
+   vertical-align:middle;
+   background: #ccc;
+   color: black;
+   }
+.inline-button em {
+   cursor:hand;
+   font-style: normal;
+   margin:0; padding: 0.1em 0.5em;
+   background: white;
+   color: black;
+   }
+.inline-button span {
+   cursor:hand;
+   margin:0; padding: 0.1em 0.5em 0.1em 0.3em;
+   }
+.inline-button:hover {
+   background: #666;
+   color: white;
+   }
+.inline-button:hover em {
+   background: black;
+   color: white;
+   }
+.s1 {
+	background-color: #FFFFFF;
+	color: #008000;
+}
+.s2 {
+	background-color: #FF8000;
+	color: #000000;
+}
+.s5 {
+	background-color: #FFFFFF;
+	color: #008000;
+}
+.s6 {
+	background-color: #FFFFFF;
+	color: #FF0000;
+}
+.s7 {
+	background-color: #FFFFFF;
+	color: #FF0000;
+}
+.s8 {
+	background-color: #FFFFFF;
+	color: #FF0000;
+}
+.s9 {
+	background-color: #FFFFFF;
+	color: #008000;
+}
+.s10 {
+	background-color: #FFFFFF;
+	color: #800000;
+}
+.s3 {
+	background-color: #FFFFFF;
+	color: #000000;
+}
+.s4 {
+	background-color: #FFFF00;
+	color: #0000FF;
+}
+.s11 {
+	background-color: #00FF00;
+	color: #000000;   }
+/* Horizontal lists
+----------------------------------------*/
+ul.linklist {
+	display: block;
+	margin: 0;
+}
+
+ul.linklist li {
+	display: block;
+	list-style-type: none;
+	float: left;
+	width: auto;
+	margin-right: 5px;
+	font-size: 1.1em;
+	line-height: 2.2em;
+}
+
+ul.linklist {
+	float: right;
+	margin-right: 0;
+	margin-left: 5px;
+	text-align: right;
+}
+
+ul.navlinks {
+	padding-bottom: 1px;
+	margin-bottom: 1px;
+	border-bottom: 1px solid #FFFFFF;
+	font-weight: bold;
+}
+
+a.flag {color: #AAA; font-size:0.8em;text-decoration:none;}
+a.flag:hover {color:#FFF;text-decoration:underline;}
+a.en-flag {padding-left:21px; background: url(images/flag/en.png) top left no-repeat;}
+a.de-flag {padding-left:21px; background: url(images/flag/de.png) top left no-repeat;}
+a.ru-flag {padding-left:21px; background: url(images/flag/ru.png) top left no-repeat;} 
+a.cs-flag {padding-left:21px; background: url(images/flag/cz.png) top left no-repeat;}
+a.fr-flag {padding-left:21px; background: url(images/flag/fr.png) top left no-repeat;}
+a.es-flag {padding-left:21px; background: url(images/flag/es.png) top left no-repeat;}
+a.it-flag {padding-left:21px; background: url(images/flag/it.png) top left no-repeat;}
+
+-->   
+</style>
+
+<script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+
+<script type="text/javascript">
+function trim11 (str) {
+str = str.replace(/^\s+/, '');
+for (var i = str.length - 1; i >= 0; i--) {
+if (/\S/.test(str.charAt(i))) {
+str = str.substring(0, i + 1);
+break;
+}
+}
+return str;
+}
+
+function _highlight(inp_id,out_id) {
+elm=document.getElementById(out_id);
+var inptxt = trim11(document.getElementById(inp_id).value);
+var inp_arr = inptxt.split(/[ :,;-]+/);
+var html=elm.innerHTML;
+text=trim11(html.replace(/<[^>]+>/g,''));
+lines=text.split(/\r?\n/g);
+
+html="<pre>";
+for (var i in lines) {
+var tic=lines[i];
+var line_arr=tic.split(' ');
+
+var item='';
+for (var j in line_arr) {
+var num=line_arr[j];
+var hits=false;
+for (var k in inp_arr) {
+var hit=inp_arr[k];
+if (hit==num) { 
+hits=true;
+break;
+}
+}
+var pads=(j<(line_arr.length-1)) ? ' ':'';
+item+= hits ? '<span class="s2">'+num+'</span>'+pads : num+pads;
+}
+html+=item+'\r\n';
+}
+elm.innerHTML=html+'</pre>';
+}
+</script>
+      
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?progn_what_select.htm"; }
+  else { parent.quicksync('a3.2.1.5.10.4'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFEF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#000000">
+  <tr valign="middle">
+    <td align="left">
+      <p style="text-indent: 0px; margin: 0px 0px 0px 0px;"><span style="font-size: 12pt; color: #ffffff;">Jak wybierać prognozy</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a class="inline-button" href="contents.htm"><em>LC</em><span>&lt;&lt;</span></a>&nbsp;
+     <!--<a href="contents.htm">Top</a>-->
+     <a class="inline-button" href="prognozyopcje.htm"><em>LC</em><span>&lt;</span></a>&nbsp;
+     <!--<a href="prognozyopcje.htm">Previous</a>&nbsp;-->
+     <a class="inline-button" href="prognozy_game_trick.htm"><em>LC</em><span>&gt;</span></a>&nbsp;     
+     <!--<a href="prognozy_game_trick.htm">Next</a>-->
+     </span>
+    </td>
+  </tr>
+    
+  <tr><td colspan="2">
+  <script>
+  function switchlang(lang) {
+  $(".goog-te-sectional-gadget-link-text").html('');
+  $.getScript("//translate.google.com/translate_a/element.js?cb=googleSectionalElementInit&ug=section&hl="+lang);
+  }
+  function googleSectionalElementInit() {
+  new google.translate.SectionalElement({
+    sectionalNodeClassName: 'goog-trans-section',
+    controlNodeClassName: 'goog-trans-control',
+    background: '#99ff99'
+  }, 'google_sectional_element');
+  }
+  switchlang ('en');
+  </script>
+<div id="lang-menu">
+<ul class="linklist navlinks" style="font-size:12px";>
+<li class="icon_home"><a class="flag en-flag" href="javascript:void(0)" onclick="return switchlang('en');">English</a> &raquo;</li>
+<li class="icon_home"><a class="flag de-flag" href="javascript:void(0)" onclick="return switchlang('de');">Deutsch</a> &raquo;</li>
+<li class="icon_home"><a class="flag es-flag" href="javascript:void(0)" onclick="return switchlang('es');">Español</a> &raquo;</li>
+<li class="icon_home"><a class="flag fr-flag" href="javascript:void(0)" onclick="return switchlang('fr');">Français</a> &raquo;</li>
+<li class="icon_home"><a class="flag it-flag" href="javascript:void(0)" onclick="return switchlang('it');">Italiano</a> &raquo;</li>
+<li class="icon_home"><a class="flag ru-flag" href="javascript:void(0)" onclick="return switchlang('ru');">Rусский</a> &raquo;</li>
+</ul>
+</div>
+  </td></tr> 
+    
+</table>
+
+
+<!-- Placeholder for topic body begin. -->
+
+<div id="topic_body" class="goog-trans-section" lang="pl">
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<div class="goog-trans-control">
+<a class="goog-te-gadget-link" href="javascript:void(0)"><span class="goog-te-sectional-gadget-link-text"></span></a>
+</div>
+<div class="content">
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">Obserwacja statystyk może znakomicie ułatwić podjęcie decyzji wyboru metody gry.</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">&nbsp;</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">Typowy przykład: </span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">Wybierając z prognoz 3,4 i 6 bardzo łatwo można uzyskać to, o co chodzi, mianowicie skuteczność około 35-50%: </span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">Np. dla prognozy wykonanej dla okresów od 1 do 15, poziomu wybierania 33% i poziomu 3 kolejno naprzemiennych okresów losowań uzyskujemy prognozę i raport skuteczności dla 10 ostatnich losowań wstecz. Na niebiesko w statystyce zaznaczone są trafienia w procentach skuteczności, gwarantujące dobry rezultat na liczby wybranej prognozy. Poniższy diagram statystyki skuteczności został wygenerowany tak, aby w kolumnie 1 wyświelić rezultaty już znane. Jak widać dobry rezultat można byłoby uzyskać biorąc pod uwagę okresy prognoz 1, 5, 7,11,13 i 14.</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">W ostatniej kolumnie znajduje się średnia wartość prognozy za ostatnich 10 losowań. Jak widać rewelacyjnie od 10 losowań zachowują się prognozy okresów 7 i 14 dając srednią za 10 losowań ponad 40% (zaznaczone na czerwono?. Prognozy te należy bezwzględnie brać pod uwagę aż do czasu załamania się tego trendu. Z prognozami tymi mamy szansę na prawdziwe hity.</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">Kolejne kolumny od kolumny nr 1 do kolumny 10 zawierają skuteczność prognoz generowanych w kolejnych dniach i sprawdzanych w kolejnych losowaniach od ostatniego do losowania o 10 wcześniejszego.</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">------------------------------------------------------</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">Okres &nbsp; &nbsp;| 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10|| śr</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">------------------------------------------------------</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">Okres &nbsp; 1| </span><span style="font-family: 'Courier New'; font-weight: bold; color: #0000ff;">50</span><span style="font-family: 'Courier New'; color: #800000;">| &nbsp; | &nbsp; | &nbsp; | | 25| &nbsp; | </span><span style="font-family: 'Courier New'; font-weight: bold; color: #0000ff;">50</span><span style="font-family: 'Courier New'; color: #800000;">| 25| &nbsp; || 20</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">Okres &nbsp; 2| 20| 20| 25| &nbsp; | 17| </span><span style="font-family: 'Courier New'; font-weight: bold; color: #0000ff;">33</span><span style="font-family: 'Courier New'; color: #800000;">| &nbsp; | </span><span style="font-family: 'Courier New'; font-weight: bold; color: #0000ff;">33</span><span style="font-family: 'Courier New'; color: #0000ff;">| </span><span style="font-family: 'Courier New'; font-weight: bold; color: #0000ff;">40</span><span style="font-family: 'Courier New'; color: #0000ff;">| </span><span style="font-family: 'Courier New'; font-weight: bold; color: #0000ff;">33</span><span style="font-family: 'Courier New'; color: #800000;">|| 22</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; font-weight: bold; color: #0000ff;">33</span><span style="font-family: 'Courier New'; color: #0000ff;">| </span><span style="font-family: 'Courier New'; font-weight: bold; color: #0000ff;">67</span><span style="font-family: 'Courier New'; color: #0000ff;">| </span><span style="font-family: 'Courier New'; font-weight: bold; color: #0000ff;">80</span><span style="font-family: 'Courier New'; color: #800000;">| &nbsp; | 20| &nbsp; || 26</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">Okres &nbsp; 4| 30| &nbsp; | </span><span style="font-family: 'Courier New'; font-weight: bold; color: #0000ff;">45</span><span style="font-family: 'Courier New'; color: #800000;">| &nbsp; | 19| 33| 20| 30|</span><span style="font-family: 'Courier New'; color: #0000ff;"> </span><span style="font-family: 'Courier New'; font-weight: bold; color: #0000ff;">41</span><span style="font-family: 'Courier New'; color: #800000;">| 29|| 25</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">Okres &nbsp; 5| </span><span style="font-family: 'Courier New'; font-weight: bold; color: #0000ff;">43</span><span style="font-family: 'Courier New'; color: #800000;">| &nbsp; | </span><span style="font-family: 'Courier New'; font-weight: bold; color: #0000ff;">33</span><span style="font-family: 'Courier New'; color: #800000;">| 25| 14| </span><span style="font-family: 'Courier New'; font-weight: bold; color: #0000ff;">40</span><span style="font-family: 'Courier New'; color: #0000ff;">| </span><span style="font-family: 'Courier New'; font-weight: bold; color: #0000ff;">33</span><span style="font-family: 'Courier New'; color: #800000;">| 29| 25| 17|| 26</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">Okres &nbsp; 6| &nbsp; | &nbsp; | 20| 17| &nbsp; | </span><span style="font-family: 'Courier New'; font-weight: bold; color: #0000ff;">33</span><span style="font-family: 'Courier New'; color: #0000ff;">| &nbsp; | 5</span><span style="font-family: 'Courier New'; font-weight: bold; color: #0000ff;">0</span><span style="font-family: 'Courier New'; color: #800000;">| 20| </span><span style="font-family: 'Courier New'; font-weight: bold; color: #0000ff;">33</span><span style="font-family: 'Courier New'; color: #800000;">|| 17</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">Okres &nbsp; 7| </span><span style="font-family: 'Courier New'; font-weight: bold; color: #0000ff;">33</span><span style="font-family: 'Courier New'; color: #0000ff;">| </span><span style="font-family: 'Courier New'; font-weight: bold; color: #0000ff;">33</span><span style="font-family: 'Courier New'; color: #800000;">| &nbsp; | </span><span style="font-family: 'Courier New'; font-weight: bold; color: #0000ff;">75</span><span style="font-family: 'Courier New'; color: #0000ff;">| </span><span style="font-family: 'Courier New'; font-weight: bold; color: #0000ff;">40</span><span style="font-family: 'Courier New'; color: #0000ff;">| </span><span style="font-family: 'Courier New'; font-weight: bold; color: #0000ff;">67</span><span style="font-family: 'Courier New'; color: #0000ff;">| </span><span style="font-family: 'Courier New'; font-weight: bold; color: #0000ff;">67</span><span style="font-family: 'Courier New'; color: #800000;">| &nbsp; | </span><span style="font-family: 'Courier New'; font-weight: bold; color: #0000ff;">33</span><span style="font-family: 'Courier New'; color: #0000ff;">| </span><span style="font-family: 'Courier New'; font-weight: bold; color: #0000ff;">50</span><span style="font-family: 'Courier New'; color: #800000;">|| </span><span style="font-family: 'Courier New'; font-weight: bold; color: #ff0000;">40</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">Okres &nbsp; 8| 20| &nbsp; | &nbsp; | &nbsp; | &nbsp; | </span><span style="font-family: 'Courier New'; font-weight: bold; color: #0000ff;">67</span><span style="font-family: 'Courier New'; color: #0000ff;">| </span><span style="font-family: 'Courier New'; font-weight: bold; color: #0000ff;">60</span><span style="font-family: 'Courier New'; color: #800000;">| &nbsp; | &nbsp; | &nbsp; || 15</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">Okres &nbsp; 9| </span><span style="font-family: 'Courier New'; font-weight: bold; color: #0000ff;">33</span><span style="font-family: 'Courier New'; color: #0000ff;">| &nbsp; | &nbsp; | | </span><span style="font-family: 'Courier New'; font-weight: bold; color: #0000ff;">50</span><span style="font-family: 'Courier New'; color: #0000ff;">| &nbsp; | </span><span style="font-family: 'Courier New'; font-weight: bold; color: #0000ff;">33</span><span style="font-family: 'Courier New'; color: #0000ff;">| </span><span style="font-family: 'Courier New'; font-weight: bold; color: #0000ff;">40</span><span style="font-family: 'Courier New'; color: #800000;">| &nbsp; | 25|| 23</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">Okres &nbsp;10| &nbsp; | &nbsp; | 33| </span><span style="font-family: 'Courier New'; font-weight: bold; color: #0000ff;">43</span><span style="font-family: 'Courier New'; color: #0000ff;">| </span><span style="font-family: 'Courier New'; font-weight: bold; color: #0000ff;">33</span><span style="font-family: 'Courier New'; color: #0000ff;">| </span><span style="font-family: 'Courier New'; font-weight: bold; color: #0000ff;">50</span><span style="font-family: 'Courier New'; color: #0000ff;">| 43</span><span style="font-family: 'Courier New'; color: #800000;">| 12| &nbsp; | 29|| 24</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">Okres &nbsp;11|</span><span style="font-family: 'Courier New'; color: #0000ff;"> </span><span style="font-family: 'Courier New'; font-weight: bold; color: #0000ff;">44</span><span style="font-family: 'Courier New'; color: #800000;">| 17| 22| 14| 20| 29| &nbsp; | 20| 12| </span><span style="font-family: 'Courier New'; font-weight: bold; color: #0000ff;">50</span><span style="font-family: 'Courier New'; color: #800000;">|| 23</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">Okres &nbsp;12| 25| </span><span style="font-family: 'Courier New'; font-weight: bold; color: #0000ff;">33</span><span style="font-family: 'Courier New'; color: #0000ff;">| &nbsp; | &nbsp; |</span><span style="font-family: 'Courier New'; font-weight: bold; color: #0000ff;">100</span><span style="font-family: 'Courier New'; color: #800000;">| &nbsp; | &nbsp; | &nbsp; | &nbsp; | &nbsp; || 16</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">Okres &nbsp;13| </span><span style="font-family: 'Courier New'; font-weight: bold; color: #0000ff;">67</span><span style="font-family: 'Courier New'; color: #0000ff;">| </span><span style="font-family: 'Courier New'; font-weight: bold; color: #0000ff;">33</span><span style="font-family: 'Courier New'; color: #800000;">| &nbsp; | </span><span style="font-family: 'Courier New'; font-weight: bold; color: #0000ff;">33</span><span style="font-family: 'Courier New'; color: #0000ff;">| </span><span style="font-family: 'Courier New'; font-weight: bold; color: #0000ff;">33</span><span style="font-family: 'Courier New'; color: #800000;">| &nbsp; | &nbsp; | &nbsp; | &nbsp; | &nbsp; || 17</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">Okres &nbsp;14| | 17| </span><span style="font-family: 'Courier New'; font-weight: bold; color: #0000ff;">40</span><span style="font-family: 'Courier New'; color: #800000;">| 20|</span><span style="font-family: 'Courier New'; color: #0000ff;"> </span><span style="font-family: 'Courier New'; font-weight: bold; color: #0000ff;">50</span><span style="font-family: 'Courier New'; color: #0000ff;">|</span><span style="font-family: 'Courier New'; font-weight: bold; color: #0000ff;">100</span><span style="font-family: 'Courier New'; color: #800000;">| &nbsp; |</span><span style="font-family: 'Courier New'; color: #0000ff;"> </span><span style="font-family: 'Courier New'; font-weight: bold; color: #0000ff;">33</span><span style="font-family: 'Courier New'; color: #0000ff;">|</span><span style="font-family: 'Courier New'; font-weight: bold; color: #0000ff;">100</span><span style="font-family: 'Courier New'; font-weight: bold; color: #ff0000;">41</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">Okres &nbsp;15| &nbsp; | &nbsp; | </span><span style="font-family: 'Courier New'; font-weight: bold; color: #0000ff;">33</span><span style="font-family: 'Courier New'; color: #0000ff;">| &nbsp; | &nbsp; | </span><span style="font-family: 'Courier New'; font-weight: bold; color: #0000ff;">67</span><span style="font-family: 'Courier New'; color: #0000ff;">| &nbsp; | &nbsp; | &nbsp; | </span><span style="font-family: 'Courier New'; font-weight: bold; color: #0000ff;">33</span><span style="font-family: 'Courier New'; color: #800000;">|| 13</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">------------------------------------------------------</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'MS Shell Dlg';">Obserwacja okresowego występowania skutecznych prognoz pozwala przewidzieć dobrą skuteczność dla prognozy okresy 5,9 i 13.</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'MS Shell Dlg';">&nbsp;</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">------------------------------------------------------------</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">sumy trafień, skuteczność i trend dla cykli-okresów kwantowania</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;"> od 1 do 15 z ostatnich 10 losowań)</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">------------------------------------------------------------</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;"> &nbsp; &nbsp;cykl-okres ZG-Z| &nbsp; 4| &nbsp;10| &nbsp; 5| &nbsp; 7| &nbsp; 3| &nbsp; 2| &nbsp;11| &nbsp; 6|</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;"> &nbsp;suma trafień ZG-Z| &nbsp;31| &nbsp;17| &nbsp;16| &nbsp;15| &nbsp;13| &nbsp;12| &nbsp;11| &nbsp;10|</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">------------------------------------------------------------</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;"> &nbsp; &nbsp;cykl-okres ZG-Z| &nbsp; 7| &nbsp;14| &nbsp; 4| &nbsp;10| &nbsp; 3| &nbsp; 2| &nbsp; 5| &nbsp; 6|</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">średnia skut.w%ZG-Z| &nbsp;38| &nbsp;36| &nbsp;29| &nbsp;28| &nbsp;26| &nbsp;25| &nbsp;25| &nbsp;25|</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">------------------------------------------------------------</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;"> &nbsp; &nbsp;cykl-okres ZG-Z| &nbsp; 7| &nbsp;14| &nbsp;13| &nbsp;10| &nbsp;12| &nbsp; 3| &nbsp; 9| &nbsp; 5</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">trend prognozy ZG-Z| &nbsp;43| &nbsp;42| &nbsp;29| &nbsp;28| &nbsp;27| &nbsp;26| &nbsp;22| &nbsp;17</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">------------------------------------------------------------</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;"> &nbsp; &nbsp;cykl-okres ZG-Z| &nbsp; 5| &nbsp;15| &nbsp;11| &nbsp; 1| &nbsp; 8| &nbsp; 2| &nbsp; 4| &nbsp; 6</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">trend prognozy ZG-Z| &nbsp;17| &nbsp;16| &nbsp;13| &nbsp;12| &nbsp; 9| &nbsp; 7| &nbsp; 4|</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">------------------------------------------------------------</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg'; color: #7f0000;">uwaga : pierwsze dwie grupy w przykładzie są obcięte do 8 pozycji w wierszu, ostatni wiersz trendu jest w całości ale jest złamany do dwu wierszy.</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">Pierwszy wiersz każdej tabeli zawiera numer prognozy ( tu od 1 do 15)</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">drugie wiersze każdej grupy statystyk to odpowiednio: suma wszystkich trafień tej prognozy za 10 losowań, średnia trafień za 10 losowań ( jest to ta sama wartość, co w ostatnim wierszu tabeli raportów za symbolem ||) posortowana wg średniej oraz ostatnia grupa to przewidywana wartość przyszła wyliczana na podstawie trendu liniowego za 10 losowań. Wiersze te są posortowane odpowiednio sumami, wartościami średniej za xx losowań oraz wielkością wyliczanej regresją liniową &nbsp;wartością przyszłą.</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">Na podstawie analizy statystyki i wierszy podsumowań i trendów można "przewidywać" skuteczne wybranie prognozy, która rokuje większą skutecznością. </span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">Uwagi praktyczne :</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">Zwykle po okresie mniejszych skuteczności następuje 1 2 dniowy okres zwiększonej skuteczności, "gwarancją" &nbsp;takiego zachowania się prognoz jest wartość średnia, która przewyższa domyślny procent ( dla Multilotka i Keno 25%). Gracz obdarzony zmysłem obserwacji z łatwością potrafi "przewidzieć przyszłe zachowanie prognozy.</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">Gracze, którzy mają trudności wyboru mogą pomocniczo posłużyć się wyliczeniem trendu, który w pierwszym wierszu grupy podaje numery prognoz wg "przewidywanej wartości prognozy przyszłej podanej w drugim wierszu grupy. W podanym wyżej przykładzie trend wyliczony odpowiada wynikom, ponieważ dla wierszy 7,14 i 13 &nbsp;przewidywania się sprawdziły a w niektórych wyrażnie wyniki były lepsze. </span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">Prognoza &nbsp;7 &nbsp;Przewidywana 43% Faktyczna 33%</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">Prognoza 14 &nbsp;Przewidywana 42% Faktyczna 50%</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">Prognoza 13 &nbsp;Przewidywana 29% Faktyczna 67%</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+
+</div>
+</td></tr></table>
+</div>
+
+<!-- Placeholder for topic body end. -->
+</body>
+</html>

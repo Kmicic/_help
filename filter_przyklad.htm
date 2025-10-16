@@ -1,0 +1,372 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Przyklad filtracji</title>
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+   <style type="text/css">
+   <!--
+   .inline-button {
+   width:auto;
+   font: bold 90%/1 Verdana, sans-serif;
+   margin: 0 0.2em; padding: 0.1em 0; _padding:0;
+   border: 1px solid black;
+   white-space:nowrap;
+   text-decoration: none;
+   vertical-align:middle;
+   background: #ccc;
+   color: black;
+   }
+.inline-button em {
+   cursor:hand;
+   font-style: normal;
+   margin:0; padding: 0.1em 0.5em;
+   background: white;
+   color: black;
+   }
+.inline-button span {
+   cursor:hand;
+   margin:0; padding: 0.1em 0.5em 0.1em 0.3em;
+   }
+.inline-button:hover {
+   background: #666;
+   color: white;
+   }
+.inline-button:hover em {
+   background: black;
+   color: white;
+   }
+.s1 {
+	background-color: #FFFFFF;
+	color: #008000;
+}
+.s2 {
+	background-color: #FF8000;
+	color: #000000;
+}
+.s5 {
+	background-color: #FFFFFF;
+	color: #008000;
+}
+.s6 {
+	background-color: #FFFFFF;
+	color: #FF0000;
+}
+.s7 {
+	background-color: #FFFFFF;
+	color: #FF0000;
+}
+.s8 {
+	background-color: #FFFFFF;
+	color: #FF0000;
+}
+.s9 {
+	background-color: #FFFFFF;
+	color: #008000;
+}
+.s10 {
+	background-color: #FFFFFF;
+	color: #800000;
+}
+.s3 {
+	background-color: #FFFFFF;
+	color: #000000;
+}
+.s4 {
+	background-color: #FFFF00;
+	color: #0000FF;
+}
+.s11 {
+	background-color: #00FF00;
+	color: #000000;   }
+/* Horizontal lists
+----------------------------------------*/
+ul.linklist {
+	display: block;
+	margin: 0;
+}
+
+ul.linklist li {
+	display: block;
+	list-style-type: none;
+	float: left;
+	width: auto;
+	margin-right: 5px;
+	font-size: 1.1em;
+	line-height: 2.2em;
+}
+
+ul.linklist {
+	float: right;
+	margin-right: 0;
+	margin-left: 5px;
+	text-align: right;
+}
+
+ul.navlinks {
+	padding-bottom: 1px;
+	margin-bottom: 1px;
+	border-bottom: 1px solid #FFFFFF;
+	font-weight: bold;
+}
+
+a.flag {color: #AAA; font-size:0.8em;text-decoration:none;}
+a.flag:hover {color:#FFF;text-decoration:underline;}
+a.en-flag {padding-left:21px; background: url(images/flag/en.png) top left no-repeat;}
+a.de-flag {padding-left:21px; background: url(images/flag/de.png) top left no-repeat;}
+a.ru-flag {padding-left:21px; background: url(images/flag/ru.png) top left no-repeat;} 
+a.cs-flag {padding-left:21px; background: url(images/flag/cz.png) top left no-repeat;}
+a.fr-flag {padding-left:21px; background: url(images/flag/fr.png) top left no-repeat;}
+a.es-flag {padding-left:21px; background: url(images/flag/es.png) top left no-repeat;}
+a.it-flag {padding-left:21px; background: url(images/flag/it.png) top left no-repeat;}
+
+-->   
+</style>
+
+<script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+
+<script type="text/javascript">
+function trim11 (str) {
+str = str.replace(/^\s+/, '');
+for (var i = str.length - 1; i >= 0; i--) {
+if (/\S/.test(str.charAt(i))) {
+str = str.substring(0, i + 1);
+break;
+}
+}
+return str;
+}
+
+function _highlight(inp_id,out_id) {
+elm=document.getElementById(out_id);
+var inptxt = trim11(document.getElementById(inp_id).value);
+var inp_arr = inptxt.split(/[ :,;-]+/);
+var html=elm.innerHTML;
+text=trim11(html.replace(/<[^>]+>/g,''));
+lines=text.split(/\r?\n/g);
+
+html="<pre>";
+for (var i in lines) {
+var tic=lines[i];
+var line_arr=tic.split(' ');
+
+var item='';
+for (var j in line_arr) {
+var num=line_arr[j];
+var hits=false;
+for (var k in inp_arr) {
+var hit=inp_arr[k];
+if (hit==num) { 
+hits=true;
+break;
+}
+}
+var pads=(j<(line_arr.length-1)) ? ' ':'';
+item+= hits ? '<span class="s2">'+num+'</span>'+pads : num+pads;
+}
+html+=item+'\r\n';
+}
+elm.innerHTML=html+'</pre>';
+}
+</script>
+      
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?filter_przyklad.htm"; }
+  else { parent.quicksync('a3.2.1.3.1.11'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFEF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#000000">
+  <tr valign="middle">
+    <td align="left">
+      <p style="text-indent: 0px; margin: 0px 0px 0px 0px;"><span style="font-size: 12pt; color: #ffffff;">Przyklad filtracji MHD</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a class="inline-button" href="contents.htm"><em>LC</em><span>&lt;&lt;</span></a>&nbsp;
+     <!--<a href="contents.htm">Top</a>-->
+     <a class="inline-button" href="filtrmhd.htm"><em>LC</em><span>&lt;</span></a>&nbsp;
+     <!--<a href="filtrmhd.htm">Previous</a>&nbsp;-->
+     <a class="inline-button" href="filtrspacji.htm"><em>LC</em><span>&gt;</span></a>&nbsp;     
+     <!--<a href="filtrspacji.htm">Next</a>-->
+     </span>
+    </td>
+  </tr>
+    
+  <tr><td colspan="2">
+  <script>
+  function switchlang(lang) {
+  $(".goog-te-sectional-gadget-link-text").html('');
+  $.getScript("//translate.google.com/translate_a/element.js?cb=googleSectionalElementInit&ug=section&hl="+lang);
+  }
+  function googleSectionalElementInit() {
+  new google.translate.SectionalElement({
+    sectionalNodeClassName: 'goog-trans-section',
+    controlNodeClassName: 'goog-trans-control',
+    background: '#99ff99'
+  }, 'google_sectional_element');
+  }
+  switchlang ('en');
+  </script>
+<div id="lang-menu">
+<ul class="linklist navlinks" style="font-size:12px";>
+<li class="icon_home"><a class="flag en-flag" href="javascript:void(0)" onclick="return switchlang('en');">English</a> &raquo;</li>
+<li class="icon_home"><a class="flag de-flag" href="javascript:void(0)" onclick="return switchlang('de');">Deutsch</a> &raquo;</li>
+<li class="icon_home"><a class="flag es-flag" href="javascript:void(0)" onclick="return switchlang('es');">Español</a> &raquo;</li>
+<li class="icon_home"><a class="flag fr-flag" href="javascript:void(0)" onclick="return switchlang('fr');">Français</a> &raquo;</li>
+<li class="icon_home"><a class="flag it-flag" href="javascript:void(0)" onclick="return switchlang('it');">Italiano</a> &raquo;</li>
+<li class="icon_home"><a class="flag ru-flag" href="javascript:void(0)" onclick="return switchlang('ru');">Rусский</a> &raquo;</li>
+</ul>
+</div>
+  </td></tr> 
+    
+</table>
+
+
+<!-- Placeholder for topic body begin. -->
+
+<div id="topic_body" class="goog-trans-section" lang="pl">
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<div class="goog-trans-control">
+<a class="goog-te-gadget-link" href="javascript:void(0)"><span class="goog-te-sectional-gadget-link-text"></span></a>
+</div>
+<div class="content">
+<p>Na poniższym przykładzie pokażę jak w pełni wykorzystać filtry MHD i filtr SPS. </p>
+<p>Dla gry Lotto 6/49 symetrycznym układem kuponu jest kupon o rozmiarach 7x7 ( 7 wierszy i 7 kolumn). &nbsp;Na takim wirtualnym kuponie ( rzeczywisty ma 9 kolumn) znakomicie można grać przewidując układy losowań. </p>
+<p>Kupon taki można założyć i używać w programie. Z menu pik wybieramy "Menadżera gier liczbowych" i w pozycjach bazy danych gry dotyczących rozmiarów kuponu wpisujemy wierszy kuponu = 7 i kolumn kuponu=7. Po zamknięciu "menadżera" wszędzie gdzie pojawia się kupon będzie on miał wymiary 7x7.</p>
+<p>Aby ustawić filtry MHD musimy założyć pewien układ rozkładu liczb na kuponie.</p>
+<p>Zakładamy że :</p>
+<p>1. liczby wystąpią tylko w wierszach 2,3 i 5, pozostałe wiersze będą puste, ominiemy wiersze które zawierały liczby z losowania poprzedniego z 31.07.2009 roku oraz wiersz pierwszy ponieważ liczby niskie ostatnio "niechętnie" wychodzą.</p>
+<p>2.stosunek liczb które wystąpią na obrzeżu do liczb z wnętrza kuponu będzie 3/3 jest to bardzo często powtarzający się układ liczb.</p>
+<p>&nbsp;</p>
+<p>aby wprowadzić do filtrów te założenia, wybieramy opcję "edytuj filtr MHD" z menu "filtry"</p>
+<p>&nbsp;</p>
+<p><img src="edmhd.png" width="502" height="532" border="0" alt="edMHD"></p>
+<p>&nbsp;</p>
+<p>Zgodnie z tym co zakładaliśmy, włączamy filtry OK7 i SK7 (obrzeża i środka kuponu) z opcją dokładnie- 3 ( jest to bardzo popularny rozkład i często wychodzi w losowaniach) , i filtry wierszy W72,W73,W75 z opcją nie więcej niż 3 ponieważ nikt nie jest w stanie przewidzieć ile liczb będzie w każdym z wierszu.</p>
+<p>Wczytujemy do pola edycji wszystkie liczby z wierszy 2,3 i 5. (21 liczb) i z menu kombinacje uruchamiamy "odfiltrowany system pełny z liczb pola edycji". </p>
+<p>Pełny system z 21 liczb miałby 54 264 zakłady.</p>
+<p>Program wykonał system i wyświetlił &nbsp;7420 zakładów spełniających nasze warunki.</p>
+<p>Należy dalej ograniczyć ilość zakładów, dlatego należy najpierw wykluczyć układy mało prawdopodobne. &nbsp;Włączamy w kaskadę filtrów filtr SPS (sum,parzystości i kolejnych liczb). Filtr sumy ustawiamy na szeroki zakres od 80 do 120,)średnio 6*20), &nbsp;filtr parzystości też szeroko i bezpiecznie na najpopularniejsze układy 2-4,3-3 i 4-2, Filtr kolejnych liczb też na popularne układy 0 i 1.</p>
+<p>Uruchamiamy ponownie kombinacje i na wyjściu otrzymamy 2458 zakłady. To w dalszym ciągu jest znaczna ilość.</p>
+<p>Musimy zaryzykować i zacieśnić filtrację. Zakładamy że w wierszu 2 będą trzy w wierszu trzecim dwie i w piątym jedna cyfra. Opcje filtrów zmieniamy na "dokładnie i wpisujemy 3,2 i 1 odpowiednio.</p>
+<p>Po generacji i filtracji mamy jeszcze 612 zakładów.</p>
+<p>można teraz np zacieśnić filtr SPS sumy o 15 z każdej strony i spróbować ponownie.</p>
+<p>&nbsp;</p>
+<p>Włączamy raport kategorii liczb specjalnych i wybieramy "rozkłady kategorii typami" :</p>
+<p>&nbsp;</p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 29, 03,01,02,00,00, 02-06-12, &nbsp;-14, &nbsp; 30</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 31, 01,01,02,01,01, 02-05-22, &nbsp;-20, &nbsp; 28</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 32, 02,02,02,00,00, 02-06-22, &nbsp;-11, &nbsp; 27</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 36, 02,01,02,00,01, 02-07-27, &nbsp; -1, &nbsp; 24</span></p>
+<p>&nbsp;</p>
+<p>musimy wybrać rozkład kategorii &nbsp;z czterech najczęściej występujących rozkładów w historii losowań. Nie wybieramy ostatniego ponieważ wystąpił w losowaniu poprzednim. Nie wybieramy trzeciego od końca ponieważ zawiera nie brane pod uwagę liczby losowania poprzedniego, pozostał czwarty i drugi. Decydujemy że starszy będzie bardziej odpowiedni. Nie wystąpił od -14 losowań.</p>
+<p>Zgodnie z tym układem kategorii liczb specjalnych wczytujemy liczby kategorii za 51 losowań do filtrów MHD. Wczytując liczby do filtrów korzystamy z opcji wczytywania liczb kategorii specjalnych. I zgodnie z wybranym układem (ilość wystąpień 29, 03,01,02,00,00 ) dla filtrów kategorii ustawiamy kolejno:</p>
+<p>&nbsp;</p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Gorące &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(WARM) &nbsp; &nbsp; &nbsp; &nbsp;dokładnie 3 liczby</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Zimne &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(COLD) &nbsp; &nbsp; &nbsp; &nbsp;dokładnie 1 liczba</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Sodziewane &nbsp; &nbsp; &nbsp; &nbsp;(DUE) &nbsp; &nbsp; &nbsp; &nbsp;dokładnie 2 liczby</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Pewne &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(SPECDUE) &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Ostatnie &nbsp; &nbsp; &nbsp; &nbsp;(LAST) &nbsp; &nbsp; &nbsp; &nbsp;dokładnie 0 liczb</span></p>
+<p>&nbsp;</p>
+<p>Ponawiamy generację i filtrację systemu pełnego i otrzymujemy &nbsp;38 zakładów.</p>
+<p>Jest to ilość zakładów którą można zagrać.</p>
+<p>&nbsp;</p>
+<p>Na początku zakładów wstawione są raporty informacyjne które można wstawić po każdej generacji za pomocą klawiszy Ctrl+J. Informację wybiera się z rozwijanego menu i jest ona wstawiana w miejscu ostatniej pozycji kursora.</p>
+<p>&nbsp;</p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">/kombinacja: odfiltrowany system pełny z liczb pola edycji</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">/analiza od dnia 02-02-06 do dnia 02-07-31 z 176 dni</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">/wygenerowane dn : 02-08-04 20:03:28, czas wykonania : 0H 0 min 5,370 sec. 8 9 13 18 21 29</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">/Filtr SPS wycina z poza zakresu SUMA=95-105,N/P=2-4,SZEREG=0-1</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">/Filtr HIT Trafień w historii jest wyłączony</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">/Filtr RF Zakresów jest wyłączony</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">/Filtr AVG średniej w kolumnie jest wyłączony</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">/Filtr twardych jest wyłączony</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">/Filtr MHD przepuszcza dokładnie 3 liczby / Gorące / z zakresu 4 8 10 13 15 17 21 28 30 32 33 39 41 45 46</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">/Filtr MHD przepuszcza dokładnie 2 liczby / Oczekiwane / z zakresu 1 2 5 6 7 9 18 19 20 35 36 37 38 42 44 47</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">/Filtr MHD przepuszcza dokładnie 0 liczb / Pewne / z zakresu 16 30 48</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">/Filtr MHD przepuszcza dokładnie 0 liczb / Ostatnie losowanie / z zakresu 22 24 25 26 27 40 43</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">/Filtr MHD przepuszcza dokładnie 3 liczby / Obrzeże kuponu K7 / z zakresu 1 2 3 4 5 6 7 8 14 15 21 22 28 29 35 36 42 43 44 45 46 47 48 49</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">/Filtr MHD przepuszcza dokładnie 3 liczby / Środek kuponu K7 / z zakresu 9 10 11 12 13 16 17 18 19 20 23 24 25 26 27 30 31 32 33 34 37 38 39 40 41</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">/Filtr MHD przepuszcza dokładnie 0 liczb / Wiersz 7x7 1 / z zakresu 1 2 3 4 5 6 7</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">/Filtr MHD przepuszcza dokładnie 3 liczby / Wiersz 7x7 1 / z zakresu 8 9 10 11 12 13 14</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">/Filtr MHD przepuszcza dokładnie 2 liczby / Wiersz 7x7 1 / z zakresu 15 16 17 18 19 20 21</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">/Filtr MHD przepuszcza dokładnie 0 liczb / Wiersz 7x7 1 / z zakresu 22 23 24 25 26 27 28</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">/Filtr MHD przepuszcza dokładnie 1 liczbę / Wiersz 7x7 1 / z zakresu 29 30 31 32 33 34 35</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">/Filtr MHD przepuszcza dokładnie 0 liczb / Wiersz 7x7 1 / z zakresu 36 37 38 39 40 41 42</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">/Filtr MHD przepuszcza dokładnie 0 liczb / Wiersz 7x7 1 / z zakresu 43 44 45 46 47 48 49</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 8 &nbsp;9 13 20 21 29</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 8 &nbsp;9 14 15 18 32</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 8 &nbsp;9 14 15 19 32</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 8 &nbsp;9 14 18 21 32</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 8 &nbsp;9 14 19 21 32</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 8 &nbsp;9 14 20 21 32</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 8 &nbsp;9 14 15 18 33</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 8 &nbsp;9 14 15 19 33</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 8 &nbsp;9 14 15 20 33</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 8 &nbsp;9 14 18 21 33</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 8 &nbsp;9 14 19 21 33</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 8 &nbsp;9 14 20 21 33</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 8 &nbsp;9 12 15 17 35</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 9 10 14 15 17 35</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 8 10 11 15 18 35</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 8 10 12 15 18 35</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 8 12 13 15 18 35</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 8 10 14 17 18 35</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 8 13 14 17 18 35</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 8 10 11 15 19 35</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 8 10 12 15 19 35</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 8 12 13 15 19 35</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 8 10 14 17 19 35</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 8 10 11 15 20 35</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 8 10 12 15 20 35</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 8 12 13 15 20 35</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 8 10 14 17 20 35</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 9 10 12 15 21 35</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 8 &nbsp;9 12 17 21 35</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 8 10 11 18 21 35</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 8 10 12 18 21 35</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 8 10 11 19 21 35</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 8 10 12 19 21 35</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
+<p>&nbsp;</p>
+<p>Po losowaniu bilans jest zaskakujący:</p>
+<p>&nbsp;</p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> &nbsp; 12 trafień &nbsp;3 z &nbsp;6</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> &nbsp; &nbsp;6 trafień &nbsp;4 z &nbsp;6</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> &nbsp; &nbsp;4 trafień &nbsp;5 z &nbsp;6</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> &nbsp; &nbsp;1 trafień &nbsp;6 z &nbsp;6</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
+<p>&nbsp;</p>
+<p>Ps. w losowaniu tym nikt z 15 milionów grających nie trafił 6 ki. Pula nagród przeszła na następne losowanie.</p>
+<p>Powyższy przykład pokazuje jak filtracją ( uwaga nawet filtracją z systemu pełnego 6z 49 - trwa on ponad pół godziny ale jest możliwa do wykonania) można zredukować ilość zakładów nie tracąc głównej wygranej. </p>
+<p>&nbsp;</p>
+<p>Życzę Wam udanych łowów.</p>
+<p>&nbsp;</p>
+
+</div>
+</td></tr></table>
+</div>
+
+<!-- Placeholder for topic body end. -->
+</body>
+</html>

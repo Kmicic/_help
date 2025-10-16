@@ -1,0 +1,310 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Manipulacje bazy danych</title>
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+   <style type="text/css">
+   <!--
+   .inline-button {
+   width:auto;
+   font: bold 90%/1 Verdana, sans-serif;
+   margin: 0 0.2em; padding: 0.1em 0; _padding:0;
+   border: 1px solid black;
+   white-space:nowrap;
+   text-decoration: none;
+   vertical-align:middle;
+   background: #ccc;
+   color: black;
+   }
+.inline-button em {
+   cursor:hand;
+   font-style: normal;
+   margin:0; padding: 0.1em 0.5em;
+   background: white;
+   color: black;
+   }
+.inline-button span {
+   cursor:hand;
+   margin:0; padding: 0.1em 0.5em 0.1em 0.3em;
+   }
+.inline-button:hover {
+   background: #666;
+   color: white;
+   }
+.inline-button:hover em {
+   background: black;
+   color: white;
+   }
+.s1 {
+	background-color: #FFFFFF;
+	color: #008000;
+}
+.s2 {
+	background-color: #FF8000;
+	color: #000000;
+}
+.s5 {
+	background-color: #FFFFFF;
+	color: #008000;
+}
+.s6 {
+	background-color: #FFFFFF;
+	color: #FF0000;
+}
+.s7 {
+	background-color: #FFFFFF;
+	color: #FF0000;
+}
+.s8 {
+	background-color: #FFFFFF;
+	color: #FF0000;
+}
+.s9 {
+	background-color: #FFFFFF;
+	color: #008000;
+}
+.s10 {
+	background-color: #FFFFFF;
+	color: #800000;
+}
+.s3 {
+	background-color: #FFFFFF;
+	color: #000000;
+}
+.s4 {
+	background-color: #FFFF00;
+	color: #0000FF;
+}
+.s11 {
+	background-color: #00FF00;
+	color: #000000;   }
+/* Horizontal lists
+----------------------------------------*/
+ul.linklist {
+	display: block;
+	margin: 0;
+}
+
+ul.linklist li {
+	display: block;
+	list-style-type: none;
+	float: left;
+	width: auto;
+	margin-right: 5px;
+	font-size: 1.1em;
+	line-height: 2.2em;
+}
+
+ul.linklist {
+	float: right;
+	margin-right: 0;
+	margin-left: 5px;
+	text-align: right;
+}
+
+ul.navlinks {
+	padding-bottom: 1px;
+	margin-bottom: 1px;
+	border-bottom: 1px solid #FFFFFF;
+	font-weight: bold;
+}
+
+a.flag {color: #AAA; font-size:0.8em;text-decoration:none;}
+a.flag:hover {color:#FFF;text-decoration:underline;}
+a.en-flag {padding-left:21px; background: url(images/flag/en.png) top left no-repeat;}
+a.de-flag {padding-left:21px; background: url(images/flag/de.png) top left no-repeat;}
+a.ru-flag {padding-left:21px; background: url(images/flag/ru.png) top left no-repeat;} 
+a.cs-flag {padding-left:21px; background: url(images/flag/cz.png) top left no-repeat;}
+a.fr-flag {padding-left:21px; background: url(images/flag/fr.png) top left no-repeat;}
+a.es-flag {padding-left:21px; background: url(images/flag/es.png) top left no-repeat;}
+a.it-flag {padding-left:21px; background: url(images/flag/it.png) top left no-repeat;}
+
+-->   
+</style>
+
+<script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+
+<script type="text/javascript">
+function trim11 (str) {
+str = str.replace(/^\s+/, '');
+for (var i = str.length - 1; i >= 0; i--) {
+if (/\S/.test(str.charAt(i))) {
+str = str.substring(0, i + 1);
+break;
+}
+}
+return str;
+}
+
+function _highlight(inp_id,out_id) {
+elm=document.getElementById(out_id);
+var inptxt = trim11(document.getElementById(inp_id).value);
+var inp_arr = inptxt.split(/[ :,;-]+/);
+var html=elm.innerHTML;
+text=trim11(html.replace(/<[^>]+>/g,''));
+lines=text.split(/\r?\n/g);
+
+html="<pre>";
+for (var i in lines) {
+var tic=lines[i];
+var line_arr=tic.split(' ');
+
+var item='';
+for (var j in line_arr) {
+var num=line_arr[j];
+var hits=false;
+for (var k in inp_arr) {
+var hit=inp_arr[k];
+if (hit==num) { 
+hits=true;
+break;
+}
+}
+var pads=(j<(line_arr.length-1)) ? ' ':'';
+item+= hits ? '<span class="s2">'+num+'</span>'+pads : num+pads;
+}
+html+=item+'\r\n';
+}
+elm.innerHTML=html+'</pre>';
+}
+</script>
+      
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?manipulacjebazydanych.htm"; }
+  else { parent.quicksync('a5.2'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFEF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#000000">
+  <tr valign="middle">
+    <td align="left">
+      <p style="text-indent: 0px; margin: 0px 0px 0px 0px;"><span style="font-size: 12pt; color: #ffffff;">Manipulacje bazy danych</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a class="inline-button" href="contents.htm"><em>LC</em><span>&lt;&lt;</span></a>&nbsp;
+     <!--<a href="contents.htm">Top</a>-->
+     <a class="inline-button" href="another_upload_methods.htm"><em>LC</em><span>&lt;</span></a>&nbsp;
+     <!--<a href="another_upload_methods.htm">Previous</a>&nbsp;-->
+     <a class="inline-button" href="tipsmemo.htm"><em>LC</em><span>&gt;</span></a>&nbsp;     
+     <!--<a href="tipsmemo.htm">Next</a>-->
+     </span>
+    </td>
+  </tr>
+    
+  <tr><td colspan="2">
+  <script>
+  function switchlang(lang) {
+  $(".goog-te-sectional-gadget-link-text").html('');
+  $.getScript("//translate.google.com/translate_a/element.js?cb=googleSectionalElementInit&ug=section&hl="+lang);
+  }
+  function googleSectionalElementInit() {
+  new google.translate.SectionalElement({
+    sectionalNodeClassName: 'goog-trans-section',
+    controlNodeClassName: 'goog-trans-control',
+    background: '#99ff99'
+  }, 'google_sectional_element');
+  }
+  switchlang ('en');
+  </script>
+<div id="lang-menu">
+<ul class="linklist navlinks" style="font-size:12px";>
+<li class="icon_home"><a class="flag en-flag" href="javascript:void(0)" onclick="return switchlang('en');">English</a> &raquo;</li>
+<li class="icon_home"><a class="flag de-flag" href="javascript:void(0)" onclick="return switchlang('de');">Deutsch</a> &raquo;</li>
+<li class="icon_home"><a class="flag es-flag" href="javascript:void(0)" onclick="return switchlang('es');">Español</a> &raquo;</li>
+<li class="icon_home"><a class="flag fr-flag" href="javascript:void(0)" onclick="return switchlang('fr');">Français</a> &raquo;</li>
+<li class="icon_home"><a class="flag it-flag" href="javascript:void(0)" onclick="return switchlang('it');">Italiano</a> &raquo;</li>
+<li class="icon_home"><a class="flag ru-flag" href="javascript:void(0)" onclick="return switchlang('ru');">Rусский</a> &raquo;</li>
+</ul>
+</div>
+  </td></tr> 
+    
+</table>
+
+
+<!-- Placeholder for topic body begin. -->
+
+<div id="topic_body" class="goog-trans-section" lang="pl">
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<div class="goog-trans-control">
+<a class="goog-te-gadget-link" href="javascript:void(0)"><span class="goog-te-sectional-gadget-link-text"></span></a>
+</div>
+<div class="content">
+<p>&nbsp;</p>
+<p>Do manipulacji bazami danych służy narzędziowy program "DataBaseDriver.exe'. Z pomocą tego programu można zakładać nowe bazy losowań bądź je uzupełniać.</p>
+<p>Najczęściej uzytkownicy mają kłopoty z uzupełnianiem bazy danych wyników losowań lub z importem danych losowań z plików tekstowych.</p>
+<p>Prawidłowa baza danych ma określoną strukturę i brak któregoś z jej elementów może powodować kłopoty w działaniu programu.</p>
+<p>&nbsp;</p>
+<p>1. Otwieramy programem DataBaseDriver bazę danych np "Duży_Lotek"</p>
+<p>2. Aby obejrzeć strukturę bazy wybieramy z menu "Edycja" polecenie "Restrukturyzacja tabeli". Pojawi się poniższy dialog :.</p>
+<p>&nbsp;</p>
+<p><img src="restruct.png" width="545" height="396" border="0" alt="restruct"></p>
+<p>&nbsp;</p>
+<p>3. Wybieramy zakładkę "Pola" . Prawidłowy układ pól przedstawiony jest na powyższym rysunku. Każda baza losowań ma taki właśnie układ pól. Bazy innych fier mogą tylko różnić się ilością pól oznaczających liczby wylosowane dla gier 6/49 będzie to 6 pól od "L1" do "L6" a np dla gry "Multilotek" lub "Keno" tych pól będzie 20 od "L1" do "L20". Liczba dodatkowa lub tzw "numerek" zawsze umieszczany jest na polu ostatnim za zestawem podstawowym. W numerku 4 liczby losowane to pola od "L1" do "L4" a numerek to pole "L5".</p>
+<p>&nbsp;</p>
+<p>4. Następnie sprawdzamy czy prawidłowe są ustawienia indeksów, wybieramy zakładkę "Indeksy"</p>
+<p>&nbsp;</p>
+<p><img src="indeksy.png" width="545" height="396" border="0" alt="indeksy"></p>
+<p>&nbsp;</p>
+<p>Prawidłowy układ pól przedstawia rysunek powyżej. Każda baza losowań (każdej gry) musi posiadać indeksy o nazwach "DATE" indeks pola "DATE" oraz indeks o nazwie "ID" czyli indeks pola "ID".</p>
+<p>&nbsp;</p>
+<p>Jeżeli układ, struktura Twojej bazy jest taka jak na rysunkach, nie musisz nic robić poz wciśnięciem przycisku "Anuluj" natomias jeżeli tak nie jest możesz edytować odpowiednie pola i doprowadzić strukturę bazy do wymaganej postaci jak na rysunkach. Po edycji pól należy wcisnąć przycisk "OK".</p>
+<p>&nbsp;</p>
+<p>JAK ZAIMPORTOWAĆ BAZĘ Z PLIKU TEKSTOWEGO ?</p>
+<p>&nbsp;</p>
+<p>Do przećwiczenia importu użyj bazy gry nieistniejącej np bazy "Nowa gra" lub wykonaj kopię bazy istniejącej.</p>
+<p>&nbsp;</p>
+<p>Otwórz dowolną znaną bazę gry np "DUZY_LOTEK" z menu "Edycja" wybierz polecenie "Wykonaj kopię bazy" poproszony zostaniesz o podanie nazwy nowej bazy więc wpisz np "Moja baza". System wykona kopię bazy.</p>
+<p>&nbsp;</p>
+<p>Z menu pliki otwórz nowo wykonaną bazę oraz poleceniem z menu "Edycja" -&gt; "Wyczyść tabelę" wyczyść wszytskie wpisy losowań z bazy.</p>
+<p>Teraz można przystąpić do importu danych np z pliku tekstowego. Z menu "Pliki" należy wybrać opcję "Import". Poproszony zostaniesz o wybranie pliku tekstowego w którym masz dane o losowaniach. Po jego wybraniu ukaże się formularz importu :</p>
+<p>&nbsp;</p>
+<p><img src="import1.png" width="649" height="433" border="0" alt="import1"></p>
+<p>&nbsp;</p>
+<p>W polu testowym ukażą się pierwsze trzy linijki tekstu. Plik tekstowy musi posiadać datę i odpowiednią ilość liczb wylosowanych każde pole musi być oddzielone znakiem separcji.. Nie musi (ale może) posiadać numer losowania. Numer losowania algorytm importu może wpisać automatycznie.  </p>
+<p>W ramce "Format pliku" wybieramy taki znak separcji jaki jest użyty w pliku tekstowym. W naszym przypadku będzie to średnik. Jako znaki separcji dostępne są : średnik, przecinek, kreska pionowa,minus, spacja lub znak tabulacji.</p>
+<p>Przykładowy plik tekstowy jako pierwsze pole ma datę, w bazie jest to trzecie z kolei pole, więc w ramce "startuj od pola nr w bazie" należy wybrać "3". &nbsp;W czasie wyboru pola w tabeli bazy podświetlane jest odpowiednie pole.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><img src="test1.png" width="441" height="161" border="0" alt="test1"></p>
+<p>&nbsp;</p>
+<p>Widać że pola są niedopasowane ponieważ brakuje w pliku tekstowym numeru losowania w bazie jest to pole ID. </p>
+<p>&nbsp;</p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">Uwaga pierwsze pole "RecordID" system wpisuje sam &nbsp;jest to pole z autonkrementacją wpisywaną automatycznie za każdym dodaniem nowego wpisu.</span></p>
+<p>&nbsp;</p>
+<p>Aby dodać pole z numerem losowania wcisnąć należy przycisk "Dodaj ID". Pojawi się formularz w którym można podać jak to pole ma być numerowane.</p>
+<p>&nbsp;</p>
+<p><img src="import2.png" width="232" height="292" border="0" alt="import2"></p>
+<p>&nbsp;</p>
+<p>Opcja "W polu bazy nr" wpisać należy numer pola w bazie w którą dodane będzie pole "ID" oraz początkowy numer losowania w pole "począwszy od numeru". Po ustawieniu parametrów dodania pola wcisnąć należy "OK".</p>
+<p>W formularzu ponownie należy wcisnąć polecenie "Test". Teraz widać że wszystkie pola są na właściwych miejscach i można dokonać importu danych.</p>
+<p>&nbsp;</p>
+<p><img src="test3.png" width="441" height="161" border="0" alt="test3"> </p>
+<p>&nbsp;</p>
+<p>W tym celu wciskamy przycisk "Import". Po wykonaniu importu wszystkie dane zostaną wprowadzone do bazy i tabela bazy zostanie wypełniona zgodnie z naszymi ustawieniami.</p>
+<p>&nbsp;</p>
+<p><img src="newgame.png" width="659" height="462" border="0" alt="newgame">.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+</div>
+</td></tr></table>
+</div>
+
+<!-- Placeholder for topic body end. -->
+</body>
+</html>

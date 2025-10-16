@@ -1,0 +1,360 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Kombinacja na jej numer</title>
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+   <style type="text/css">
+   <!--
+   .inline-button {
+   width:auto;
+   font: bold 90%/1 Verdana, sans-serif;
+   margin: 0 0.2em; padding: 0.1em 0; _padding:0;
+   border: 1px solid black;
+   white-space:nowrap;
+   text-decoration: none;
+   vertical-align:middle;
+   background: #ccc;
+   color: black;
+   }
+.inline-button em {
+   cursor:hand;
+   font-style: normal;
+   margin:0; padding: 0.1em 0.5em;
+   background: white;
+   color: black;
+   }
+.inline-button span {
+   cursor:hand;
+   margin:0; padding: 0.1em 0.5em 0.1em 0.3em;
+   }
+.inline-button:hover {
+   background: #666;
+   color: white;
+   }
+.inline-button:hover em {
+   background: black;
+   color: white;
+   }
+.s1 {
+	background-color: #FFFFFF;
+	color: #008000;
+}
+.s2 {
+	background-color: #FF8000;
+	color: #000000;
+}
+.s5 {
+	background-color: #FFFFFF;
+	color: #008000;
+}
+.s6 {
+	background-color: #FFFFFF;
+	color: #FF0000;
+}
+.s7 {
+	background-color: #FFFFFF;
+	color: #FF0000;
+}
+.s8 {
+	background-color: #FFFFFF;
+	color: #FF0000;
+}
+.s9 {
+	background-color: #FFFFFF;
+	color: #008000;
+}
+.s10 {
+	background-color: #FFFFFF;
+	color: #800000;
+}
+.s3 {
+	background-color: #FFFFFF;
+	color: #000000;
+}
+.s4 {
+	background-color: #FFFF00;
+	color: #0000FF;
+}
+.s11 {
+	background-color: #00FF00;
+	color: #000000;   }
+/* Horizontal lists
+----------------------------------------*/
+ul.linklist {
+	display: block;
+	margin: 0;
+}
+
+ul.linklist li {
+	display: block;
+	list-style-type: none;
+	float: left;
+	width: auto;
+	margin-right: 5px;
+	font-size: 1.1em;
+	line-height: 2.2em;
+}
+
+ul.linklist {
+	float: right;
+	margin-right: 0;
+	margin-left: 5px;
+	text-align: right;
+}
+
+ul.navlinks {
+	padding-bottom: 1px;
+	margin-bottom: 1px;
+	border-bottom: 1px solid #FFFFFF;
+	font-weight: bold;
+}
+
+a.flag {color: #AAA; font-size:0.8em;text-decoration:none;}
+a.flag:hover {color:#FFF;text-decoration:underline;}
+a.en-flag {padding-left:21px; background: url(images/flag/en.png) top left no-repeat;}
+a.de-flag {padding-left:21px; background: url(images/flag/de.png) top left no-repeat;}
+a.ru-flag {padding-left:21px; background: url(images/flag/ru.png) top left no-repeat;} 
+a.cs-flag {padding-left:21px; background: url(images/flag/cz.png) top left no-repeat;}
+a.fr-flag {padding-left:21px; background: url(images/flag/fr.png) top left no-repeat;}
+a.es-flag {padding-left:21px; background: url(images/flag/es.png) top left no-repeat;}
+a.it-flag {padding-left:21px; background: url(images/flag/it.png) top left no-repeat;}
+
+-->   
+</style>
+
+<script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+
+<script type="text/javascript">
+function trim11 (str) {
+str = str.replace(/^\s+/, '');
+for (var i = str.length - 1; i >= 0; i--) {
+if (/\S/.test(str.charAt(i))) {
+str = str.substring(0, i + 1);
+break;
+}
+}
+return str;
+}
+
+function _highlight(inp_id,out_id) {
+elm=document.getElementById(out_id);
+var inptxt = trim11(document.getElementById(inp_id).value);
+var inp_arr = inptxt.split(/[ :,;-]+/);
+var html=elm.innerHTML;
+text=trim11(html.replace(/<[^>]+>/g,''));
+lines=text.split(/\r?\n/g);
+
+html="<pre>";
+for (var i in lines) {
+var tic=lines[i];
+var line_arr=tic.split(' ');
+
+var item='';
+for (var j in line_arr) {
+var num=line_arr[j];
+var hits=false;
+for (var k in inp_arr) {
+var hit=inp_arr[k];
+if (hit==num) { 
+hits=true;
+break;
+}
+}
+var pads=(j<(line_arr.length-1)) ? ' ':'';
+item+= hits ? '<span class="s2">'+num+'</span>'+pads : num+pads;
+}
+html+=item+'\r\n';
+}
+elm.innerHTML=html+'</pre>';
+}
+</script>
+      
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?combine_num_combine.htm"; }
+  else { parent.quicksync('a3.2.1.4.12'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFEF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#000000">
+  <tr valign="middle">
+    <td align="left">
+      <p style="text-indent: 0px; margin: 0px 0px 0px 0px;"><span style="font-size: 12pt; color: #ffffff;">Kombinacja na jej numer</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a class="inline-button" href="contents.htm"><em>LC</em><span>&lt;&lt;</span></a>&nbsp;
+     <!--<a href="contents.htm">Top</a>-->
+     <a class="inline-button" href="systemystrefowekrokpokroku.htm"><em>LC</em><span>&lt;</span></a>&nbsp;
+     <!--<a href="systemystrefowekrokpokroku.htm">Previous</a>&nbsp;-->
+     <a class="inline-button" href="menu_report.htm"><em>LC</em><span>&gt;</span></a>&nbsp;     
+     <!--<a href="menu_report.htm">Next</a>-->
+     </span>
+    </td>
+  </tr>
+    
+  <tr><td colspan="2">
+  <script>
+  function switchlang(lang) {
+  $(".goog-te-sectional-gadget-link-text").html('');
+  $.getScript("//translate.google.com/translate_a/element.js?cb=googleSectionalElementInit&ug=section&hl="+lang);
+  }
+  function googleSectionalElementInit() {
+  new google.translate.SectionalElement({
+    sectionalNodeClassName: 'goog-trans-section',
+    controlNodeClassName: 'goog-trans-control',
+    background: '#99ff99'
+  }, 'google_sectional_element');
+  }
+  switchlang ('en');
+  </script>
+<div id="lang-menu">
+<ul class="linklist navlinks" style="font-size:12px";>
+<li class="icon_home"><a class="flag en-flag" href="javascript:void(0)" onclick="return switchlang('en');">English</a> &raquo;</li>
+<li class="icon_home"><a class="flag de-flag" href="javascript:void(0)" onclick="return switchlang('de');">Deutsch</a> &raquo;</li>
+<li class="icon_home"><a class="flag es-flag" href="javascript:void(0)" onclick="return switchlang('es');">Español</a> &raquo;</li>
+<li class="icon_home"><a class="flag fr-flag" href="javascript:void(0)" onclick="return switchlang('fr');">Français</a> &raquo;</li>
+<li class="icon_home"><a class="flag it-flag" href="javascript:void(0)" onclick="return switchlang('it');">Italiano</a> &raquo;</li>
+<li class="icon_home"><a class="flag ru-flag" href="javascript:void(0)" onclick="return switchlang('ru');">Rусский</a> &raquo;</li>
+</ul>
+</div>
+  </td></tr> 
+    
+</table>
+
+
+<!-- Placeholder for topic body begin. -->
+
+<div id="topic_body" class="goog-trans-section" lang="pl">
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<div class="goog-trans-control">
+<a class="goog-te-gadget-link" href="javascript:void(0)"><span class="goog-te-sectional-gadget-link-text"></span></a>
+</div>
+<div class="content">
+<p>&nbsp;</p>
+<p>Jak powszechnie wiadomo, wszystkich kombinacji liczb w typowej grze lotto 6/49 jest 13 983 816. Jest to ogromna i trudna do objęcia ilość zakładów. Ale nie każdy gracz wie że, grając w terminalu na chybił trafił czy typując z ręki decyduje się na grę z taką właśnie szansą. Sposób gry który proponuję polega na zawężeniu ilości kombinacji branych pod uwagę przy typowaniu zakładów stosując właśnie kombinację na jej numer. Specjalny opracowany przez autora sposób generacji zakładów na numer kombinacji oraz numeru kombinacji na podstawie zawartości zakładu umożliwia uszeregowanie całego spektrum kombinacji w specjalny sposób.  </p>
+<p>&nbsp;</p>
+<p>W algorytmie wykorzystano właściwości kombinacji ko-leksykalnej (colex). Kolejność kombinacji &nbsp;w odróżnieniu od kombinacji do której jesteśmy przyzwyczajeni (leksykalnej) jest bardziej równomiernie rozłożona w całym spektrum numeracji kombinacji. Ta kolejność przypomina liczby binarne w arytmetyce komputerowej. Kombinacja ko-leksykalna polega na tym że następny element (ostatnia liczba w kombinacji) nie zostanie zwiększona dokąd &nbsp;nie wyczerpią sie kombinacje na pozycjach młodszych.</p>
+<p>&nbsp;</p>
+<p>przykład : w kombinacji leksykalnej 6 liczb w &nbsp;zakładzie z 49, kombinacja :</p>
+<p>&nbsp;</p>
+<p>1, 2 ,3, 4, 5, 49 &nbsp;ma numer kolejny 49, mimo że to jest dopiero początek szeregu numeracji kombinacji leksykalnej.</p>
+<p>&nbsp;</p>
+<p>w kombinacji ko-leksykalnej ta kombinacja ma numer : 12 271 513 a wiec numer dużo starszy.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Dlatego decydującym parametrem jest ostatnia liczba zakładu ( lub zakres liczb np 39-48) która decyduje w jakim zakresie będą szukane trafienia. Przez co można "panować" nad położeniem numeru kombinacji.</p>
+<p>Np zakres wszystkich kombinacji dla ostatniej liczby np 21 w Lotto (6/49) wynosi 54 264 elementów. Wiec zakres poszukiwań jest znacząco mniejszy od 14 milionów wszystkich kombinacji.</p>
+<p>&nbsp;</p>
+<p> Jeżeli ostatnią liczbą będzie liczba przez nas podana na pewno w obliczonym zakresie generacji znajduje się główna wygrana. Tylko od miejsca wyboru środka generacji, od sposobu generacji, od odchylenia jakie zadamy zależy ilość i jakość trafień. &nbsp; Do tego celu służy dialog wywoływany z menu kombinacje.</p>
+<p>&nbsp;</p>
+<p><img src="komb_colex.png" width="490" height="396" border="0" alt="KOMB_COLEX"></p>
+<p>&nbsp;</p>
+<p>Metoda gry i ograniczania kombinacji polega na tym ze typujemy jedną liczbę lub ich zakres którą uważamy że będzie ostatnią liczbą w posortowanym losowaniu. Ograniczamy wtedy zakres trafień do kilku z zakresu 40-49. Losowania w których nie pada liczba 40..49 jako ostatnia należą do rzadkości. I tak jeżeli typujemy 1 liczbę z tego zakresu np. liczbę 49 &nbsp;otrzymujemy zakres kombinacji :</p>
+<p>&nbsp;</p>
+<p>Takie wczytanie zakresu kombinacji można uzyskać poprzez wpisanie ostatniej liczby którą przewidujemy że będzie ostatnia w losowaniu do pola edycji "wczytaj zakres dla ostatniej liczby w zakładzie" i wciśnięcie przycisku tego pola z symbolem trzech kropek. Można również wczytać zakres kombinacji poprzez wpisanie zakresu liczb np jak na rysunku (47 do 49). &nbsp;Jak widać kombinacje skrajne są mało prawdopodobne i nadają się do odrzucenia. Do odrzucania mamy do dyspozycji kilka opcji.</p>
+<p>Pierwszym rodzajem generacji jest metoda krokowa. Jest to metoda która sprawdzi wszystkie kombinacje począwszy &nbsp;np: od kombinacji zawierającej zakład : 1 2 3 4 5 49 - kombinacja nr &nbsp; 12 271 513</p>
+<p>do kombinacji zawierającej zakład 44 45 46 47 48 49 - kombinacja &nbsp;nr 13 983 816</p>
+<p>sprawdzając ewentualnie filtrując wszystkie kombinacje z zadanym w polu edycji kroku. Jeżeli w polu edycji zadamy krok równy 1 przeszukane zostaną wszystkie kombinacje w tym zakresie.</p>
+<p>Drugi sposób jest analogiczny jak w kombinacji Gaussa mianowicie regulujemy środek trafień(mean) i jego rozrzut(stddev) tak aby obejmowały zakresem trafień bardziej prawdopodobne układy liczb. Parametry <a href="comb_gauss.htm">generacji Gaussa</a> są analogiczne jak w tej kombinacji i łatwo można się nauczyć jak regulować tymi parametrami aby uzyskać żądany zakres przemiatania funkcji losującej. Ułatwieniem jest funkcja która wczytuje środkowy zakład ( ten który leży dokładnie pod środkiem dzwona funkcji losującej, wokół którego będą zakłady losowane) do pola edycji. Każda zmiana pola mean wczytuje zakład centralny i łatwo można się zorientować jakie zakłady uzyskamy w wyniku generacji.</p>
+<p> Dodatkowo można włóczyć <a href="menu_filters_sum.htm">filtrację sumy</a> ( która zawęza zakres trafień do zakresu bardziej prawdopodobnego jak wiadomo większość trafień mieści się w sumach od 100 do 200 - ponad 80% losowań, a eliminuje się też prawie 70% niepotrzebnych kombinacji), <a href="menu_filters_parity.htm">filtrację stosunków liczb nieparzystych do parzystych</a>- większość trafień to układy 3/3 2/3 i 3/2 tu analogicznie zakresy te obejmują ponad 80% losowań i eliminują z zakresu tez prawie 70 % niepotrzebnych kombinacji. Trzecim filtrem jest <a href="menu_filters_string.htm">filtr kolejnych liczb</a> eliminujący występowanie szeregów liczb np: 1,2 3.. tu współczynnik eliminacji zbędnych kombinacji jest najbardziej skuteczny, akres 0,1 czyli losowań gdzie nie było kolejnych liczb lub była co najmniej jedna kolejność ( np 1,2 lub 33,34) trafia się w 95% losowań a eliminuje pozostałe kombinacje czyli prawie 85% niepotrzebnych kombinacji. Wcale filtry nie muszą yć ustwaione wąsko ( chyba że polujemy precyzyjnie na główną wygraną). Mogą być ustawione tak szeroko jak podałem wyżej. </p>
+<p><a href="menu_filters_hits.htm">filtr trafień w poprzednich losowań</a>. Jak wynika z obserwacji &nbsp;z ponad 600 losowań poprzednich 5 ka powtórzyła się tylko dwukrotnie. Czwórki trafone w poprzednich losowaniach występują mniej więcej co drugie losowanie w pozostałych powtarzane są trójki.</p>
+<p>A to stosowny fragment raportu trafień w poprzednich losowaniach :</p>
+<p>&nbsp;</p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">02-03-30 286 276 &nbsp;92 &nbsp;14 &nbsp; 2 &nbsp; 0 &nbsp; 0</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">02-04-03 299 273 &nbsp;83 &nbsp;15 &nbsp; 0 &nbsp; 0 &nbsp; 0</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">02-04-06 293 275 &nbsp;94 &nbsp; 8 &nbsp; 0 &nbsp; 0 &nbsp; 0</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">02-04-10 275 283 &nbsp;92 &nbsp;19 &nbsp; 1 &nbsp; 0 &nbsp; 0</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">02-04-13 293 286 &nbsp;80 &nbsp;11 &nbsp; 0 &nbsp; 0 &nbsp; 0</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">02-04-17 321 264 &nbsp;74 &nbsp;10 &nbsp; 1 &nbsp; 0 &nbsp; 0</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">02-04-20 279 301 &nbsp;77 &nbsp;13 &nbsp; 0 &nbsp; 0 &nbsp; 0</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">02-04-24 307 263 &nbsp;87 &nbsp;13 &nbsp; 0 &nbsp; 0 &nbsp; 0</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">02-04-27 285 277 &nbsp;91 &nbsp;16 &nbsp; 1 &nbsp; 0 &nbsp; 0</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">02-05-01 291 274 &nbsp;97 &nbsp; 8 &nbsp; 0 &nbsp; 0 &nbsp; 0</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">02-05-04 296 284 &nbsp;79 &nbsp;11 &nbsp; 0 &nbsp; 0 &nbsp; 0</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">02-05-08 274 285 &nbsp;99 &nbsp;12 &nbsp; 0 &nbsp; 0 &nbsp; 0</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">02-05-11 310 255 &nbsp;94 &nbsp;10 &nbsp; 1 &nbsp; 0 &nbsp; 0</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">02-05-15 277 289 &nbsp;93 &nbsp;11 &nbsp; 0 &nbsp; 0 &nbsp; 0</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">02-05-18 302 265 &nbsp;88 &nbsp;15 &nbsp; 0 &nbsp; 0 &nbsp; 0</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">02-05-22 287 271 &nbsp;99 &nbsp;12 &nbsp; 1 &nbsp; 0 &nbsp; 0</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">02-05-25 261 296 &nbsp;99 &nbsp;13 &nbsp; 1 &nbsp; 0 &nbsp; 0</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p>liczby z ostatniego wiersza znaczą : brak trafień 261 losowań, jedno trafienie 296, dwa 99, trzy 13 i jedna czwórka</p>
+<p>piątek i szóstek brak. Ustawienie filtra na pięć to bardzo bezpieczne ustawienie i eliminuje znaczną ilość kombinacji. Często można pokusić się o ustawienie filtra na eliminację trafionych czwórek.</p>
+<p>Następne filtry to filtr zakresów liczb oraz filtr twardych wybieranych z listy lub ( i ) &nbsp;wielokrotny filtr twardych wybieranych z list bazy danych filtrów dowolnie konfigurowalnych. Tak mocny zestaw filtrów pozwala np. wygenerować system pełny o rozsądnym koszcie nawet z wszystkich liczb gry. Wygenerowanie systemu pełnego w kombinacji na jej numer jest równoznaczne z zadaniem zakresu liczby ostatniej jako 6-49. System przeszuka wówczas wszystkie kombinacje po drodze obrabiając je filtrami wybierze tylko te które odpowiadają zadanym kryteriom.</p>
+<p>&nbsp;</p>
+<p>Sposób postępowania dla przykładowej generacji :</p>
+<p>&nbsp;</p>
+<p>1. wybrać rodzaj generacji - losowa Gaussa</p>
+<p>2. w pole "wczytaj zakres dla ostatniej liczby w zakładzie lub ich zakresu" wpisuję liczbę 49.</p>
+<p> otrzymuję kombinacje od nr : 12 271 513 do 13 983 816.</p>
+<p>3. W pole "parametry generacji losowej Gaussa" wpisuje mean (50%) i odchylenie na 1%.</p>
+<p>&nbsp;</p>
+<p>pola "pokaż zakład leżący dokładnie w środku zakresu generacji.." przyciskiem z kropkami obok pola z.</p>
+<p>pokaże się zakład : &nbsp;1 14 17 21 43 49 &nbsp;wokół tego zakresu będą generowane zakłady np:</p>
+<p>&nbsp;</p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 4 30 31 36 42 49</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">11 12 26 36 44 49</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">16 33 34 38 42 49</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">11 12 36 38 40 49</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">10 20 38 41 42 49</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p>generuje zakład wokół zadanego środka :</p>
+<p>&nbsp;</p>
+<p>w przykładowym &nbsp;losowaniu 6 ka była środkiem generacji Gaussa dla ustawień 72.71455 i &nbsp;była to kombinacja nr &nbsp;COMB=13 516 606. ( wygrały liczby : 7 24 27 29 46 49 )</p>
+<p>&nbsp;</p>
+<p>okolice 6 ki ( kombinacja nr: 13 516 606) wyglądały tak (generowane ze stałym krokiem):</p>
+<p>&nbsp;</p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 1 24 27 29 46 49 &nbsp; COMB=13 516 600, DIFF= 6</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 2 24 27 29 46 49 &nbsp; COMB=13 516 601, DIFF= 5</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 3 24 27 29 46 49 &nbsp; COMB=13 516 602, DIFF= 4</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 4 24 27 29 46 49 &nbsp; COMB=13 516 603, DIFF= 3</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 5 24 27 29 46 49 &nbsp; COMB=13 516 604, DIFF= 2</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 6 24 27 29 46 49 &nbsp; COMB=13 516 605, DIFF= 1</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 7 24 27 29 46 49 &nbsp; COMB=13 516 606, DIFF= 0</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 8 24 27 29 46 49 &nbsp; COMB=13 516 607, DIFF=-1</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 9 24 27 29 46 49 &nbsp; COMB=13 516 608, DIFF=-2</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">10 24 27 29 46 49 &nbsp; COMB=13 516 609, DIFF=-3</span></p>
+<p>&nbsp;</p>
+<p>Przy tych samych parametrach z generacją Gaussa o bardzo wąskim dzwonie 0.0001 mimo że wybiera losowo bez problemów trafia szóstkę.</p>
+<p>&nbsp;</p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">16 23 27 29 46 49 &nbsp;COMB=13 516 593, DIFF= 13</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">18 23 27 29 46 49 &nbsp;COMB=13 516 595, DIFF= 11</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 2 24 27 29 46 49 &nbsp;COMB=13 516 601, DIFF= &nbsp;5</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">15 22 27 29 46 49 &nbsp;COMB=13 516 571, DIFF= 35</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">13 24 27 29 46 49 &nbsp;COMB=13 516 612, DIFF= -6</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 2 25 27 29 46 49 &nbsp;COMB=13 516 624, DIFF=-18</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 7 24 27 29 46 49 &nbsp;COMB=13 516 606, DIFF= &nbsp;0</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">15 24 27 29 46 49 &nbsp;COMB=13 516 614, DIFF= -8</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 3 24 27 29 46 49 &nbsp;COMB=13 516 602, DIFF= &nbsp;4</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">21 24 27 29 46 49 &nbsp;COMB=13 516 620, DIFF=-14</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p>Filtr posiada okno narzędziowe w którym wizualnie można zmieniać parametry i zakresy generacji filtra.</p>
+<p>&nbsp;</p>
+<p><img src="knjngauss.png" width="481" height="202" border="0" alt="knjngauss"></p>
+<p>&nbsp;</p>
+<p>przesuwając linie czerwona (środek generacji) , niebieska (odchylenie kombinacji generowanej od srodka),</p>
+<p>żółta i zielona linia pozwala przesuwać po spektrum kombinacji dla wybranej liczby zakresów generacji la metody z &nbsp;"przemiataniem po zakresach". Zakres (spektrum) generacji to obszar zacieniony na niebiesko. &nbsp;Przesuwanie linii powoduje zmiany parametrów w odpowiednich polach edycji a &nbsp;w polu zakładów pojawia się zakład będący dokładnie w środku zakresu generacji. W ten sposób przy wąskim dzwonie można wygenerować określoną ilość zakładów "podobnych" do wyświetlanego. Przesunięcia obszaru można dokonać przytrzymując prawy przycisk myszki.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+</div>
+</td></tr></table>
+</div>
+
+<!-- Placeholder for topic body end. -->
+</body>
+</html>

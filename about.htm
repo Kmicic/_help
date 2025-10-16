@@ -1,0 +1,339 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>O Programie</title>
+   <meta name="keywords" content="Informacje ogólne.,Dlaczego nie można zapewnić wygranej ?" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+   <style type="text/css">
+   <!--
+   .inline-button {
+   width:auto;
+   font: bold 90%/1 Verdana, sans-serif;
+   margin: 0 0.2em; padding: 0.1em 0; _padding:0;
+   border: 1px solid black;
+   white-space:nowrap;
+   text-decoration: none;
+   vertical-align:middle;
+   background: #ccc;
+   color: black;
+   }
+.inline-button em {
+   cursor:hand;
+   font-style: normal;
+   margin:0; padding: 0.1em 0.5em;
+   background: white;
+   color: black;
+   }
+.inline-button span {
+   cursor:hand;
+   margin:0; padding: 0.1em 0.5em 0.1em 0.3em;
+   }
+.inline-button:hover {
+   background: #666;
+   color: white;
+   }
+.inline-button:hover em {
+   background: black;
+   color: white;
+   }
+.s1 {
+	background-color: #FFFFFF;
+	color: #008000;
+}
+.s2 {
+	background-color: #FF8000;
+	color: #000000;
+}
+.s5 {
+	background-color: #FFFFFF;
+	color: #008000;
+}
+.s6 {
+	background-color: #FFFFFF;
+	color: #FF0000;
+}
+.s7 {
+	background-color: #FFFFFF;
+	color: #FF0000;
+}
+.s8 {
+	background-color: #FFFFFF;
+	color: #FF0000;
+}
+.s9 {
+	background-color: #FFFFFF;
+	color: #008000;
+}
+.s10 {
+	background-color: #FFFFFF;
+	color: #800000;
+}
+.s3 {
+	background-color: #FFFFFF;
+	color: #000000;
+}
+.s4 {
+	background-color: #FFFF00;
+	color: #0000FF;
+}
+.s11 {
+	background-color: #00FF00;
+	color: #000000;   }
+/* Horizontal lists
+----------------------------------------*/
+ul.linklist {
+	display: block;
+	margin: 0;
+}
+
+ul.linklist li {
+	display: block;
+	list-style-type: none;
+	float: left;
+	width: auto;
+	margin-right: 5px;
+	font-size: 1.1em;
+	line-height: 2.2em;
+}
+
+ul.linklist {
+	float: right;
+	margin-right: 0;
+	margin-left: 5px;
+	text-align: right;
+}
+
+ul.navlinks {
+	padding-bottom: 1px;
+	margin-bottom: 1px;
+	border-bottom: 1px solid #FFFFFF;
+	font-weight: bold;
+}
+
+a.flag {color: #AAA; font-size:0.8em;text-decoration:none;}
+a.flag:hover {color:#FFF;text-decoration:underline;}
+a.en-flag {padding-left:21px; background: url(images/flag/en.png) top left no-repeat;}
+a.de-flag {padding-left:21px; background: url(images/flag/de.png) top left no-repeat;}
+a.ru-flag {padding-left:21px; background: url(images/flag/ru.png) top left no-repeat;} 
+a.cs-flag {padding-left:21px; background: url(images/flag/cz.png) top left no-repeat;}
+a.fr-flag {padding-left:21px; background: url(images/flag/fr.png) top left no-repeat;}
+a.es-flag {padding-left:21px; background: url(images/flag/es.png) top left no-repeat;}
+a.it-flag {padding-left:21px; background: url(images/flag/it.png) top left no-repeat;}
+
+-->   
+</style>
+
+<script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+
+<script type="text/javascript">
+function trim11 (str) {
+str = str.replace(/^\s+/, '');
+for (var i = str.length - 1; i >= 0; i--) {
+if (/\S/.test(str.charAt(i))) {
+str = str.substring(0, i + 1);
+break;
+}
+}
+return str;
+}
+
+function _highlight(inp_id,out_id) {
+elm=document.getElementById(out_id);
+var inptxt = trim11(document.getElementById(inp_id).value);
+var inp_arr = inptxt.split(/[ :,;-]+/);
+var html=elm.innerHTML;
+text=trim11(html.replace(/<[^>]+>/g,''));
+lines=text.split(/\r?\n/g);
+
+html="<pre>";
+for (var i in lines) {
+var tic=lines[i];
+var line_arr=tic.split(' ');
+
+var item='';
+for (var j in line_arr) {
+var num=line_arr[j];
+var hits=false;
+for (var k in inp_arr) {
+var hit=inp_arr[k];
+if (hit==num) { 
+hits=true;
+break;
+}
+}
+var pads=(j<(line_arr.length-1)) ? ' ':'';
+item+= hits ? '<span class="s2">'+num+'</span>'+pads : num+pads;
+}
+html+=item+'\r\n';
+}
+elm.innerHTML=html+'</pre>';
+}
+</script>
+      
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?about.htm"; }
+  else { parent.quicksync('a2'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFEF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#000000">
+  <tr valign="middle">
+    <td align="left">
+      <p style="text-indent: 0px; margin: 0px 0px 0px 0px;"><span style="font-size: 12pt; color: #ffffff;">O &nbsp; &nbsp;p r o g r a m i e ....</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a class="inline-button" href="contents.htm"><em>LC</em><span>&lt;&lt;</span></a>&nbsp;
+     <!--<a href="contents.htm">Top</a>-->
+     <a class="inline-button" href="contents.htm"><em>LC</em><span>&lt;</span></a>&nbsp;
+     <!--<a href="contents.htm">Previous</a>&nbsp;-->
+     <a class="inline-button" href="main_panel.htm"><em>LC</em><span>&gt;</span></a>&nbsp;     
+     <!--<a href="main_panel.htm">Next</a>-->
+     </span>
+    </td>
+  </tr>
+    
+  <tr><td colspan="2">
+  <script>
+  function switchlang(lang) {
+  $(".goog-te-sectional-gadget-link-text").html('');
+  $.getScript("//translate.google.com/translate_a/element.js?cb=googleSectionalElementInit&ug=section&hl="+lang);
+  }
+  function googleSectionalElementInit() {
+  new google.translate.SectionalElement({
+    sectionalNodeClassName: 'goog-trans-section',
+    controlNodeClassName: 'goog-trans-control',
+    background: '#99ff99'
+  }, 'google_sectional_element');
+  }
+  switchlang ('en');
+  </script>
+<div id="lang-menu">
+<ul class="linklist navlinks" style="font-size:12px";>
+<li class="icon_home"><a class="flag en-flag" href="javascript:void(0)" onclick="return switchlang('en');">English</a> &raquo;</li>
+<li class="icon_home"><a class="flag de-flag" href="javascript:void(0)" onclick="return switchlang('de');">Deutsch</a> &raquo;</li>
+<li class="icon_home"><a class="flag es-flag" href="javascript:void(0)" onclick="return switchlang('es');">Español</a> &raquo;</li>
+<li class="icon_home"><a class="flag fr-flag" href="javascript:void(0)" onclick="return switchlang('fr');">Français</a> &raquo;</li>
+<li class="icon_home"><a class="flag it-flag" href="javascript:void(0)" onclick="return switchlang('it');">Italiano</a> &raquo;</li>
+<li class="icon_home"><a class="flag ru-flag" href="javascript:void(0)" onclick="return switchlang('ru');">Rусский</a> &raquo;</li>
+</ul>
+</div>
+  </td></tr> 
+    
+</table>
+
+
+<!-- Placeholder for topic body begin. -->
+
+<div id="topic_body" class="goog-trans-section" lang="pl">
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<div class="goog-trans-control">
+<a class="goog-te-gadget-link" href="javascript:void(0)"><span class="goog-te-sectional-gadget-link-text"></span></a>
+</div>
+<div class="content">
+<p>&nbsp;</p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">Lotto CAD w skrócie zwany przez użytkowników w skrócie LC to program dla myślących i umiejących połączyć swoje zdolności i inteligencję z zestawem doskonałych narzędzi które program dostarcza w wymaganej i dostatecznej ilości i jakości. </span></p>
+<p>&nbsp;</p>
+<p>Program jest bardzo zaawansowany lecz w ciągu niedługiego czasu okazuje się łatwy w stosowaniu i bardzo przyjazny. </p>
+<p>&nbsp;</p>
+<p class="p_ImageCaption"><span class="f_ImageCaption">Wszyscy użytkownicy w tym "zawodowi" gracze, niezwykle wysoko cenią sobie jego pomoc:</span></p>
+<hr noshade size=1 style="color : #999999"><p>&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 19px 0px 38px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td>Jestem Panu szalenie wdzięczna za ten program. Bardzo ułatwia grę. W tej chwili gram tylko systemem. </td></tr></table></div><p>&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 19px 0px 38px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td>Co do nowości -jestem bardzo ,bardzo zadowolony. Mapa jest super. &nbsp;Myślę,że inni użytkownicy LC też się tym zachwycą.</td></tr></table></div><p>&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 19px 0px 38px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td>Gratuluję pomysłu, program jest naprawdę dobry, a próbowałem już kilka. </td></tr></table></div><p>&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 19px 0px 38px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td></td></tr></table></div><p>&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 19px 0px 38px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td>Program Pana jest wspaniały. Nie znam drugiego tak dobrego. </td></tr></table></div><p>&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 19px 0px 38px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td>W końcu odebrałem LC 2009. Po zainstalowaniu szczeka opadła mi na podlone i szukałem jej 5 minut. Rewelacja. Wspaniały program. Musze powiedzieć odkąd zetknąłem się z LC w zasadzie straciłem zainteresowanie grami komputerowymi. Wole rozgryzać LottoCada i robić sobie różne zestawienia.</td></tr></table></div><p>&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 19px 0px 38px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td></td></tr></table></div><p>&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 19px 0px 38px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td>Bardzo proszę o odpowiedź i jednocześnie proszę o podanie terminu kiedy będzie gotowa wersja ostateczna - wtedy z przyjemnością kupię kolejny raz uaktualnienie.</td></tr></table></div><p>&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 19px 0px 38px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td>Nie mam nic przeciwko aby ten list zamieścić w materiałach reklamowych. Uważam ze program jest super.</td></tr></table></div><p>&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 19px 0px 38px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td>Ja wczoraj wytypowałem za pomocą LC na sucho ( a szkoda ) 12 liczbowy zestaw i weszło aż 8/12 co daje 66% skuteczności . Proszę nie traktować tego jako reklamy - to są fakty.</td></tr></table></div><p>&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 19px 0px 38px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td>Poza tym gratuluję programu. Oglądałem już kilka, i ten uważam za najlepszy. Jak coś wygram to dam znać.</td></tr></table></div><p>&nbsp;</p>
+<hr noshade size=1 style="color : #999999"><p>&nbsp;</p>
+<p class="p_ImageCaption"><span class="f_ImageCaption">LC obsługuje wszystkie gry Polskie i każdą dowolną grę lotto na świecie. </span></p>
+<hr noshade size=1 style="color : #999999"><p>&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 19px 0px 36px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="28"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#9633;</span></td><td>Wbudowane wszystkie gry Polskie Totalizatora Sportowego / Multilotek, Duży Lotek, Express Lotek i TS Numerek/ </td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 19px 0px 36px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="28"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#9633;</span></td><td>Wbudowane gry z USA, Australii i Wielkiej Brytanii. </td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 19px 0px 36px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="28"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#9633;</span></td><td></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 19px 0px 36px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="28"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#9633;</span></td><td>Dla wszystkich gier krajowych i wbudowanych gier zagranicznych wyniki gier można uzupełniać poprzez sieć Internet. </td></tr></table></div><p>&nbsp;</p>
+<p>Wielo stopniowe filtry, konfigurowalne przez użytkownika pozwalają z wielu milionów kombinacji liczb, wyselekcjonować zakłady wygrywające. A odrzucić zakłady mało prawdopodobne. Charakterystyka dzwonowa filtrów doskonale obrazuje rozkład normalny Gausa, te mało prawdopodobne układy liczb leżą na krańcach rozkładu te najbardziej prawdopodobne leżą w środku zakresu i zadaniem filtra jest ich wyselekcjonowanie. </p>
+<p>&nbsp;</p>
+<p><span class="f_ImageCaption">Dostępne są filtry</span></p>
+<hr noshade size=1 style="color : #999999"><p>&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 19px 0px 38px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="27"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#9633;</span></td><td>Posiadający charakterystykę rozkładu Gausa Filtr PS ( filtr sum zakładów, stosunku parzystych do nieparzystych i filtr ciągu kolejnych liczb. </td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 19px 0px 38px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="27"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#9633;</span></td><td>Filtry HAF (trafień w historii losowań) odrzuca trafienia od określonego poziomu, które nie powinny się powtórzyć. </td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 19px 0px 38px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="27"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#9633;</span></td><td>Odwracalne filtry zakresów, przepuszczają lub zatrzymują zakłady z zadanych zakresów liczb. </td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 19px 0px 38px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="27"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#9633;</span></td><td>Filtry średniej w kolumnie ( wycinające zakłady o nierównomiernym rozkładzie liczb). </td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 19px 0px 38px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="27"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#9633;</span></td><td>Jednokrotny filtr liczb twardych wybieranych z zadanej listy liczb w zadanej ilości i zadany sposób. </td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 19px 0px 38px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="27"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#9633;</span></td><td>Rewelacyjny wielokrotny filtr, całkowicie konfigurowalny przez użytkownika pozwala wyselekcjonować nawet z wszystkich (w DL prawie 14 milionów) kombinacji liczb nawet ten jeden wygrywający 6-kęp zakład. Filtry te tworzy się bardzo łatwo i wykorzystywać je można wielokrotnie. </td></tr></table></div><p style="text-indent: -27px; margin: 0px 19px 0px 65px;">&nbsp;</p>
+<p>Specjalny podział na kategorie specjalne liczb ułatwia ich wybór do skutecznej gry. Kategorie te tworzone są na podstawie okresowej częstości występowania liczb w losowaniach i na prawidłowości ach wynikających z rachunku prawdopodobieństwa. </p>
+<p>&nbsp;</p>
+<p><span class="f_ImageCaption">Programem można dokonać wielu analiz</span> ułatwiających wybór liczb i podjecie decyzji ustawień filtrów, w postaci tabel, wykresów, raportów i grafów interaktywnych. </p>
+<hr noshade size=1 style="color : #999999"><p>&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 19px 0px 38px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="26"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#9633;</span></td><td>Analiza częstości występowania liczb. </td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 19px 0px 38px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="26"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#9633;</span></td><td>Analiza odstępów, oczekiwania liczb na wylosowanie. </td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 19px 0px 38px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="26"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#9633;</span></td><td>Analiza występowania kategorii liczb specjalnych. </td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 19px 0px 38px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="26"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#9633;</span></td><td>Analiza skuteczności automatycznego prognozowania liczb w losowaniach przeszłych. </td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 19px 0px 38px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="26"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#9633;</span></td><td>Analiza skuteczności filtrów. A przez to że filtry mają możliwość konfigurowania przez użytkownika, analiza ta staje się również analizą w pełni konfigurowalną i bardzo uniwersalną. </td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 19px 0px 38px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="26"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#9633;</span></td><td>Analiza układów i zestawów liczb użytkownika. </td></tr></table></div><p>&nbsp;</p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">LC to Jedyny program w świecie wyliczający i optymalizujący systemy skrócone na żądanie. Inne programy używają tylko filtrów gotowych, często nie sprawdzonych.</span> </p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">LC tworzy na żądanie systemy strefowe które zmniejszają koszty i zwiększają prawdopodobieństwo trafienia.</span> </p>
+<p>&nbsp;</p>
+<p><span class="f_ImageCaption">LC może na kilkanaście sposobów generować zakłady</span> opartych na okresowych trendach wybranych liczb. Parametry generacji ustawia się łatwo i w sposób interaktywny. </p>
+<hr noshade size=1 style="color : #999999"><p>&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 19px 0px 38px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="25"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#9633;</span></td><td>Kombinacja <span class="f_ImageCaption">równomierna</span> (głównym jej zadaniem jest takie wygenerowanie zakładów aby w zakładach wszystkie liczby zostały użyte równomiernie) </td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 19px 0px 38px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="25"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#9633;</span></td><td>Kombinacja <span class="f_ImageCaption">przypadkowa</span> ( kombinacja która tworzy losowo zakłady z wybranej przez użytkownika paczki liczb). </td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 19px 0px 38px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="25"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#9633;</span></td><td>Kombinacja <span class="f_ImageCaption">liniowa</span> ( liczby do zakładów są wybierane liniowo, czyli proporcjonalnie do częstości ich występowania w zadanej ilości losowań wstecz.) </td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 19px 0px 38px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="25"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#9633;</span></td><td>Kombinacja wykładnicza. Działa analogicznie jak kombinacja liniowa, lecz użytkownik może zmieniać proporcje wyboru liczb na proporcje wykładnicze. Jest to najbardziej uniwersalna kombinacja. </td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 19px 0px 38px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="25"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#9633;</span></td><td>Kombinacje <span class="f_ImageCaption">wykładnicze</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 19px 0px 38px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="25"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#9633;</span></td><td>Kombinacja <span class="f_ImageCaption">z wszystkich liczb</span> gry. Tworzą paczki zakładów z wszystkich liczb gry w taki sposób aby każda liczba była użyta jednokrotnie. Tylko od tego w którym zakładzie liczby się zgrupują zależy wysokość wygranej. </td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 19px 0px 38px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="25"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#9633;</span></td><td>Kombinacja <span class="f_ImageCaption">"Chybił Trafił"</span> emuluje analogiczną funkcję terminala lotto. </td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 19px 0px 38px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="25"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#9633;</span></td><td>Kombinacje <span class="f_ImageCaption">przemienne z paczki liczb</span> lub z wszystkich liczb gry. Są to kombinacje wykładnicze z tym że połowa zakładów jest produkowana z wykładnikiem dodatnim ( najczęściej występujące) a druga połowa zakładów jest tworzona z wykładnikiem ujemnym ( z liczb najrzadziej występujących w losowaniach z zadanego okresu. </td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 19px 0px 38px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="25"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#9633;</span></td><td>Kombinacje z <span class="f_ImageCaption">funkcją losującą wg rozkładu normalnego Gausa</span>. Analogiczne do kombinacji wykładniczych z tą różnicą że tam częstość wyboru liczb zależy od częstości występowania liczb a tu zależy od położenia środka dzwonu (gęstości) funkcji losującej Gausa. Jest to kombinacja dla tych którzy chcą mieć większy wpływ na to co znajdzie się w zakładach. </td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 19px 0px 38px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="25"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#9633;</span></td><td><span class="f_ImageCaption">wg kluczy systemów pełnych</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 19px 0px 38px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="25"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#9633;</span></td><td>Kombinacje pełne<span class="f_ImageCaption"> z filtracją</span> (niewiele jest programów na świecie, które potrafią generować i jednocześnie filtrować zakłady systemów pełnych). </td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 19px 0px 38px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="25"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#9633;</span></td><td>Kombinacje <span class="f_ImageCaption">systemu strefowego</span>. Systemy te są znacznie tańsze od systemów pełnych a jedynym warunkiem najwyższej wygranej jest trafienie w strefę o odpowiednim poziomie. Ilość stref, ilość liczb w strefie, ilość trafień w strefę(poziom) można ustawiać indywidualnie do potrzeb. </td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 19px 0px 38px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="25"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#9633;</span></td><td>Kombinacja <span class="f_ImageCaption">na numer kombinacji</span>. Unikalny w świecie, będący naszym wynalazkiem szybki algorytm pozwala poruszać się grającemu w gąszczu wielomilionowych możliwych kombinacji gry i wybierać miejsca w których jest wygrana główna lub trafiać na zagęszczenia (zgrupowania) trafień. Wszystko w sposób szybki, wizualny, interaktywny i łatwy. </td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 19px 0px 38px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="25"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#9633;</span></td><td>Kombinacja pełna dla każdej ilości liczb i każdej ilości liczb w zakładzie. </td></tr></table></div><p>&nbsp;</p>
+<p>Kilkanaście sposobów <span class="f_ImageCaption">wyboru liczb</span>. </p>
+<hr noshade size=1 style="color : #999999"><p>&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 19px 0px 40px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="24"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#9633;</span></td><td>Wybór liczb z kategorii liczb specjalnych. </td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 19px 0px 40px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="24"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#9633;</span></td><td>wybór bezpośrednio z tabel analitycznych i interaktywnych grafów losowań. </td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 19px 0px 40px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="24"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#9633;</span></td><td>Wybór z list liczb często występujących, </td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 19px 0px 40px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="24"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#9633;</span></td><td>nie często występujących, </td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 19px 0px 40px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="24"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#9633;</span></td><td>obliczonych że powinny wystąpić, </td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 19px 0px 40px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="24"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#9633;</span></td><td>pewniaków, liczb twardych, </td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 19px 0px 40px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="24"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#9633;</span></td><td>ciągów liczb, </td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 19px 0px 40px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="24"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#9633;</span></td><td>liczb stowarzyszonych ( które występują częściej po określonych liczbach). </td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 19px 0px 40px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="24"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#9633;</span></td><td>par liczb, trójek liczb. </td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 19px 0px 40px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="24"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#9633;</span></td><td>Wyboru paczek liczb obliczanych z trendów. </td></tr></table></div><p style="text-indent: -24px; margin: 0px 19px 0px 64px;">&nbsp;</p>
+<p><span class="f_ImageCaption">Moduł drukowania</span> zakładów bezpośrednio na kuponach gry. </p>
+<hr noshade size=1 style="color : #999999"><p>&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 19px 0px 37px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="27"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#9633;</span></td><td>Wielostronicowy podgląd drukowania. </td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 19px 0px 37px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="27"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#9633;</span></td><td>Jednorazowo ustawiana dla każdej gry, korekta XY, niedokładności podajnika papieru czy różnic rodzajów kuponów. </td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 19px 0px 37px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="27"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#9633;</span></td><td>Nadruk i pozycjonowanie numeru kuponu. </td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 19px 0px 37px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="27"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#9633;</span></td><td>Ustawianie wielkości znacznika. </td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 19px 0px 37px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="27"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#9633;</span></td><td>Możliwość druku kuponu na arkuszach do pocięcia. </td></tr></table></div><p>&nbsp;</p>
+<p>Liczb prognozowanych i wiele innych. </p>
+<p>Program posiada zestaw użytecznych funkcji i opcji : </p>
+<p>&nbsp;</p>
+<p class="p_ImageCaption"><span class="f_ImageCaption">Funkcje prognozujące. </span></p>
+<hr noshade size=1 style="color : #999999"><p>&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 19px 0px 38px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#9633;</span></td><td>Funkcje i opcje powstałe na życzenie zawodowych graczy. </td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 19px 0px 38px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#9633;</span></td><td>Przyjazny interfejs programu z możliwością całkowitego skonfigurowania menu i pasków narzędziowych do własnych upodobań. </td></tr></table></div><p>&nbsp;</p>
+<p class="p_ImageCaption"><span class="f_ImageCaption">Moduł PHP i serwera WWW.</span></p>
+<hr noshade size=1 style="color : #999999"><p>&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 19px 0px 39px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#9633;</span></td><td>Język skryptowy PHP5.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 19px 0px 39px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#9633;</span></td><td>Lokalny Serwer HTTP (WWW)</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 19px 0px 39px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#9633;</span></td><td>Pełna komunikacja z baza danych i funkcjami programu.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 19px 0px 39px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#9633;</span></td><td>Praca interaktywna poprzez protokół internetowy TCP/IP.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 19px 0px 39px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#9633;</span></td><td>Interaktywna praca z programem poprzez przeglądarkę internetową.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 19px 0px 39px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#9633;</span></td><td>Sterowanie przyciskami i funkcjami programu (makra).</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 19px 0px 39px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#9633;</span></td><td>Możliwość wdrażania własnych pomysłów na analizy, statystyki czy generacje.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 19px 0px 39px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#9633;</span></td><td>Niespotykane bogactwo i łatwość dostępu do dokumentacji, źródeł i funkcji PHP.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 19px 0px 39px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="16"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#9633;</span></td><td>Śmiało można zapożyczyć hasło z EXCELA, "Jak czegoś nie można zrobić ze skryptami PHP to na pewno tego nie można zrobić " :-).</td></tr></table></div><p>&nbsp;</p>
+<p><span class="f_ImageCaption">Całości dopełnia fakt że</span> : </p>
+<p>&nbsp;</p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">Pracując z programem nigdy nie będziesz się nudził. Pomyśl ile programów odstawiłeś "do kąta", ten z pewnością nie da Ci spać. :-) </span></p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">&nbsp;</span></p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">Nam choć znamy go od podszewki trudno się czasem od niego oderwać. To program z gatunku "programów wciągających". To program na lata. Intencją moją właśnie jest to aby program był otwartym narzędziem w odróżnieniu od programów formularzowych. Choć mocno jestem namawiany przez użytkowników do stosowania modelu do którego się przyzwyczaili w innych programach, niestety musze odmówić. Proponuje im i pomagam w stworzeniu i użyciu skryptów PHP, które mogą WSZYSTKO.</span></p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">&nbsp;</span></p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">Unikalne, szybkie algorytmy obliczeniowe sprawiają że program jest szybki i sprawny w działaniu. To zdaniem również wielu graczy nie są przechwałki autora. </span></p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">&nbsp;</span></p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">Wszystko albo prawie wszystko co powinien grający mieć znajdziesz w zestawie Lotto CAD 2009. </span></p>
+<p>&nbsp;</p>
+<p>Program który zawodowi gracze nazywają zabójcą gier liczbowych. Przykładowym zabójstwem jest trafienie 5 trójek ( co nie wydaje się takie nierealne) w systemie strefowym 3/2 na dziesięć liczb w zakładzie. Zabrać można od prowadzącego grę 24,3 miliona złotych. Płacąc niecałe 300 zł. </p>
+<p>&nbsp;</p>
+<p>Przyłącz do wielu zadowolonych użytkowników programu, niezadowolonych jeszcze nie spotkaliśmy. </p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Program jest rezultatem wieloletnich moich doświadczeń i ponad dziesięcioletniej pracy programistycznej. W programie wykorzystałem również doświadczenia i pomysły których dostarczyli mi moi koledzy i znajomi z list dyskusyjnych i forów, często poniekąd anonimowi bo znani tylko z pseudonimu który używają w Internecie ale jakże znani i cenieni, którym serdecznie dziękuję za okazaną pomoc, życząc jednocześnie im samych tuzów w ich ulubionych grach liczbowych. </p>
+<p>Ta wymiana doświadczeń i pomysłów oraz moja sięgająca dekady praca zaowocowała programem który nie pozwala już wielu, przegrywać w ulubione gry Lotto. </p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Dla mnie największą nagrodą są doniesienia o wygranych osiągniętych z pomocą programu LC2009, czego i Wam życzę. </p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Życzy autor Lotto Cad 2012 </p>
+<p>&nbsp;</p>
+<p>W.W. Jarzęcki</p>
+
+</div>
+</td></tr></table>
+</div>
+
+<!-- Placeholder for topic body end. -->
+</body>
+</html>

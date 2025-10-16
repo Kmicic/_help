@@ -1,0 +1,402 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Zmienne PHP</title>
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+   <style type="text/css">
+   <!--
+   .inline-button {
+   width:auto;
+   font: bold 90%/1 Verdana, sans-serif;
+   margin: 0 0.2em; padding: 0.1em 0; _padding:0;
+   border: 1px solid black;
+   white-space:nowrap;
+   text-decoration: none;
+   vertical-align:middle;
+   background: #ccc;
+   color: black;
+   }
+.inline-button em {
+   cursor:hand;
+   font-style: normal;
+   margin:0; padding: 0.1em 0.5em;
+   background: white;
+   color: black;
+   }
+.inline-button span {
+   cursor:hand;
+   margin:0; padding: 0.1em 0.5em 0.1em 0.3em;
+   }
+.inline-button:hover {
+   background: #666;
+   color: white;
+   }
+.inline-button:hover em {
+   background: black;
+   color: white;
+   }
+.s1 {
+	background-color: #FFFFFF;
+	color: #008000;
+}
+.s2 {
+	background-color: #FF8000;
+	color: #000000;
+}
+.s5 {
+	background-color: #FFFFFF;
+	color: #008000;
+}
+.s6 {
+	background-color: #FFFFFF;
+	color: #FF0000;
+}
+.s7 {
+	background-color: #FFFFFF;
+	color: #FF0000;
+}
+.s8 {
+	background-color: #FFFFFF;
+	color: #FF0000;
+}
+.s9 {
+	background-color: #FFFFFF;
+	color: #008000;
+}
+.s10 {
+	background-color: #FFFFFF;
+	color: #800000;
+}
+.s3 {
+	background-color: #FFFFFF;
+	color: #000000;
+}
+.s4 {
+	background-color: #FFFF00;
+	color: #0000FF;
+}
+.s11 {
+	background-color: #00FF00;
+	color: #000000;   }
+/* Horizontal lists
+----------------------------------------*/
+ul.linklist {
+	display: block;
+	margin: 0;
+}
+
+ul.linklist li {
+	display: block;
+	list-style-type: none;
+	float: left;
+	width: auto;
+	margin-right: 5px;
+	font-size: 1.1em;
+	line-height: 2.2em;
+}
+
+ul.linklist {
+	float: right;
+	margin-right: 0;
+	margin-left: 5px;
+	text-align: right;
+}
+
+ul.navlinks {
+	padding-bottom: 1px;
+	margin-bottom: 1px;
+	border-bottom: 1px solid #FFFFFF;
+	font-weight: bold;
+}
+
+a.flag {color: #AAA; font-size:0.8em;text-decoration:none;}
+a.flag:hover {color:#FFF;text-decoration:underline;}
+a.en-flag {padding-left:21px; background: url(images/flag/en.png) top left no-repeat;}
+a.de-flag {padding-left:21px; background: url(images/flag/de.png) top left no-repeat;}
+a.ru-flag {padding-left:21px; background: url(images/flag/ru.png) top left no-repeat;} 
+a.cs-flag {padding-left:21px; background: url(images/flag/cz.png) top left no-repeat;}
+a.fr-flag {padding-left:21px; background: url(images/flag/fr.png) top left no-repeat;}
+a.es-flag {padding-left:21px; background: url(images/flag/es.png) top left no-repeat;}
+a.it-flag {padding-left:21px; background: url(images/flag/it.png) top left no-repeat;}
+
+-->   
+</style>
+
+<script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+
+<script type="text/javascript">
+function trim11 (str) {
+str = str.replace(/^\s+/, '');
+for (var i = str.length - 1; i >= 0; i--) {
+if (/\S/.test(str.charAt(i))) {
+str = str.substring(0, i + 1);
+break;
+}
+}
+return str;
+}
+
+function _highlight(inp_id,out_id) {
+elm=document.getElementById(out_id);
+var inptxt = trim11(document.getElementById(inp_id).value);
+var inp_arr = inptxt.split(/[ :,;-]+/);
+var html=elm.innerHTML;
+text=trim11(html.replace(/<[^>]+>/g,''));
+lines=text.split(/\r?\n/g);
+
+html="<pre>";
+for (var i in lines) {
+var tic=lines[i];
+var line_arr=tic.split(' ');
+
+var item='';
+for (var j in line_arr) {
+var num=line_arr[j];
+var hits=false;
+for (var k in inp_arr) {
+var hit=inp_arr[k];
+if (hit==num) { 
+hits=true;
+break;
+}
+}
+var pads=(j<(line_arr.length-1)) ? ' ':'';
+item+= hits ? '<span class="s2">'+num+'</span>'+pads : num+pads;
+}
+html+=item+'\r\n';
+}
+elm.innerHTML=html+'</pre>';
+}
+</script>
+      
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?zmienne_php.htm"; }
+  else { parent.quicksync('a3.2.1.8.5.1'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFEF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#000000">
+  <tr valign="middle">
+    <td align="left">
+      <p style="text-indent: 0px; margin: 0px 0px 0px 0px;"><span style="font-size: 12pt; color: #ffffff;">Zmienne PHP</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a class="inline-button" href="contents.htm"><em>LC</em><span>&lt;&lt;</span></a>&nbsp;
+     <!--<a href="contents.htm">Top</a>-->
+     <a class="inline-button" href="lottocad_vs_php.htm"><em>LC</em><span>&lt;</span></a>&nbsp;
+     <!--<a href="lottocad_vs_php.htm">Previous</a>&nbsp;-->
+     <a class="inline-button" href="funkcje_wbudowane.htm"><em>LC</em><span>&gt;</span></a>&nbsp;     
+     <!--<a href="funkcje_wbudowane.htm">Next</a>-->
+     </span>
+    </td>
+  </tr>
+    
+  <tr><td colspan="2">
+  <script>
+  function switchlang(lang) {
+  $(".goog-te-sectional-gadget-link-text").html('');
+  $.getScript("//translate.google.com/translate_a/element.js?cb=googleSectionalElementInit&ug=section&hl="+lang);
+  }
+  function googleSectionalElementInit() {
+  new google.translate.SectionalElement({
+    sectionalNodeClassName: 'goog-trans-section',
+    controlNodeClassName: 'goog-trans-control',
+    background: '#99ff99'
+  }, 'google_sectional_element');
+  }
+  switchlang ('en');
+  </script>
+<div id="lang-menu">
+<ul class="linklist navlinks" style="font-size:12px";>
+<li class="icon_home"><a class="flag en-flag" href="javascript:void(0)" onclick="return switchlang('en');">English</a> &raquo;</li>
+<li class="icon_home"><a class="flag de-flag" href="javascript:void(0)" onclick="return switchlang('de');">Deutsch</a> &raquo;</li>
+<li class="icon_home"><a class="flag es-flag" href="javascript:void(0)" onclick="return switchlang('es');">Español</a> &raquo;</li>
+<li class="icon_home"><a class="flag fr-flag" href="javascript:void(0)" onclick="return switchlang('fr');">Français</a> &raquo;</li>
+<li class="icon_home"><a class="flag it-flag" href="javascript:void(0)" onclick="return switchlang('it');">Italiano</a> &raquo;</li>
+<li class="icon_home"><a class="flag ru-flag" href="javascript:void(0)" onclick="return switchlang('ru');">Rусский</a> &raquo;</li>
+</ul>
+</div>
+  </td></tr> 
+    
+</table>
+
+
+<!-- Placeholder for topic body begin. -->
+
+<div id="topic_body" class="goog-trans-section" lang="pl">
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<div class="goog-trans-control">
+<a class="goog-te-gadget-link" href="javascript:void(0)"><span class="goog-te-sectional-gadget-link-text"></span></a>
+</div>
+<div class="content">
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code" style="font-size: 12pt;">Zmienne</span></p>
+<p class="p_Courier"><span class="f_Courier">&nbsp;</span></p>
+<p>Każda zmienna w PHP poprzedzona jest znakiem $(dolar). Zmienna to umowne oznaczenie przestrzeni w pamięci komputera które zawiera dane które w dowolnej chwili można odczytać lub zapisać w miejscu pamięci na które ta zmienna wskazuje . Najogólniej zmienna to rodzaj wskaźnika który wskazuje na dane w niej zawarte. Dane to liczby, napisy lub struktury złożone jak tablice (wiele zmiennych, zgrupowanych w tablice i oznaczonych kluczami czyli indeksami do poszczególnych ich składowych).</p>
+<p>Przed każdym wywołaniem skryptu program LottoCad, przekazuje zestaw zmiennych wraz z danymi. Są to zmienne które pozwalają zorientować się mającemu działać skryptowi o tym np jaka gra jest otworzona, jakie ma właściwości (ilość liczb, ilość liczb losowanych itd). </p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">//Najprościej w PHP zmienną odczytać wybierając polecenie :</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Print $zmienna;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">przykład : skrypt</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">print $witam;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">?&gt;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">wyświetli napis : witaj w świecie PHP</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">//Tablice odczytuje się poleceniem :</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Print_r($zmienna_tablicowa);</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">przykład : skrypt</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&lt;?php</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">$tablica=array("Witaj","w","świecie","PHP");</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">print_r($tablica);</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">?&gt;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">wyświetli jej zawartość (polecenie print_r) słuzy do debugowania (sprawdzania) zawartości tablic w PHP.</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">wyświetlany tekst :</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Array</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">(</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> &nbsp; &nbsp;[0] =&gt; Witaj</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> &nbsp; &nbsp;[1] =&gt; w</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> &nbsp; &nbsp;[2] =&gt; świecie</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> &nbsp; &nbsp;[3] =&gt; PHP</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">jak widać tablica ma 4 elementy z kluczami o kolejnych numerach począwszy od zera.</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">tak więc np polecenie print $tablica[0]; wyświetli zawartość elementu nr [0] a więc napisu : Witaj.</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p>Omówię wszystkie zmienne kolejno z wyjaśnieniem :</p>
+<p class="p_Courier"><span class="f_Courier">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
+<p class="p_Headingredunderlined"><span class="f_Headingredunderlined">&nbsp;</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">zawiera napis (liczby) znajdujące się w polu losowań w chwili wywołania skryptu.</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">przykład : "1 12 32 44 68" zmienna jest typu string(napis).</span></p>
+<p class="p_Courier"><span class="f_Courier">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">$APP_PATH</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">zawiera pełna ścieżkę dostępu do katalogu w którym zainstalowany jest LottoCad.</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">przykład : &nbsp;"C:/Program Files/Wojar Software/LottoCad/" zmienna jest typu string(napis).</span></p>
+<p class="p_Headingredunderlined"><span class="f_Headingredunderlined">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">$GAME_NUMBERS_ALL</span></p>
+<p class="p_Headingredunderlined"><span class="f_Headingredunderlined">&nbsp;</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">zawiera ilość wszystkich liczb gry</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">przykład : 49 zmienna jest typu Integer(liczba całkowita).</span></p>
+<p class="p_Courier"><span class="f_Courier">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">$GAME_DRAW_ALL</span></p>
+<p class="p_Headingredunderlined"><span class="f_Headingredunderlined">&nbsp;</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">zawiera ilość liczb losowanych gry</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">przykład : 6 zmienna jest typu Integer(liczba całkowita).</span></p>
+<p class="p_Courier"><span class="f_Courier">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">$GAME_WITH_BONUS</span></p>
+<p class="p_Headingredunderlined"><span class="f_Headingredunderlined">&nbsp;</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">zawiera informację czy gra jest grą z bonusem.Liczbą dodatkową.</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">przykład : 1 zmienna jest typu Boolean(wartość logiczna). </span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">wartość 0 lub False = Prawda, 1 lub True = Fałsz</span></p>
+<p class="p_Headingredunderlined"><span class="f_Headingredunderlined">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">$GAME_ID  </span></p>
+<p class="p_Headingredunderlined"><span class="f_Headingredunderlined">&nbsp;</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">zawiera identyfikator gry (liczbę porzadkową)</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">przykład : 1 zmienna jest typu Integer(liczba całkowita). </span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">wartość 1 Oznacza np Multilotek</span></p>
+<p class="p_Courier"><span class="f_Courier">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">$GAME_PICK_MAX</span><span class="f_HeadersName"> </span></p>
+<p class="p_Headingredunderlined"><span class="f_Headingredunderlined">&nbsp;</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">zawiera maksymalna ilość liczb skreślanych w zakładzie</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">przykład : 10 zmienna jest typu Integer(liczba całkowita). </span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">wartość 10 oznacza 10 skreśleń w &nbsp;Multilotek(KENO)</span></p>
+<p class="p_Courier"><span class="f_Courier">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">$GAME_NAME</span></p>
+<p class="p_Courier"><span class="f_Courier">&nbsp;</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">zawiera nazwę gry</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">przykład : "MultiLotek". &nbsp;zmienna jest typu string(napis).</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">$GAME_TICKET_ROWS</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">zawiera ilość wierszy liczbowych na kuponie gry</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">przykład : 8 zmienna jest typu Integer(liczba całkowita). </span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">wartość 8 wierszy gry Multilotek(KENO)</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">$GAME_TICKET_COLS</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">zawiera ilość kolumn liczbowych na kuponie gry</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">przykład : 10 zmienna jest typu Integer(liczba całkowita). </span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">wartość 10 wiersze gry Multilotek(KENO)</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">$GAME_WITH_STAKE</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">zawiera informację czy gra jest grą ze stawką gry.</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">przykład : 1 zmienna jest typu Boolean(wartość logiczna). </span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">wartość 0 lub False = Prawda, 1 lub True = Fałsz</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">$GAME_TABLE_NAME</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">zawiera nazwę tabeli bazy danych losowań gry</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">przykład : "Multi.dat". &nbsp;zmienna jest typu string(napis).</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">$GAME_DUALRANGE</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">zawiera informację czy gra jest grą z drugim zestawem liczb(Numerek).</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">przykład : 0 zmienna jest typu Boolean(wartość logiczna). </span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">wartość 0 lub False = Prawda, 1 lub True = Fałsz</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">$GAME_BONUS_DRAWN</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">zawiera ilość losowanych liczb dodatkowych</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">przykład : 1 zmienna jest typu Integer(liczba całkowita). </span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">wartość 1 oznacza jedną liczbę losowaną.</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">$GAME_DUAL_NUMBERS_ALL</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">przykład : 45 zmienna jest typu Integer(liczba całkowita). </span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">45 oznacza ilość liczb drugiego zestawu w Numerku.</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">$GAME_DUAL_NUMBERS_DRAWN</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">zawiera ilość wszystkich liczb losowanych z drugiego zestawu</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">przyklad : 1 zmienna jest typu Integer(liczba całkowita). </span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">wartość 1 oznacza ilość liczb drugiego zestawu w Numerku.</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">$GAME_LAST_DRAW_ID</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">zawiera numer(id) ostatniego losowania w bazie danych.</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">przykład : 3234 zmienna jest typu Integer(liczba całkowita). </span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">wartość 3234 oznacza numer ostatniego losowania w bazie losowań.</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">$GAME_LAST_DRAW_DATE</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">przykład : "2009-09-07" zmienna jest typu String(napis). </span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">wartość "2009-09-07" oznacza datę ostatniego losowania w bazie losowań.</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+
+</div>
+</td></tr></table>
+</div>
+
+<!-- Placeholder for topic body end. -->
+</body>
+</html>

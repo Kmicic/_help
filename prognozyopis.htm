@@ -1,0 +1,589 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Prognozy opis</title>
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+   <style type="text/css">
+   <!--
+   .inline-button {
+   width:auto;
+   font: bold 90%/1 Verdana, sans-serif;
+   margin: 0 0.2em; padding: 0.1em 0; _padding:0;
+   border: 1px solid black;
+   white-space:nowrap;
+   text-decoration: none;
+   vertical-align:middle;
+   background: #ccc;
+   color: black;
+   }
+.inline-button em {
+   cursor:hand;
+   font-style: normal;
+   margin:0; padding: 0.1em 0.5em;
+   background: white;
+   color: black;
+   }
+.inline-button span {
+   cursor:hand;
+   margin:0; padding: 0.1em 0.5em 0.1em 0.3em;
+   }
+.inline-button:hover {
+   background: #666;
+   color: white;
+   }
+.inline-button:hover em {
+   background: black;
+   color: white;
+   }
+.s1 {
+	background-color: #FFFFFF;
+	color: #008000;
+}
+.s2 {
+	background-color: #FF8000;
+	color: #000000;
+}
+.s5 {
+	background-color: #FFFFFF;
+	color: #008000;
+}
+.s6 {
+	background-color: #FFFFFF;
+	color: #FF0000;
+}
+.s7 {
+	background-color: #FFFFFF;
+	color: #FF0000;
+}
+.s8 {
+	background-color: #FFFFFF;
+	color: #FF0000;
+}
+.s9 {
+	background-color: #FFFFFF;
+	color: #008000;
+}
+.s10 {
+	background-color: #FFFFFF;
+	color: #800000;
+}
+.s3 {
+	background-color: #FFFFFF;
+	color: #000000;
+}
+.s4 {
+	background-color: #FFFF00;
+	color: #0000FF;
+}
+.s11 {
+	background-color: #00FF00;
+	color: #000000;   }
+/* Horizontal lists
+----------------------------------------*/
+ul.linklist {
+	display: block;
+	margin: 0;
+}
+
+ul.linklist li {
+	display: block;
+	list-style-type: none;
+	float: left;
+	width: auto;
+	margin-right: 5px;
+	font-size: 1.1em;
+	line-height: 2.2em;
+}
+
+ul.linklist {
+	float: right;
+	margin-right: 0;
+	margin-left: 5px;
+	text-align: right;
+}
+
+ul.navlinks {
+	padding-bottom: 1px;
+	margin-bottom: 1px;
+	border-bottom: 1px solid #FFFFFF;
+	font-weight: bold;
+}
+
+a.flag {color: #AAA; font-size:0.8em;text-decoration:none;}
+a.flag:hover {color:#FFF;text-decoration:underline;}
+a.en-flag {padding-left:21px; background: url(images/flag/en.png) top left no-repeat;}
+a.de-flag {padding-left:21px; background: url(images/flag/de.png) top left no-repeat;}
+a.ru-flag {padding-left:21px; background: url(images/flag/ru.png) top left no-repeat;} 
+a.cs-flag {padding-left:21px; background: url(images/flag/cz.png) top left no-repeat;}
+a.fr-flag {padding-left:21px; background: url(images/flag/fr.png) top left no-repeat;}
+a.es-flag {padding-left:21px; background: url(images/flag/es.png) top left no-repeat;}
+a.it-flag {padding-left:21px; background: url(images/flag/it.png) top left no-repeat;}
+
+-->   
+</style>
+
+<script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+
+<script type="text/javascript">
+function trim11 (str) {
+str = str.replace(/^\s+/, '');
+for (var i = str.length - 1; i >= 0; i--) {
+if (/\S/.test(str.charAt(i))) {
+str = str.substring(0, i + 1);
+break;
+}
+}
+return str;
+}
+
+function _highlight(inp_id,out_id) {
+elm=document.getElementById(out_id);
+var inptxt = trim11(document.getElementById(inp_id).value);
+var inp_arr = inptxt.split(/[ :,;-]+/);
+var html=elm.innerHTML;
+text=trim11(html.replace(/<[^>]+>/g,''));
+lines=text.split(/\r?\n/g);
+
+html="<pre>";
+for (var i in lines) {
+var tic=lines[i];
+var line_arr=tic.split(' ');
+
+var item='';
+for (var j in line_arr) {
+var num=line_arr[j];
+var hits=false;
+for (var k in inp_arr) {
+var hit=inp_arr[k];
+if (hit==num) { 
+hits=true;
+break;
+}
+}
+var pads=(j<(line_arr.length-1)) ? ' ':'';
+item+= hits ? '<span class="s2">'+num+'</span>'+pads : num+pads;
+}
+html+=item+'\r\n';
+}
+elm.innerHTML=html+'</pre>';
+}
+</script>
+      
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?prognozyopis.htm"; }
+  else { parent.quicksync('a3.2.1.5.10.1'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFEF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#000000">
+  <tr valign="middle">
+    <td align="left">
+      <p style="text-indent: 0px; margin: 0px 0px 0px 0px;"><span style="font-size: 12pt; color: #ffffff;">Prognozy opis</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a class="inline-button" href="contents.htm"><em>LC</em><span>&lt;&lt;</span></a>&nbsp;
+     <!--<a href="contents.htm">Top</a>-->
+     <a class="inline-button" href="predictionsreport.htm"><em>LC</em><span>&lt;</span></a>&nbsp;
+     <!--<a href="predictionsreport.htm">Previous</a>&nbsp;-->
+     <a class="inline-button" href="panelprognozy.htm"><em>LC</em><span>&gt;</span></a>&nbsp;     
+     <!--<a href="panelprognozy.htm">Next</a>-->
+     </span>
+    </td>
+  </tr>
+    
+  <tr><td colspan="2">
+  <script>
+  function switchlang(lang) {
+  $(".goog-te-sectional-gadget-link-text").html('');
+  $.getScript("//translate.google.com/translate_a/element.js?cb=googleSectionalElementInit&ug=section&hl="+lang);
+  }
+  function googleSectionalElementInit() {
+  new google.translate.SectionalElement({
+    sectionalNodeClassName: 'goog-trans-section',
+    controlNodeClassName: 'goog-trans-control',
+    background: '#99ff99'
+  }, 'google_sectional_element');
+  }
+  switchlang ('en');
+  </script>
+<div id="lang-menu">
+<ul class="linklist navlinks" style="font-size:12px";>
+<li class="icon_home"><a class="flag en-flag" href="javascript:void(0)" onclick="return switchlang('en');">English</a> &raquo;</li>
+<li class="icon_home"><a class="flag de-flag" href="javascript:void(0)" onclick="return switchlang('de');">Deutsch</a> &raquo;</li>
+<li class="icon_home"><a class="flag es-flag" href="javascript:void(0)" onclick="return switchlang('es');">Español</a> &raquo;</li>
+<li class="icon_home"><a class="flag fr-flag" href="javascript:void(0)" onclick="return switchlang('fr');">Français</a> &raquo;</li>
+<li class="icon_home"><a class="flag it-flag" href="javascript:void(0)" onclick="return switchlang('it');">Italiano</a> &raquo;</li>
+<li class="icon_home"><a class="flag ru-flag" href="javascript:void(0)" onclick="return switchlang('ru');">Rусский</a> &raquo;</li>
+</ul>
+</div>
+  </td></tr> 
+    
+</table>
+
+
+<!-- Placeholder for topic body begin. -->
+
+<div id="topic_body" class="goog-trans-section" lang="pl">
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<div class="goog-trans-control">
+<a class="goog-te-gadget-link" href="javascript:void(0)"><span class="goog-te-sectional-gadget-link-text"></span></a>
+</div>
+<div class="content">
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">Prognozy najprościej mówiąc mają zadanie wyłowić liczby których występowanie w kolejnych losowaniach podlega okresowości i które co kilka losowań występują często by w następnym okresie zupełnie albo bardzo rzadko występować. Jeżeli będziemy analizować kolejne okresy wstecz od losowania ostatniego to można je podzielić na okresy (kwanty) i dla każdego okresu (kwantu) uporządkować je wg częstości wystąpień.  </span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">Najprościej wyjaśni to diagram (literą G oznaczone są okresy w których liczby są </span><span style="font-family: 'MS Shell Dlg'; font-weight: bold; color: #ff0000;">Gorące</span><span style="font-family: 'MS Shell Dlg'; font-weight: bold; color: #0000ff;">Zimne</span><span style="font-family: 'MS Shell Dlg';">- nie występują lub są "leniwe")</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">Przykład : jeżeli zadamy w prognozie GZ-&gt;?G parametry : </span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">start = 1 </span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">ile grup( cykli) = 5 </span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">&nbsp;</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">Kolejne &nbsp; &nbsp; &nbsp; &nbsp;okresy (cykle analizy)</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">Losowania &nbsp; &nbsp; &nbsp;1 2 3 4 5</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">------------ &nbsp; - - - - -</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">.... &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">.... &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span style="font-family: 'Courier New'; font-weight: bold; color: #ff0000;">G</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">.... &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span style="font-family: 'Courier New'; font-weight: bold; color: #ff0000;">G</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">.... &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span style="font-family: 'Courier New'; font-weight: bold; color: #ff0000;">G</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">... &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </span><span style="font-family: 'Courier New'; font-weight: bold; color: #ff0000;">G</span><span style="font-family: 'Courier New'; color: #800000;"> </span><span style="font-family: 'Courier New'; font-weight: bold; color: #ff0000;">G</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;"> N 2003-01-26 &nbsp; &nbsp; &nbsp;  </span><span style="font-family: 'Courier New'; font-weight: bold; color: #ff0000;">G</span><span style="font-family: 'Courier New'; color: #800000;"> </span><span style="font-family: 'Courier New'; font-weight: bold; color: #0000ff;">Z</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">Pn 2003-01-27 &nbsp; &nbsp; &nbsp;  </span><span style="font-family: 'Courier New'; font-weight: bold; color: #ff0000;">G</span><span style="font-family: 'Courier New'; color: #800000;"> </span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">Wt 2003-01-28 &nbsp; &nbsp;  </span><span style="font-family: 'Courier New'; font-weight: bold; color: #ff0000;">G</span><span style="font-family: 'Courier New'; color: #800000;"> </span><span style="font-family: 'Courier New'; font-weight: bold; color: #ff0000;">G</span><span style="font-family: 'Courier New'; color: #800000;"> </span><span style="font-family: 'Courier New'; font-weight: bold; color: #0000ff;">Z</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">Śr 2003-01-29 &nbsp; &nbsp;  </span><span style="font-family: 'Courier New'; font-weight: bold; color: #ff0000;">G</span><span style="font-family: 'Courier New'; color: #800000;"> </span><span style="font-family: 'Courier New'; font-weight: bold; color: #0000ff;">Z</span><span style="font-family: 'Courier New'; color: #800000;"> </span><span style="font-family: 'Courier New'; font-weight: bold; color: #0000ff;">Z</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">Cz 2003-01-30 &nbsp; &nbsp;  </span><span style="font-family: 'Courier New'; font-weight: bold; color: #ff0000;">G</span><span style="font-family: 'Courier New'; color: #800000;"> </span><span style="font-family: 'Courier New'; font-weight: bold; color: #0000ff;">Z</span><span style="font-family: 'Courier New'; color: #800000;"> </span><span style="font-family: 'Courier New'; font-weight: bold; color: #0000ff;">Z</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">Pt 2003-01-31 &nbsp; &nbsp;  </span><span style="font-family: 'Courier New'; font-weight: bold; color: #ff0000;">G</span><span style="font-family: 'Courier New'; color: #800000;"> </span><span style="font-family: 'Courier New'; font-weight: bold; color: #0000ff;">Z</span><span style="font-family: 'Courier New'; color: #800000;"> </span><span style="font-family: 'Courier New'; font-weight: bold; color: #ff0000;">G</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">So 2003-02-01 &nbsp; &nbsp;  </span><span style="font-family: 'Courier New'; font-weight: bold; color: #0000ff;">Z Z</span><span style="font-family: 'Courier New'; color: #800000;"> </span><span style="font-family: 'Courier New'; font-weight: bold; color: #ff0000;">G</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">Pn 2003-02-03 &nbsp;  </span><span style="font-family: 'Courier New'; font-weight: bold; color: #ff0000;">G</span><span style="font-family: 'Courier New'; color: #800000;"> </span><span style="font-family: 'Courier New'; font-weight: bold; color: #0000ff;">Z</span><span style="font-family: 'Courier New'; color: #800000;"> </span><span style="font-family: 'Courier New'; font-weight: bold; color: #ff0000;">G G</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">Wt 2003-02-04 &nbsp;  </span><span style="font-family: 'Courier New'; font-weight: bold; color: #ff0000;">G</span><span style="font-family: 'Courier New'; color: #800000;"> </span><span style="font-family: 'Courier New'; font-weight: bold; color: #0000ff;">Z</span><span style="font-family: 'Courier New'; color: #800000;"> </span><span style="font-family: 'Courier New'; font-weight: bold; color: #ff0000;">G G</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">Śr 2003-02-05 &nbsp;  </span><span style="font-family: 'Courier New'; font-weight: bold; color: #0000ff;">Z</span><span style="font-family: 'Courier New'; color: #800000;"> </span><span style="font-family: 'Courier New'; font-weight: bold; color: #ff0000;">G G G</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">Cz 2003-02-06 &nbsp; &nbsp; </span><span style="font-family: 'Courier New'; font-weight: bold; color: #ff0000;">G G </span><span style="font-family: 'Courier New'; font-weight: bold; color: #0000ff;">Z</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; font-weight: bold; color: #ff0000;">G G G</span><span style="font-family: 'Courier New'; color: #800000;"> </span><span style="font-family: 'Courier New'; font-weight: bold; color: #0000ff;">Z Z</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;"> N 2003-02-09  </span><span style="font-family: 'Courier New'; font-weight: bold; color: #0000ff;">Z </span><span style="font-family: 'Courier New'; font-weight: bold; color: #ff0000;">G</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">Pn 2003-02-10  </span><span style="font-family: 'Courier New'; font-weight: bold; color: #ff0000;">G</span><span style="font-family: 'Courier New'; color: #800000;"> </span><span style="font-family: 'Courier New'; font-weight: bold; color: #0000ff;">Z Z Z Z</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">Wt 2003-02-11  </span><span style="font-family: 'Courier New'; font-weight: bold; color: #0000ff;">Z Z Z Z Z</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">zauważyć należy że ostatnim analizowaną datą jest losowanie ostatniego losowania cyklu Zimnego co zapowiada że jeżeli trend okresowości się utrzyma, następnym okresem powinien być okres gorący. </span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">Wynikiem tak wykonanej prognozy jest lista prognoz :</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">dla poziomu wybierania 33% z list Gorących i Zimnych.</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">cykl &nbsp;1 losowań (4 liczb)-&gt; 50 53 60 66</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">----------------------------------------</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">&nbsp;</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">03-01-28 -&gt;[ 1] 50</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">03-01-29 -&gt;[ 0]</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">03-01-30 -&gt;[ 1] 53</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">03-01-31 -&gt;[ 2] 53 66</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">03-02-01 -&gt;[ 1] 66</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">03-02-02 -&gt;[ 0]</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">03-02-03 -&gt;[ 1] 50</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">03-02-04 -&gt;[ 1] 50</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">03-02-05 -&gt;[ 0]</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">03-02-06 -&gt;[ 0]</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">&nbsp;</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;">03-02-08 -&gt;[ 4] 50 53 60 66 &nbsp; G</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;">03-02-09 -&gt;[ 0] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Z</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;">03-02-10 -&gt;[ 4] 50 53 60 66 &nbsp; G</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;">03-02-11 -&gt;[ 0] &nbsp;&lt;---- &nbsp; &nbsp; &nbsp; &nbsp;Z</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">cykl &nbsp;2 losowań (5 liczb)-&gt; &nbsp;6 32 38 45 48</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">-------------------------------------------</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">03-01-27 -&gt;[ 3] &nbsp;6 38 48</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">03-01-28 -&gt;[ 1] 38</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">03-01-29 -&gt;[ 2] 38 48</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">03-01-30 -&gt;[ 2] 38 48</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">03-01-31 -&gt;[ 1] &nbsp;6</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">03-02-01 -&gt;[ 3] &nbsp;6 38 48</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">03-02-02 -&gt;[ 1] &nbsp;6</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">03-02-03 -&gt;[ 2] 32 48</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;">03-02-04 -&gt;[ 1] 48 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;G</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;">03-02-05 -&gt;[ 3] &nbsp;6 32 45 &nbsp; &nbsp; &nbsp;G</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;">03-02-06 -&gt;[ 0] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Z</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;">03-02-07 -&gt;[ 1] 45 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Z</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;">03-02-08 -&gt;[ 4] &nbsp;6 38 45 48 &nbsp; G</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;">03-02-09 -&gt;[ 2] 32 38 &nbsp; &nbsp; &nbsp; &nbsp; G</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;">03-02-10 -&gt;[ 0] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Z</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;">&nbsp;</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">cykl &nbsp;3 losowań (3 liczb)-&gt; 28 43 78</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">-------------------------------------</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">03-01-27 -&gt;[ 0]</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">03-01-28 -&gt;[ 2] 43 78</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">03-01-29 -&gt;[ 0]</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">03-01-30 -&gt;[ 1] 43</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;">03-01-31 -&gt;[ 1] 28 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;G</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;">03-02-01 -&gt;[ 0] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; G</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;">03-02-02 -&gt;[ 2] 28 78 &nbsp; &nbsp; &nbsp; &nbsp; G</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;">03-02-03 -&gt;[ 0] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Z</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;">03-02-04 -&gt;[ 0] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Z</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;">03-02-05 -&gt;[ 0] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Z</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;">03-02-06 -&gt;[ 0] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; G</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;">03-02-07 -&gt;[ 2] 43 78 &nbsp; &nbsp; &nbsp; &nbsp; G</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;">03-02-08 -&gt;[ 3] 28 43 78 &nbsp; &nbsp; &nbsp;G</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;">03-02-09 -&gt;[ 0] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Z</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;">03-02-10 -&gt;[ 0] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Z</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;">03-02-11 -&gt;[ 0] &nbsp;&lt;---- &nbsp; &nbsp; &nbsp; &nbsp;Z </span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">cykl &nbsp;4 losowań (22 liczb)-&gt; &nbsp;2 &nbsp;3 &nbsp;8 15 18 23 27 30 33 34 39 43 46 54 57 58 65 68 70 71 74 78</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">-----------------------------------------------------------------------------------------------</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;">03-01-27 -&gt;[ 5] &nbsp;2 &nbsp;3 33 68 70 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; G</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;">&nbsp;</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;">03-01-29 -&gt;[ 6] &nbsp;2 &nbsp;3 18 23 39 46 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;G</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;">03-01-30 -&gt;[ 8] 15 23 27 34 43 46 58 71 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;G</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;">03-01-31 -&gt;[ 4] &nbsp;2 34 39 46 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Z &nbsp; &nbsp;  </span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;">03-02-01 -&gt;[ 0] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Z </span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;">03-02-02 -&gt;[ 3] &nbsp;3 57 78 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Z </span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;">03-02-03 -&gt;[ 5] 23 27 57 65 70 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Z </span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;">03-02-04 -&gt;[ 7] 18 23 33 54 65 68 71 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; G </span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;">03-02-05 -&gt;[ 5] 15 34 39 46 74 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; G </span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;">03-02-06 -&gt;[12] &nbsp;2 &nbsp;3 &nbsp;8 18 23 27 30 46 54 65 70 71 &nbsp;G </span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;">03-02-07 -&gt;[10] &nbsp;3 &nbsp;8 15 18 30 33 43 57 58 78 &nbsp; &nbsp; &nbsp; &nbsp;G </span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;">03-02-08 -&gt;[ 2] 43 78 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Z </span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;">03-02-09 -&gt;[ 2] &nbsp;3 30 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Z </span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;">03-02-10 -&gt;[ 2] 46 68 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Z </span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;">03-02-11 -&gt;[ 6] &nbsp;2 33 34 39 54 71 &nbsp;&lt;---- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Z</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">cykl &nbsp;5 losowań (3 liczb)-&gt; 18 42 70</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">-------------------------------------</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;">03-01-27 -&gt;[ 1] 70 &nbsp; &nbsp; &nbsp; &nbsp;G</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;">03-01-28 -&gt;[ 0] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Z</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;">03-01-29 -&gt;[ 1] 18 &nbsp; &nbsp; &nbsp; &nbsp;Z</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;">03-01-30 -&gt;[ 0] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Z</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;">03-01-31 -&gt;[ 0] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Z</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;">03-02-01 -&gt;[ 0] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Z</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;">03-02-02 -&gt;[ 1] 42 &nbsp; &nbsp; &nbsp; &nbsp;G</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;">03-02-03 -&gt;[ 1] 70 &nbsp; &nbsp; &nbsp; &nbsp;G</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;">03-02-04 -&gt;[ 2] 18 42 &nbsp; &nbsp; G</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;">03-02-05 -&gt;[ 1] 42 &nbsp; &nbsp; &nbsp; &nbsp;G</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;">03-02-06 -&gt;[ 3] 18 42 70 &nbsp;G</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;">03-02-07 -&gt;[ 1] 18 &nbsp; &nbsp; &nbsp; &nbsp;Z</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;">03-02-08 -&gt;[ 0] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Z</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;">03-02-09 -&gt;[ 1] 42 &nbsp; &nbsp; &nbsp; &nbsp;Z</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;">03-02-10 -&gt;[ 0] &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Z</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;">03-02-11 -&gt;[ 0] &nbsp;&lt;---- &nbsp; &nbsp;Z</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">Dokładniej opisany będzie sposób budowania &nbsp;prognozy dla cyklu po 4 losowania :</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg'; font-weight: bold;">cykl 0</span><span style="font-family: 'MS Shell Dlg';">. z okresu &nbsp;od 11 do 8 lutego sortowane są liczby ze względu na częstość wystąpień, sposób sortowania jest taki </span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">aby utworzyć listę liczb Zimnych ( od najrzadziej występujących do najczęściej występujących)</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;">77 75 74 70 65 &nbsp;7 &nbsp;8 58 10 11 </span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;"> 0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 </span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;">12 57 55 15 49 37 18 36 35 21  </span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;"> 0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 </span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;">31 23 27 79 &nbsp;1 25 28 &nbsp;2 30 78 </span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;"> 0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;1 &nbsp;1 &nbsp;1 &nbsp;1 &nbsp;1</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;">&nbsp;</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;"> 1 &nbsp;1 &nbsp;1 &nbsp;1 &nbsp;1 &nbsp;1 &nbsp;1 &nbsp;1 &nbsp;1 &nbsp;1 </span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;">42 43 &nbsp;6 45 46 68 48 17 67 64  </span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;"> 1 &nbsp;1 &nbsp;1 &nbsp;1 &nbsp;1 &nbsp;1 &nbsp;1 &nbsp;1 &nbsp;1 &nbsp;1 </span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;">52 63 54 62 56 14 13 59 80 26 </span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;"> 1 &nbsp;1 &nbsp;1 &nbsp;1 &nbsp;1 &nbsp;1 &nbsp;1 &nbsp;1 &nbsp;1 &nbsp;1 </span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;">60 16 53 &nbsp;9 66 51 50 69 47 22  </span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;"> 2 &nbsp;2 &nbsp;2 &nbsp;2 &nbsp;2 &nbsp;2 &nbsp;2 &nbsp;2 &nbsp;2 &nbsp;2 </span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;">72 73 20 38 29 61 &nbsp;5 44 &nbsp;4 24</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;"> 2 &nbsp;2 &nbsp;2 &nbsp;2 &nbsp;2 &nbsp;2 &nbsp;3 &nbsp;3 &nbsp;3 &nbsp;4</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">  </span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">zadane było 33% wybierania liczb z listy to stanowi pierwsze 25 liczb ale ponieważ 25 pozycja ma 1 wystąpienie w okresie, wybierane są również wszystkie liczby które mają ilość wystąpień 1 czyli 60 liczb:</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">77 75 74 70 65 &nbsp;7 &nbsp;8 58 10 11 </span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">12 57 55 15 49 37 18 36 35 21 </span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">31 23 27 79 &nbsp;1 25 28 &nbsp;2 30 78 </span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">32 33 34 &nbsp;3 76 19 71 39 40 41 </span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">42 43 &nbsp;6 45 46 68 48 17 67 64 </span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">52 63 54 62 56 14 13 59 80 26</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg'; font-weight: bold;">cykl 1</span><span style="font-family: 'MS Shell Dlg';">. z okresu &nbsp;od 7 do 4 lutego sortowane są liczby ze względu na częstość &nbsp;wystąpień sposób sortowania jest taki aby utworzyć listę liczb Gorących &nbsp; ( od najczęściej występującej do najrzadziej występującej):</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;">36 42 18 69 40 &nbsp;7 &nbsp;8 56 &nbsp;3 75 </span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;"> 3 &nbsp;3 &nbsp;3 &nbsp;3 &nbsp;2 &nbsp;2 &nbsp;2 &nbsp;2 &nbsp;2 &nbsp;2 </span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;">33 30 72 15 16 71 45 65 26 55</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;"> 2 &nbsp;2 &nbsp;2 &nbsp;2 &nbsp;2 &nbsp;2 &nbsp;2 &nbsp;2 &nbsp;2 &nbsp;2 </span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;">23 46 54 25 68 27 67 20 70 64</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;"> 2 &nbsp;2 &nbsp;2 &nbsp;1 &nbsp;1 &nbsp;1 &nbsp;1 &nbsp;1 &nbsp;1 &nbsp;1  </span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;">32 13 34 58 74 57 10 39 77 &nbsp;6 </span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;"> 1 &nbsp;1 &nbsp;1 &nbsp;1 &nbsp;1 &nbsp;1 &nbsp;1 &nbsp;1 &nbsp;1 &nbsp;1  </span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;"> 5 43 44 &nbsp;4 &nbsp;2 47 48 49 50 24 </span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;"> 1 &nbsp;1 &nbsp;1 &nbsp;1 &nbsp;1 &nbsp;1 &nbsp;1 &nbsp;1 &nbsp;1 &nbsp;1  </span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;">53 78 79 </span><span style="font-family: 'Courier New'; color: #0000ff;">51 41 38 37 59 60 61</span><span style="font-family: 'Courier New'; color: #ff0000;"> </span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;"> 1 &nbsp;1 &nbsp;1 </span><span style="font-family: 'Courier New'; color: #800000;"> </span><span style="font-family: 'Courier New'; color: #0000ff;">0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 </span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;">62 63 35 31 66 29 28 22 21 19 </span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;"> 0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 </span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;">17 73 14 12 76 11 &nbsp;9 52 80 &nbsp;1</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;"> 0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">poziom wybierania to 33% czyli 25 liczb ale 25 liczba ma ilość wystąpień 1 tak samo jak wszystkie liczby do pozycji 54 więc wybranych jest 53 liczby :</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">36 42 18 69 40 &nbsp;7 &nbsp;8 56 &nbsp;3 75 </span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">33 30 72 15 16 71 45 65 26 55 </span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">23 46 54 25 68 27 67 20 70 64 </span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">32 13 34 58 74 57 10 39 77 &nbsp;6  </span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 5 43 44 &nbsp;4 &nbsp;2 47 48 49 50 24 </span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">53 78 79 </span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">&nbsp;</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">55 15 49 18 36 23 27 79 25 &nbsp;2 </span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">30 78 32 33 34 &nbsp;3 71 39 40 42 </span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">43 &nbsp;6 45 46 68 48 67 64 54 56 </span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">13 26</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg'; font-weight: bold;">cykl 2. </span><span style="font-family: 'MS Shell Dlg';">z okresu &nbsp;od 3 lutego do 31 stycznia sortowane są liczby ze względu na częstość wystąpień, sposób sortowania jest taki </span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">aby utworzyć listę liczb Zimnych ( od najrzadziej występujących &nbsp;do najczęściej występujących)</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;">74 73 71 68 64 63 &nbsp;8 &nbsp;9 61 60 </span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;"> 0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 </span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;">58 13 54 15 52 51 18 45 43 37 </span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;"> 0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 </span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;">36 33 30 79 &nbsp;1 27 &nbsp;2 29 78 31  </span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;"> 0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;1 &nbsp;1 &nbsp;1 &nbsp;1 &nbsp;1 </span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;">&nbsp;</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;"> 1 &nbsp;1 &nbsp;1 &nbsp;1 &nbsp;1 &nbsp;1 &nbsp;1 &nbsp;1 &nbsp;1 &nbsp;1 </span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;">42 21 72 70 46 69 65 &nbsp;7 50 19  </span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;"> 1 &nbsp;1 &nbsp;1 &nbsp;1 &nbsp;1 &nbsp;1 &nbsp;1 &nbsp;1 &nbsp;1 &nbsp;1</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;">62 53 16 55 11 12 59 80 26</span><span style="font-family: 'Courier New'; color: #800000;"> </span><span style="font-family: 'Courier New'; color: #ff0000;">57  </span><span style="font-family: 'Courier New'; color: #800000;"> </span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;"> 1 &nbsp;1 &nbsp;1 &nbsp;1 &nbsp;1 &nbsp;1 &nbsp;1 &nbsp;1 &nbsp;1</span><span style="font-family: 'Courier New'; color: #800000;"> </span><span style="font-family: 'Courier New'; color: #ff0000;"> 2</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;">56 10 17 49 66 67 25 48 47 77 &nbsp; </span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;"> 2 &nbsp;2 &nbsp;2 &nbsp;2 &nbsp;2 &nbsp;2 &nbsp;2 &nbsp;2 &nbsp;2 &nbsp;2 </span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;">20 &nbsp;4 76 40 28 14 22 &nbsp;5 &nbsp;6 44</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;"> 2 &nbsp;2 &nbsp;2 &nbsp;2 &nbsp;2 &nbsp;2 &nbsp;3 &nbsp;3 &nbsp;3 &nbsp;3</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">poziom wybierania to 33% czyli 25 liczb ale 25 liczba ma ilość wystąpień 1 tak samo jak wszystkie liczby do pozycji 59 więc wybranych jest 59 liczb :</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">58 13 54 15 52 51 18 45 43 37 </span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">36 33 30 79 &nbsp;1 27 &nbsp;2 29 78 31 </span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">32 24 34 35 23 75 38 39 &nbsp;3 41 </span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">42 21 72 70 46 69 65 &nbsp;7 50 19 </span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">62 53 16 55 11 12 59 80 26</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">wspólne liczby z cykli 0,1 i 2 to 34 liczby :</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">75 74 70 65 &nbsp;7 &nbsp;8 58 10 55 15 </span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">49 18 36 23 27 79 &nbsp;2 30 78 32 </span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">33 34 &nbsp;3 71 39 42 43 45 46 68 </span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">64 54 13 26</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg'; font-weight: bold;">cykl 3. </span><span style="font-family: 'MS Shell Dlg';">z okresu &nbsp;od 30 do 27 stycznia sortowane są liczby ze względu na częstość &nbsp;wystąpień sposób sortowania jest taki aby &nbsp;utworzyć listę </span><span style="font-family: 'MS Shell Dlg'; color: #ff0000;">liczb gorących</span><span style="font-family: 'MS Shell Dlg';"> &nbsp;( od najczęściej występującej do najrzadziej występującej):</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;">38 59 &nbsp;5 77 48 43 40 &nbsp;3 10 39  </span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;"> 4 &nbsp;3 &nbsp;3 &nbsp;3 &nbsp;3 &nbsp;2 &nbsp;2 &nbsp;2 &nbsp;2 &nbsp;2  </span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;"> 2 37 29 27 16 23 22 46 58 21 </span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;"> 2 &nbsp;2 &nbsp;2 &nbsp;2 &nbsp;2 &nbsp;2 &nbsp;2 &nbsp;2 &nbsp;2 &nbsp;1 </span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;">&nbsp;</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;"> 1 &nbsp;1 &nbsp;1 &nbsp;1 &nbsp;1 &nbsp;1 &nbsp;1 &nbsp;1 &nbsp;1 &nbsp;1 </span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;">68 33 34 35 67 14 72 74 11 41 </span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;"> 1 &nbsp;1 &nbsp;1 &nbsp;1 &nbsp;1 &nbsp;1 &nbsp;1 &nbsp;1 &nbsp;1 &nbsp;1</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;">&nbsp;</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;">&nbsp;</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;">57 53 56 80 &nbsp;1</span><span style="font-family: 'Courier New'; color: #800000;"> </span><span style="font-family: 'Courier New'; color: #0000ff;">54 52 51 60 61</span><span style="font-family: 'Courier New'; color: #800000;"> </span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;"> 1 &nbsp;1 &nbsp;1 &nbsp;1 &nbsp;1</span><span style="font-family: 'Courier New'; color: #800000;"> </span><span style="font-family: 'Courier New'; color: #0000ff;"> 0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0</span><span style="font-family: 'Courier New'; color: #800000;"> </span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;">45 63 64 44 66 42 36 32 28 26 </span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;"> 0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 </span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;">25 73 13 75 76 12 &nbsp;9 79 &nbsp;7 55 &nbsp; &nbsp; &nbsp;  </span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;"> 0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp; </span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'MS Shell Dlg';"> &nbsp;  </span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">jak poprzednio 33% to 25 liczb ale wybierane są też wszystkie w prawo które mają jedno trafienie czyli 55 liczb:</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">38 59 &nbsp;5 77 48 43 40 &nbsp;3 10 39 </span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">19 18 24 71 70 17 69 15 30 31 </span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">68 33 34 35 67 14 72 74 11 41 </span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">65 &nbsp;8 62 78 &nbsp;6 47 &nbsp;4 49 50 20 </span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">57 53 56 80 &nbsp;1 54</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">liczby wspólne z wszystkich cykli to 22 liczby :</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">2 3 8 15 18 23 27 30 33 34 </span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">39 43 46 57 58 65 68 70 71 </span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">Ponieważ pierwszym cyklem analizowanym ( cykl 0 ) był okres Zimny z dużym prawdopodobieństwem można założyć że jeżeli trend okresowości się utrzyma liczby te znów mogą występować częściej w najbliższych czterech losowaniach (będą gorące). </span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">Aby zagęścić możliwość trafienia w szczyt trendu, można wygenerować prognozę z offsetem o dwa lub trzy losowania wstecz. Wówczas możemy sprawdzić czy trend się sprawdza z założoną okresowością i można zaatakować w trzecim lub czwartym dniu cyklu. Klasyczny przykład :</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">cykl &nbsp;4 losowań (10 liczb)-&gt; 14 19 26 33 35 44 68 70 72 76</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">&nbsp;</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;">03-01-24 -&gt;[ 5] 26 33 44 72 76</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;">03-01-25 -&gt;[ 3] 19 44 68</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;">03-01-26 -&gt;[ 3] 14 33 68</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;">03-01-27 -&gt;[ 7] 14 19 33 35 68 70 72</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;">03-01-28 -&gt;[ 0]</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;">03-01-29 -&gt;[ 0]</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;">03-01-30 -&gt;[ 0]</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;">03-01-31 -&gt;[ 0]</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;">03-02-01 -&gt;[ 4] 14 19 44 76</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;">03-02-02 -&gt;[ 4] 14 26 35 44</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;">03-02-03 -&gt;[ 4] 44 70 72 76</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;">03-02-04 -&gt;[ 5] 26 33 44 68 72</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;">03-02-05 -&gt;[ 1] 72</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;">03-02-06 -&gt;[ 2] 26 70</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;">03-02-07 -&gt;[ 1] 33</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;">03-02-08 -&gt;[ 1] 44 &nbsp;&lt;---- </span><span style="font-family: 'Courier New'; color: #800000;"> // strzałka pokazuje offset</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">03-02-09 -&gt;[ 4] 19 44 72 76</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">03-02-10 -&gt;[ 3] 14 44 68</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">03-02-11 -&gt;[ 3] 26 33 72 // w tym dniu generujemy z offsetem 3</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">03-02-12 -&gt;[ 6] 14 26 33 44 72 76 &nbsp;tutaj trafiamy e 6 liczb z 10 średni zysk ze stref to ok 400 zł.</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">Dla prognozy GZ-&gt;?G pierwszy cykl analizy wstecz jest zawsze Zimny-&gt; ? Prognozuje przyszły cykl Gorący</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">Dla prognozy ZG-&gt;?Z pierwszy cykl analizy wstecz jest zawsze Gorący-&gt; ? Prognozuje przyszły cykl Zimny</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">po co przewidywać cykl zimny, otóż jak wykazuje praktyka bardzo często jeżeli cykl nie sprawdza się pierwsze cykle okazują się przedłużonym cyklem Gorącym.</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">przykład :</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">cykl &nbsp;4 losowań (22 liczb)-&gt; &nbsp;7 14 21 25 26 31 34 41 42 44 47 49 50 55 57 62 66 67 69 70 75 76</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">-----------------------------------------------------------------------------------------------</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;">03-01-18 -&gt;[ 9] &nbsp;7 26 34 42 44 57 70 75 76</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;">03-01-19 -&gt;[ 3] 42 44 75</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;">03-01-20 -&gt;[ 4] 14 47 62 67</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;">03-01-21 -&gt;[ 1] 69</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;">03-01-22 -&gt;[ 4] 25 41 49 50</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;">03-01-23 -&gt;[ 7] &nbsp;7 25 31 42 66 70 75</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;">03-01-24 -&gt;[ 7] 26 41 42 44 47 57 76</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;">03-01-25 -&gt;[ 7] &nbsp;7 31 44 49 50 66 67</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;">03-01-26 -&gt;[ 6] 14 21 34 50 62 69</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;">03-01-27 -&gt;[ 3] 14 49 70</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;">03-01-28 -&gt;[ 4] 31 47 50 57</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;">03-01-29 -&gt;[ 3] 21 41 62</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;">03-01-30 -&gt;[ 3] 34 67 69</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;">03-01-31 -&gt;[ 8] &nbsp;7 25 34 41 49 55 66 75</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;">03-02-01 -&gt;[ 8] 14 21 44 47 49 66 67 76</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;">03-02-02 -&gt;[ 8] 14 25 26 31 42 44 47 57</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #ff0000;">03-02-03 -&gt;[ 8] 44 50 57 62 67 69 70 76 &nbsp;&lt;----</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;">03-02-04</span><span style="font-family: 'Courier New'; color: #800000;"> -&gt;[ 9] &nbsp;7 26 42 44 47 50 55 69 75 &nbsp; Przedłużony cykl Gorący</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;">03-02-05</span><span style="font-family: 'Courier New'; color: #800000;"> -&gt;[ 4] 34 42 49 69</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;">03-02-06</span><span style="font-family: 'Courier New'; color: #800000;"> -&gt;[ 5] 25 26 42 69 70</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #0000ff;">03-02-07</span><span style="font-family: 'Courier New'; color: #800000;"> -&gt;[ 5] &nbsp;7 55 57 67 75</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Sans Serif';"><a href="http://www.helpandmanual.com/order.html">jak wybierać prognozy</a></span><span style="font-family: 'MS Shell Dlg';"> na które warto zagrać</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+
+</div>
+</td></tr></table>
+</div>
+
+<!-- Placeholder for topic body end. -->
+</body>
+</html>

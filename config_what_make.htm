@@ -1,0 +1,359 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Jak to zrobic</title>
+   <meta name="keywords" content="Dostosuj gry,Nowa gra,Manager Gier,Baza danych "Games.DAT",Jak dostosować zestaw gier." />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+   <style type="text/css">
+   <!--
+   .inline-button {
+   width:auto;
+   font: bold 90%/1 Verdana, sans-serif;
+   margin: 0 0.2em; padding: 0.1em 0; _padding:0;
+   border: 1px solid black;
+   white-space:nowrap;
+   text-decoration: none;
+   vertical-align:middle;
+   background: #ccc;
+   color: black;
+   }
+.inline-button em {
+   cursor:hand;
+   font-style: normal;
+   margin:0; padding: 0.1em 0.5em;
+   background: white;
+   color: black;
+   }
+.inline-button span {
+   cursor:hand;
+   margin:0; padding: 0.1em 0.5em 0.1em 0.3em;
+   }
+.inline-button:hover {
+   background: #666;
+   color: white;
+   }
+.inline-button:hover em {
+   background: black;
+   color: white;
+   }
+.s1 {
+	background-color: #FFFFFF;
+	color: #008000;
+}
+.s2 {
+	background-color: #FF8000;
+	color: #000000;
+}
+.s5 {
+	background-color: #FFFFFF;
+	color: #008000;
+}
+.s6 {
+	background-color: #FFFFFF;
+	color: #FF0000;
+}
+.s7 {
+	background-color: #FFFFFF;
+	color: #FF0000;
+}
+.s8 {
+	background-color: #FFFFFF;
+	color: #FF0000;
+}
+.s9 {
+	background-color: #FFFFFF;
+	color: #008000;
+}
+.s10 {
+	background-color: #FFFFFF;
+	color: #800000;
+}
+.s3 {
+	background-color: #FFFFFF;
+	color: #000000;
+}
+.s4 {
+	background-color: #FFFF00;
+	color: #0000FF;
+}
+.s11 {
+	background-color: #00FF00;
+	color: #000000;   }
+/* Horizontal lists
+----------------------------------------*/
+ul.linklist {
+	display: block;
+	margin: 0;
+}
+
+ul.linklist li {
+	display: block;
+	list-style-type: none;
+	float: left;
+	width: auto;
+	margin-right: 5px;
+	font-size: 1.1em;
+	line-height: 2.2em;
+}
+
+ul.linklist {
+	float: right;
+	margin-right: 0;
+	margin-left: 5px;
+	text-align: right;
+}
+
+ul.navlinks {
+	padding-bottom: 1px;
+	margin-bottom: 1px;
+	border-bottom: 1px solid #FFFFFF;
+	font-weight: bold;
+}
+
+a.flag {color: #AAA; font-size:0.8em;text-decoration:none;}
+a.flag:hover {color:#FFF;text-decoration:underline;}
+a.en-flag {padding-left:21px; background: url(images/flag/en.png) top left no-repeat;}
+a.de-flag {padding-left:21px; background: url(images/flag/de.png) top left no-repeat;}
+a.ru-flag {padding-left:21px; background: url(images/flag/ru.png) top left no-repeat;} 
+a.cs-flag {padding-left:21px; background: url(images/flag/cz.png) top left no-repeat;}
+a.fr-flag {padding-left:21px; background: url(images/flag/fr.png) top left no-repeat;}
+a.es-flag {padding-left:21px; background: url(images/flag/es.png) top left no-repeat;}
+a.it-flag {padding-left:21px; background: url(images/flag/it.png) top left no-repeat;}
+
+-->   
+</style>
+
+<script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+
+<script type="text/javascript">
+function trim11 (str) {
+str = str.replace(/^\s+/, '');
+for (var i = str.length - 1; i >= 0; i--) {
+if (/\S/.test(str.charAt(i))) {
+str = str.substring(0, i + 1);
+break;
+}
+}
+return str;
+}
+
+function _highlight(inp_id,out_id) {
+elm=document.getElementById(out_id);
+var inptxt = trim11(document.getElementById(inp_id).value);
+var inp_arr = inptxt.split(/[ :,;-]+/);
+var html=elm.innerHTML;
+text=trim11(html.replace(/<[^>]+>/g,''));
+lines=text.split(/\r?\n/g);
+
+html="<pre>";
+for (var i in lines) {
+var tic=lines[i];
+var line_arr=tic.split(' ');
+
+var item='';
+for (var j in line_arr) {
+var num=line_arr[j];
+var hits=false;
+for (var k in inp_arr) {
+var hit=inp_arr[k];
+if (hit==num) { 
+hits=true;
+break;
+}
+}
+var pads=(j<(line_arr.length-1)) ? ' ':'';
+item+= hits ? '<span class="s2">'+num+'</span>'+pads : num+pads;
+}
+html+=item+'\r\n';
+}
+elm.innerHTML=html+'</pre>';
+}
+</script>
+      
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?config_what_make.htm"; }
+  else { parent.quicksync('a5.4.1'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFEF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#000000">
+  <tr valign="middle">
+    <td align="left">
+      <p style="text-indent: 0px; margin: 0px 0px 0px 0px;"><span style="font-size: 12pt; color: #ffffff;">Jak skonfigurować nową grę</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a class="inline-button" href="contents.htm"><em>LC</em><span>&lt;&lt;</span></a>&nbsp;
+     <!--<a href="contents.htm">Top</a>-->
+     <a class="inline-button" href="program_configure_method.htm"><em>LC</em><span>&lt;</span></a>&nbsp;
+     <!--<a href="program_configure_method.htm">Previous</a>&nbsp;-->
+          
+     <!---->
+     </span>
+    </td>
+  </tr>
+    
+  <tr><td colspan="2">
+  <script>
+  function switchlang(lang) {
+  $(".goog-te-sectional-gadget-link-text").html('');
+  $.getScript("//translate.google.com/translate_a/element.js?cb=googleSectionalElementInit&ug=section&hl="+lang);
+  }
+  function googleSectionalElementInit() {
+  new google.translate.SectionalElement({
+    sectionalNodeClassName: 'goog-trans-section',
+    controlNodeClassName: 'goog-trans-control',
+    background: '#99ff99'
+  }, 'google_sectional_element');
+  }
+  switchlang ('en');
+  </script>
+<div id="lang-menu">
+<ul class="linklist navlinks" style="font-size:12px";>
+<li class="icon_home"><a class="flag en-flag" href="javascript:void(0)" onclick="return switchlang('en');">English</a> &raquo;</li>
+<li class="icon_home"><a class="flag de-flag" href="javascript:void(0)" onclick="return switchlang('de');">Deutsch</a> &raquo;</li>
+<li class="icon_home"><a class="flag es-flag" href="javascript:void(0)" onclick="return switchlang('es');">Español</a> &raquo;</li>
+<li class="icon_home"><a class="flag fr-flag" href="javascript:void(0)" onclick="return switchlang('fr');">Français</a> &raquo;</li>
+<li class="icon_home"><a class="flag it-flag" href="javascript:void(0)" onclick="return switchlang('it');">Italiano</a> &raquo;</li>
+<li class="icon_home"><a class="flag ru-flag" href="javascript:void(0)" onclick="return switchlang('ru');">Rусский</a> &raquo;</li>
+</ul>
+</div>
+  </td></tr> 
+    
+</table>
+
+
+<!-- Placeholder for topic body begin. -->
+
+<div id="topic_body" class="goog-trans-section" lang="pl">
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<div class="goog-trans-control">
+<a class="goog-te-gadget-link" href="javascript:void(0)"><span class="goog-te-sectional-gadget-link-text"></span></a>
+</div>
+<div class="content">
+<p>Służy do tego opcja menu głównego MANAGER GIER.</p>
+<p>Dane o grze przechowywane są w bazie danych o nazwie GAMES.DAT. Do obsługi baz danych służy pomocniczy program narzędziowy BASEDRIVER.EXE. Konfigurację programu można przeprowadzić albo z programu poprzez wybranie opcji "Menadżer Gier" z menu głównego lub bezpośrednio ingerując w zawartość baz systemowych za pomocą programu Basedriver.exe. Zestaw gier obsługiwnych aktualnie przez program przechowuje się w bazie danych o nazwie MAINBASE.DAT. Budowa bazy jest prosta i składa się z dwóch kolumn. Pierwsza to kolejny numer gry programu (gra 1,2,3..n) , druga to identyfikator gry z bazy danych GAMES.DAT.</p>
+<p>&nbsp;</p>
+<p>Przykład :</p>
+<p>&nbsp;</p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">1 &nbsp;i &nbsp;1 oznacza że pierwszą grą obsługiwaną będzie gra o numerze 1 czyli Multilotek.</span></p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">2 &nbsp;i &nbsp;2 oznacza że drugą grą będzie DużyLotek .....</span></p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">3 &nbsp;i &nbsp;7 oznacza że trzecią grą będzie National Lottery Wielka Brytania.</span></p>
+<p>&nbsp;</p>
+<p>Zestaw gier predefiniowanych :</p>
+<hr noshade size=1 style="color : #999999"><p>&nbsp;</p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2"> 1.Multilotek &nbsp; &nbsp; &nbsp; &nbsp; Polska</span></p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2"> 2.Duży Lotek &nbsp; &nbsp; &nbsp; &nbsp; Polska</span></p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2"> 3.Expres Lotek &nbsp; &nbsp; &nbsp; Polska</span></p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2"> 4.TS Numerek &nbsp; &nbsp; &nbsp; &nbsp; Polska</span></p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2"> 5.Pick 10 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;New York USA</span></p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span style="width:33px">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_Code2"> New York USA</span></p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2"> 7.National Lottery &nbsp; GBR</span></p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2"> 8.Take Five &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2"> 9.BIG GAME &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; USA</span></p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">10.POWERBALL &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;USA</span></p>
+<p>&nbsp;</p>
+<p>Dane o poszczególnych grach przechowywane są w bazie o nazwie GAMES.DAT</p>
+<p>&nbsp;</p>
+<p>Pola tej bazy oznaczają :</p>
+<hr noshade size=1 style="color : #999999"><p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">Record_ID &nbsp; &nbsp; &nbsp; &nbsp;- Pole autoinkrementowane i nie należy go zmieniać.</span></p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">ID &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - Numer gry identyfikator ( dowolna lub kolejna liczba).</span></p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">Nbrs_All &nbsp; &nbsp; &nbsp; &nbsp; - Ile liczb ma gra (np. KENO 80 ).</span></p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">Nbrs_Drawn &nbsp; &nbsp; &nbsp; - Ile liczb jest losowanych (np. KENO 20).</span></p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">&nbsp;</span></p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">TicketPickMax &nbsp; &nbsp;- Ile maksymalnie liczb można skreslić na kuponie.</span></p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">TicketPlaysMin &nbsp; - Ile minimum gier można zawrzeć na 1 kuponie (np 1)</span></p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">TicketPlaysMax &nbsp; - Ile maksimum gier można zawrzeć na 1 kuponie (np 10) &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">Game_Name &nbsp; &nbsp; &nbsp; &nbsp;- Nazwa gry (np. PICK10 )</span></p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">Country &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;- Kraj (Polska)</span></p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">State_city &nbsp; &nbsp; &nbsp; - Stan,Region,Województwo itp.</span></p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">Adress &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - Adres firmy prowadzącej grę.</span></p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">Ticket_Rows &nbsp; &nbsp; &nbsp;- Ile wierszy ma jeden zakład.</span></p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">Ticket_Cols &nbsp; &nbsp; &nbsp;- Ile kolumn ma jeden zakład.</span></p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">Stake_Game &nbsp; &nbsp; &nbsp; - Czy jest to gra ze stawką ( MULTI - tak , LOTTO Nie)</span></p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">Stake_min &nbsp; &nbsp; &nbsp; &nbsp;- Minimalna stawka gry</span></p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">Stake_max &nbsp; &nbsp; &nbsp; &nbsp;- Maksymalna stawka gry</span></p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">Charge_of_bet &nbsp; &nbsp;- Opłata podstawowa za zakład.</span></p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">FirstDateLos &nbsp; &nbsp; - Data uznawanego za pierwsze losowanie w bazie danych.</span></p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">FirstIDLos &nbsp; &nbsp; &nbsp; - jak wyżej tylko dotyczy numeru losowania.</span></p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">DatabaseName &nbsp; &nbsp; - Nazwa pliku z bazą losowań &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">Sun &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;- Czy losowanie jest w Niedzielę &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">Mon &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;- Czy losowanie jest w Poniedziałek</span></p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">Tue &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;- Czy losowanie jest w Wtorek</span></p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">Wed &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;- Czy losowanie jest w Środę</span></p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">Thu &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;- Czy losowanie jest w Czwartek</span></p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">Fri &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;- Czy losowanie jest w Piątek</span></p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">Sat &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;- Czy losowanie jest w Sobotę</span></p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">FileNamePrefix &nbsp; - Przedrostek nazwy pliku zakładów 2 litery ( np. LT)</span></p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">FileNameExt &nbsp; &nbsp; &nbsp;- Rozszerzenie nazwy pliku zakładów (np. TIC lub DAT lub TXT)</span></p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">MoneySymbol &nbsp; &nbsp; &nbsp;- Symbol waluty ( np. zł,USD,EUR,$ ... )</span></p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">BonusGame &nbsp; &nbsp; &nbsp; &nbsp;- Czy jest to gra z liczbą dodatkową</span></p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">LargeIcon &nbsp; &nbsp; &nbsp; &nbsp;- Zawiera dane obrazka ikony przycisków gry.</span></p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Obrazek ikony można wprowadzić w Menadżerze </span></p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; gry już w programie własciwym.</span></p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">PrintModul &nbsp; &nbsp; &nbsp; - Czy obecny jest moduł dll drukowania kuponów</span></p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">PrintModulName &nbsp; - Nazwa modułu dll drukowania kuponów </span></p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(Dla zestawu gier zawartych w bazie danych = TAK ).</span></p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">UpdateModul &nbsp; &nbsp; &nbsp;- Czy obecny jest moduł dll automatycznego uzupełniania danych losowań. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;( Dla zestawu gier zawartych w bazie danych = TAK ).</span></p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">UpdateModulName &nbsp;- Nazwa modułu dll automatycznego uzupełniania danych &nbsp;losowań. </span></p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;( dla Polskich gier = PrevLib.dll ).</span></p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">Range2Game &nbsp; &nbsp; &nbsp; - Czy jest to gra z dwoma zestawami liczb ( Numerek = TAK)</span></p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">Range2Nbrs &nbsp; &nbsp; &nbsp; - Ile liczb jest w zestawie drugim (Numerek = 35)</span></p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">Range2Drawn &nbsp; &nbsp; &nbsp;- Ile liczb jest losowane z zestawu drugiego. (Numerek=1)</span></p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">GameUrl &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;- Adres serwisu WWW gry</span></p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">UpdateUrl &nbsp; &nbsp; &nbsp; &nbsp;- Adres i polecenie dla automatycznego uzupełniania bazy losowań.</span></p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">RefererUrl &nbsp; &nbsp; &nbsp; - Adres URL wywołujący (referer URL)/obecnie nieużyany/</span></p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">&nbsp;</span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Dla prawidłowego działania programu przy dodaniu nowej gry wymagane jest aby wypełnić tablicę bazy danych wygrane o nazwie JACKPOT.DAT. Dla gier ze stawką i możliwoscią typowania różnej ilości liczb w zakładzie (Multilotek,KENO) należy wypełnić tablicę dla każdej ilości liczb typowanych w zakładzie. Kolumny tej bazy to :</p>
+<p>&nbsp;</p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span style="width:33px">&nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_Code">Przykład: KENO 10 typowanych liczb</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">---------------------------------------------</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">ID &nbsp; &nbsp; - Pole autonkrementowane ( nie należy zmieniać) &nbsp; = &nbsp; &nbsp; 1</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">GAMEID - Numer gry z bazy danych GAMES.DAT &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; = &nbsp; &nbsp; 1</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">PICK &nbsp; - Ilość typowanych liczb w zakładzie &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;= &nbsp; &nbsp;10</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">HIT0 &nbsp; - wielokrotność stawki przy trafieniu 0 liczb. &nbsp; &nbsp;= &nbsp; &nbsp;-1</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">HIT2 &nbsp; - wielokrotność stawki przy trafieniu 0 liczb. &nbsp; &nbsp;= &nbsp; &nbsp;-1</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">HIT3 &nbsp; - wielokrotność stawki przy trafieniu 0 liczb. &nbsp; &nbsp;= &nbsp; &nbsp;-1</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">HIT4 &nbsp; - wielokrotność stawki przy trafieniu 0 liczb. &nbsp; &nbsp;= &nbsp; &nbsp; 1</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">HIT5 &nbsp; - wielokrotność stawki przy trafieniu 0 liczb. &nbsp; &nbsp;= &nbsp; &nbsp; 2</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">HIT6 &nbsp; - wielokrotność stawki przy trafieniu 0 liczb. &nbsp; &nbsp;= &nbsp; &nbsp; 6</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">HIT8 &nbsp; - wielokrotność stawki przy trafieniu 0 liczb. &nbsp; &nbsp;= &nbsp; 260</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">HIT9 &nbsp; - wielokrotność stawki przy trafieniu 0 liczb. &nbsp; &nbsp;= &nbsp;5000</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">HIT10 &nbsp;- wielokrotność stawki przy trafieniu 0 liczb. &nbsp; &nbsp;= 10000</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">BONUSHIT - jeżeli gra jest grą z liczbą dodatkową wpisuje się tu szereg znaków</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">oznaczających przy ilu trafieniach z zestawu podstawowego liczb liczba dodatkowa </span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">uwzględniana jest jako nagroda. </span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">np dla gry ( PowerBall=012345, dla Gry National Lottery = 5 ).</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Jeżeli nie jest to gra z określoną stawką jako wartości w odpowiednich polach HITx wpisać należy &nbsp;liczbę dodatnią o wartości ilości trafień. Np dla gry Duży Lotek wypełniamy w polu HIT3 - 3 w HIT4 - 4 w HIT5 - 5 i w HIT6 - 6.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">Uwaga. Po wprowadzeniu danych nowej gry &nbsp;a przed uruchomieniem programu należy sprawdzić czy baza danych losowań zawiera choć jedno losowanie. Baza nie może być pusta. Przed uruchomieniem programu należy do niej wprowadzić przynajmniej jedno losowanie, choćby teoretyczne. Program nie uruchomi się również jeżeli nie wprowadzisz obrazka ikony, ikona to bitmapa windows o wymiarach 32x32 i max 8 bitowej (256) palecie kolorów. Ikone taka stworzyć można w programie Paint. </span></p>
+
+</div>
+</td></tr></table>
+</div>
+
+<!-- Placeholder for topic body end. -->
+</body>
+</html>

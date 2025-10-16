@@ -1,0 +1,278 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Filtry opis</title>
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+   <style type="text/css">
+   <!--
+   .inline-button {
+   width:auto;
+   font: bold 90%/1 Verdana, sans-serif;
+   margin: 0 0.2em; padding: 0.1em 0; _padding:0;
+   border: 1px solid black;
+   white-space:nowrap;
+   text-decoration: none;
+   vertical-align:middle;
+   background: #ccc;
+   color: black;
+   }
+.inline-button em {
+   cursor:hand;
+   font-style: normal;
+   margin:0; padding: 0.1em 0.5em;
+   background: white;
+   color: black;
+   }
+.inline-button span {
+   cursor:hand;
+   margin:0; padding: 0.1em 0.5em 0.1em 0.3em;
+   }
+.inline-button:hover {
+   background: #666;
+   color: white;
+   }
+.inline-button:hover em {
+   background: black;
+   color: white;
+   }
+.s1 {
+	background-color: #FFFFFF;
+	color: #008000;
+}
+.s2 {
+	background-color: #FF8000;
+	color: #000000;
+}
+.s5 {
+	background-color: #FFFFFF;
+	color: #008000;
+}
+.s6 {
+	background-color: #FFFFFF;
+	color: #FF0000;
+}
+.s7 {
+	background-color: #FFFFFF;
+	color: #FF0000;
+}
+.s8 {
+	background-color: #FFFFFF;
+	color: #FF0000;
+}
+.s9 {
+	background-color: #FFFFFF;
+	color: #008000;
+}
+.s10 {
+	background-color: #FFFFFF;
+	color: #800000;
+}
+.s3 {
+	background-color: #FFFFFF;
+	color: #000000;
+}
+.s4 {
+	background-color: #FFFF00;
+	color: #0000FF;
+}
+.s11 {
+	background-color: #00FF00;
+	color: #000000;   }
+/* Horizontal lists
+----------------------------------------*/
+ul.linklist {
+	display: block;
+	margin: 0;
+}
+
+ul.linklist li {
+	display: block;
+	list-style-type: none;
+	float: left;
+	width: auto;
+	margin-right: 5px;
+	font-size: 1.1em;
+	line-height: 2.2em;
+}
+
+ul.linklist {
+	float: right;
+	margin-right: 0;
+	margin-left: 5px;
+	text-align: right;
+}
+
+ul.navlinks {
+	padding-bottom: 1px;
+	margin-bottom: 1px;
+	border-bottom: 1px solid #FFFFFF;
+	font-weight: bold;
+}
+
+a.flag {color: #AAA; font-size:0.8em;text-decoration:none;}
+a.flag:hover {color:#FFF;text-decoration:underline;}
+a.en-flag {padding-left:21px; background: url(images/flag/en.png) top left no-repeat;}
+a.de-flag {padding-left:21px; background: url(images/flag/de.png) top left no-repeat;}
+a.ru-flag {padding-left:21px; background: url(images/flag/ru.png) top left no-repeat;} 
+a.cs-flag {padding-left:21px; background: url(images/flag/cz.png) top left no-repeat;}
+a.fr-flag {padding-left:21px; background: url(images/flag/fr.png) top left no-repeat;}
+a.es-flag {padding-left:21px; background: url(images/flag/es.png) top left no-repeat;}
+a.it-flag {padding-left:21px; background: url(images/flag/it.png) top left no-repeat;}
+
+-->   
+</style>
+
+<script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+
+<script type="text/javascript">
+function trim11 (str) {
+str = str.replace(/^\s+/, '');
+for (var i = str.length - 1; i >= 0; i--) {
+if (/\S/.test(str.charAt(i))) {
+str = str.substring(0, i + 1);
+break;
+}
+}
+return str;
+}
+
+function _highlight(inp_id,out_id) {
+elm=document.getElementById(out_id);
+var inptxt = trim11(document.getElementById(inp_id).value);
+var inp_arr = inptxt.split(/[ :,;-]+/);
+var html=elm.innerHTML;
+text=trim11(html.replace(/<[^>]+>/g,''));
+lines=text.split(/\r?\n/g);
+
+html="<pre>";
+for (var i in lines) {
+var tic=lines[i];
+var line_arr=tic.split(' ');
+
+var item='';
+for (var j in line_arr) {
+var num=line_arr[j];
+var hits=false;
+for (var k in inp_arr) {
+var hit=inp_arr[k];
+if (hit==num) { 
+hits=true;
+break;
+}
+}
+var pads=(j<(line_arr.length-1)) ? ' ':'';
+item+= hits ? '<span class="s2">'+num+'</span>'+pads : num+pads;
+}
+html+=item+'\r\n';
+}
+elm.innerHTML=html+'</pre>';
+}
+</script>
+      
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?menu_filters_descr.htm"; }
+  else { parent.quicksync('a3.2.1.3.1'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFEF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#000000">
+  <tr valign="middle">
+    <td align="left">
+      <p style="text-indent: 0px; margin: 0px 0px 0px 0px;"><span style="font-size: 12pt; color: #ffffff;">Filtry opis</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a class="inline-button" href="contents.htm"><em>LC</em><span>&lt;&lt;</span></a>&nbsp;
+     <!--<a href="contents.htm">Top</a>-->
+     <a class="inline-button" href="menu_filters.htm"><em>LC</em><span>&lt;</span></a>&nbsp;
+     <!--<a href="menu_filters.htm">Previous</a>&nbsp;-->
+     <a class="inline-button" href="menu_filters_sum.htm"><em>LC</em><span>&gt;</span></a>&nbsp;     
+     <!--<a href="menu_filters_sum.htm">Next</a>-->
+     </span>
+    </td>
+  </tr>
+    
+  <tr><td colspan="2">
+  <script>
+  function switchlang(lang) {
+  $(".goog-te-sectional-gadget-link-text").html('');
+  $.getScript("//translate.google.com/translate_a/element.js?cb=googleSectionalElementInit&ug=section&hl="+lang);
+  }
+  function googleSectionalElementInit() {
+  new google.translate.SectionalElement({
+    sectionalNodeClassName: 'goog-trans-section',
+    controlNodeClassName: 'goog-trans-control',
+    background: '#99ff99'
+  }, 'google_sectional_element');
+  }
+  switchlang ('en');
+  </script>
+<div id="lang-menu">
+<ul class="linklist navlinks" style="font-size:12px";>
+<li class="icon_home"><a class="flag en-flag" href="javascript:void(0)" onclick="return switchlang('en');">English</a> &raquo;</li>
+<li class="icon_home"><a class="flag de-flag" href="javascript:void(0)" onclick="return switchlang('de');">Deutsch</a> &raquo;</li>
+<li class="icon_home"><a class="flag es-flag" href="javascript:void(0)" onclick="return switchlang('es');">Español</a> &raquo;</li>
+<li class="icon_home"><a class="flag fr-flag" href="javascript:void(0)" onclick="return switchlang('fr');">Français</a> &raquo;</li>
+<li class="icon_home"><a class="flag it-flag" href="javascript:void(0)" onclick="return switchlang('it');">Italiano</a> &raquo;</li>
+<li class="icon_home"><a class="flag ru-flag" href="javascript:void(0)" onclick="return switchlang('ru');">Rусский</a> &raquo;</li>
+</ul>
+</div>
+  </td></tr> 
+    
+</table>
+
+
+<!-- Placeholder for topic body begin. -->
+
+<div id="topic_body" class="goog-trans-section" lang="pl">
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<div class="goog-trans-control">
+<a class="goog-te-gadget-link" href="javascript:void(0)"><span class="goog-te-sectional-gadget-link-text"></span></a>
+</div>
+<div class="content">
+<p>Z pomocą filtrów można odfiltrować zakłady które mają niewielką szansę dać wygraną. Filtry umożliwiają z Twoich typów czy systemów pełnych otrzymać zestaw zakładów gwarantujący wygraną przy zmniejszonych kosztach. Filtrację można stosować łącznie lub oddzielnie dla każdego rodzaju filtracji. </p>
+<p>Filtry umożliwiają odrzucenie zakładów które dają nikłą szansę na osiągnięcie sukcesu a tym samym znacznie <a href="menu_filters_what_use.htm">zwiększyć szanse grającego na wygraną</a>. &nbsp;Filtry sumy, parzystości i wystąpień kolejnych liczb spełniają się w grach lotto w których ilość liczb wylosowanych jest równa ilości liczb w zakładzie i mają marginalne znaczenie w grach typu Multilotek(Keno). Filtry te są zespolone i oddzielnie można ich użyć tylko po generacji kiedy wygenerowane zakłady znajdują się w polu tekstowym "zakłady". Filtracja w czasie generacji ( w czasie rzeczywistym) może być przeprowadzana tylko z całym zestawem filtrów. Dlatego jeżeli chcemy użyć tylko jednego filtra z zestawu pozostałe należy ustawić na zakres pełny.Filtry te noszą skróconą nazwę filtrów SPS. W skład zestawu SPS wchodzą &nbsp;: </p>
+<p>1. <a href="menu_filters_sum.htm">Filtr sumy</a></p>
+<p>2. <a href="menu_filters_parity.htm">Filtr stosunku liczb parzystych do nieparzystych</a></p>
+<p>3. <a href="menu_filters_string.htm">Filtr wystąpień szeregu kolejnych liczb</a></p>
+<p>&nbsp;</p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">Uwaga: W grze multilotek filtry sumy, parzystości i szeregu kolejnych cyfr, mają marginalne znaczenie z uwagi na to że ilość liczb losowanych nie odpowiada ilości liczb w zakładzie. Filtr trafień można stosować bez ograniczeń.</span></p>
+<p>&nbsp;</p>
+<p>Drugi filtr to <a href="menu_filters_hits.htm">filtr trafień w poprzednich losowaniach</a> z pomocą tego filtra można wyciąć zakłady które trafiły w poprzednich losowaniach określoną wybieraną z opcji ilość trafień. Filtr można odwrócić tzn wyciąć zakłady które nie trafiły w historii losowań określonej ilości trafień. Sprawdzanie można ustawić albo na zakres wybranych dat lub dla wszystkich losowań dostępnych w bazie losowań. Filtr trafień nosi skróconą nazwę filtra HF ( Hit Filter). </p>
+<p>&nbsp;</p>
+<p>Trzecim filtrem jest filtr zakresów. Nosi skróconą nazwę filtra RF (Range Filter). Pozwala przepuścić lub zatrzymać tylko te zakłady które zawierają liczby z określonego przez użytkownika zakresu liczb. </p>
+<p>&nbsp;</p>
+<p>Czwarty filtr to filtr średniej w kolumnie. Używa się go dla zapewnienia w generowanych zakładach równomiernego rozkładu liczb. Rozkład liczb wyliczany jest na podstawie losowań poprzednich z odchylenia standardowego i dewiacji równej jedności. Dla każdej kolumny liczb przydzielony jest dopuszczalny zakres liczb które mogą się tam znaleźć. Filtr dopuszcza określoną przez użytkownika ilość kolumn nie mieszczących się w wyliczonych kryteriach zakresów. Ponad 80 procent losowań miesci się w zakresie wyliczonym z dopuszczeniem jednego błędu. Filtr zapobiega pojawianiu się na wyjściu generowanych zakładów zakładów o nierównomiernym rozkładzie liczb (np. dla Lotto 6/49 - zakładów np 38,41,45,47,48,49, lub zakładów np 1,4,6,8,9,12 ). Filtr nosi skróconą nazwę filtra AVG (Average Filter). </p>
+<p>&nbsp;</p>
+<p>Piąty filtr to filtr liczb twardych wybieranych z listy. Filtr ten podczas generacji sprawdza czy w generowanych zakładach znajduje się określoną ilość liczb zawartych w polu edycji liczb twardych. Filtr działa w trzech podstawowych rodzajach pracy. Przepuść nie więcej, przepuść nie mniej lub przepuść dokładnie. Filtr ten umożliwia wybranie podczas generacji tylko tych zakładów które, maja określoną warunkami pracy ilość liczb z listy liczb twardych. Filtr ten nosi skróconą nazwę filtra HF (Hard Filter). </p>
+<p>&nbsp;</p>
+<p>Szóstym i najbardziej uniwersalnym filtrem jest wielokrotny filtr liczb twardych i nosi skróconą nazwę MHD (Multi HarD Filter). Działanie jego jest analogiczne jak poprzedniego filtra lecz korzysta on z bazy filtrów, którą użytkownik może w dowolny sposób edytować oraz można takich filtrów użyć jednocześnie dowolną ilość w dowolny zaprogramowany przez użytkownika sposób. Filtry MHD konfiguruje się bardzo łatwo, sprawnie i szybko. Filtry MHD to niespotykane uniwersalne narzędzie które umożliwi grę i generację zakładów na dowolny sposób.</p>
+<p>&nbsp;</p>
+<p>Wszystkie filtry można stosować w czasie rzeczywistym podczas generacji kombinacji. Filtry w czasie rzeczywistym działają dla kombinacji wykładniczych i liniowych wszystkich rodzajów, dla <a href="comb_another.htm">kombinacji na jej numer</a> &nbsp;dla kombinacji odfiltrowanego systemu pełnego z liczb pola edycji oraz dla kombinacji systemów strefowych. &nbsp;Filtracji dla innych rodzai kombinacji można dokonać również dla każdej kombinacji zakładów wpisanych do pola tekstowego zakłady( linie z zakładami które nie spełniają wymagań filtra będą traktowane jako komentarze na początku takich linii wstawiony będzie znak komentarza znak &nbsp;ukośnika ) lub w zależności od ustawienia opcji zakłady mogą być wycinane. &nbsp;Filtracji po generacji można dokonać dla dwu filtrów Filtra SPS i Filtra HF. </p>
+<p>&nbsp;</p>
+<p>Jeżeli użytkownik żąda trudne zadanie, wąski filtr lub wybór który uniemożliwia skuteczne filtrowanie, założone są dla wszystkich filtrów limity bezskutecznego poszukiwania rozwiązania. Limity te ustawia użytkownik i w przypadku ich przekroczenia &nbsp;pojawia się odpowiedni komunikat i akcja generacji zakładów zostaje przerwana a dotychczas wygenerowane zakłady zostają wyświetlone. Po takim komunikacie należy poprawić parametry filtracji stosownie do komunikatu i powtórzyć operację. Operacji zwiększania limitów można dokonać również podczas generacji wówczas jeżeli wskaźnik limitów zbliża się do końca i stwierdzimy że przerwanie akcji generacji jest nieuniknione.</p>
+<p>&nbsp;</p>
+<p>Każdy filtr można oddzielnie włączyć a wyłączyć można wszystkie jednym przyciskiem opcji menu a wszystkie opcje filtrów dostępne są z jednego rozwijalnego menu.</p>
+<p>&nbsp;</p>
+
+</div>
+</td></tr></table>
+</div>
+
+<!-- Placeholder for topic body end. -->
+</body>
+</html>

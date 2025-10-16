@@ -1,0 +1,383 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Funkcje wbudowane</title>
+   <meta name="keywords" content="delphi_date,delphi_extract_file_dir,delphi_extract_file_drive,delphi_extract_file_name,delphi_extract_file_ext,delphi_show_message,delphi_get_system_directory,delphi_input_box,php_info_print_table_row,delphi_exec_sql,delphi_exec_sql_num,delphi_get_draw_arr,delphi_confirm_box,delphi_get_hot_arr,delphi_get_hot_arr_assoc,delphi_get_period_arr,delphi_get_period_arr_assoc,delphi_set_progress_bar,delphi_str_memoa,delphi_str_memob,delphi_clear_memoa,delphi_clear_memob,delphi_addline_memoa,delphi_addline_memob" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+   <style type="text/css">
+   <!--
+   .inline-button {
+   width:auto;
+   font: bold 90%/1 Verdana, sans-serif;
+   margin: 0 0.2em; padding: 0.1em 0; _padding:0;
+   border: 1px solid black;
+   white-space:nowrap;
+   text-decoration: none;
+   vertical-align:middle;
+   background: #ccc;
+   color: black;
+   }
+.inline-button em {
+   cursor:hand;
+   font-style: normal;
+   margin:0; padding: 0.1em 0.5em;
+   background: white;
+   color: black;
+   }
+.inline-button span {
+   cursor:hand;
+   margin:0; padding: 0.1em 0.5em 0.1em 0.3em;
+   }
+.inline-button:hover {
+   background: #666;
+   color: white;
+   }
+.inline-button:hover em {
+   background: black;
+   color: white;
+   }
+.s1 {
+	background-color: #FFFFFF;
+	color: #008000;
+}
+.s2 {
+	background-color: #FF8000;
+	color: #000000;
+}
+.s5 {
+	background-color: #FFFFFF;
+	color: #008000;
+}
+.s6 {
+	background-color: #FFFFFF;
+	color: #FF0000;
+}
+.s7 {
+	background-color: #FFFFFF;
+	color: #FF0000;
+}
+.s8 {
+	background-color: #FFFFFF;
+	color: #FF0000;
+}
+.s9 {
+	background-color: #FFFFFF;
+	color: #008000;
+}
+.s10 {
+	background-color: #FFFFFF;
+	color: #800000;
+}
+.s3 {
+	background-color: #FFFFFF;
+	color: #000000;
+}
+.s4 {
+	background-color: #FFFF00;
+	color: #0000FF;
+}
+.s11 {
+	background-color: #00FF00;
+	color: #000000;   }
+/* Horizontal lists
+----------------------------------------*/
+ul.linklist {
+	display: block;
+	margin: 0;
+}
+
+ul.linklist li {
+	display: block;
+	list-style-type: none;
+	float: left;
+	width: auto;
+	margin-right: 5px;
+	font-size: 1.1em;
+	line-height: 2.2em;
+}
+
+ul.linklist {
+	float: right;
+	margin-right: 0;
+	margin-left: 5px;
+	text-align: right;
+}
+
+ul.navlinks {
+	padding-bottom: 1px;
+	margin-bottom: 1px;
+	border-bottom: 1px solid #FFFFFF;
+	font-weight: bold;
+}
+
+a.flag {color: #AAA; font-size:0.8em;text-decoration:none;}
+a.flag:hover {color:#FFF;text-decoration:underline;}
+a.en-flag {padding-left:21px; background: url(images/flag/en.png) top left no-repeat;}
+a.de-flag {padding-left:21px; background: url(images/flag/de.png) top left no-repeat;}
+a.ru-flag {padding-left:21px; background: url(images/flag/ru.png) top left no-repeat;} 
+a.cs-flag {padding-left:21px; background: url(images/flag/cz.png) top left no-repeat;}
+a.fr-flag {padding-left:21px; background: url(images/flag/fr.png) top left no-repeat;}
+a.es-flag {padding-left:21px; background: url(images/flag/es.png) top left no-repeat;}
+a.it-flag {padding-left:21px; background: url(images/flag/it.png) top left no-repeat;}
+
+-->   
+</style>
+
+<script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+
+<script type="text/javascript">
+function trim11 (str) {
+str = str.replace(/^\s+/, '');
+for (var i = str.length - 1; i >= 0; i--) {
+if (/\S/.test(str.charAt(i))) {
+str = str.substring(0, i + 1);
+break;
+}
+}
+return str;
+}
+
+function _highlight(inp_id,out_id) {
+elm=document.getElementById(out_id);
+var inptxt = trim11(document.getElementById(inp_id).value);
+var inp_arr = inptxt.split(/[ :,;-]+/);
+var html=elm.innerHTML;
+text=trim11(html.replace(/<[^>]+>/g,''));
+lines=text.split(/\r?\n/g);
+
+html="<pre>";
+for (var i in lines) {
+var tic=lines[i];
+var line_arr=tic.split(' ');
+
+var item='';
+for (var j in line_arr) {
+var num=line_arr[j];
+var hits=false;
+for (var k in inp_arr) {
+var hit=inp_arr[k];
+if (hit==num) { 
+hits=true;
+break;
+}
+}
+var pads=(j<(line_arr.length-1)) ? ' ':'';
+item+= hits ? '<span class="s2">'+num+'</span>'+pads : num+pads;
+}
+html+=item+'\r\n';
+}
+elm.innerHTML=html+'</pre>';
+}
+</script>
+      
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?funkcje_wbudowane.htm"; }
+  else { parent.quicksync('a3.2.1.8.5.2'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFEF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#000000">
+  <tr valign="middle">
+    <td align="left">
+      <p style="text-indent: 0px; margin: 0px 0px 0px 0px;"><span style="font-size: 12pt; color: #ffffff;">Funkcje wbudowane</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a class="inline-button" href="contents.htm"><em>LC</em><span>&lt;&lt;</span></a>&nbsp;
+     <!--<a href="contents.htm">Top</a>-->
+     <a class="inline-button" href="zmienne_php.htm"><em>LC</em><span>&lt;</span></a>&nbsp;
+     <!--<a href="zmienne_php.htm">Previous</a>&nbsp;-->
+     <a class="inline-button" href="funkcje_makr.htm"><em>LC</em><span>&gt;</span></a>&nbsp;     
+     <!--<a href="funkcje_makr.htm">Next</a>-->
+     </span>
+    </td>
+  </tr>
+    
+  <tr><td colspan="2">
+  <script>
+  function switchlang(lang) {
+  $(".goog-te-sectional-gadget-link-text").html('');
+  $.getScript("//translate.google.com/translate_a/element.js?cb=googleSectionalElementInit&ug=section&hl="+lang);
+  }
+  function googleSectionalElementInit() {
+  new google.translate.SectionalElement({
+    sectionalNodeClassName: 'goog-trans-section',
+    controlNodeClassName: 'goog-trans-control',
+    background: '#99ff99'
+  }, 'google_sectional_element');
+  }
+  switchlang ('en');
+  </script>
+<div id="lang-menu">
+<ul class="linklist navlinks" style="font-size:12px";>
+<li class="icon_home"><a class="flag en-flag" href="javascript:void(0)" onclick="return switchlang('en');">English</a> &raquo;</li>
+<li class="icon_home"><a class="flag de-flag" href="javascript:void(0)" onclick="return switchlang('de');">Deutsch</a> &raquo;</li>
+<li class="icon_home"><a class="flag es-flag" href="javascript:void(0)" onclick="return switchlang('es');">Español</a> &raquo;</li>
+<li class="icon_home"><a class="flag fr-flag" href="javascript:void(0)" onclick="return switchlang('fr');">Français</a> &raquo;</li>
+<li class="icon_home"><a class="flag it-flag" href="javascript:void(0)" onclick="return switchlang('it');">Italiano</a> &raquo;</li>
+<li class="icon_home"><a class="flag ru-flag" href="javascript:void(0)" onclick="return switchlang('ru');">Rусский</a> &raquo;</li>
+</ul>
+</div>
+  </td></tr> 
+    
+</table>
+
+
+<!-- Placeholder for topic body begin. -->
+
+<div id="topic_body" class="goog-trans-section" lang="pl">
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<div class="goog-trans-control">
+<a class="goog-te-gadget-link" href="javascript:void(0)"><span class="goog-te-sectional-gadget-link-text"></span></a>
+</div>
+<div class="content">
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code" style="font-size: 12pt;">FUNKCJE WBUDOWANE.</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">Są to funkcje które są dostępne z kodu skryptu i w odróżnieniu od zmiennych nie zawierają danych ale zwracają je na żądanie. Aby funkcja zwróciła dane np do zmiennej trzeba ją wywołać np:</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">$twoja_zmienna=jakaś_funkcja($ewentualne_parametry).</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">konstrukcja ta wprowadzi do zmiennej $twoja_zmienna wartość którą zwróci funkcja wywołana ze skryptu z parametrami (danymi sterującymi funkcją).</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">$moja_data=delphi_date();</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">działanie : Zwraca bieżącą datę.</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">zmienna $moja_data zawiera np "2009-09-07"</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">$sciezka=delphi_extract_file_dir("C:/Program Files/Wojar Software/LottoCAD/LottoCad.exe");</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">działanie : Zwraca ścieżkę do pliku.</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">$dysk=delphi_extract_file_drive("C:/Program Files/Wojar Software/LottoCAD/LottoCad.exe");</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">działanie : Zwraca ścieżkę napędu na którym jest plik.</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">zmienna $dysk zawiera np "C:/"</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">$filename=delphi_extract_file_name("C:/Program Files/Wojar Software/LottoCAD/LottoCad.exe");</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">działanie : Zwraca ścieżkę napadu na którym jest plik.</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">zmienna $dysk zawiera np "C:/"</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">$ext=delphi_extract_file_ext("C:/Program Files/Wojar Software/LottoCAD/LottoCad.exe");</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">działanie : Zwraca rozszerzenie pliku.</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">zmienna $ext zawiera np ".exe"</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">delphi_show_message("Uwaga to komunikat")</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">Wyświetla ten komunikat z klawiszem OK.</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">$windows=delphi_get_system_directory()</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">Zwraca nazwę katalogu systemowego Windows</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">zmienna $windows zawierać będzie napis "Windows"</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">$input=delphi_input_box("Wprowadź","Wartość","12")</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">Wyświetla formularz do wprowadzenia danej tekstowej.</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">Formularz ma tytuł "Wprowadź", Wyświetla tekst zachęty "Wartość" a w polu wejściowym jest wartość domyślna "12"</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">$input zawiera dane wprowadzone przez użytkownika</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">$drawstr=php_info_print_table_row();</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">Zwraca tablicę losowań jako tekst ze znakami nowej linii.</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">$drawstr zawiera ten tekst</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">$draw=delphi_exec_sql("Select * from MULTI");</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">Wykonuje zapytanie sql zwraca tablicę asocjacyjna dla select lub komunikat wykonania</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">$draw zawiera wszystkie losowania bazy zawarte w tablicy(array).</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">Tablica jest tablicą asocjacyjną tzn nazwy pól są realnymi nazwami pól bazy danych lub zapytania.</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">$draw=delphi_exec_sql_num("Select * from MULTI");</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">Wykonuje zapytanie sql zwraca tablicę wartości. </span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">$draw zawiera wszystkie losowania bazy zawarte w tablicy(array).</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">Kluczami pól są kolejne liczby od zera począwszy.</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">$draw=delphi_get_draw_arr();</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">Zwraca tablicę losowań jako tablicę.</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">$draw zawiera wszystkie losowania bazy zawarte w tablicy(array).</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">Tablica jest tablicą asocjacyjną tzn nazwy pól są realnymi nazwami pól bazy danych lub zapytania.</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">$result=delphi_confirm_box("Wybierz","Czy mam kontynuować ?");</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">Wyświetla formularz do zatwierdzenia bądź odrzucenia.</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">Formularz ma tytuł "Wybierz", Wyświetla tekst zachęty "Czy mam kontynuować";</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">$input dana równa False(fałsz) jeżeli użytkownik wciśnie Nie lub</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">jest równa True(prawda) jeżeli użytkownik wciśnie Tak.</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">$hot=delphi_get_hot_arr();</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">Zwraca tablicę liczb gorące - zimne;</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">Tablica $hot zawiera klucze jako kolejne liczby od zera począwszy.</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">$hot=delphi_get_hot_arr_assoc();</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">Zwraca tablicę liczb gorące - zimne, asocjacyjną</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">Tablica $hot zawiera klucze jako nazwy pól.</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">$odstęp=delphi_get_period_arr();</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">Zwraca tablicę odstępów liczb</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">Tablica $odstęp zawiera klucze jako kolejne liczby od zera począwszy.</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">$odstęp=delphi_get_period_arr_assoc();</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">Zwraca tablicę odstępów liczb</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">delphi_set_progress_bar($min,$max,$progress);</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">Steruje paskiem postępu edytora PHP, podczas wykonywania programu</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">przykład : delphi_set_progress_bar(0,100,50);</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">wyświetli pasek postępu ustawiony w połowie zakresu min-max czyli 50%.</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">$text=delphi_str_memoa();</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">Pobiera zawartość pola zakłady</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">zmienna $text zawiera cały tekst z pola zakłady</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">$text=delphi_str_memob();</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">Pobiera zawartość pola wyniki</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">zmienna $text zawiera cały tekst z pola wyniki</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">delphi_clear_memoa();</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">Funkcja czyści zawartość pola zakłady;</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">delphi_clear_memob();</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">Funkcja czyści zawartość pola wyniki;</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">delphi_addline_memoa("jedna linia dodana");</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">Dodaje linie "jedna linia dodana" do pola zakłady</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">delphi_addline_memob("jedna linia dodana");</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">Dodaje linie "jedna linia dodana" do pola wyniki</span></p>
+<p class="p_NormalCourier"><span class="f_NormalCourier">&nbsp;</span></p>
+
+</div>
+</td></tr></table>
+</div>
+
+<!-- Placeholder for topic body end. -->
+</body>
+</html>

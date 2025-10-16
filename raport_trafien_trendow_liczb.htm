@@ -1,0 +1,297 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Raport trafien trendow liczb</title>
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+   <style type="text/css">
+   <!--
+   .inline-button {
+   width:auto;
+   font: bold 90%/1 Verdana, sans-serif;
+   margin: 0 0.2em; padding: 0.1em 0; _padding:0;
+   border: 1px solid black;
+   white-space:nowrap;
+   text-decoration: none;
+   vertical-align:middle;
+   background: #ccc;
+   color: black;
+   }
+.inline-button em {
+   cursor:hand;
+   font-style: normal;
+   margin:0; padding: 0.1em 0.5em;
+   background: white;
+   color: black;
+   }
+.inline-button span {
+   cursor:hand;
+   margin:0; padding: 0.1em 0.5em 0.1em 0.3em;
+   }
+.inline-button:hover {
+   background: #666;
+   color: white;
+   }
+.inline-button:hover em {
+   background: black;
+   color: white;
+   }
+.s1 {
+	background-color: #FFFFFF;
+	color: #008000;
+}
+.s2 {
+	background-color: #FF8000;
+	color: #000000;
+}
+.s5 {
+	background-color: #FFFFFF;
+	color: #008000;
+}
+.s6 {
+	background-color: #FFFFFF;
+	color: #FF0000;
+}
+.s7 {
+	background-color: #FFFFFF;
+	color: #FF0000;
+}
+.s8 {
+	background-color: #FFFFFF;
+	color: #FF0000;
+}
+.s9 {
+	background-color: #FFFFFF;
+	color: #008000;
+}
+.s10 {
+	background-color: #FFFFFF;
+	color: #800000;
+}
+.s3 {
+	background-color: #FFFFFF;
+	color: #000000;
+}
+.s4 {
+	background-color: #FFFF00;
+	color: #0000FF;
+}
+.s11 {
+	background-color: #00FF00;
+	color: #000000;   }
+/* Horizontal lists
+----------------------------------------*/
+ul.linklist {
+	display: block;
+	margin: 0;
+}
+
+ul.linklist li {
+	display: block;
+	list-style-type: none;
+	float: left;
+	width: auto;
+	margin-right: 5px;
+	font-size: 1.1em;
+	line-height: 2.2em;
+}
+
+ul.linklist {
+	float: right;
+	margin-right: 0;
+	margin-left: 5px;
+	text-align: right;
+}
+
+ul.navlinks {
+	padding-bottom: 1px;
+	margin-bottom: 1px;
+	border-bottom: 1px solid #FFFFFF;
+	font-weight: bold;
+}
+
+a.flag {color: #AAA; font-size:0.8em;text-decoration:none;}
+a.flag:hover {color:#FFF;text-decoration:underline;}
+a.en-flag {padding-left:21px; background: url(images/flag/en.png) top left no-repeat;}
+a.de-flag {padding-left:21px; background: url(images/flag/de.png) top left no-repeat;}
+a.ru-flag {padding-left:21px; background: url(images/flag/ru.png) top left no-repeat;} 
+a.cs-flag {padding-left:21px; background: url(images/flag/cz.png) top left no-repeat;}
+a.fr-flag {padding-left:21px; background: url(images/flag/fr.png) top left no-repeat;}
+a.es-flag {padding-left:21px; background: url(images/flag/es.png) top left no-repeat;}
+a.it-flag {padding-left:21px; background: url(images/flag/it.png) top left no-repeat;}
+
+-->   
+</style>
+
+<script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+
+<script type="text/javascript">
+function trim11 (str) {
+str = str.replace(/^\s+/, '');
+for (var i = str.length - 1; i >= 0; i--) {
+if (/\S/.test(str.charAt(i))) {
+str = str.substring(0, i + 1);
+break;
+}
+}
+return str;
+}
+
+function _highlight(inp_id,out_id) {
+elm=document.getElementById(out_id);
+var inptxt = trim11(document.getElementById(inp_id).value);
+var inp_arr = inptxt.split(/[ :,;-]+/);
+var html=elm.innerHTML;
+text=trim11(html.replace(/<[^>]+>/g,''));
+lines=text.split(/\r?\n/g);
+
+html="<pre>";
+for (var i in lines) {
+var tic=lines[i];
+var line_arr=tic.split(' ');
+
+var item='';
+for (var j in line_arr) {
+var num=line_arr[j];
+var hits=false;
+for (var k in inp_arr) {
+var hit=inp_arr[k];
+if (hit==num) { 
+hits=true;
+break;
+}
+}
+var pads=(j<(line_arr.length-1)) ? ' ':'';
+item+= hits ? '<span class="s2">'+num+'</span>'+pads : num+pads;
+}
+html+=item+'\r\n';
+}
+elm.innerHTML=html+'</pre>';
+}
+</script>
+      
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?raport_trafien_trendow_liczb.htm"; }
+  else { parent.quicksync('a3.2.1.5.8'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFEF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#000000">
+  <tr valign="middle">
+    <td align="left">
+      <p style="text-indent: 0px; margin: 0px 0px 0px 0px;"><span style="font-size: 12pt; color: #ffffff;">Raport trafień trendów liczb</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a class="inline-button" href="contents.htm"><em>LC</em><span>&lt;&lt;</span></a>&nbsp;
+     <!--<a href="contents.htm">Top</a>-->
+     <a class="inline-button" href="menu_report_tabskut.htm"><em>LC</em><span>&lt;</span></a>&nbsp;
+     <!--<a href="menu_report_tabskut.htm">Previous</a>&nbsp;-->
+     <a class="inline-button" href="raportpewn.htm"><em>LC</em><span>&gt;</span></a>&nbsp;     
+     <!--<a href="raportpewn.htm">Next</a>-->
+     </span>
+    </td>
+  </tr>
+    
+  <tr><td colspan="2">
+  <script>
+  function switchlang(lang) {
+  $(".goog-te-sectional-gadget-link-text").html('');
+  $.getScript("//translate.google.com/translate_a/element.js?cb=googleSectionalElementInit&ug=section&hl="+lang);
+  }
+  function googleSectionalElementInit() {
+  new google.translate.SectionalElement({
+    sectionalNodeClassName: 'goog-trans-section',
+    controlNodeClassName: 'goog-trans-control',
+    background: '#99ff99'
+  }, 'google_sectional_element');
+  }
+  switchlang ('en');
+  </script>
+<div id="lang-menu">
+<ul class="linklist navlinks" style="font-size:12px";>
+<li class="icon_home"><a class="flag en-flag" href="javascript:void(0)" onclick="return switchlang('en');">English</a> &raquo;</li>
+<li class="icon_home"><a class="flag de-flag" href="javascript:void(0)" onclick="return switchlang('de');">Deutsch</a> &raquo;</li>
+<li class="icon_home"><a class="flag es-flag" href="javascript:void(0)" onclick="return switchlang('es');">Español</a> &raquo;</li>
+<li class="icon_home"><a class="flag fr-flag" href="javascript:void(0)" onclick="return switchlang('fr');">Français</a> &raquo;</li>
+<li class="icon_home"><a class="flag it-flag" href="javascript:void(0)" onclick="return switchlang('it');">Italiano</a> &raquo;</li>
+<li class="icon_home"><a class="flag ru-flag" href="javascript:void(0)" onclick="return switchlang('ru');">Rусский</a> &raquo;</li>
+</ul>
+</div>
+  </td></tr> 
+    
+</table>
+
+
+<!-- Placeholder for topic body begin. -->
+
+<div id="topic_body" class="goog-trans-section" lang="pl">
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<div class="goog-trans-control">
+<a class="goog-te-gadget-link" href="javascript:void(0)"><span class="goog-te-sectional-gadget-link-text"></span></a>
+</div>
+<div class="content">
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">Nowy raport trafień dla &nbsp;wyliczanych trendów liczb pomaga wytypować liczby na przyszłe losowanie. </span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">Na podstawie kolejnych wystąpień liczb w &nbsp;losowaniach, dla każdego losowania i z analizą dla określonej ilości losowań wstecz obliczany jest dla każdej liczby osobno jej trend. </span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">Trend jest to linia prosta która obrazuje tendencję (właśnie trend) dla danej liczby jej częstości i gęstości występowania w określonym zakresie losowań. Trend obliczany jest medodą najmniejszych kwadratów. Wynikiem obliczeń jest równanie linii prostej najlepiej dopasowane do funkcji częstości, gęstości i równomierności występowania liczb w kolejnych losowaniach. Prosta wyznaczana jest równaniem y=ax i obrazuje wektor (jakby wskażnik) umieszczony w punkcie (0,0) układu współrzędnych. Wartość dodatnia trendu wskazuje że liczba jest coraz rzadziej losowana, wartość ujemna że coraz częściej. Wartości zblizone do zera wskazują na stabilność liczby w zadanym okresie losowań.</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">Stabilność ta ma również swoje odbicie w statystykach trafień z zakresu trendów zblizonych do wartości zerowej.</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';"> W historii losowań zdarzają się trafienia o skuteczności przekraczającej 50%. Trafienia takie z całą pewnością zaowocują wygraną.</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">Raport rejestruje ilość trafień w kolejnych losowaniach dla trendów obliczanych za poprzednie ustawiane przez użytkownika okresy i grupuje je w 23 zakresach co 1/10 plus zakres który użytkownik może ustawić dla własnych obserwacji. Trendy liczb w większości mieszczą się w zakresie wartości od -1 do 1. Jeżeli ilość próbek (losowań) szczególnie dla trendów krótkookresowych jest niewielka, trend może przybierać wartości powyżej i poniżej jedności. Dzieje się to wtedy gdy określona liczba "czeka" długo na wylosowanie lub po długim okresie braku losowań występuje seria powtórzeń.</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">Ilość losowań dana do analizy jest bardzo ważnym parametrem i ma swoje odzwierciedlenie w statystykach. Przy zbyt małym zakresie losowań ( dla multilotka- 4-9 losowań) rozkład trafień jest szeroki i bardzo trudne jest wytypowanie liczb. Poprostu brakuje danych aby określić stabilność liczby. W zakresie tym lepsze wyniki statystyczne osiągają liczby których właśnie prosta trendu przyjmuje wartości powyżej i ponizej jedności. W ten sposób "wyłapywać" można tendencje krótkookresowe liczb. Wartości średnie dają typowy rozkład normalny (dzwon Gaussa) i wartości w poblizu zera trendu wyliczanego liczb dają w statystykach najwięcej trafień. Wartości duże (30-50 losowań) powodują że dzwon staje się bardzo wąski i statystyki trafień obejmują swym zakresem dwa, trzy zakresy zgrupowane w środku ( w poblizu zera trendów). Takie rozkłady trafień mają swoje uzasadnienie praktyczne. Tendencje liczb bardzo wyrażnie zarysowywują się w krótkich a przedewszystkiem średnich okresach. W okresach dłuższych wszelkie różnice dążą do zrównoważenia więc trendy stają się poziome i tracą na wartości aby uwzględniać je przy typowaniu(praktycznie się zrównują) . Ilość dni analizy dla każdej gry należy dobrać idywidualnie, wg oceny skuteczności trafiania w określone zakresy trafień trendów liczb.</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">&nbsp;</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><img src="menuraporttrend.png" width="278" height="180" border="0" alt="menuraporttrend"></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">Druga częśc raportu to spis zakresów przedziałów trendów a trzecia zawiera liczby które śię znalazły w określonych przedziałach trendów, średnią ilość trafień za okres wszystkich losowań oraz numer zakresu. Zakres pierwszy to zakres określony przez użytkownika i w wierszu pierwszym wypisane są średnia trafień i wszystkie liczby które znalazły się w tym zakresie na losowanie następne.</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">przykład dla trendów za 19 losowań gdzie wyrażnie widać dzwon rozkładu normalnego Gaussa:</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">średnia: &nbsp; 4.80 zakres: ( 1) liczby: &nbsp;6 12 17 19 20 37 39 40 48 49 62 64 65 70 71 76 78</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">średnia: &nbsp; 0.00 zakres: ( 2) liczby:</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">średnia: &nbsp; 0.10 zakres: ( 3) liczby: 80</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">średnia: &nbsp; 0.12 zakres: ( 4) liczby: &nbsp;7</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">&nbsp;</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">średnia: &nbsp; 0.18 zakres: ( 6) liczby:</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">średnia: &nbsp; 0.27 zakres: ( 7) liczby: 73</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">średnia: &nbsp; 0.43 zakres: ( 8) liczby: 55</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">średnia: &nbsp; 0.71 zakres: ( 9) liczby: 26 30 46 54</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">średnia: &nbsp; 1.25 zakres: (10) liczby: 16 21 50 59</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">średnia: &nbsp; 2.36 zakres: (11) liczby: &nbsp;2 24 25 35 38 43 44 52 69 72 75</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">średnia: &nbsp; 4.19 zakres: (12) liczby: &nbsp;1 &nbsp;3 &nbsp;6 12 14 17 20 28 36 37 40 48 51 64 67 76 79</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">średnia: &nbsp; 4.49 zakres: (13) liczby: &nbsp;4 10 19 27 39 42 49 56 57 58 61 62 65 70 71 74 78</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">średnia: &nbsp; 2.45 zakres: (14) liczby: 15 18 22 23 31 45 47 68 77</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">średnia: &nbsp; 1.22 zakres: (15) liczby: &nbsp;5 &nbsp;8 32 33 34 63</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">średnia: &nbsp; 0.64 zakres: (16) liczby: &nbsp;9 13 53</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">średnia: &nbsp; 0.45 zakres: (17) liczby: 41</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">średnia: &nbsp; 0.22 zakres: (18) liczby: 29 60</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">średnia: &nbsp; 0.20 zakres: (19) liczby:</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">średnia: &nbsp; 0.11 zakres: (20) liczby:</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">średnia: &nbsp; 0.09 zakres: (21) liczby:</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">średnia: &nbsp; 0.06 zakres: (22) liczby: 66</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">średnia: &nbsp; 0.12 zakres: (23) liczby:</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">średnia: &nbsp; 0.00 zakres: (24) liczby:</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">Ciekawostką jest że często liczby samotne umieszczone w wierszach gdzie średnia jest większa lub w pobliżu 0.5 często właśnie są losowane i można je potraktować jako liczby pewne. Doświadczalnie należy ustalić kiedy taką liczbę można uznać za "pewną".</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">Po kilku próbach generacji raportu za różne zakresy losowań wstecz, można określić najwłaściwszy okres analizy i jego zakres. Ułatwiają to również obserwacje zarówno pierwsej części raportu jak również np wykres trendów liczb wylosowanych. Na wykresie tym można zaobserwować rozkład trafień trendów w losowaniach poprzednich i próbować na podstawie oscylacji tych zakresów przewidzieć np czy gęstość trafień losowania przyszłego w pobliżu trendu równego zero będzie większa po stronie trendów dodatnich czy po stronie trendów ujemnych.</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">Raport jak zresztą większość raportów w LC posiada między kolumnami znaki oddzielające i po zapisaniu go do np. pliku tekstowego, bardzo łatwo można raport wprowadzić do arkusza programu Excel i dowolnie taki raport w arkuszu obrabiać. </span></p>
+
+</div>
+</td></tr></table>
+</div>
+
+<!-- Placeholder for topic body end. -->
+</body>
+</html>

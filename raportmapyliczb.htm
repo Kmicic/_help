@@ -1,0 +1,330 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Raport mapy liczb</title>
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+   <style type="text/css">
+   <!--
+   .inline-button {
+   width:auto;
+   font: bold 90%/1 Verdana, sans-serif;
+   margin: 0 0.2em; padding: 0.1em 0; _padding:0;
+   border: 1px solid black;
+   white-space:nowrap;
+   text-decoration: none;
+   vertical-align:middle;
+   background: #ccc;
+   color: black;
+   }
+.inline-button em {
+   cursor:hand;
+   font-style: normal;
+   margin:0; padding: 0.1em 0.5em;
+   background: white;
+   color: black;
+   }
+.inline-button span {
+   cursor:hand;
+   margin:0; padding: 0.1em 0.5em 0.1em 0.3em;
+   }
+.inline-button:hover {
+   background: #666;
+   color: white;
+   }
+.inline-button:hover em {
+   background: black;
+   color: white;
+   }
+.s1 {
+	background-color: #FFFFFF;
+	color: #008000;
+}
+.s2 {
+	background-color: #FF8000;
+	color: #000000;
+}
+.s5 {
+	background-color: #FFFFFF;
+	color: #008000;
+}
+.s6 {
+	background-color: #FFFFFF;
+	color: #FF0000;
+}
+.s7 {
+	background-color: #FFFFFF;
+	color: #FF0000;
+}
+.s8 {
+	background-color: #FFFFFF;
+	color: #FF0000;
+}
+.s9 {
+	background-color: #FFFFFF;
+	color: #008000;
+}
+.s10 {
+	background-color: #FFFFFF;
+	color: #800000;
+}
+.s3 {
+	background-color: #FFFFFF;
+	color: #000000;
+}
+.s4 {
+	background-color: #FFFF00;
+	color: #0000FF;
+}
+.s11 {
+	background-color: #00FF00;
+	color: #000000;   }
+/* Horizontal lists
+----------------------------------------*/
+ul.linklist {
+	display: block;
+	margin: 0;
+}
+
+ul.linklist li {
+	display: block;
+	list-style-type: none;
+	float: left;
+	width: auto;
+	margin-right: 5px;
+	font-size: 1.1em;
+	line-height: 2.2em;
+}
+
+ul.linklist {
+	float: right;
+	margin-right: 0;
+	margin-left: 5px;
+	text-align: right;
+}
+
+ul.navlinks {
+	padding-bottom: 1px;
+	margin-bottom: 1px;
+	border-bottom: 1px solid #FFFFFF;
+	font-weight: bold;
+}
+
+a.flag {color: #AAA; font-size:0.8em;text-decoration:none;}
+a.flag:hover {color:#FFF;text-decoration:underline;}
+a.en-flag {padding-left:21px; background: url(images/flag/en.png) top left no-repeat;}
+a.de-flag {padding-left:21px; background: url(images/flag/de.png) top left no-repeat;}
+a.ru-flag {padding-left:21px; background: url(images/flag/ru.png) top left no-repeat;} 
+a.cs-flag {padding-left:21px; background: url(images/flag/cz.png) top left no-repeat;}
+a.fr-flag {padding-left:21px; background: url(images/flag/fr.png) top left no-repeat;}
+a.es-flag {padding-left:21px; background: url(images/flag/es.png) top left no-repeat;}
+a.it-flag {padding-left:21px; background: url(images/flag/it.png) top left no-repeat;}
+
+-->   
+</style>
+
+<script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+
+<script type="text/javascript">
+function trim11 (str) {
+str = str.replace(/^\s+/, '');
+for (var i = str.length - 1; i >= 0; i--) {
+if (/\S/.test(str.charAt(i))) {
+str = str.substring(0, i + 1);
+break;
+}
+}
+return str;
+}
+
+function _highlight(inp_id,out_id) {
+elm=document.getElementById(out_id);
+var inptxt = trim11(document.getElementById(inp_id).value);
+var inp_arr = inptxt.split(/[ :,;-]+/);
+var html=elm.innerHTML;
+text=trim11(html.replace(/<[^>]+>/g,''));
+lines=text.split(/\r?\n/g);
+
+html="<pre>";
+for (var i in lines) {
+var tic=lines[i];
+var line_arr=tic.split(' ');
+
+var item='';
+for (var j in line_arr) {
+var num=line_arr[j];
+var hits=false;
+for (var k in inp_arr) {
+var hit=inp_arr[k];
+if (hit==num) { 
+hits=true;
+break;
+}
+}
+var pads=(j<(line_arr.length-1)) ? ' ':'';
+item+= hits ? '<span class="s2">'+num+'</span>'+pads : num+pads;
+}
+html+=item+'\r\n';
+}
+elm.innerHTML=html+'</pre>';
+}
+</script>
+      
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?raportmapyliczb.htm"; }
+  else { parent.quicksync('a3.2.1.5.1'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFEF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#000000">
+  <tr valign="middle">
+    <td align="left">
+      <p style="text-indent: 0px; margin: 0px 0px 0px 0px;"><span style="font-size: 12pt; color: #ffffff;">Raport mapy liczb</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a class="inline-button" href="contents.htm"><em>LC</em><span>&lt;&lt;</span></a>&nbsp;
+     <!--<a href="contents.htm">Top</a>-->
+     <a class="inline-button" href="menu_report.htm"><em>LC</em><span>&lt;</span></a>&nbsp;
+     <!--<a href="menu_report.htm">Previous</a>&nbsp;-->
+     <a class="inline-button" href="menu_report_whells.htm"><em>LC</em><span>&gt;</span></a>&nbsp;     
+     <!--<a href="menu_report_whells.htm">Next</a>-->
+     </span>
+    </td>
+  </tr>
+    
+  <tr><td colspan="2">
+  <script>
+  function switchlang(lang) {
+  $(".goog-te-sectional-gadget-link-text").html('');
+  $.getScript("//translate.google.com/translate_a/element.js?cb=googleSectionalElementInit&ug=section&hl="+lang);
+  }
+  function googleSectionalElementInit() {
+  new google.translate.SectionalElement({
+    sectionalNodeClassName: 'goog-trans-section',
+    controlNodeClassName: 'goog-trans-control',
+    background: '#99ff99'
+  }, 'google_sectional_element');
+  }
+  switchlang ('en');
+  </script>
+<div id="lang-menu">
+<ul class="linklist navlinks" style="font-size:12px";>
+<li class="icon_home"><a class="flag en-flag" href="javascript:void(0)" onclick="return switchlang('en');">English</a> &raquo;</li>
+<li class="icon_home"><a class="flag de-flag" href="javascript:void(0)" onclick="return switchlang('de');">Deutsch</a> &raquo;</li>
+<li class="icon_home"><a class="flag es-flag" href="javascript:void(0)" onclick="return switchlang('es');">Español</a> &raquo;</li>
+<li class="icon_home"><a class="flag fr-flag" href="javascript:void(0)" onclick="return switchlang('fr');">Français</a> &raquo;</li>
+<li class="icon_home"><a class="flag it-flag" href="javascript:void(0)" onclick="return switchlang('it');">Italiano</a> &raquo;</li>
+<li class="icon_home"><a class="flag ru-flag" href="javascript:void(0)" onclick="return switchlang('ru');">Rусский</a> &raquo;</li>
+</ul>
+</div>
+  </td></tr> 
+    
+</table>
+
+
+<!-- Placeholder for topic body begin. -->
+
+<div id="topic_body" class="goog-trans-section" lang="pl">
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<div class="goog-trans-control">
+<a class="goog-te-gadget-link" href="javascript:void(0)"><span class="goog-te-sectional-gadget-link-text"></span></a>
+</div>
+<div class="content">
+<p>Raport ten służy do analizy skuteczności typowania na określone kolumny posortowane wg wybranego sposobu sortowania analogicznie jak w "mapie odstępów". Analiza przeprowadzana jest dla zakresu dat ustawionych w zakładce w polach zakres sprawdzania. Wszystkie opcje obsługiwane są z panelu raportu &nbsp;podzielonego na cztery zakładki: </p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><img src="rmap1.png" width="179" height="408" border="0" alt="rmap1"><img src="rmap2.png" width="179" height="408" border="0" alt="rmap2"></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><img src="rmap3.png" width="179" height="408" border="0" alt="rmap3"><img src="rmap4.png" width="179" height="408" border="0" alt="rmap4"></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p><span style="font-family: 'MS Shell Dlg'; font-weight: bold; color: #ff0000;">W zakładce "Zakresy"</span><span style="font-family: 'MS Shell Dlg';"> </span>można do raportu wybrać tylko ustalone pozycje posortowanej listy "od pozycji" &nbsp;określonej w polu "od pozycji" taką ilość pozycji ile określimy w polu "ile liczb". </p>
+<p><span style="width:29px">&nbsp;</span></p>
+<p> &nbsp; &nbsp; &nbsp;W zakłądce tej w grupie "zakres sprawdzania" można ustawić ostatnią datę analizy oraz ilość losowań wstecz. Przycisk "&lt;" służy do wywołania kalendarza na którym w sposób wizualny ten zakres można ustawiać. W zakładce znajdują się również trzy opcje :</p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: 0px; margin: 0px 19px 0px 42px;"><span style="font-family: 'MS Shell Dlg';">1. </span><span style="font-family: 'MS Shell Dlg'; font-weight: bold;">Auto sprawdzanie</span><span style="font-family: 'MS Shell Dlg';"> - </span>opcja ta powoduje że do głównego pola edycji automatycznie wczytywane jest (po zmianie daty ostatniego losowania analizy) losowanie następne co przy wykorzystaniu właściwości podświetlania trafień "pola zakłady" umożliwia wizualną ocenę ilości trafień<span style="font-family: 'MS Shell Dlg';">.</span></p>
+<p style="text-indent: 0px; margin: 0px 19px 0px 42px;"><span style="font-family: 'MS Shell Dlg';">2. </span><span style="font-family: 'MS Shell Dlg'; font-weight: bold;">Wyświetlaj liczby</span><span style="font-family: 'MS Shell Dlg';"> </span>zaznaczenie opcji powoduje oprócz sprawdzania wyświetla tablicę  &nbsp; &nbsp; &nbsp; &nbsp;liczb typowanych przez metodę.</p>
+<p style="text-indent: 0px; margin: 0px 19px 0px 42px;"><span style="font-family: 'MS Shell Dlg';">3. </span><span style="font-family: 'MS Shell Dlg'; font-weight: bold;">Tylko pozycje trafione</span><span style="font-family: 'MS Shell Dlg';"> </span>wyświetla tylko liczby trafione w następnym losowaniu pozostałe wyświetlane są jako znak kropki.</p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg'; font-weight: bold; color: #ff0000;">W zakładce "Opcje" dostępne są:</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p><span style="font-family: 'MS Shell Dlg'; font-weight: bold;">Pole "punktów trendu, regresji, korelacji i średniej z zakresu [ 8 ]" </span></p>
+<p>Dwie funkcje trendu " trend liniowy" i "przewidywana" .Trend liniowy obliczany jest dla "XX" ostatnich odstępów danej liczby jako prosta określająca nachylenie "trend" wynikający z ostatnich XX odstępów tej liczby. Natomiast przewidywana to "przewidywany" następny odstęp obliczonej równaniem liniowym wynikającym z funkcji trendu.</p>
+<p>Funkcja obliczania przewidywanej daje w wyniku przyszłą wartość przewidywaną w oparciu o trend liniowy z serii danych x i y. Wartościami x są numery kolejnych losowań a wartościami y są wartości odstępów w momentach wylosowania.</p>
+<p>W odróżnieniu od "przewidywanej" trend obliczany jest dla narastających wartości odstępów y dla wszystkich kolejnych losowań.</p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Sans Serif'; font-weight: bold;">Ostatni jako prognoza </span>przełącznik ten powoduje że niezależnie ostatnie losowanie nie jest sprawdzane i można wyniki analizy traktować jako prognozę na losowanie przyszłe. Symuluje sytuację taką jakby w bazie losowań losowanie przyszłe nie istniało.</p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg'; font-weight: bold;">Pole "wyświetlaj trafienia od % [ &nbsp;]" </span>w sekcji wyświetlania trafień wyświetla tylko ilość trafień przekraczającą zadaną wartość w procentach.</p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg'; font-weight: bold;">Opcja [x] &nbsp;raport do pola zakłady</span><span style="font-family: 'MS Shell Dlg';"> - </span>zaznaczony prze kieruje wyświetlanie raportu do pola zakłady.</p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg'; font-weight: bold;">Pole "wyświetlaj trafienia od %" </span>umożliwia wygaszenie w kolumnach trafień wartości mniejszych niż procentowo określonych w tym polu. Można w ten sposób wygasić trafienia zerowe.</p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg'; font-weight: bold;">Pole "sumuj trafienia % z listy najlepszych"</span><span style="font-family: 'MS Shell Dlg';"> </span>określa ile % z listy najlepszych trafień ma być zsumowane<span style="font-family: 'MS Shell Dlg';">.</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg'; font-weight: bold;">GRUPA RAPORT POZYCJI </span></p>
+<p><span style="font-family: 'MS Sans Serif'; font-weight: bold;">przełącznik "dołącz raport pozycji" </span>do każdego raportu mapy dołączany jest raport z kombinacji wszystkich pozycji raportu mapy. Raport ten ma za zadanie wyłowienie z raportu mapy tylko tych kolumn które dają regularne trafienia w zadanym zakresie dat. </p>
+<p><span style="width:29px">&nbsp;</span>Metoda ta polega na tym że sprawdzane są wszystkie N kombinacji kolumn ustawione w polu<span style="font-family: 'MS Sans Serif';"> </span><span style="font-family: 'MS Sans Serif'; font-weight: bold;">"ilość kombinacji".</span><span style="font-family: 'MS Sans Serif';"> </span>Jeżeli w polu tym będzie ustawiona wartość 2 będą to wszystkie pary kolumn. Następnie zliczane są trafienia dla każdej pary kolumn. Wyniki są sortowane i wyświetlane wg ilości trafień ustawionych w polu<span style="font-family: 'MS Sans Serif';"> </span><span style="font-family: 'MS Sans Serif'; font-weight: bold;">"sortuj wg trafionych"</span><span style="font-family: 'MS Sans Serif';">.  </span>A sposób sortowania narastająco lub opadająco wybiera się przełącznikiem<span style="font-family: 'MS Sans Serif';"> </span><span style="font-family: 'MS Sans Serif'; font-weight: bold;">"sortuj opadająco"</span><span style="font-family: 'MS Sans Serif';">.</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p><span style="font-family: 'MS Shell Dlg'; font-weight: bold; color: #ff0000;">W zakładce "sortowanie"</span><span style="font-family: 'MS Shell Dlg';"> </span>można ustawić rodzaj sortowania raportu "narastająco" lub "opadająco", oraz wiersz wg którego raport mapy będzie sortowany.:</p>
+<p>W raporcie mapy dla każdego losowania z zakresu ustawionego przez użytkownika liczona jest mapa liczb i sortowana wg obliczonej wartości funkcji przedstawionych poniżej. Dla tak uszeregowanych liczb sprawdzane są trafienia w losowaniach następnych. Analizy wykazują że dla niektórych funkcji czestość trafień określonych pozycji tak posortowanej mapy jest częstsza lub okresowo częstsza niz innych pozycji. Analiza ta pozwala zagrać skutecznie na podstawie analizy tych zależności. Raport w ostatnich wierszach pokazuje zestaw liczb dla tych pozycji oraz pokazuje które kolumny trafiają częściej<span style="font-family: 'MS Shell Dlg';">.</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">1. </span><span style="font-family: 'MS Shell Dlg'; font-weight: bold;">Naturalny porządek</span><span style="font-family: 'MS Shell Dlg';"> - kolumny są sortowane wg kolejności naturalnej.</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">2. </span><span style="font-family: 'MS Shell Dlg'; font-weight: bold;">Ostatni minus średnia NN </span></p>
+<p><span style="font-family: 'MS Shell Dlg';">3. &nbsp; </span><span style="font-family: 'MS Shell Dlg'; font-weight: bold;">Średnia odstępów z NN </span>ostatnich wystąpień liczby. Średnia bez oznaczenia ilości wystąpień oznacza średnią z wszystkich losowań. Wartość XX to wartość ustawiona przez użytkownika. </p>
+<p>4. &nbsp;Średnia z zakresu. W odróżnieniu od średniej z NN wystąpień, średnia z zakresu jest średnią z ustawionego w kalendarzu lub w panelu "kombinacje" zakresu dat analizy losowań. jeżeli liczba w tym zakresie dat (losowań) nie wystąpiła przyjeto jako wartość średniej wartość maksymalną (999). </p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">5.  </span><span style="font-family: 'MS Shell Dlg'; font-weight: bold;">Ostatni odstęp minus średnia </span><span style="font-family: 'MS Shell Dlg';">z zakresu to wartość różnicy ostatniego odstępu ( jak w pkt 1) i średniej z zakresu obliczonej jak w pkt 4.</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">6.  </span><span style="font-family: 'MS Shell Dlg'; font-weight: bold;">Max, Min </span><span style="font-family: 'MS Shell Dlg';">to odpowiednio Maksymalny i Minimalny odstęp we wszystkich losowaniach.</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">7. </span><span style="font-family: 'MS Shell Dlg'; font-weight: bold;">Trend liniowy </span><span style="font-family: 'MS Shell Dlg';">to wartość prostej obrazującej trend obliczona funkcją regresji liniowej z ostatnich (xx) odstępów liczby.</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">8. </span><span style="font-family: 'MS Shell Dlg'; font-weight: bold;">Przewidywany odstęp</span><span style="font-family: 'MS Shell Dlg';">, to wartość przyszłego odstępu obliczona funkcją regresji liniowej na podstawie trendu obliczanego w odróżnieniu od funkcji poprzedniej nie z ostatnich NN odstępów ale z ostatnich NN wartości odstępów w momencie wylosowania.</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">9.  </span><span style="font-family: 'MS Shell Dlg'; font-weight: bold;">Częstość</span><span style="font-family: 'MS Shell Dlg';"> - to ilość wystąpień liczby w ostatnich NN losowaniach.</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">10. </span><span style="font-family: 'MS Shell Dlg'; font-weight: bold;">Ostatni odstęp</span><span style="font-family: 'MS Shell Dlg';"> - wartość ostatniego( bieżącego) okresu oczekiwania liczby na wylosowanie.</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>1. Włącz panel raportu klikając prawym myszy na pustym polu obok menu</p>
+<p>2. Ustaw zakres w polu "wybierz liczby" na wszystkie liczby gry dla ML będzie to 1 do 80</p>
+<p>3. Odznaczam pole wybieraj z sekwencji</p>
+<p>&nbsp;</p>
+<p>4. Przyciskiem " ostatnia data i zakres średniej zakresu" ustawiam 12 dni</p>
+<p><span style="width:29px">&nbsp;</span>zakres dat ustawiany w dialogu ma podwójne znaczenie, ostatnia wybrana data to data]</p>
+<p><span style="width:29px">&nbsp;</span>to data ostatniego losowania dla raportu. Natomiast zakres wybranych dni to zakres </p>
+<p><span style="width:29px">&nbsp;</span>obliczania &nbsp;wiersza "średnia z zakresu" i "ostatni odstęp minus średnia z zakresu".</p>
+<p>&nbsp;</p>
+<p>5. Zapuszczam raport dla 50 losowań wstecz i sortowanie wg średniej za ostatnie 12 losowań</p>
+<p>&nbsp;</p>
+<p>6. Raport ma kilka nowych opcji :</p>
+<p> &nbsp; &nbsp; a) Przycisk [RAPORT] jeżeli jest zaznaczona opcja "[v] raport do pola zakłady" automatycznie wyłącza sprawdzanie składni pola zakłady.</p>
+<p> &nbsp; &nbsp; b) ostatnie dwie linijki zawierają posortowane wg ilości trafień pozycje , kolumny raportu.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p> &nbsp;7. Zaznacz wszystkie pozycje z początku posortowanej listy wg trafień.</p>
+<p> &nbsp;8. Wybieram opcję (6c) i wyślij zaznaczenie do pola "wybieraj z sekwencji" i zaznaczam tą opcję.</p>
+<p> &nbsp;9. Uruchamiam raport</p>
+<p> &nbsp;W ten sposób prześledzić można trafienia w kolumnach najczęściej trafiających w zadanym okresie dat.</p>
+<p> &nbsp;Jeżeli dla różnych zakresów losowań analizy kolumny kolejno będziesz wybierał te które się powtórzyły znajdę wiersze uniwersalnie trafiające.</p>
+<p>&nbsp;</p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+
+</div>
+</td></tr></table>
+</div>
+
+<!-- Placeholder for topic body end. -->
+</body>
+</html>

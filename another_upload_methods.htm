@@ -1,0 +1,319 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Inne metody uzupelniania bazy losowań</title>
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+   <style type="text/css">
+   <!--
+   .inline-button {
+   width:auto;
+   font: bold 90%/1 Verdana, sans-serif;
+   margin: 0 0.2em; padding: 0.1em 0; _padding:0;
+   border: 1px solid black;
+   white-space:nowrap;
+   text-decoration: none;
+   vertical-align:middle;
+   background: #ccc;
+   color: black;
+   }
+.inline-button em {
+   cursor:hand;
+   font-style: normal;
+   margin:0; padding: 0.1em 0.5em;
+   background: white;
+   color: black;
+   }
+.inline-button span {
+   cursor:hand;
+   margin:0; padding: 0.1em 0.5em 0.1em 0.3em;
+   }
+.inline-button:hover {
+   background: #666;
+   color: white;
+   }
+.inline-button:hover em {
+   background: black;
+   color: white;
+   }
+.s1 {
+	background-color: #FFFFFF;
+	color: #008000;
+}
+.s2 {
+	background-color: #FF8000;
+	color: #000000;
+}
+.s5 {
+	background-color: #FFFFFF;
+	color: #008000;
+}
+.s6 {
+	background-color: #FFFFFF;
+	color: #FF0000;
+}
+.s7 {
+	background-color: #FFFFFF;
+	color: #FF0000;
+}
+.s8 {
+	background-color: #FFFFFF;
+	color: #FF0000;
+}
+.s9 {
+	background-color: #FFFFFF;
+	color: #008000;
+}
+.s10 {
+	background-color: #FFFFFF;
+	color: #800000;
+}
+.s3 {
+	background-color: #FFFFFF;
+	color: #000000;
+}
+.s4 {
+	background-color: #FFFF00;
+	color: #0000FF;
+}
+.s11 {
+	background-color: #00FF00;
+	color: #000000;   }
+/* Horizontal lists
+----------------------------------------*/
+ul.linklist {
+	display: block;
+	margin: 0;
+}
+
+ul.linklist li {
+	display: block;
+	list-style-type: none;
+	float: left;
+	width: auto;
+	margin-right: 5px;
+	font-size: 1.1em;
+	line-height: 2.2em;
+}
+
+ul.linklist {
+	float: right;
+	margin-right: 0;
+	margin-left: 5px;
+	text-align: right;
+}
+
+ul.navlinks {
+	padding-bottom: 1px;
+	margin-bottom: 1px;
+	border-bottom: 1px solid #FFFFFF;
+	font-weight: bold;
+}
+
+a.flag {color: #AAA; font-size:0.8em;text-decoration:none;}
+a.flag:hover {color:#FFF;text-decoration:underline;}
+a.en-flag {padding-left:21px; background: url(images/flag/en.png) top left no-repeat;}
+a.de-flag {padding-left:21px; background: url(images/flag/de.png) top left no-repeat;}
+a.ru-flag {padding-left:21px; background: url(images/flag/ru.png) top left no-repeat;} 
+a.cs-flag {padding-left:21px; background: url(images/flag/cz.png) top left no-repeat;}
+a.fr-flag {padding-left:21px; background: url(images/flag/fr.png) top left no-repeat;}
+a.es-flag {padding-left:21px; background: url(images/flag/es.png) top left no-repeat;}
+a.it-flag {padding-left:21px; background: url(images/flag/it.png) top left no-repeat;}
+
+-->   
+</style>
+
+<script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+
+<script type="text/javascript">
+function trim11 (str) {
+str = str.replace(/^\s+/, '');
+for (var i = str.length - 1; i >= 0; i--) {
+if (/\S/.test(str.charAt(i))) {
+str = str.substring(0, i + 1);
+break;
+}
+}
+return str;
+}
+
+function _highlight(inp_id,out_id) {
+elm=document.getElementById(out_id);
+var inptxt = trim11(document.getElementById(inp_id).value);
+var inp_arr = inptxt.split(/[ :,;-]+/);
+var html=elm.innerHTML;
+text=trim11(html.replace(/<[^>]+>/g,''));
+lines=text.split(/\r?\n/g);
+
+html="<pre>";
+for (var i in lines) {
+var tic=lines[i];
+var line_arr=tic.split(' ');
+
+var item='';
+for (var j in line_arr) {
+var num=line_arr[j];
+var hits=false;
+for (var k in inp_arr) {
+var hit=inp_arr[k];
+if (hit==num) { 
+hits=true;
+break;
+}
+}
+var pads=(j<(line_arr.length-1)) ? ' ':'';
+item+= hits ? '<span class="s2">'+num+'</span>'+pads : num+pads;
+}
+html+=item+'\r\n';
+}
+elm.innerHTML=html+'</pre>';
+}
+</script>
+      
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?another_upload_methods.htm"; }
+  else { parent.quicksync('a5.1'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFEF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#000000">
+  <tr valign="middle">
+    <td align="left">
+      <p style="text-indent: 0px; margin: 0px 0px 0px 0px;"><span style="font-size: 12pt; color: #ffffff;">Inne metody uzupelniania bazy losowań</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a class="inline-button" href="contents.htm"><em>LC</em><span>&lt;&lt;</span></a>&nbsp;
+     <!--<a href="contents.htm">Top</a>-->
+     <a class="inline-button" href="sztuczkiikruczki.htm"><em>LC</em><span>&lt;</span></a>&nbsp;
+     <!--<a href="sztuczkiikruczki.htm">Previous</a>&nbsp;-->
+     <a class="inline-button" href="manipulacjebazydanych.htm"><em>LC</em><span>&gt;</span></a>&nbsp;     
+     <!--<a href="manipulacjebazydanych.htm">Next</a>-->
+     </span>
+    </td>
+  </tr>
+    
+  <tr><td colspan="2">
+  <script>
+  function switchlang(lang) {
+  $(".goog-te-sectional-gadget-link-text").html('');
+  $.getScript("//translate.google.com/translate_a/element.js?cb=googleSectionalElementInit&ug=section&hl="+lang);
+  }
+  function googleSectionalElementInit() {
+  new google.translate.SectionalElement({
+    sectionalNodeClassName: 'goog-trans-section',
+    controlNodeClassName: 'goog-trans-control',
+    background: '#99ff99'
+  }, 'google_sectional_element');
+  }
+  switchlang ('en');
+  </script>
+<div id="lang-menu">
+<ul class="linklist navlinks" style="font-size:12px";>
+<li class="icon_home"><a class="flag en-flag" href="javascript:void(0)" onclick="return switchlang('en');">English</a> &raquo;</li>
+<li class="icon_home"><a class="flag de-flag" href="javascript:void(0)" onclick="return switchlang('de');">Deutsch</a> &raquo;</li>
+<li class="icon_home"><a class="flag es-flag" href="javascript:void(0)" onclick="return switchlang('es');">Español</a> &raquo;</li>
+<li class="icon_home"><a class="flag fr-flag" href="javascript:void(0)" onclick="return switchlang('fr');">Français</a> &raquo;</li>
+<li class="icon_home"><a class="flag it-flag" href="javascript:void(0)" onclick="return switchlang('it');">Italiano</a> &raquo;</li>
+<li class="icon_home"><a class="flag ru-flag" href="javascript:void(0)" onclick="return switchlang('ru');">Rусский</a> &raquo;</li>
+</ul>
+</div>
+  </td></tr> 
+    
+</table>
+
+
+<!-- Placeholder for topic body begin. -->
+
+<div id="topic_body" class="goog-trans-section" lang="pl">
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<div class="goog-trans-control">
+<a class="goog-te-gadget-link" href="javascript:void(0)"><span class="goog-te-sectional-gadget-link-text"></span></a>
+</div>
+<div class="content">
+<p>Istnieje kilka sposobów wprowadzania danych jeżeli nie posiadasz łącza internetowego lub połaczenie nie działa:</p>
+<p>&nbsp;</p>
+<p class="p_Headingredunderlined"><span class="f_Headingredunderlined">Sposób 1 :</span></p>
+<p>&nbsp;</p>
+<p>1. Uruchamiamy program LottoCad</p>
+<p>&nbsp;</p>
+<p>2. Z bocznej zakładki wybieramy opcję baza losowań</p>
+<p>&nbsp;</p>
+<p>3. Umieszczmy kursor na ostatnim losowaniu</p>
+<p>&nbsp;</p>
+<p>4. Na lewym bocznym pasku ostatniego losowania powinien się znajdować symbol strzałki skierowanej w prawo lub jak kto woli symbol trójkąta z wierzchołkiem skierowanym w lewo <img src="strza�ka.png" width="15" height="17" border="0" alt="strzałka"> &nbsp; symbol ten oznacza że baza znajduje się w stanie przeglądania. Jeżeli na lewym szarym bocznym pasku tabeli losowań znajduje się symbol gwiazdki który, oznacza ze baza znajduje się w stanie wprowadzania (wstawiania) danych. Przy nieprawidłowym wciskaniu klawiszy &nbsp;w pasku tym może pojawić się symbol przypominający kształtem dużą literę I oznacza on że baza jest w stanie edycji i dane są właśnie modyfikowane. Aby przywrócić &nbsp; stan przeglądania i ewentualnie unieważnić wprowadzone zmiany należy wcisnąć przycisk ESC (nawet dwukrotnie). Wówczas stan bazy przywrócimy do stanu przeglądania a wprowadzone żle dane zostaną unieważnione.</p>
+<p>&nbsp;</p>
+<p>5. Aby wprowadzić nowy wiersz można użyć klawisza strzałki w dół (Down) &nbsp;lub wcisnąć klawisz INSERT (wstaw), winien się pojawić w tabeli nowy wiersz gotowy do wprowadzania danych z symbolem gwiazdki.6. Należy ustawić kursor na pierwszym polu i wprowadzić kolejny numer losowania i kolejno datę w obowiązującym w tabeli formacie RR-MM-DD oraz w kolejnych komórkach liczby losowania. Do następnej komórki &nbsp;przechodzi się za pomocą klawisza ENTER lub kursorem myszki. &nbsp; Po wprowadzeniu ostatniego ( dla Multilotka 20-ej liczby losowania) i wciśnoięciu Enter losowanie zostanie dopisane do bazy i w bocznym pasku pojawi się symbol trójkąta lub strzałki.</p>
+<p>&nbsp;</p>
+<p class="p_ImageCaption"><span class="f_ImageCaption">Inne porady związane z arkuszem bazy losowań :</span></p>
+<p class="p_ImageCaption"><span class="f_ImageCaption">&nbsp;</span></p>
+<p> &nbsp; Jeżeli w bocznym szarym pasku znajduje się symbol trójkąta lub strzałki można usunąć nieprawidłowe wiersze przez wciśnięcie jednocześnie klawiszy &nbsp;CTRL i DEL. Pojawi się wówczas zapytanie "Czy usunąć zaznaczony rekord ?" które należy potwierdzić lub zrezygnować z usuwania rekordu.</p>
+<p> &nbsp; Z menu podręcznego (prawy myszki) &nbsp;można wybrać lub zgasić &nbsp;opcję "zaznaczanie wielu rekordów dozwolone". Ocja zaznaczanie wielu dozwolone &nbsp;pozwala zaznaczać (np do usunięcia) wiele rekordów bazy. Zaznaczanie wielu </p>
+<p> &nbsp; przeprowadza się w następujący sposób: zaznaczamy kliknięciem myszki pierwszy wiersz &nbsp;tabeli a następnie z jednocześnie wciśniętym klawiszem SHIFT zaznaczamy wiersz ostatni. &nbsp; Lub zaznaczamy wiersz pierwszy i z wciśniętym klawiszem SHIFT klawiszami strzałka w dół &nbsp; &nbsp;(DOWN) lub strzałka w górę (UP) przeciągamy zaznaczenie do wiersza końcowego zaznaczania. &nbsp;Po zaznaczeniu wielu rekordów możliwe jest ich jednoczesne usuniecie z pomocą &nbsp;jednoczesnego wciśnięcia klawiszy CTRL i DEL. Wówczas zamiast pytania o usunięcie &nbsp; pojedynczego rekordu pojawi się pytanie :" usunąć wszystkie zaznaczone rekordy?".</p>
+<p class="p_Headingredunderlined"><span class="f_Headingredunderlined">&nbsp;</span></p>
+<p class="p_Headingredunderlined"><span class="f_Headingredunderlined">Sposób 2: </span></p>
+<p class="p_Headingredunderlined"><span class="f_Headingredunderlined">&nbsp;</span></p>
+<p>Uzupełnianie bazy losowań przez import z pliku tekstowego: &nbsp; </p>
+<p>&nbsp;</p>
+<p>Najszybciej i najprościej można to zrobić tworząc plik tekstowy trzymając się określonych zasad:</p>
+<p>&nbsp;</p>
+<p>Do pliku należy wpisywać dane posługując się np. Notepadem lub panelem tekstowym "zakłady" z programu LottoCAD. Przy użyciu panela tekstowego z programu LottoCAD należy najpierw posługując się podręcznym menu </p>
+<p>panela tekstowego (prawy myszki) wyłączyć opcję "sprawdzanie skłądni wyłączone". Jeżeli używamy edytora poprostu wpisujemy kolejno numer losowania datę w formacie RR-MM-DD lub RRRR-MM-DD i kolejne numery losowań jako oddzielenie kolejnych kolumn można użyć dowolnego znaku z ;:' lub poprostu spacji &nbsp;(zaleca się średnik ;). Plik ten zapisujemy w dowolnym miejscu na dysku jako plik z rozszeżeniem txt ( przykład: losowanie1.txt). Po zapisaniu pliku dla wersji po 1 marca 2009 wybieramy z menu "narzędzia" opcję aktualizuj bazę losowań. W formularzu importu rozwijamy opcje dodatkowe przyciskiem "pokaż opcje" i zaznaczamy import z pliku i opcję TXT. Po wciśnięciu klawisza import zostaniemy zapytani o lokalizację pliku tekstowego który wczesniej utworzyliśmy i zapisalismy na dysku. Program automatycznie dopisze losowania do bazy. jeżeli posiadasz wersję programu z przed 1 marca 2009 importu z pliku tekstowego &nbsp;można dokonać w ten sam sposób co wyżej lecz należy wyłączyć program LottoCAd i wybrać program "Obsługa baz danych" (BaseDriver.exe) i otworzyć plik bazy z wynikami losowań ( z rozszerzeniem *,dat) dla multilotka jest to plik "multi.dat". W programie tym można również wprowadzać losowania w sposób ręczny podany wyżej. Import z pliku uruchamia się wybierając z menu opcję "Import". Tworzenie pliku tekstowego można sobie ułatwić uruchamiając najpierw opcję "export" i zapisać plik tekstowy na dysku z istniejących rekordów bazy danych a następnie w edytorze tekstowym dopisać losowania które chcemy dołozyć do bazy trzymając się zasad wprowadzania które program wyeksportował. Wybierz taki format eksportu który zapewni Ci łatwe wpisywanie np. nie eksportuj pliku w formacie z ogranicznikami pól w postaci "pole". Unikniesz wtedy żmudnego dopisywania wyników i wielokrotnego wprowadzania symbolu (").</p>
+<p>Łatwo plik tekstowy zrobisz używając excela. Przed wpisywaniem kolumnę drugą w excelu Po wypełnieniu kolumn kolejno numer losowania, data losowania, liczba 1, liczba 2 ..... , należy wyeksportować plik w formacie csv ( tekst rozdzielany średnikami). I plik do importu gotowy bez zwracania uwagi na formatowanie.</p>
+<p>&nbsp;</p>
+<p>Przykład: fragment prawidłowego pliku importu wormat CSV pola oddzielane średnikami:</p>
+<p>&nbsp;</p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">1725;02-04-07;1;6;11;16;21;26;31;36;41;46;51;56;61;66;71;76;77,78;79;80</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">1726;02-04-08;2;7;12;17;22;27;32;37;42;47;52;57;62;67;72;76;77;78;79;80</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">1727;02-04-09;3;8;13;18;23;28;33;38;43;48;53;58;63;68;73;76;78;78;79;80</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">1728;02-04-10;4;9;14;19;24;29;34;39;44;49;54;59;64;69;74;76;79;78;79;80</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">1729;02-04-11;5;10;15;20;25;30;35;40;45;50;55;60;65;70;74;75;76;78;79;80</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">1730;02-04-12;6;11;16;21;26;31;36;41;46;51;56;61;66;71;73;76;77;78;79;80</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">1731;02-04-13;7;12;17;22;27;32;37;42;47;52;57;62;67;70;72;77;77;78;79;80</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">1732;02-04-14;8;13;18;23;28;33;38;43;48;53;58;63;68;69;73;78;77;78;79;80</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">1733;02-04-15;9;14;19;24;29;34;39;44;49;54;59;64;65;69;74;79;77;78;79;80</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">1734;02-04-16;10;15;20;25;30;35;40;45;50;55;60;61;65;70;75;80;77;78;79;80</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">1735;02-04-17;11;16;21;26;31;36;41;46;51;56;57;61;66;71;76;81;77;78;79;80</span></p>
+<p>&nbsp;</p>
+<p class="p_Headingredunderlined"><span class="f_Headingredunderlined">Sposób 3 : </span></p>
+<p class="p_Headingredunderlined"><span class="f_Headingredunderlined">&nbsp;</span></p>
+<p>W programie LottoCAD znajduje się główne pole edycji losowań. Pole to wykorzystywane jest przez bardzo wiele opcji programu między innymi słuzy do wprowadzania aktualnego losowania.Losowanie automatycznie wpisywane jest do bazy danych po wciśnięciu zielonego przycisku obok pola edycji. W czasie losowania gry wpisujemy w to pole kolejne wylosowane liczby podczas losowania w studio telewizyjnym. Po wciśnięciu przycisku obok pola zawartośc pola zostaje posortowana i dopisana do bazy z numerewm losowania następnym i aktualną (dzisiejszą) datą. Po wpisaniu losowania przycisk staje się nieaktywny. Znaczy to że losowanie z dzisiejszą datą już w bazie istnieje. Zapobiega to podwójnemu wpisowi losowania. Ale można program oszukać:</p>
+<p>&nbsp;</p>
+<p>Przykład :</p>
+<p>Jako ostatnie losowanie mamy w bazie losowanie np. z dnia 02-03-03 dziś jest np. 02-03-07 z kolektury wzieliśmy wyniki losowań od dnia 4 do 6 marca i robimy to tak :</p>
+<p>1. Wybieramy z bocznego paska wyboru panel "Baza Losowań".</p>
+<p>2. wpisujemy do pola edycji losowanie z 4 marca 2009</p>
+<p>3. Wciskamy zielony przycisk obok pola edycji jest aktywny bo ostatnie losowanie jest &nbsp;z mniejszą datą niż data aktualna.</p>
+<p>5. W tabeli losowań pojawi się nowy wiersz z losowaniem które właśnie wprowadziliśmy. Z pomocą myszki rozwijamy w tym wierszu kalendarz z pola daty losowania które &nbsp;wprowadziliśmy i poprawiamy datę na własciwą i wybieramy datę 02-03-04.</p>
+<p>6. Ponieważ zielony przycisk jest w dalszym ciągu nieaktywny musimy odświerzyć całą &nbsp;bazę gry. Można to zrobić w następujący sposób: należy wybrać z bocznego paska &nbsp;zakładkę innej gry np. "Express Lotek" i jeszcze raz ponownie w ten sam sposób &nbsp;wrócić do gry "Multilotek". Zielony przycisk będzie już aktywny i umożliwi &nbsp; &nbsp;wprowadzenie następnego losowania w tym celu należy powtórzyć poprzednie kroki &nbsp; poczynając od pkt.1</p>
+<p>&nbsp;</p>
+<p>Jest to trochę uciążliwy sposób ale dla kilku losowań możliwy do stosowania.</p>
+<p class="p_Headingredunderlined"><span class="f_Headingredunderlined">&nbsp;</span></p>
+<p class="p_Headingredunderlined"><span class="f_Headingredunderlined">Sposób 4 :</span></p>
+<p class="p_Headingredunderlined"><span class="f_Headingredunderlined">&nbsp;</span></p>
+<p>Każdy program wyposażony jest w program narzedziowy do obsługi wszystkich baz danych "Base Driver.exe". Programem tym można edytowac i uzupełniać dowolną bazę danych gry a w szczególności bazę wyników losowań.</p>
+<p>&nbsp;</p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">&nbsp;</span></p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">Uwaga : Manipulację zawartością baz danych zaleca się tylko doświadczonym uzytkownikom. Jeżeli chcesz coś zmieniać w bazach danych, pamiętaj że dobrym zwtczajem jest zrobienie kopii roboczrj katalogu Databases.</span></p>
+<p>&nbsp;</p>
+
+</div>
+</td></tr></table>
+</div>
+
+<!-- Placeholder for topic body end. -->
+</body>
+</html>

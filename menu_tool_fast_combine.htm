@@ -1,0 +1,236 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Szybki pasek kombinacji</title>
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+   <style type="text/css">
+   <!--
+   .inline-button {
+   width:auto;
+   font: bold 90%/1 Verdana, sans-serif;
+   margin: 0 0.2em; padding: 0.1em 0; _padding:0;
+   border: 1px solid black;
+   white-space:nowrap;
+   text-decoration: none;
+   vertical-align:middle;
+   background: #ccc;
+   color: black;
+   }
+.inline-button em {
+   cursor:hand;
+   font-style: normal;
+   margin:0; padding: 0.1em 0.5em;
+   background: white;
+   color: black;
+   }
+.inline-button span {
+   cursor:hand;
+   margin:0; padding: 0.1em 0.5em 0.1em 0.3em;
+   }
+.inline-button:hover {
+   background: #666;
+   color: white;
+   }
+.inline-button:hover em {
+   background: black;
+   color: white;
+   }
+.s1 {
+	background-color: #FFFFFF;
+	color: #008000;
+}
+.s2 {
+	background-color: #FF8000;
+	color: #000000;
+}
+.s5 {
+	background-color: #FFFFFF;
+	color: #008000;
+}
+.s6 {
+	background-color: #FFFFFF;
+	color: #FF0000;
+}
+.s7 {
+	background-color: #FFFFFF;
+	color: #FF0000;
+}
+.s8 {
+	background-color: #FFFFFF;
+	color: #FF0000;
+}
+.s9 {
+	background-color: #FFFFFF;
+	color: #008000;
+}
+.s10 {
+	background-color: #FFFFFF;
+	color: #800000;
+}
+.s3 {
+	background-color: #FFFFFF;
+	color: #000000;
+}
+.s4 {
+	background-color: #FFFF00;
+	color: #0000FF;
+}
+.s11 {
+	background-color: #00FF00;
+	color: #000000;   }
+/* Horizontal lists
+----------------------------------------*/
+ul.linklist {
+	display: block;
+	margin: 0;
+}
+
+ul.linklist li {
+	display: block;
+	list-style-type: none;
+	float: left;
+	width: auto;
+	margin-right: 5px;
+	font-size: 1.1em;
+	line-height: 2.2em;
+}
+
+ul.linklist {
+	float: right;
+	margin-right: 0;
+	margin-left: 5px;
+	text-align: right;
+}
+
+ul.navlinks {
+	padding-bottom: 1px;
+	margin-bottom: 1px;
+	border-bottom: 1px solid #FFFFFF;
+	font-weight: bold;
+}
+
+a.flag {color: #AAA; font-size:0.8em;text-decoration:none;}
+a.flag:hover {color:#FFF;text-decoration:underline;}
+a.en-flag {padding-left:21px; background: url(images/flag/en.png) top left no-repeat;}
+a.de-flag {padding-left:21px; background: url(images/flag/de.png) top left no-repeat;}
+a.ru-flag {padding-left:21px; background: url(images/flag/ru.png) top left no-repeat;} 
+a.cs-flag {padding-left:21px; background: url(images/flag/cz.png) top left no-repeat;}
+a.fr-flag {padding-left:21px; background: url(images/flag/fr.png) top left no-repeat;}
+a.es-flag {padding-left:21px; background: url(images/flag/es.png) top left no-repeat;}
+a.it-flag {padding-left:21px; background: url(images/flag/it.png) top left no-repeat;}
+
+-->   
+</style>
+
+<script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+
+<script type="text/javascript">
+function trim11 (str) {
+str = str.replace(/^\s+/, '');
+for (var i = str.length - 1; i >= 0; i--) {
+if (/\S/.test(str.charAt(i))) {
+str = str.substring(0, i + 1);
+break;
+}
+}
+return str;
+}
+
+function _highlight(inp_id,out_id) {
+elm=document.getElementById(out_id);
+var inptxt = trim11(document.getElementById(inp_id).value);
+var inp_arr = inptxt.split(/[ :,;-]+/);
+var html=elm.innerHTML;
+text=trim11(html.replace(/<[^>]+>/g,''));
+lines=text.split(/\r?\n/g);
+
+html="<pre>";
+for (var i in lines) {
+var tic=lines[i];
+var line_arr=tic.split(' ');
+
+var item='';
+for (var j in line_arr) {
+var num=line_arr[j];
+var hits=false;
+for (var k in inp_arr) {
+var hit=inp_arr[k];
+if (hit==num) { 
+hits=true;
+break;
+}
+}
+var pads=(j<(line_arr.length-1)) ? ' ':'';
+item+= hits ? '<span class="s2">'+num+'</span>'+pads : num+pads;
+}
+html+=item+'\r\n';
+}
+elm.innerHTML=html+'</pre>';
+}
+</script>
+      
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?menu_tool_fast_combine.htm"; }
+  else { parent.quicksync('a3.2.1.6.4'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFEF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+
+
+
+<!-- Placeholder for topic body begin. -->
+
+<div id="topic_body" class="goog-trans-section" lang="pl">
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<div class="goog-trans-control">
+<a class="goog-te-gadget-link" href="javascript:void(0)"><span class="goog-te-sectional-gadget-link-text"></span></a>
+</div>
+<div class="content">
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">Jest to &nbsp;pasek narzędziowy- kalendarz dla formularza kombinacje. Jeżeli formularz kombinacje jest aktywny otworzony) z pomocą paska można zmieniać zakres wybranych dat. Umożliwia też i usprawnia wizualizację wybranego do kombinacjii analizy zakresu dat. Kalendarz mieści kilka kolumn miesięcznych. Zwiększenia ilości miesięcy wyświetlanych na pasku można dokonać poprzez kliknięcie prawym klawiszem </span></p>
+<p style="text-align: center; text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">myszki.Zmniejszenie uzyskuje się poprzez kliknięcie prawym przyciskiem myszki i przytrzymanie klawisza shift. Zaznaczenie zakresu dat przeprowadza się jak tradycyjne zaznaczanie poprzez przeciągnięcie zakresu zaznaczania od wybranej daty startowej do wybranej daty końcowej lub odwrotnie. W panelu kombinacje gdy jest on aktywny modyfikowane są zakresy dat w zakładce wybór dat.</span></p>
+<p style="text-align: center; text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-align: center; text-indent: -19px; margin: 0px 19px 0px 38px;"><img src="quicktoolbar.png" width="441" height="219" border="0" alt="quicktoolbar"></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">Pasek posiada kilka dodatkowych opcji. Wybór dat można dokonywać w sposób ciągły przez przeciąganie zaznaczenia po datach kalendarza zwalniając przycisk myszki na datach krańcowych lub wybiórczo dla okesów nieciągłych przez kliknięcie na dacie z przytrzymanym klawiszem Ctrl. Pod kalendarzem umieszczony </span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">został przycisk powtarzania generacji kombinacji. Różni się on od dostępnej dotychczas opcji "powtórz i sprawdź z polem edycji" że z pomocą kalendarza dynamicznie można zmieniać zakresy dat na kalendarzu i automatycznie zmieniane są one w formularzu kombinacje. Wybór dat ułatwia umieszczony również </span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">pod kalendarzem prosty wykres trafień z losowania które zostało wcześniej wybrane z pola "wczytaj losowanie z dnia". Dodatkowo pod przyciskiem "generuj i sprawdź" umieszczone zostało pole przełączników z przyciskami "0","-1"..."-5". Wybranie przełącznika "0" oznacza że diagram(wykres) trafień będzie rysowany </span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">dla trafień w losowaniach poprzednich z liczb umieszczonych w polu edycji. Natomiast wybranie dowolnego przycisku z zakresu "-1".."-5" oznacza że diagram będzie rysowany z liczb losowania odpowiednio o 1 do 5 losowań wstecz od losowania z datą ustawioną w polu "wczytaj losowanie z dnia".Taka organizacja </span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">umożliwia analizę i szybkie generowanie zakładów dla wielu opcji które trzeba by było często i żmudnie zmieniać.Przykład zastosowania: </span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">1. Otwieramy formularz :"kombinacje". ( kalendarz wyboru do kombinacji jest aktywny tylko &nbsp; jeżeli formularz kombinacje jest otworzony, </span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">uwaga może być niewidoczny ale nie może być &nbsp; zamknięty przyciskiem OK lub krzyżykiem systemowym zamykającym okno).</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">&nbsp;</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">2. Ustawiamy kombinację liniową lub wykładniczą, ustawiamy jeżeli stosujemy liczby twarde &nbsp; i priorytetowe.</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2"> Uwaga zakresu dat nie musimy ustawiać, wybierzemy je z nowego paska &nbsp; kalendarza. </span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">3. Nie zamykykając formularza kombinacje ( nie używamy krzyżyka zamknięcia okna ani przycisku OK), klikamy myszką na okno główne programu. Jeżeli kalendarz nie jest &nbsp; widoczny wybieramy z menu "narzedzia" opcję "wyświetlaj kalendarz kombinacji". </span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">4. W polu "wczytaj losowanie z dnia" wybieramy do pola edycji losowanie z którym &nbsp; generowane zakłady będą sprawdzane. &nbsp; </span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">Uwaga : Sprawdzanie zawsze jest wykonywane z liczbami z pola edycji. </span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">5. Na wykresie pokazywane są graficznie ilości liczb trafionych z pola edycji w poprzednich losowaniach. </span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">6. Pozostaje wybór dat dowolną metodą (również klikając na wykresie, daty wybrane są na wykresie podświetlane) i przyciskanie przycisku "Generuj i sprawdź". &nbsp; </span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">Wykres pozwala orientować się w wyborze zakresu dat czy wybierać niższych &nbsp;trafień "dołki" czy wyższych "górki".</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">Na wykresie również można wybierać zakresy dat poprzez kliknięcie na słupek odpowiadający dacie, kliknięcie na podświetlony słupek powoduje jego zgaszenie i usynięcie daty z zakresu wybranych dat i odwrotnie klinięcie na słuoek zgaszony, zapala go i wybiera odpowiednią datę.</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+
+</div>
+</td></tr></table>
+</div>
+
+<!-- Placeholder for topic body end. -->
+</body>
+</html>

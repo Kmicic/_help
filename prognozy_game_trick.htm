@@ -1,0 +1,332 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Prognozy przyklady gry</title>
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+   <style type="text/css">
+   <!--
+   .inline-button {
+   width:auto;
+   font: bold 90%/1 Verdana, sans-serif;
+   margin: 0 0.2em; padding: 0.1em 0; _padding:0;
+   border: 1px solid black;
+   white-space:nowrap;
+   text-decoration: none;
+   vertical-align:middle;
+   background: #ccc;
+   color: black;
+   }
+.inline-button em {
+   cursor:hand;
+   font-style: normal;
+   margin:0; padding: 0.1em 0.5em;
+   background: white;
+   color: black;
+   }
+.inline-button span {
+   cursor:hand;
+   margin:0; padding: 0.1em 0.5em 0.1em 0.3em;
+   }
+.inline-button:hover {
+   background: #666;
+   color: white;
+   }
+.inline-button:hover em {
+   background: black;
+   color: white;
+   }
+.s1 {
+	background-color: #FFFFFF;
+	color: #008000;
+}
+.s2 {
+	background-color: #FF8000;
+	color: #000000;
+}
+.s5 {
+	background-color: #FFFFFF;
+	color: #008000;
+}
+.s6 {
+	background-color: #FFFFFF;
+	color: #FF0000;
+}
+.s7 {
+	background-color: #FFFFFF;
+	color: #FF0000;
+}
+.s8 {
+	background-color: #FFFFFF;
+	color: #FF0000;
+}
+.s9 {
+	background-color: #FFFFFF;
+	color: #008000;
+}
+.s10 {
+	background-color: #FFFFFF;
+	color: #800000;
+}
+.s3 {
+	background-color: #FFFFFF;
+	color: #000000;
+}
+.s4 {
+	background-color: #FFFF00;
+	color: #0000FF;
+}
+.s11 {
+	background-color: #00FF00;
+	color: #000000;   }
+/* Horizontal lists
+----------------------------------------*/
+ul.linklist {
+	display: block;
+	margin: 0;
+}
+
+ul.linklist li {
+	display: block;
+	list-style-type: none;
+	float: left;
+	width: auto;
+	margin-right: 5px;
+	font-size: 1.1em;
+	line-height: 2.2em;
+}
+
+ul.linklist {
+	float: right;
+	margin-right: 0;
+	margin-left: 5px;
+	text-align: right;
+}
+
+ul.navlinks {
+	padding-bottom: 1px;
+	margin-bottom: 1px;
+	border-bottom: 1px solid #FFFFFF;
+	font-weight: bold;
+}
+
+a.flag {color: #AAA; font-size:0.8em;text-decoration:none;}
+a.flag:hover {color:#FFF;text-decoration:underline;}
+a.en-flag {padding-left:21px; background: url(images/flag/en.png) top left no-repeat;}
+a.de-flag {padding-left:21px; background: url(images/flag/de.png) top left no-repeat;}
+a.ru-flag {padding-left:21px; background: url(images/flag/ru.png) top left no-repeat;} 
+a.cs-flag {padding-left:21px; background: url(images/flag/cz.png) top left no-repeat;}
+a.fr-flag {padding-left:21px; background: url(images/flag/fr.png) top left no-repeat;}
+a.es-flag {padding-left:21px; background: url(images/flag/es.png) top left no-repeat;}
+a.it-flag {padding-left:21px; background: url(images/flag/it.png) top left no-repeat;}
+
+-->   
+</style>
+
+<script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+
+<script type="text/javascript">
+function trim11 (str) {
+str = str.replace(/^\s+/, '');
+for (var i = str.length - 1; i >= 0; i--) {
+if (/\S/.test(str.charAt(i))) {
+str = str.substring(0, i + 1);
+break;
+}
+}
+return str;
+}
+
+function _highlight(inp_id,out_id) {
+elm=document.getElementById(out_id);
+var inptxt = trim11(document.getElementById(inp_id).value);
+var inp_arr = inptxt.split(/[ :,;-]+/);
+var html=elm.innerHTML;
+text=trim11(html.replace(/<[^>]+>/g,''));
+lines=text.split(/\r?\n/g);
+
+html="<pre>";
+for (var i in lines) {
+var tic=lines[i];
+var line_arr=tic.split(' ');
+
+var item='';
+for (var j in line_arr) {
+var num=line_arr[j];
+var hits=false;
+for (var k in inp_arr) {
+var hit=inp_arr[k];
+if (hit==num) { 
+hits=true;
+break;
+}
+}
+var pads=(j<(line_arr.length-1)) ? ' ':'';
+item+= hits ? '<span class="s2">'+num+'</span>'+pads : num+pads;
+}
+html+=item+'\r\n';
+}
+elm.innerHTML=html+'</pre>';
+}
+</script>
+      
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?prognozy_game_trick.htm"; }
+  else { parent.quicksync('a3.2.1.5.10.5'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFEF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#000000">
+  <tr valign="middle">
+    <td align="left">
+      <p style="text-indent: 0px; margin: 0px 0px 0px 0px;"><span style="font-size: 12pt; color: #ffffff;">Prognozy przykłady gry</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a class="inline-button" href="contents.htm"><em>LC</em><span>&lt;&lt;</span></a>&nbsp;
+     <!--<a href="contents.htm">Top</a>-->
+     <a class="inline-button" href="progn_what_select.htm"><em>LC</em><span>&lt;</span></a>&nbsp;
+     <!--<a href="progn_what_select.htm">Previous</a>&nbsp;-->
+     <a class="inline-button" href="raportpozycji.htm"><em>LC</em><span>&gt;</span></a>&nbsp;     
+     <!--<a href="raportpozycji.htm">Next</a>-->
+     </span>
+    </td>
+  </tr>
+    
+  <tr><td colspan="2">
+  <script>
+  function switchlang(lang) {
+  $(".goog-te-sectional-gadget-link-text").html('');
+  $.getScript("//translate.google.com/translate_a/element.js?cb=googleSectionalElementInit&ug=section&hl="+lang);
+  }
+  function googleSectionalElementInit() {
+  new google.translate.SectionalElement({
+    sectionalNodeClassName: 'goog-trans-section',
+    controlNodeClassName: 'goog-trans-control',
+    background: '#99ff99'
+  }, 'google_sectional_element');
+  }
+  switchlang ('en');
+  </script>
+<div id="lang-menu">
+<ul class="linklist navlinks" style="font-size:12px";>
+<li class="icon_home"><a class="flag en-flag" href="javascript:void(0)" onclick="return switchlang('en');">English</a> &raquo;</li>
+<li class="icon_home"><a class="flag de-flag" href="javascript:void(0)" onclick="return switchlang('de');">Deutsch</a> &raquo;</li>
+<li class="icon_home"><a class="flag es-flag" href="javascript:void(0)" onclick="return switchlang('es');">Español</a> &raquo;</li>
+<li class="icon_home"><a class="flag fr-flag" href="javascript:void(0)" onclick="return switchlang('fr');">Français</a> &raquo;</li>
+<li class="icon_home"><a class="flag it-flag" href="javascript:void(0)" onclick="return switchlang('it');">Italiano</a> &raquo;</li>
+<li class="icon_home"><a class="flag ru-flag" href="javascript:void(0)" onclick="return switchlang('ru');">Rусский</a> &raquo;</li>
+</ul>
+</div>
+  </td></tr> 
+    
+</table>
+
+
+<!-- Placeholder for topic body begin. -->
+
+<div id="topic_body" class="goog-trans-section" lang="pl">
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<div class="goog-trans-control">
+<a class="goog-te-gadget-link" href="javascript:void(0)"><span class="goog-te-sectional-gadget-link-text"></span></a>
+</div>
+<div class="content">
+<p style="text-indent: 0px;"><span style="font-family: 'MS Shell Dlg';">Praktyczne przykłady gry:</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'MS Shell Dlg';">Wykonujemy prognozy ZG-?Z &nbsp;od 1 do 15 cykli, procent wybierania z list = 33%, &nbsp;Parametry te można wybrać doświadczalnie na podstawie maksymalnej średniej skuteczności ocenionej na podstawie raportów skuteczności oraz ilości wybieranych w prognozach liczb. Analizy wykazują ze takie ustawienia jak wyżej dają wysoką skuteczność przy ilości prognozowanych 5 do 10 liczb na prognozę.</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'MS Shell Dlg';"> Większa ilość liczb w poszczególnych prognozach zwiększa poziom błędu i jest mniej skuteczna. Parametry musi ustalić każdy użytkownik indywidualnie na podstawie analizy i obserwacji statystyk skuteczności w myśl zasady, że jeżeli średnia skuteczność prognozy wykonana dla większej ilości 10-20 losowań wstecz jest większa niż 25% a na przykład od 3-5 losowań jest dużo niższa, uzasadnione jest twierdzenie, &nbsp;że w najbliższych losowaniach jej skuteczność się poprawi zgodnie z zasadą globalnej równowagi.</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Arial';">&nbsp;</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'MS Shell Dlg';">Przykład: Prognoza:</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">cykl &nbsp;1 losowań (4 liczb)-&gt; &nbsp;9 69 72 73</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">cykl &nbsp;2 losowań (5 liczb)-&gt; &nbsp;2 13 37 46 56</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">cykl &nbsp;3 losowań (8 liczb)-&gt; 32 33 34 62 64 68 72 80</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">cykl &nbsp;4 losowań (10 liczb)-&gt; 14 17 19 28 41 52 62 66 76 80</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">cykl &nbsp;5 losowań (7 liczb)-&gt; &nbsp;4 20 22 43 53 56 67</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">cykl &nbsp;6 losowań (4 liczb)-&gt; &nbsp;3 18 29 43</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">cykl &nbsp;7 losowań (6 liczb)-&gt; 24 30 33 36 51 60</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">cykl &nbsp;8 losowań (5 liczb)-&gt; &nbsp;8 18 33 36 64</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">cykl &nbsp;9 losowań (6 liczb)-&gt; 23 30 32 33 53 70</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">cykl 10 losowań (5 liczb)-&gt; 32 42 54 65 78</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">cykl 11 losowań (9 liczb)-&gt; 14 32 44 53 54 65 67 71 76</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">cykl 12 losowań (4 liczb)-&gt; 34 54 65 76</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">cykl 13 losowań (3 liczb)-&gt; 20 67 71</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">cykl 14 losowań (6 liczb)-&gt; &nbsp;6 20 24 25 67 71</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">cykl 15 losowań (2 liczb)-&gt; 36 43</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">analiza skuteczności :</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">Okres &nbsp; 1| &nbsp; | &nbsp; | &nbsp; | 50| 25| &nbsp; | 50| 25| &nbsp; | &nbsp; || 15</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">Okres &nbsp; 2| 20| 25| &nbsp; | 17| 33| &nbsp; | 33| 40| 33| 50|| 25</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">Okres &nbsp; 3| &nbsp; | 14| 25| 33| 67| 80| &nbsp; | 20| &nbsp; | 25|| 26</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">Okres &nbsp; 4| &nbsp; | 45| &nbsp; | 19| 33| 20| 30| 41| 29| 71|| 29</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">Okres &nbsp; 5| &nbsp; | 33| 25| 14| 40| 33| 29| 25| 17| 36|| 25</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">Okres &nbsp; 6| &nbsp; | 20| 17| &nbsp; | 33| &nbsp; | 50| 20| 33| 75|| 25</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">Okres &nbsp; 7| 33| &nbsp; | 75| 40| 67| 67| &nbsp; | 33| 50| 12|| 38</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">Okres &nbsp; 8| &nbsp; | &nbsp; | &nbsp; | &nbsp; | 67| 60| &nbsp; | &nbsp; | &nbsp; | 20|| 15</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">Okres &nbsp; 9| &nbsp; | &nbsp; | 50| 50| &nbsp; | 33| 40| &nbsp; | 25| &nbsp; || 20</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">Okres &nbsp;10| &nbsp; | 33| 43| 33| 50| 43| 12| &nbsp; | 29| 33|| 28</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">Okres &nbsp;11| 17| 22| 14| 20| 29| &nbsp; | 20| 12| 50| 25|| 21</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">Okres &nbsp;12| 33| &nbsp; | &nbsp; |100| &nbsp; | &nbsp; | &nbsp; | &nbsp; | &nbsp; | 33|| 17</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">Okres &nbsp;13| 33| &nbsp; | 33| 33| &nbsp; | &nbsp; | &nbsp; | &nbsp; | &nbsp; | &nbsp; || 10</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">&nbsp;</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">Okres &nbsp;15| &nbsp; | 33| &nbsp; | &nbsp; | 67| &nbsp; | &nbsp; | &nbsp; | 33| &nbsp; || 13</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">Z założenia wynika że chcemy zagrać o piątkę z 4 lub 5 stref po 2 lub trzy liczby w strefie, czyli potrzebujemy 10-15 liczb. Ale raczej 10-12 ze względu na koszty.</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">Analizując tabelę zauważymy, że od 3 losowań od ostatniego nie wychodzi okres 1 i należy się spodziewać, że w najbliższych losowaniach trend ten się odwróci, więc pobieramy 4 liczby prognozy: 9 69 72 73, zwraca też uwagę, że po długim okresie zerowym okres 13 zaczyna występować. Nie są to wyniki zbyt wysokie, ale właśnie, dlatego należy zwrócić na to uwagę. Dodajemy okres 13 do już wybranych 4 liczb i otrzymujemy &nbsp;9 20 67 69 71 72 73. Zwrócić należ również uwagę na wiersze, które dość regularnie dają trafienia a w ostatnim losowaniu dały niższą skuteczność. Takim wierszem jest wiersz 14. Uwzględniając ten wiersz otrzymujemy zestaw liczb: &nbsp;6 9 20 24 25 67 69 71 72 73</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">z liczb tych wykonujemy regularny system strefowy po dwie liczby w strefie i rezultatem gry, mimo że jedna ze stref nie trafiła, &nbsp;jest niewielka wygrana: Suma wygranej= 64.00 zł &nbsp; Koszt= 38.40 zł &nbsp;Zysk= 25.60 zł. &nbsp;lub generując 5 ki w kombinacji wykładniczej z 30 dni wstecz z wykładnikiem 5 za każdą generację wyłuskujemy 5-kę ze średnim zyskiem ok 400 zł z 25 zakładów. Przy generacji wykładniczej warto dostosować zakres dat do okresów prognoz ?.</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">Przykład prognozy odwrotnej tzn GZ-?G, jest to prognoza "przewidująca", że grę w kilku następnych losowaniach (zależnie od cyklu prognozy) można będzie zaliczyć do udanych. W prognozie tej można użyć prognozy z offsetem. Jeżeli dotyczy to prognozy o cyklu 4 wiemy, że ostatnie losowanie i trzy poprzednie to okres wybierania z liczb zimnych. Jeżeli prognoza się sprawdzi to według wszelkich znaków na niebie i ziemi następne losowania to będzie okres "gorący". Dlatego prognozę tę można wykonać z offsetem np.: 2 lub 3 losowania i jeżeli ocenimy, że trend się rozwija prawidłowo gramy tymi liczbami przez 2 lub 1 &nbsp;następne losowanie. Obserwację trendu ułatwia obserwacja wyników z włączoną opcją "AMS mode".</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">Prognoza GZ-?G z włączoną opcją "AMS mode" i offsetem o 2 losowania wstecz ( strzałka pokazuje offset generacji):</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">cykl &nbsp;4 losowań (10 liczb)-&gt; 14 19 26 33 35 44 68 70 72 76</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">-----------------------------------------------------------</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">03-01-19 -&gt;[ 3] 19 33 44</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">03-01-20 -&gt;[ 2] 14 72</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">03-01-21 -&gt;[ 3] 19 68 72</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">03-01-22 -&gt;[ 3] 19 35 68</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">03-01-23 -&gt;[ 1] 70</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">03-01-24 -&gt;[ 5] 26 33 44 72 76</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">03-01-25 -&gt;[ 3] 19 44 68</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">03-01-26 -&gt;[ 3] 14 33 68</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">03-01-27 -&gt;[ 7] 14 19 33 35 68 70 72</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">03-01-28 -&gt;[ 0]</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">03-01-29 -&gt;[ 0]</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">03-01-30 -&gt;[ 0]</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">&nbsp;</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">03-02-01 -&gt;[ 4] 14 19 44 76</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">03-02-02 -&gt;[ 4] 14 26 35 44</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">03-02-03 -&gt;[ 4] 44 70 72 76</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">03-02-04 -&gt;[ 5] 26 33 44 68 72</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">03-02-05 -&gt;[ 1] 72</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">03-02-06 -&gt;[ 2] 26 70</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">03-02-07 -&gt;[ 1] 33</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">03-02-08 -&gt;[ 1] 44 &nbsp;&lt;----</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">03-02-09 -&gt;[ 4] 19 44 72 76</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">03-02-10 -&gt;[ 3] 14 44 68</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">03-02-11 -&gt;[ 3] 26 33 72</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';"> zauważamy, że sytuacja się rozwija dobrze (liczby występują jak w typowym okresie gorącym), choć jeszcze szczyt nie został osiągnięty. To zapowiada dobrą grę w najbliższym losowaniu. I tak się stało skuteczność była 60%.</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">Czego Wam i sobie życzę... &nbsp; </span></p>
+
+</div>
+</td></tr></table>
+</div>
+
+<!-- Placeholder for topic body end. -->
+</body>
+</html>

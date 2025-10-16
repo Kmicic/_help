@@ -1,0 +1,281 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Cover BAT</title>
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+   <style type="text/css">
+   <!--
+   .inline-button {
+   width:auto;
+   font: bold 90%/1 Verdana, sans-serif;
+   margin: 0 0.2em; padding: 0.1em 0; _padding:0;
+   border: 1px solid black;
+   white-space:nowrap;
+   text-decoration: none;
+   vertical-align:middle;
+   background: #ccc;
+   color: black;
+   }
+.inline-button em {
+   cursor:hand;
+   font-style: normal;
+   margin:0; padding: 0.1em 0.5em;
+   background: white;
+   color: black;
+   }
+.inline-button span {
+   cursor:hand;
+   margin:0; padding: 0.1em 0.5em 0.1em 0.3em;
+   }
+.inline-button:hover {
+   background: #666;
+   color: white;
+   }
+.inline-button:hover em {
+   background: black;
+   color: white;
+   }
+.s1 {
+	background-color: #FFFFFF;
+	color: #008000;
+}
+.s2 {
+	background-color: #FF8000;
+	color: #000000;
+}
+.s5 {
+	background-color: #FFFFFF;
+	color: #008000;
+}
+.s6 {
+	background-color: #FFFFFF;
+	color: #FF0000;
+}
+.s7 {
+	background-color: #FFFFFF;
+	color: #FF0000;
+}
+.s8 {
+	background-color: #FFFFFF;
+	color: #FF0000;
+}
+.s9 {
+	background-color: #FFFFFF;
+	color: #008000;
+}
+.s10 {
+	background-color: #FFFFFF;
+	color: #800000;
+}
+.s3 {
+	background-color: #FFFFFF;
+	color: #000000;
+}
+.s4 {
+	background-color: #FFFF00;
+	color: #0000FF;
+}
+.s11 {
+	background-color: #00FF00;
+	color: #000000;   }
+/* Horizontal lists
+----------------------------------------*/
+ul.linklist {
+	display: block;
+	margin: 0;
+}
+
+ul.linklist li {
+	display: block;
+	list-style-type: none;
+	float: left;
+	width: auto;
+	margin-right: 5px;
+	font-size: 1.1em;
+	line-height: 2.2em;
+}
+
+ul.linklist {
+	float: right;
+	margin-right: 0;
+	margin-left: 5px;
+	text-align: right;
+}
+
+ul.navlinks {
+	padding-bottom: 1px;
+	margin-bottom: 1px;
+	border-bottom: 1px solid #FFFFFF;
+	font-weight: bold;
+}
+
+a.flag {color: #AAA; font-size:0.8em;text-decoration:none;}
+a.flag:hover {color:#FFF;text-decoration:underline;}
+a.en-flag {padding-left:21px; background: url(images/flag/en.png) top left no-repeat;}
+a.de-flag {padding-left:21px; background: url(images/flag/de.png) top left no-repeat;}
+a.ru-flag {padding-left:21px; background: url(images/flag/ru.png) top left no-repeat;} 
+a.cs-flag {padding-left:21px; background: url(images/flag/cz.png) top left no-repeat;}
+a.fr-flag {padding-left:21px; background: url(images/flag/fr.png) top left no-repeat;}
+a.es-flag {padding-left:21px; background: url(images/flag/es.png) top left no-repeat;}
+a.it-flag {padding-left:21px; background: url(images/flag/it.png) top left no-repeat;}
+
+-->   
+</style>
+
+<script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+
+<script type="text/javascript">
+function trim11 (str) {
+str = str.replace(/^\s+/, '');
+for (var i = str.length - 1; i >= 0; i--) {
+if (/\S/.test(str.charAt(i))) {
+str = str.substring(0, i + 1);
+break;
+}
+}
+return str;
+}
+
+function _highlight(inp_id,out_id) {
+elm=document.getElementById(out_id);
+var inptxt = trim11(document.getElementById(inp_id).value);
+var inp_arr = inptxt.split(/[ :,;-]+/);
+var html=elm.innerHTML;
+text=trim11(html.replace(/<[^>]+>/g,''));
+lines=text.split(/\r?\n/g);
+
+html="<pre>";
+for (var i in lines) {
+var tic=lines[i];
+var line_arr=tic.split(' ');
+
+var item='';
+for (var j in line_arr) {
+var num=line_arr[j];
+var hits=false;
+for (var k in inp_arr) {
+var hit=inp_arr[k];
+if (hit==num) { 
+hits=true;
+break;
+}
+}
+var pads=(j<(line_arr.length-1)) ? ' ':'';
+item+= hits ? '<span class="s2">'+num+'</span>'+pads : num+pads;
+}
+html+=item+'\r\n';
+}
+elm.innerHTML=html+'</pre>';
+}
+</script>
+      
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?cover_bat.htm"; }
+  else { parent.quicksync('a4.2'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFEF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#000000">
+  <tr valign="middle">
+    <td align="left">
+      <p style="text-indent: 0px; margin: 0px 0px 0px 0px;"><span style="font-size: 12pt; color: #ffffff;">Program pomocniczy CoverBAT</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a class="inline-button" href="contents.htm"><em>LC</em><span>&lt;&lt;</span></a>&nbsp;
+     <!--<a href="contents.htm">Top</a>-->
+     <a class="inline-button" href="prog_sys_shedule.htm"><em>LC</em><span>&lt;</span></a>&nbsp;
+     <!--<a href="prog_sys_shedule.htm">Previous</a>&nbsp;-->
+     <a class="inline-button" href="sztuczkiikruczki.htm"><em>LC</em><span>&gt;</span></a>&nbsp;     
+     <!--<a href="sztuczkiikruczki.htm">Next</a>-->
+     </span>
+    </td>
+  </tr>
+    
+  <tr><td colspan="2">
+  <script>
+  function switchlang(lang) {
+  $(".goog-te-sectional-gadget-link-text").html('');
+  $.getScript("//translate.google.com/translate_a/element.js?cb=googleSectionalElementInit&ug=section&hl="+lang);
+  }
+  function googleSectionalElementInit() {
+  new google.translate.SectionalElement({
+    sectionalNodeClassName: 'goog-trans-section',
+    controlNodeClassName: 'goog-trans-control',
+    background: '#99ff99'
+  }, 'google_sectional_element');
+  }
+  switchlang ('en');
+  </script>
+<div id="lang-menu">
+<ul class="linklist navlinks" style="font-size:12px";>
+<li class="icon_home"><a class="flag en-flag" href="javascript:void(0)" onclick="return switchlang('en');">English</a> &raquo;</li>
+<li class="icon_home"><a class="flag de-flag" href="javascript:void(0)" onclick="return switchlang('de');">Deutsch</a> &raquo;</li>
+<li class="icon_home"><a class="flag es-flag" href="javascript:void(0)" onclick="return switchlang('es');">Español</a> &raquo;</li>
+<li class="icon_home"><a class="flag fr-flag" href="javascript:void(0)" onclick="return switchlang('fr');">Français</a> &raquo;</li>
+<li class="icon_home"><a class="flag it-flag" href="javascript:void(0)" onclick="return switchlang('it');">Italiano</a> &raquo;</li>
+<li class="icon_home"><a class="flag ru-flag" href="javascript:void(0)" onclick="return switchlang('ru');">Rусский</a> &raquo;</li>
+</ul>
+</div>
+  </td></tr> 
+    
+</table>
+
+
+<!-- Placeholder for topic body begin. -->
+
+<div id="topic_body" class="goog-trans-section" lang="pl">
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<div class="goog-trans-control">
+<a class="goog-te-gadget-link" href="javascript:void(0)"><span class="goog-te-sectional-gadget-link-text"></span></a>
+</div>
+<div class="content">
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;">Jest to unikalny w świecie program pomocniczy do produkcji systemów pełnych i skróconych o funkcji podobnej do funkcji oferowanej w programie "Producent systemów" lecz jest od niego szybszy, skuteczniejszy i zajmuje mniej zasobów komputera tak potrzebnych i agresywnie wykorzystywanych przez algorytm produkcji systemów. Żarłoczność zasobów komputera pamieci RAM i pamieci wirtualnej na dysku twardym spowodowana jest koniecznoscia sprawdzania wielu milionów kombinacji aby móc zoptymalizować ( zapewnic tzw. pokrycie systemem) załozonych gwarancji trafienia.</p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;">Program CoverBAT pracuje z plikami wsadowymi BAT. Są to pliki tekstowe z rosszerzeniem *.BAT które zawierają wiersze z poleceniami dla wywoływanego programu. Doswiadczeni użytkownicy potrafia napisać plik wsadowy i uruchomic program.</p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;">Wielu użytkowników ma jednak trudności w posługiwaniu się programami "Producent Systemów" i &nbsp;"CoverBat" dlatego &nbsp;programu główny &nbsp;LottoCAD zawiera <a href="menu_tool_coverbat.htm">przewodnik ułatwiający produkcję systemów</a> i ich zarządzanie. Aby skorzystać z systemu skróconego należy go wybrać w zakładce "systemy" dialogu "kombinacje". Systemy dla programu przechowywane są w bazie danych. Nie wszystkie zawarte w bazie danych systemy skrócone odpowiadają wymogom użytkownika. Aby wyprodukować nowy system użytkownik musiał zamknąć program uruchomić program "Producent Systemów" lub o wiele szybciej i efektywniej pracujacy program "CoverBat" ( o ile umie sprawnie tworzyć pliki wsadowe bat lub wywoływać programy konsolowe z parametrami-szczególną trudność, jak wynika z listów sprawia uzytkownikom korzystanie z programu pracującego w trybie wsadowym COVERBAT.) a po ich wyprodukowaniu musiał je wprowadzić do bazy systemów programu głównego. Dlatego powstał ten przewodnik. Ma to jeszcze jedną zaletę. Z uwagi na to </p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;">ze baza systemów podczas instalacji zajmuje niepotrzebne miejsce od tej pory w dystrybucji będzie pusta. Systemy użytkownik wprowadzi sam do bazy posługując się właśnie tym przewodnikiem. Będą to napewno tylko systemy przez użytkownika uzywane i tylko potrzebne. Program CoverBat i Producent Systemów jest jednym z niewielu w świecie programów do produkcji systemów skróconych w czasie rzeczywistm. Większość programów Lotto oferuje systemy jedynie w postaci gotowych plików.Program CoverBat pracuje o wiele szybciej niż jego odpowiednik windowsowy program "Producent Systemów" &nbsp;dlatego polecam jego stosowanie. Dla prostych, niewielkich systemów na potrzeby bieżące przewodnik umożliwia zadanie parametrów i uruchomienie programu oraz przejecie pliku z wynikami bezpośrednio z tego przewodnika. Dla systemów rozbudowanych zaleca się zbudowanie pliku wsadowego BAT z pomocą którego można produkować systemy które wymagają wielogodzinnej pracy komputera i pełnego wykorzystania jego zasobów. Z pomocą wyprodukowanego rzewodnikiem pliku BAT można uruchomić program CoverBat który w wolnych chwilach (np w nocy) wyprodukuje zadane w tym pliku systemy ( jeżeli oczywiście nie przesadzimy, spotykam się z rządaniami i głosami na systemy z 40 liczb z gwarancją // takich systemów nie ma i nie będzie to jest matematycznie niemozliwe // i nie zadamy systemów których wykonanie wymaga tygodni pracy komputera lub zadanie szybko wyczerpie zasoby sprzetowe komputera, tworzenie systemów jest bardzo pamięciochłonne). Maksymalna ilość liczb wynosi 32 lecz realnie ze względu na czas wykonania i zasoby sprzetowe przeciętnego komputera ) można produkować systemy z max 20..27 liczb // i tak czas ich wykonania nadszarpnie nerwy niejednego cierpliwego użytkownika//. Z pomocą przewodnika można również wybierać plik systemów zapisany na dysku w pliku lub wprowadzić system do bazy systemów w programie LottoCad. Producent umożliwia również budowanie pliku wsadowego bat ( tworzenie i dodawanie poleceń) z pomocą którego można ambitniejsze lub wielokrotne zadania uruchamiać w czasie wolnym komputera (gdy bieżaco z niego nie korzystamy).</p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;">Przykładowy wiersz polecenia pliku BAT wygląda :</p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="color: #800000;">CoverBat 12 6 6 4 100 1 2 500 1</span></p>
+<p style="text-indent: 0px;">Na podstawie tego wiersza program "<span style="color: #800000;">CoverBat</span>" wygeneruje i zapisze na dysku system skrócony z 12 liczb po 6 liczb w zakładzie który przy 6 trafionych liczbach zapewni wygraną 4-kę. Przy produkcji program zapewni 100 % pokrycie, w czasie działania program będzie pracował z wysokim priorytetem ( praktycznie cały czas procesora będzie poswiecony pracy nad systemem, uzytkowanie w tym czasie innych programów będzie spowolnione), będzie pracował z metoda losową wybierania zakładów ( metoda losowa w niektórych układach liczb potrafi znaleźć rozwiazania o mniejszym koszcie przy załozonych parametrach), dla każdej iteracji metody poszukiwania będą przeprowadzane w 500 krokach, i ostatnia jedynka oznacza że jeżeli plik z takim samą nazwą istnieje na dysku zostanie nadpisany.</p>
+<p style="text-indent: 0px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;">Znaczenie poszczególnych parametrów swietnie wyjaśni fragment wygenerowany przez wizard (pomocnik, dosłownie czarodziej) . Wiersze zaczynajace się od polecenia REM oznaczają w pliku BAT komentarz i są przez interpreter poleceń ignorowane, służą jako komentarz.</p>
+<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">REM Polecenie wygenerowane przez pomocnik tworzenia systemów</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">REM programu Lotto CAD 2000</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">REM Parametery oznaczają :</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">REM Nazwa_programu par1 par2 par3 par4 opcjonalnie[ par5 par6 par7 par8 par9]</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">REM Przykład: CoverBat.exe x1 x2 x3 x4 [x5 x6 x7 x8 x9]</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">REM gdzie &nbsp;: x1 = Liczb razem &nbsp;np. 20 (Max=32)</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">REM gdzie &nbsp;: x2 - Liczb skreslanych np. &nbsp;6</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">REM gdzie &nbsp;: x3 - Ilość trafień np. &nbsp;4</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">REM gdzie &nbsp;: x4 - Gwarantowana wygrana np. &nbsp;3</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">REM Parametry opcjonalne: Domyslnie 100% pokrycia, Priorytet=0, metoda=0,kroków=500 i nadpisywnie=1</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">REM gdzie &nbsp;: x5 - Procent pokrycia np. &nbsp;100</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">REM gdzie &nbsp;: x6 - Priorytet aplikacji 1=Wysoko, 0=Niski</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">REM gdzie &nbsp;: x7 - Metoda wyszukiwania np 0=Dokładna 1=Szybka 2:Przypadkowa</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">REM gdzie &nbsp;: x8 - ilość kroków metody przypadkowej - domyślnie=500</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">&nbsp;</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+
+</div>
+</td></tr></table>
+</div>
+
+<!-- Placeholder for topic body end. -->
+</body>
+</html>

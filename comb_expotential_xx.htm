@@ -1,0 +1,364 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Kombinacja Wykładnicza XX</title>
+   <meta name="keywords" content="Kombinacja wykładnicza 80" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+   <style type="text/css">
+   <!--
+   .inline-button {
+   width:auto;
+   font: bold 90%/1 Verdana, sans-serif;
+   margin: 0 0.2em; padding: 0.1em 0; _padding:0;
+   border: 1px solid black;
+   white-space:nowrap;
+   text-decoration: none;
+   vertical-align:middle;
+   background: #ccc;
+   color: black;
+   }
+.inline-button em {
+   cursor:hand;
+   font-style: normal;
+   margin:0; padding: 0.1em 0.5em;
+   background: white;
+   color: black;
+   }
+.inline-button span {
+   cursor:hand;
+   margin:0; padding: 0.1em 0.5em 0.1em 0.3em;
+   }
+.inline-button:hover {
+   background: #666;
+   color: white;
+   }
+.inline-button:hover em {
+   background: black;
+   color: white;
+   }
+.s1 {
+	background-color: #FFFFFF;
+	color: #008000;
+}
+.s2 {
+	background-color: #FF8000;
+	color: #000000;
+}
+.s5 {
+	background-color: #FFFFFF;
+	color: #008000;
+}
+.s6 {
+	background-color: #FFFFFF;
+	color: #FF0000;
+}
+.s7 {
+	background-color: #FFFFFF;
+	color: #FF0000;
+}
+.s8 {
+	background-color: #FFFFFF;
+	color: #FF0000;
+}
+.s9 {
+	background-color: #FFFFFF;
+	color: #008000;
+}
+.s10 {
+	background-color: #FFFFFF;
+	color: #800000;
+}
+.s3 {
+	background-color: #FFFFFF;
+	color: #000000;
+}
+.s4 {
+	background-color: #FFFF00;
+	color: #0000FF;
+}
+.s11 {
+	background-color: #00FF00;
+	color: #000000;   }
+/* Horizontal lists
+----------------------------------------*/
+ul.linklist {
+	display: block;
+	margin: 0;
+}
+
+ul.linklist li {
+	display: block;
+	list-style-type: none;
+	float: left;
+	width: auto;
+	margin-right: 5px;
+	font-size: 1.1em;
+	line-height: 2.2em;
+}
+
+ul.linklist {
+	float: right;
+	margin-right: 0;
+	margin-left: 5px;
+	text-align: right;
+}
+
+ul.navlinks {
+	padding-bottom: 1px;
+	margin-bottom: 1px;
+	border-bottom: 1px solid #FFFFFF;
+	font-weight: bold;
+}
+
+a.flag {color: #AAA; font-size:0.8em;text-decoration:none;}
+a.flag:hover {color:#FFF;text-decoration:underline;}
+a.en-flag {padding-left:21px; background: url(images/flag/en.png) top left no-repeat;}
+a.de-flag {padding-left:21px; background: url(images/flag/de.png) top left no-repeat;}
+a.ru-flag {padding-left:21px; background: url(images/flag/ru.png) top left no-repeat;} 
+a.cs-flag {padding-left:21px; background: url(images/flag/cz.png) top left no-repeat;}
+a.fr-flag {padding-left:21px; background: url(images/flag/fr.png) top left no-repeat;}
+a.es-flag {padding-left:21px; background: url(images/flag/es.png) top left no-repeat;}
+a.it-flag {padding-left:21px; background: url(images/flag/it.png) top left no-repeat;}
+
+-->   
+</style>
+
+<script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+
+<script type="text/javascript">
+function trim11 (str) {
+str = str.replace(/^\s+/, '');
+for (var i = str.length - 1; i >= 0; i--) {
+if (/\S/.test(str.charAt(i))) {
+str = str.substring(0, i + 1);
+break;
+}
+}
+return str;
+}
+
+function _highlight(inp_id,out_id) {
+elm=document.getElementById(out_id);
+var inptxt = trim11(document.getElementById(inp_id).value);
+var inp_arr = inptxt.split(/[ :,;-]+/);
+var html=elm.innerHTML;
+text=trim11(html.replace(/<[^>]+>/g,''));
+lines=text.split(/\r?\n/g);
+
+html="<pre>";
+for (var i in lines) {
+var tic=lines[i];
+var line_arr=tic.split(' ');
+
+var item='';
+for (var j in line_arr) {
+var num=line_arr[j];
+var hits=false;
+for (var k in inp_arr) {
+var hit=inp_arr[k];
+if (hit==num) { 
+hits=true;
+break;
+}
+}
+var pads=(j<(line_arr.length-1)) ? ' ':'';
+item+= hits ? '<span class="s2">'+num+'</span>'+pads : num+pads;
+}
+html+=item+'\r\n';
+}
+elm.innerHTML=html+'</pre>';
+}
+</script>
+      
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?comb_expotential_xx.htm"; }
+  else { parent.quicksync('a3.2.1.4.3.8'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFEF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#000000">
+  <tr valign="middle">
+    <td align="left">
+      <p style="text-indent: 0px; margin: 0px 0px 0px 0px;"><span style="font-size: 12pt; color: #ffffff;">KOMBINACJA WYKŁADNICZA XX</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a class="inline-button" href="contents.htm"><em>LC</em><span>&lt;&lt;</span></a>&nbsp;
+     <!--<a href="contents.htm">Top</a>-->
+     <a class="inline-button" href="comb_line_xx.htm"><em>LC</em><span>&lt;</span></a>&nbsp;
+     <!--<a href="comb_line_xx.htm">Previous</a>&nbsp;-->
+     <a class="inline-button" href="comb_swap.htm"><em>LC</em><span>&gt;</span></a>&nbsp;     
+     <!--<a href="comb_swap.htm">Next</a>-->
+     </span>
+    </td>
+  </tr>
+    
+  <tr><td colspan="2">
+  <script>
+  function switchlang(lang) {
+  $(".goog-te-sectional-gadget-link-text").html('');
+  $.getScript("//translate.google.com/translate_a/element.js?cb=googleSectionalElementInit&ug=section&hl="+lang);
+  }
+  function googleSectionalElementInit() {
+  new google.translate.SectionalElement({
+    sectionalNodeClassName: 'goog-trans-section',
+    controlNodeClassName: 'goog-trans-control',
+    background: '#99ff99'
+  }, 'google_sectional_element');
+  }
+  switchlang ('en');
+  </script>
+<div id="lang-menu">
+<ul class="linklist navlinks" style="font-size:12px";>
+<li class="icon_home"><a class="flag en-flag" href="javascript:void(0)" onclick="return switchlang('en');">English</a> &raquo;</li>
+<li class="icon_home"><a class="flag de-flag" href="javascript:void(0)" onclick="return switchlang('de');">Deutsch</a> &raquo;</li>
+<li class="icon_home"><a class="flag es-flag" href="javascript:void(0)" onclick="return switchlang('es');">Español</a> &raquo;</li>
+<li class="icon_home"><a class="flag fr-flag" href="javascript:void(0)" onclick="return switchlang('fr');">Français</a> &raquo;</li>
+<li class="icon_home"><a class="flag it-flag" href="javascript:void(0)" onclick="return switchlang('it');">Italiano</a> &raquo;</li>
+<li class="icon_home"><a class="flag ru-flag" href="javascript:void(0)" onclick="return switchlang('ru');">Rусский</a> &raquo;</li>
+</ul>
+</div>
+  </td></tr> 
+    
+</table>
+
+
+<!-- Placeholder for topic body begin. -->
+
+<div id="topic_body" class="goog-trans-section" lang="pl">
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<div class="goog-trans-control">
+<a class="goog-te-gadget-link" href="javascript:void(0)"><span class="goog-te-sectional-gadget-link-text"></span></a>
+</div>
+<div class="content">
+<p>Zestaw wszystkich XX liczb gry jest roztasowany pomiędzy zadaną liczbę zakładów w taki sposób że liczby występujące częściej we wcześniejszych losowaniach, również częściej są umieszczane w wygenerowanych zakładach. Szansa liczby na umieszczenie jej w zakładach jest &nbsp;proporcjonalna wykładniczo do częstości jej występowania we wcześniejszych losowaniach. </p>
+<p> Wykładnik można zmieniać w granicach -20 .. 20 przy czym pamiętać należy, że wykładnik o wartości 1 powoduje że kombinacja staje się  <a href="comb_line.htm">liniową.</a> Wartości ujemne powodują że "szanse liczb" być wybranymi przez generator są odwrotne tzn. liczby rzadziej występujące są wybierane częściej. Jeżeli liczba z zestawu nie wystąpiła w losowaniach w wybranym okresie przyjmowana jest dla niej najmniejsza wartość współczynnika generacji.</p>
+<p style="text-indent: 0px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Kombinacja wygenerowała zakłady dla wykładnika=5 : </span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">10 11 21 23 27 35 39 65 70 75</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">10 17 21 25 30 36 53 57 65 75</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">11 23 25 29 30 36 43 54 58 65</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">15 17 34 45 47 55 58 62 68 70</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">27 30 33 34 36 40 49 70 73 80</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">dla wykładnika -5 wygenerowała :</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 4 &nbsp;6 &nbsp;8 15 31 32 35 48 59 77</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 4 13 19 31 32 33 50 67 70 76</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 4 16 19 26 31 41 48 61 76 77</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 5 15 16 20 32 35 41 60 69 77</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 8 13 14 18 19 31 32 43 60 66</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">14 15 19 31 33 45 55 59 69 76</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">dla zakresu dat i częstości :</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Najczęściej występujace &nbsp;liczby</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">od losowania nr 1771 z dnia 02-03-11</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">do losowania nr 1825 z dnia 02-05-04</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">==========================================</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Polecenie wykonano w czasie: &nbsp;0 godz &nbsp;0 min &nbsp;0. 23 sek</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">27 wylosowano &nbsp;22 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">17 wylosowano &nbsp;20 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">68 wylosowano &nbsp;19 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">36 wylosowano &nbsp;19 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">21 wylosowano &nbsp;19 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">11 wylosowano &nbsp;19 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">73 wylosowano &nbsp;18 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">57 wylosowano &nbsp;18 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">42 wylosowano &nbsp;18 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">39 wylosowano &nbsp;18 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">10 wylosowano &nbsp;18 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">80 wylosowano &nbsp;17 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">70 wylosowano &nbsp;17 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">65 wylosowano &nbsp;17 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">56 wylosowano &nbsp;17 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">43 wylosowano &nbsp;17 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">29 wylosowano &nbsp;17 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">22 wylosowano &nbsp;17 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">71 wylosowano &nbsp;16 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">62 wylosowano &nbsp;16 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">58 wylosowano &nbsp;16 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">54 wylosowano &nbsp;16 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">53 wylosowano &nbsp;16 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">49 wylosowano &nbsp;16 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">38 wylosowano &nbsp;16 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">35 wylosowano &nbsp;16 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">34 wylosowano &nbsp;16 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">30 wylosowano &nbsp;16 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">40 wylosowano &nbsp;15 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">37 wylosowano &nbsp;15 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 9 wylosowano &nbsp;15 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">66 wylosowano &nbsp;14 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">51 wylosowano &nbsp;14 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">47 wylosowano &nbsp;14 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">44 wylosowano &nbsp;14 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">24 wylosowano &nbsp;14 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">16 wylosowano &nbsp;14 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">74 wylosowano &nbsp;13 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">72 wylosowano &nbsp;13 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">69 wylosowano &nbsp;13 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">63 wylosowano &nbsp;13 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">61 wylosowano &nbsp;13 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">52 wylosowano &nbsp;13 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">25 wylosowano &nbsp;13 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">78 wylosowano &nbsp;12 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">64 wylosowano &nbsp;12 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">28 wylosowano &nbsp;12 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">15 wylosowano &nbsp;12 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">14 wylosowano &nbsp;12 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 2 wylosowano &nbsp;12 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 1 wylosowano &nbsp;12 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">55 wylosowano &nbsp;11 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">50 wylosowano &nbsp;11 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">20 wylosowano &nbsp;11 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">12 wylosowano &nbsp;11 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 3 wylosowano &nbsp;11 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">79 wylosowano &nbsp;10 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">76 wylosowano &nbsp;10 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">67 wylosowano &nbsp;10 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">59 wylosowano &nbsp;10 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">48 wylosowano &nbsp;10 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">41 wylosowano &nbsp;10 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">33 wylosowano &nbsp;10 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">32 wylosowano &nbsp;10 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">26 wylosowano &nbsp;10 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">18 wylosowano &nbsp;10 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 8 wylosowano &nbsp;10 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 6 wylosowano &nbsp;10 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">60 wylosowano &nbsp; 9 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">19 wylosowano &nbsp; 8 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">13 wylosowano &nbsp; 8 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 4 wylosowano &nbsp; 8 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">77 wylosowano &nbsp; 7 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">31 wylosowano &nbsp; 7 razy</span></p>
+<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
+
+</div>
+</td></tr></table>
+</div>
+
+<!-- Placeholder for topic body end. -->
+</body>
+</html>

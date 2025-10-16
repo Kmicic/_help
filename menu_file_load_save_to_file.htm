@@ -1,0 +1,268 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Otwórz z ... pliku tekstowego</title>
+   <meta name="keywords" content="Zapis do Pliku Zakładów,Odczyt z Pliku Zakładów,Zapis do Bazy Zakładów,Odczyt z Bazy Zakładów,Zakłady zapis i odczyt do pliku,Zakłady zapis i odczyt do bazy,Zakłady szybki odczyt,Pliki Propozycja nazwy,Pliki odczyt,Pliki odczyt zapis,Pliki szybkie odczytywanie,Pliki propozycja nazw,Pliki rozszerzenia,Pliki katalog roboczy,Pliki Opcje,Katalog roboczy Plików" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+   <style type="text/css">
+   <!--
+   .inline-button {
+   width:auto;
+   font: bold 90%/1 Verdana, sans-serif;
+   margin: 0 0.2em; padding: 0.1em 0; _padding:0;
+   border: 1px solid black;
+   white-space:nowrap;
+   text-decoration: none;
+   vertical-align:middle;
+   background: #ccc;
+   color: black;
+   }
+.inline-button em {
+   cursor:hand;
+   font-style: normal;
+   margin:0; padding: 0.1em 0.5em;
+   background: white;
+   color: black;
+   }
+.inline-button span {
+   cursor:hand;
+   margin:0; padding: 0.1em 0.5em 0.1em 0.3em;
+   }
+.inline-button:hover {
+   background: #666;
+   color: white;
+   }
+.inline-button:hover em {
+   background: black;
+   color: white;
+   }
+.s1 {
+	background-color: #FFFFFF;
+	color: #008000;
+}
+.s2 {
+	background-color: #FF8000;
+	color: #000000;
+}
+.s5 {
+	background-color: #FFFFFF;
+	color: #008000;
+}
+.s6 {
+	background-color: #FFFFFF;
+	color: #FF0000;
+}
+.s7 {
+	background-color: #FFFFFF;
+	color: #FF0000;
+}
+.s8 {
+	background-color: #FFFFFF;
+	color: #FF0000;
+}
+.s9 {
+	background-color: #FFFFFF;
+	color: #008000;
+}
+.s10 {
+	background-color: #FFFFFF;
+	color: #800000;
+}
+.s3 {
+	background-color: #FFFFFF;
+	color: #000000;
+}
+.s4 {
+	background-color: #FFFF00;
+	color: #0000FF;
+}
+.s11 {
+	background-color: #00FF00;
+	color: #000000;   }
+/* Horizontal lists
+----------------------------------------*/
+ul.linklist {
+	display: block;
+	margin: 0;
+}
+
+ul.linklist li {
+	display: block;
+	list-style-type: none;
+	float: left;
+	width: auto;
+	margin-right: 5px;
+	font-size: 1.1em;
+	line-height: 2.2em;
+}
+
+ul.linklist {
+	float: right;
+	margin-right: 0;
+	margin-left: 5px;
+	text-align: right;
+}
+
+ul.navlinks {
+	padding-bottom: 1px;
+	margin-bottom: 1px;
+	border-bottom: 1px solid #FFFFFF;
+	font-weight: bold;
+}
+
+a.flag {color: #AAA; font-size:0.8em;text-decoration:none;}
+a.flag:hover {color:#FFF;text-decoration:underline;}
+a.en-flag {padding-left:21px; background: url(images/flag/en.png) top left no-repeat;}
+a.de-flag {padding-left:21px; background: url(images/flag/de.png) top left no-repeat;}
+a.ru-flag {padding-left:21px; background: url(images/flag/ru.png) top left no-repeat;} 
+a.cs-flag {padding-left:21px; background: url(images/flag/cz.png) top left no-repeat;}
+a.fr-flag {padding-left:21px; background: url(images/flag/fr.png) top left no-repeat;}
+a.es-flag {padding-left:21px; background: url(images/flag/es.png) top left no-repeat;}
+a.it-flag {padding-left:21px; background: url(images/flag/it.png) top left no-repeat;}
+
+-->   
+</style>
+
+<script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+
+<script type="text/javascript">
+function trim11 (str) {
+str = str.replace(/^\s+/, '');
+for (var i = str.length - 1; i >= 0; i--) {
+if (/\S/.test(str.charAt(i))) {
+str = str.substring(0, i + 1);
+break;
+}
+}
+return str;
+}
+
+function _highlight(inp_id,out_id) {
+elm=document.getElementById(out_id);
+var inptxt = trim11(document.getElementById(inp_id).value);
+var inp_arr = inptxt.split(/[ :,;-]+/);
+var html=elm.innerHTML;
+text=trim11(html.replace(/<[^>]+>/g,''));
+lines=text.split(/\r?\n/g);
+
+html="<pre>";
+for (var i in lines) {
+var tic=lines[i];
+var line_arr=tic.split(' ');
+
+var item='';
+for (var j in line_arr) {
+var num=line_arr[j];
+var hits=false;
+for (var k in inp_arr) {
+var hit=inp_arr[k];
+if (hit==num) { 
+hits=true;
+break;
+}
+}
+var pads=(j<(line_arr.length-1)) ? ' ':'';
+item+= hits ? '<span class="s2">'+num+'</span>'+pads : num+pads;
+}
+html+=item+'\r\n';
+}
+elm.innerHTML=html+'</pre>';
+}
+</script>
+      
+<script type="text/javascript" src="LC2009_popup_html.js"></script><script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?menu_file_load_save_to_file.htm"; }
+  else { parent.quicksync('a3.2.1.1.1'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFEF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#000000">
+  <tr valign="middle">
+    <td align="left">
+      <p style="text-indent: 0px; margin: 0px 0px 0px 0px;"><span style="font-size: 12pt; color: #ffffff;">Zapis i odczyt zakładów z plików</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a class="inline-button" href="contents.htm"><em>LC</em><span>&lt;&lt;</span></a>&nbsp;
+     <!--<a href="contents.htm">Top</a>-->
+     <a class="inline-button" href="menu_file.htm"><em>LC</em><span>&lt;</span></a>&nbsp;
+     <!--<a href="menu_file.htm">Previous</a>&nbsp;-->
+     <a class="inline-button" href="menu_file_load_save_to_base.htm"><em>LC</em><span>&gt;</span></a>&nbsp;     
+     <!--<a href="menu_file_load_save_to_base.htm">Next</a>-->
+     </span>
+    </td>
+  </tr>
+    
+  <tr><td colspan="2">
+  <script>
+  function switchlang(lang) {
+  $(".goog-te-sectional-gadget-link-text").html('');
+  $.getScript("//translate.google.com/translate_a/element.js?cb=googleSectionalElementInit&ug=section&hl="+lang);
+  }
+  function googleSectionalElementInit() {
+  new google.translate.SectionalElement({
+    sectionalNodeClassName: 'goog-trans-section',
+    controlNodeClassName: 'goog-trans-control',
+    background: '#99ff99'
+  }, 'google_sectional_element');
+  }
+  switchlang ('en');
+  </script>
+<div id="lang-menu">
+<ul class="linklist navlinks" style="font-size:12px";>
+<li class="icon_home"><a class="flag en-flag" href="javascript:void(0)" onclick="return switchlang('en');">English</a> &raquo;</li>
+<li class="icon_home"><a class="flag de-flag" href="javascript:void(0)" onclick="return switchlang('de');">Deutsch</a> &raquo;</li>
+<li class="icon_home"><a class="flag es-flag" href="javascript:void(0)" onclick="return switchlang('es');">Español</a> &raquo;</li>
+<li class="icon_home"><a class="flag fr-flag" href="javascript:void(0)" onclick="return switchlang('fr');">Français</a> &raquo;</li>
+<li class="icon_home"><a class="flag it-flag" href="javascript:void(0)" onclick="return switchlang('it');">Italiano</a> &raquo;</li>
+<li class="icon_home"><a class="flag ru-flag" href="javascript:void(0)" onclick="return switchlang('ru');">Rусский</a> &raquo;</li>
+</ul>
+</div>
+  </td></tr> 
+    
+</table>
+
+
+<!-- Placeholder for topic body begin. -->
+
+<div id="topic_body" class="goog-trans-section" lang="pl">
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<div class="goog-trans-control">
+<a class="goog-te-gadget-link" href="javascript:void(0)"><span class="goog-te-sectional-gadget-link-text"></span></a>
+</div>
+<div class="content">
+<p>&nbsp;</p>
+<p>Zakłady z paneli tekstowych zapisywane są na dysku w postaci plików tekstowych z rozszerzeniem .dat. Wybór z opcji plików uruchamia automatyczne proponowanie schematu nazw plików. Dla zakładów Lotto proponowany schemat zapisu daty powstaje przez złożenie segmentów oznaczających: </p>
+<p>&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; border-color: #ff0000; border-style: solid; border-width: 5px; border-top: none; border-bottom: none; background: #ffcc00; padding: 5px 5px 5px 5px; margin: 0px 15px 0px 25px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td><span class="f_Code2">Przedrostek LT zakład gry Lotto</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; border-color: #ff0000; border-style: solid; border-width: 5px; border-top: none; border-bottom: none; background: #ffcc00; padding: 5px 5px 5px 5px; margin: 0px 15px 0px 25px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td><span class="f_Code2">XX dwie cyfry roku 99..00..01..02....</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; border-color: #ff0000; border-style: solid; border-width: 5px; border-top: none; border-bottom: none; background: #ffcc00; padding: 5px 5px 5px 5px; margin: 0px 15px 0px 25px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td><span class="f_Code2">XX dwie cyfry numeru miesiąca 01..12</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; border-color: #ff0000; border-style: solid; border-width: 5px; border-top: none; border-bottom: none; background: #ffcc00; padding: 5px 5px 5px 5px; margin: 0px 15px 0px 25px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td><span class="f_Code2">XX dwie cyfry dnia miesiąca 01 .. 31</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; border-color: #ff0000; border-style: solid; border-width: 5px; border-top: none; border-bottom: none; background: #ffcc00; padding: 5px 5px 5px 5px; margin: 0px 15px 0px 25px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td><span class="f_Code2">. [kropka] separator rozszerzenia</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; border-color: #ff0000; border-style: solid; border-width: 5px; border-top: none; border-bottom: none; background: #ffcc00; padding: 5px 5px 5px 5px; margin: 0px 15px 0px 25px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 10pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#8226;</span></td><td><span class="f_Code2">DAT rozszerzenie.</span></td></tr></table></div><p>&nbsp;</p>
+<p>Przykład : &nbsp; ML000302.DAT oznacza zakłady Lotto z dnia 2 marca 2000 roku.</p>
+<p>Przedrostek i rozszerzenie jest konfigurowalne i wpisuje się je w bazie danych właściwości gry. Konfigurację przedrostka i rozszerzenia nazwy plików zakładów, przeprowadzić można z "<a href="menu_file_game_manager.htm">managera gier</a>".</p>
+<p>&nbsp;</p>
+<p>Katalog roboczy w którym zapisywane będą pliki zakładów, wybierany jest w <a href="http://www.helpandmanual.com/order.html" class="popuplink">rozwijalnym polu edycji</a>, paska narzędziowego. Dobrym zwyczajem jest utworzenie osobnego katalogu dla projektowanych zakładów i wpisanie ściezki dostępu do tego katalogu właśnie w tym polu.</p>
+<p>&nbsp;</p>
+<p>Zapis i odczyt plików wybierany jest przyciskami paska narzędziowego "Pliki" lub z odpowiednich pozycji menu głównego.</p>
+<p>&nbsp;</p>
+<p>Pliki ostatnio używane, pamiętane są na <a href="http://www.helpandmanual.com/order.html" class="popuplink">liście rozwijalnej "Odczyt"</a>, umożliwiającej szybki odczyt ostatnich 15 plików.</p>
+<p>&nbsp;</p>
+<p>Po zaznaczeniu w opcjach zapis przy otwieraniu i zamykaniu, ostatni używany plik automatycznie wczytywany jest przy otwieraniu programu.automatycznie</p>
+
+</div>
+</td></tr></table>
+</div>
+
+<!-- Placeholder for topic body end. -->
+</body>
+</html>

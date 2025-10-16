@@ -1,0 +1,281 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head>
+   <title>Raport kombinacji</title>
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+   <style type="text/css">
+   <!--
+   .inline-button {
+   width:auto;
+   font: bold 90%/1 Verdana, sans-serif;
+   margin: 0 0.2em; padding: 0.1em 0; _padding:0;
+   border: 1px solid black;
+   white-space:nowrap;
+   text-decoration: none;
+   vertical-align:middle;
+   background: #ccc;
+   color: black;
+   }
+.inline-button em {
+   cursor:hand;
+   font-style: normal;
+   margin:0; padding: 0.1em 0.5em;
+   background: white;
+   color: black;
+   }
+.inline-button span {
+   cursor:hand;
+   margin:0; padding: 0.1em 0.5em 0.1em 0.3em;
+   }
+.inline-button:hover {
+   background: #666;
+   color: white;
+   }
+.inline-button:hover em {
+   background: black;
+   color: white;
+   }
+.s1 {
+	background-color: #FFFFFF;
+	color: #008000;
+}
+.s2 {
+	background-color: #FF8000;
+	color: #000000;
+}
+.s5 {
+	background-color: #FFFFFF;
+	color: #008000;
+}
+.s6 {
+	background-color: #FFFFFF;
+	color: #FF0000;
+}
+.s7 {
+	background-color: #FFFFFF;
+	color: #FF0000;
+}
+.s8 {
+	background-color: #FFFFFF;
+	color: #FF0000;
+}
+.s9 {
+	background-color: #FFFFFF;
+	color: #008000;
+}
+.s10 {
+	background-color: #FFFFFF;
+	color: #800000;
+}
+.s3 {
+	background-color: #FFFFFF;
+	color: #000000;
+}
+.s4 {
+	background-color: #FFFF00;
+	color: #0000FF;
+}
+.s11 {
+	background-color: #00FF00;
+	color: #000000;   }
+/* Horizontal lists
+----------------------------------------*/
+ul.linklist {
+	display: block;
+	margin: 0;
+}
+
+ul.linklist li {
+	display: block;
+	list-style-type: none;
+	float: left;
+	width: auto;
+	margin-right: 5px;
+	font-size: 1.1em;
+	line-height: 2.2em;
+}
+
+ul.linklist {
+	float: right;
+	margin-right: 0;
+	margin-left: 5px;
+	text-align: right;
+}
+
+ul.navlinks {
+	padding-bottom: 1px;
+	margin-bottom: 1px;
+	border-bottom: 1px solid #FFFFFF;
+	font-weight: bold;
+}
+
+a.flag {color: #AAA; font-size:0.8em;text-decoration:none;}
+a.flag:hover {color:#FFF;text-decoration:underline;}
+a.en-flag {padding-left:21px; background: url(images/flag/en.png) top left no-repeat;}
+a.de-flag {padding-left:21px; background: url(images/flag/de.png) top left no-repeat;}
+a.ru-flag {padding-left:21px; background: url(images/flag/ru.png) top left no-repeat;} 
+a.cs-flag {padding-left:21px; background: url(images/flag/cz.png) top left no-repeat;}
+a.fr-flag {padding-left:21px; background: url(images/flag/fr.png) top left no-repeat;}
+a.es-flag {padding-left:21px; background: url(images/flag/es.png) top left no-repeat;}
+a.it-flag {padding-left:21px; background: url(images/flag/it.png) top left no-repeat;}
+
+-->   
+</style>
+
+<script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+
+<script type="text/javascript">
+function trim11 (str) {
+str = str.replace(/^\s+/, '');
+for (var i = str.length - 1; i >= 0; i--) {
+if (/\S/.test(str.charAt(i))) {
+str = str.substring(0, i + 1);
+break;
+}
+}
+return str;
+}
+
+function _highlight(inp_id,out_id) {
+elm=document.getElementById(out_id);
+var inptxt = trim11(document.getElementById(inp_id).value);
+var inp_arr = inptxt.split(/[ :,;-]+/);
+var html=elm.innerHTML;
+text=trim11(html.replace(/<[^>]+>/g,''));
+lines=text.split(/\r?\n/g);
+
+html="<pre>";
+for (var i in lines) {
+var tic=lines[i];
+var line_arr=tic.split(' ');
+
+var item='';
+for (var j in line_arr) {
+var num=line_arr[j];
+var hits=false;
+for (var k in inp_arr) {
+var hit=inp_arr[k];
+if (hit==num) { 
+hits=true;
+break;
+}
+}
+var pads=(j<(line_arr.length-1)) ? ' ':'';
+item+= hits ? '<span class="s2">'+num+'</span>'+pads : num+pads;
+}
+html+=item+'\r\n';
+}
+elm.innerHTML=html+'</pre>';
+}
+</script>
+      
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if (location.search.lastIndexOf("toc=0")<=0) {
+  if (parent.frames.length==0) { parent.location.href="index.html?mraportkombinacji.htm"; }
+  else { parent.quicksync('a3.2.1.5.11.2'); }
+}
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script></head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFEF;" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#000000">
+  <tr valign="middle">
+    <td align="left">
+      <p style="text-indent: 0px; margin: 0px 0px 0px 0px;"><span style="font-size: 12pt; color: #ffffff;">Raport Kombinacji</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a class="inline-button" href="contents.htm"><em>LC</em><span>&lt;&lt;</span></a>&nbsp;
+     <!--<a href="contents.htm">Top</a>-->
+     <a class="inline-button" href="mraportlosowan.htm"><em>LC</em><span>&lt;</span></a>&nbsp;
+     <!--<a href="mraportlosowan.htm">Previous</a>&nbsp;-->
+     <a class="inline-button" href="mraportpozycji.htm"><em>LC</em><span>&gt;</span></a>&nbsp;     
+     <!--<a href="mraportpozycji.htm">Next</a>-->
+     </span>
+    </td>
+  </tr>
+    
+  <tr><td colspan="2">
+  <script>
+  function switchlang(lang) {
+  $(".goog-te-sectional-gadget-link-text").html('');
+  $.getScript("//translate.google.com/translate_a/element.js?cb=googleSectionalElementInit&ug=section&hl="+lang);
+  }
+  function googleSectionalElementInit() {
+  new google.translate.SectionalElement({
+    sectionalNodeClassName: 'goog-trans-section',
+    controlNodeClassName: 'goog-trans-control',
+    background: '#99ff99'
+  }, 'google_sectional_element');
+  }
+  switchlang ('en');
+  </script>
+<div id="lang-menu">
+<ul class="linklist navlinks" style="font-size:12px";>
+<li class="icon_home"><a class="flag en-flag" href="javascript:void(0)" onclick="return switchlang('en');">English</a> &raquo;</li>
+<li class="icon_home"><a class="flag de-flag" href="javascript:void(0)" onclick="return switchlang('de');">Deutsch</a> &raquo;</li>
+<li class="icon_home"><a class="flag es-flag" href="javascript:void(0)" onclick="return switchlang('es');">Español</a> &raquo;</li>
+<li class="icon_home"><a class="flag fr-flag" href="javascript:void(0)" onclick="return switchlang('fr');">Français</a> &raquo;</li>
+<li class="icon_home"><a class="flag it-flag" href="javascript:void(0)" onclick="return switchlang('it');">Italiano</a> &raquo;</li>
+<li class="icon_home"><a class="flag ru-flag" href="javascript:void(0)" onclick="return switchlang('ru');">Rусский</a> &raquo;</li>
+</ul>
+</div>
+  </td></tr> 
+    
+</table>
+
+
+<!-- Placeholder for topic body begin. -->
+
+<div id="topic_body" class="goog-trans-section" lang="pl">
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<div class="goog-trans-control">
+<a class="goog-te-gadget-link" href="javascript:void(0)"><span class="goog-te-sectional-gadget-link-text"></span></a>
+</div>
+<div class="content">
+<p class="p_Headingredunderlined"><span class="f_Headingredunderlined">&nbsp;</span></p>
+<p class="p_Headingredunderlined"><span style="font-family: 'MS Shell Dlg';">Dla każdego losowania z ustawionego zakresu dat analizy, raport ten sprawdza trafienia z wszystkich kombinacji ustawionych w polu "kombinacje po : [ ]" ilość liczb w kombinacji może byc ustawiana od 1 do 9. Oznacza to że wszystkie kombinacje ustawionych x pozycji ( w Multilotku ( Keno) jest ich 20. Dla przykładu przypominam że wszystkich kombinacji trójek z 20 pozycji jest 1140. A następnie najlepsze kombinacje sortowane są wg wybranej metody sortowania. Kombinacje mogą byc posortowane wg globalnych ilości trafień wszsytkich pozycji kombinacji, wg braku trafień, trafionych jedynek, dwójek, trójek itd.</span></p>
+<p class="p_Headingredunderlined"><span style="font-family: 'MS Shell Dlg';">Z uwagi na ilość wykonywanych sprawdzeń i analiz rapot przy zadaniu mu duzych parametrów kombinacji i zakresów sprawdzeń może byc wykonywany dłużej. Ale dla ustawień kombinacji do 3 4 liczb w kombinacji na współczesnych kombuterach jest niezauważalny.</span></p>
+<p class="p_Headingredunderlined"><span style="font-family: 'MS Shell Dlg';">Przykład:</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">Zakres losowań wstecz &nbsp;1 do 1 dla wszystkich 1140 kombinacji 3 - ek.</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">Zakres sprawdzania trafień od dnia &nbsp;N 2003-02-23 do dnia Pn 2003-06-02</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">----------------------------------------------------------------------</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">&nbsp;</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">Liczby z odpowiednich pozycji losowania z dnia Pn 2003-06-02 ,na następną grę.</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">------------------------------------------------------------------------------</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;"> &nbsp;Pozycje: &nbsp;2 &nbsp;10 &nbsp; 9 &nbsp; 6 &nbsp; 3 &nbsp;16 &nbsp;15 &nbsp;11 &nbsp;14 &nbsp;20 &nbsp; 7 &nbsp; 4 &nbsp;18 &nbsp;13 &nbsp;17 &nbsp;12 &nbsp;19 &nbsp; 8 &nbsp; 5 &nbsp; 1</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">Trafienia: 32 &nbsp;30 &nbsp;28 &nbsp;27 &nbsp;27 &nbsp;27 &nbsp;26 &nbsp;25 &nbsp;24 &nbsp;24 &nbsp;23 &nbsp;22 &nbsp;21 &nbsp;21 &nbsp;20 &nbsp;19 &nbsp;19 &nbsp;18 &nbsp;17 &nbsp;16</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;"> &nbsp; Liczby: &nbsp;8 &nbsp;37 &nbsp;36 &nbsp;18 &nbsp;12 &nbsp;63 &nbsp;61 &nbsp;38 &nbsp;58 &nbsp;73 &nbsp;19 &nbsp;16 &nbsp;70 &nbsp;57 &nbsp;68 &nbsp;45 &nbsp;72 &nbsp;34 &nbsp;17 &nbsp; 6</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">------------------------------------------------------------------------------------------</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;"> &nbsp;pozycje &nbsp; &nbsp; traf. &nbsp; &nbsp; liczby &nbsp; Traf: &nbsp; 0 &nbsp; 1 &nbsp; 2 &nbsp; 3</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;">-------------------------------------------------------</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;"> &nbsp;2 &nbsp; 9 &nbsp;10 &nbsp; &nbsp; 90 &nbsp; &nbsp; 8 &nbsp;36 &nbsp;37 &nbsp; &nbsp; &nbsp; &nbsp;37 &nbsp;37 &nbsp;25 &nbsp; 1</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;"> &nbsp;2 &nbsp; 3 &nbsp; 9 &nbsp; &nbsp; 87 &nbsp; &nbsp; 8 &nbsp;12 &nbsp;36 &nbsp; &nbsp; &nbsp; &nbsp;37 &nbsp;39 &nbsp;24 &nbsp; 0</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;"> 10 &nbsp;14 &nbsp;16 &nbsp; &nbsp; 81 &nbsp; &nbsp;37 &nbsp;58 &nbsp;63 &nbsp; &nbsp; &nbsp; &nbsp;44 &nbsp;32 &nbsp;23 &nbsp; 1</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;"> &nbsp;2 &nbsp; 6 &nbsp;10 &nbsp; &nbsp; 89 &nbsp; &nbsp; 8 &nbsp;18 &nbsp;37 &nbsp; &nbsp; &nbsp; &nbsp;36 &nbsp;40 &nbsp;23 &nbsp; 1</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Courier New'; color: #800000;"> &nbsp;2 &nbsp;10 &nbsp;16 &nbsp; &nbsp; 89 &nbsp; &nbsp; 8 &nbsp;37 &nbsp;63 &nbsp; &nbsp; &nbsp; &nbsp;35 &nbsp;42 &nbsp;22 &nbsp; 1</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'MS Shell Dlg';">W liniiach Pozycje, Trafienia i Liczby wyświetlane są wartości najlepszych pozycji posortowane wg trafień, liczby pochodzą z losowania przesuniętego o offset w stosunku do losowania nastepnego z wybranego zakresu. Ta że można od razu wybrać liczbę z określonej pozycji na następną grę.</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'MS Shell Dlg';">Diagram niżej wyświetla kolejne kombinacje których można wyświetlać określoną ilość z poczatku lub końca posortowanej wybranym sposobem listy kombinacji. Ustawienie w polu opcji "wyświetlaj MAX pozycji [ ]" warości 0 (zero) wyświetla wszystkie kombinacje pozycji.</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'MS Shell Dlg';">W kolejnych kolumnach wyświetlane są pozycje kolejnych kombinacji, globalna ilość trafień pozycji kombinacji, liczby z tych kombinacji na następne losowanie, oraz ilość trafień ich braku, jedynek,dwójek, trójek ...</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'MS Shell Dlg';">Raport umozliwia wybór konkretnych liczb na następną grę.</span></p>
+<p style="text-indent: 0px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
+
+</div>
+</td></tr></table>
+</div>
+
+<!-- Placeholder for topic body end. -->
+</body>
+</html>
