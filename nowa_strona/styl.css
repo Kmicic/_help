@@ -1,0 +1,30 @@
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+.kontener { display: flex; }
+.menu-nawigacyjne {
+    width: 280px;
+    min-width: 280px;
+    background-color: #f0f0f0;
+    padding: 20px;
+    height: 100vh;
+    overflow-y: auto;
+    border-right: 1px solid #ddd;
+    box-sizing: border-box;
+}
+.menu-nawigacyjne p { margin: 0 0 5px 0; line-height: 1.4; }
+.menu-nawigacyjne a { color: #0000d0; text-decoration: none; }
+.menu-nawigacyjne a:hover { text-decoration: underline; }
+.glowna-tresc {
+    flex-grow: 1;
+    padding: 30px;
+    background-color: #fff;
+    max-width: calc(100% - 320px);
+}
+.glowna-tresc, .glowna-tresc p, .glowna-tresc font {
+    font-family: "Times New Roman", serif;
+    font-size: 12pt;
+}
