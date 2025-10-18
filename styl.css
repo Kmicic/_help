@@ -1,0 +1,232 @@
+/* 
+  ==========================================================================
+  WERSJA OSTATECZNA (2024-07-29 - Uproszczona logika)
+  - Wszystkie podmenu otwierają się w prawo z 90% nachodzeniem na rodzica.
+  - Usunięto skomplikowane wyjątki dla ostatnich elementów.
+  - To rozwiązanie jest najprostsze i najbardziej stabilne.
+  ==========================================================================
+*/
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: #f4f4f4; /* Jasnoszare tło dla całej strony */
+}
+
+.glowna-tresc {
+    padding: 30px;
+    background-color: #fff; /* Białe tło dla obszaru treści */
+    width: 80%; /* Ograniczenie szerokości dla lepszej czytelności */
+    max-width: 1200px; /* Maksymalna szerokość */
+    margin: 20px auto; /* Wyśrodkowanie i dodanie marginesu od góry/dołu */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Subtelny cień */
+    box-sizing: border-box;
+}
+
+/* ==========================================================================
+   NOWE STYLE MENU NAWIGACYJNEGO (z nachodzeniem)
+   ========================================================================== */
+
+/* --- Kontener Głównego Menu --- */
+.menu-nawigacyjne {
+    width: 100%;
+    background-color: #343a40; /* Ciemnoszary */
+    border-bottom: 3px solid #007bff; /* Niebieski akcent */
+    box-sizing: border-box;
+}
+
+.menu-nawigacyjne ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+}
+
+/* --- Elementy Głównego Poziomu --- */
+.menu-nawigacyjne > ul > li {
+    float: left;
+    position: relative; /* Kluczowe dla pozycjonowania podmenu */
+}
+
+.menu-nawigacyjne li a, .menu-nawigacyjne .dropbtn {
+    display: block;
+    color: #f8f9fa; /* Jasny tekst */
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    white-space: nowrap;
+}
+
+.menu-nawigacyjne li a:hover, .menu-nawigacyjne .dropdown:hover > .dropbtn {
+    background-color: #495057;
+    color: #fff;
+}
+
+/* --- Kontener Rozwijanego Podmenu --- */
+.menu-nawigacyjne .dropdown-content {
+    display: none; /* Ukryte domyślnie */
+    position: absolute;
+    background-color: #ffffff; /* Białe tło */
+    min-width: 240px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 100;
+    border-radius: 0 0 5px 5px;
+    border-top: 3px solid #007bff;
+    left: 0;
+    padding: 0;
+}
+
+/* --- Pokazywanie Podmenu po Najechaniu --- */
+.menu-nawigacyjne .dropdown:hover > .dropdown-content {
+    display: block;
+}
+
+/* --- Lista wewnątrz podmenu --- */
+.menu-nawigacyjne .dropdown-content ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* --- Linki w Podmenu --- */
+.menu-nawigacyjne .dropdown-content a {
+    color: #212529; /* Ciemny tekst */
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid #f1f1f1;
+    display: block;
+}
+
+.menu-nawigacyjne .dropdown-content li:last-child a {
+    border-bottom: none;
+}
+
+.menu-nawigacyjne .dropdown-content a:hover {
+    background-color: #f1f1f1;
+    color: #000; /* Ciemniejszy tekst po najechaniu */
+}
+
+/* --- Podmenu Zagnieżdżone --- */
+.menu-nawigacyjne .dropdown-content .dropdown {
+    width: 100%;
+    position: relative;
+}
+
+/* NOWA LOGIKA: Nachodzenie podmenu na rodzica (90% pokrycia) */
+.menu-nawigacyjne .dropdown-content .dropdown .dropdown-content {
+    left: 50%; /* Otwieraj w prawo z 50% nachodzeniem */
+    top: 0; /* Wyrównaj do góry rodzica */
+    border-radius: 5px;
+}
+
+/* --- Strzałki wskazujące na istnienie podmenu --- */
+.menu-nawigacyjne .dropdown > a::after, .menu-nawigacyjne .dropdown > .dropbtn::after {
+    content: ' ▼';
+    font-size: 0.8em;
+    vertical-align: middle;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.menu-nawigacyjne .dropdown-content .dropdown > a::after {
+    content: ' ►';
+    float: right;
+    font-size: 0.8em;
+    line-height: 1.2;
+    margin-left: 0;
+}
+
+/* --- USUNIĘTO SKOMPLIKOWANE REGUŁY DOTYCZĄCE OTWIERANIA W LEWO --- */
+/* Teraz wszystkie podmenu otwierają się w prawo */
+
+/* --- Czyszczenie float --- */
+.menu-nawigacyjne ul::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* ==========================================================================
+   POZOSTAŁE STYLE
+   ========================================================================== */
+
+.glowna-tresc, .glowna-tresc p, .glowna-tresc font {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, serif;
+    font-size: 12pt;
+}
+
+.inline-button {
+   width:auto;
+   font: bold 90%/1 Verdana, sans-serif;
+   margin: 0 0.2em; padding: 0.1em 0; _padding:0;
+   border: 1px solid black;
+   white-space:nowrap;
+   text-decoration: none;
+   vertical-align:middle;
+   background: #ccc;
+   color: black;
+}
+.inline-button em {
+   cursor:hand;
+   font-style: normal;
+   margin:0; padding: 0.1em 0.5em;
+   background: white;
+   color: black;
+}
+.inline-button span {
+   cursor:hand;
+   margin:0; padding: 0.1em 0.5em 0.1em 0.3em;
+}
+.inline-button:hover {
+   background: #666;
+   color: white;
+}
+.inline-button:hover em {
+   background: black;
+   color: white;
+}
+
+/* --- Style kolorów --- */
+.s1, .s5, .s9 { background-color: #FFFFFF; color: #008000; }
+.s2 { background-color: #FF8000; color: #000000; }
+.s3 { background-color: #FFFFFF; color: #000000; }
+.s4 { background-color: #FFFF00; color: #0000FF; }
+.s6, .s7, .s8 { background-color: #FFFFFF; color: #FF0000; }
+.s10 { background-color: #FFFFFF; color: #800000; }
+.s11 { background-color: #00FF00; color: #000000; }
+
+/* --- Style listy języków --- */
+ul.linklist {
+    display: block;
+    margin: 0;
+}
+ul.linklist li {
+    display: block;
+    list-style-type: none;
+    float: left;
+    width: auto;
+    margin-right: 5px;
+    font-size: 0.8em;
+    line-height: 2.2em;
+}
+ul.linklist {
+    float: right;
+    margin-right: 0;
+    margin-left: 5px;
+    text-align: right;
+}
+ul.navlinks {
+    padding-bottom: 1px;
+    margin-bottom: 1px;
+    border-bottom: 1px solid #FFFFFF;
+    font-weight: bold;
+}
+a.flag {color: #AAA; font-size:0.8em;text-decoration:none;}
+a.flag:hover {color:#FFF;text-decoration:underline;}
+a.en-flag {padding-left:21px; background: url(images/flag/en.png) top left no-repeat;}
+a.de-flag {padding-left:21px; background: url(images/flag/de.png) top left no-repeat;}
+a.ru-flag {padding-left:21px; background: url(images/flag/ru.png) top left no-repeat;} 
+a.cs-flag {padding-left:21px; background: url(images/flag/cz.png) top left no-repeat;}
+a.fr-flag {padding-left:21px; background: url(images/flag/fr.png) top left no-repeat;}
+a.es-flag {padding-left:21px; background: url(images/flag/es.png) top left no-repeat;}
+a.it-flag {padding-left:21px; background: url(images/flag/it.png) top left no-repeat;}

@@ -1,486 +1,2101 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
-<head>
-   <title>Systemy strefowe</title>
-   <meta name="keywords" content="" />
-   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-   <meta http-equiv="Content-Style-Type" content="text/css" />
-   <link type="text/css" href="default.css" rel="stylesheet" />
-   <style type="text/css">
-   <!--
-   .inline-button {
-   width:auto;
-   font: bold 90%/1 Verdana, sans-serif;
-   margin: 0 0.2em; padding: 0.1em 0; _padding:0;
-   border: 1px solid black;
-   white-space:nowrap;
-   text-decoration: none;
-   vertical-align:middle;
-   background: #ccc;
-   color: black;
-   }
-.inline-button em {
-   cursor:hand;
-   font-style: normal;
-   margin:0; padding: 0.1em 0.5em;
-   background: white;
-   color: black;
-   }
-.inline-button span {
-   cursor:hand;
-   margin:0; padding: 0.1em 0.5em 0.1em 0.3em;
-   }
-.inline-button:hover {
-   background: #666;
-   color: white;
-   }
-.inline-button:hover em {
-   background: black;
-   color: white;
-   }
-.s1 {
-	background-color: #FFFFFF;
-	color: #008000;
-}
-.s2 {
-	background-color: #FF8000;
-	color: #000000;
-}
-.s5 {
-	background-color: #FFFFFF;
-	color: #008000;
-}
-.s6 {
-	background-color: #FFFFFF;
-	color: #FF0000;
-}
-.s7 {
-	background-color: #FFFFFF;
-	color: #FF0000;
-}
-.s8 {
-	background-color: #FFFFFF;
-	color: #FF0000;
-}
-.s9 {
-	background-color: #FFFFFF;
-	color: #008000;
-}
-.s10 {
-	background-color: #FFFFFF;
-	color: #800000;
-}
-.s3 {
-	background-color: #FFFFFF;
-	color: #000000;
-}
-.s4 {
-	background-color: #FFFF00;
-	color: #0000FF;
-}
-.s11 {
-	background-color: #00FF00;
-	color: #000000;   }
-/* Horizontal lists
-----------------------------------------*/
-ul.linklist {
-	display: block;
-	margin: 0;
-}
-
-ul.linklist li {
-	display: block;
-	list-style-type: none;
-	float: left;
-	width: auto;
-	margin-right: 5px;
-	font-size: 1.1em;
-	line-height: 2.2em;
-}
-
-ul.linklist {
-	float: right;
-	margin-right: 0;
-	margin-left: 5px;
-	text-align: right;
-}
-
-ul.navlinks {
-	padding-bottom: 1px;
-	margin-bottom: 1px;
-	border-bottom: 1px solid #FFFFFF;
-	font-weight: bold;
-}
-
-a.flag {color: #AAA; font-size:0.8em;text-decoration:none;}
-a.flag:hover {color:#FFF;text-decoration:underline;}
-a.en-flag {padding-left:21px; background: url(images/flag/en.png) top left no-repeat;}
-a.de-flag {padding-left:21px; background: url(images/flag/de.png) top left no-repeat;}
-a.ru-flag {padding-left:21px; background: url(images/flag/ru.png) top left no-repeat;} 
-a.cs-flag {padding-left:21px; background: url(images/flag/cz.png) top left no-repeat;}
-a.fr-flag {padding-left:21px; background: url(images/flag/fr.png) top left no-repeat;}
-a.es-flag {padding-left:21px; background: url(images/flag/es.png) top left no-repeat;}
-a.it-flag {padding-left:21px; background: url(images/flag/it.png) top left no-repeat;}
-
--->   
-</style>
-
-<script type="text/javascript" src="jquery-1.7.1.min.js"></script>
-
-<script type="text/javascript">
-function trim11 (str) {
-str = str.replace(/^\s+/, '');
-for (var i = str.length - 1; i >= 0; i--) {
-if (/\S/.test(str.charAt(i))) {
-str = str.substring(0, i + 1);
-break;
-}
-}
-return str;
-}
-
-function _highlight(inp_id,out_id) {
-elm=document.getElementById(out_id);
-var inptxt = trim11(document.getElementById(inp_id).value);
-var inp_arr = inptxt.split(/[ :,;-]+/);
-var html=elm.innerHTML;
-text=trim11(html.replace(/<[^>]+>/g,''));
-lines=text.split(/\r?\n/g);
-
-html="<pre>";
-for (var i in lines) {
-var tic=lines[i];
-var line_arr=tic.split(' ');
-
-var item='';
-for (var j in line_arr) {
-var num=line_arr[j];
-var hits=false;
-for (var k in inp_arr) {
-var hit=inp_arr[k];
-if (hit==num) { 
-hits=true;
-break;
-}
-}
-var pads=(j<(line_arr.length-1)) ? ' ':'';
-item+= hits ? '<span class="s2">'+num+'</span>'+pads : num+pads;
-}
-html+=item+'\r\n';
-}
-elm.innerHTML=html+'</pre>';
-}
-</script>
-      
-<script type="text/javascript" src="helpman_topicinit.js"></script>
-<!-- Redirect browser to frame page if page is not in the content frame. -->
-<script type="text/javascript">
-<!--
-if (location.search.lastIndexOf("toc=0")<=0) {
-  if (parent.frames.length==0) { parent.location.href="index.html?systemystrefowekrokpokroku.htm"; }
-  else { parent.quicksync('a3.2.1.4.11'); }
-}
-//-->
-</script>
-<script type="text/javascript" src="highlight.js"></script></head>
-<body style="margin: 0px 0px 0px 0px; background: #FFFFEF;" onload="highlight();">
-<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
-
-
-
-<!-- Placeholder for topic body begin. -->
-
-<div id="topic_body" class="goog-trans-section" lang="pl">
-<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
-<div class="goog-trans-control">
-<a class="goog-te-gadget-link" href="javascript:void(0)"><span class="goog-te-sectional-gadget-link-text"></span></a>
-</div>
-<div class="content">
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;">Ciekawe układy można osiągnąć grając systemami strefowymi po trzy liczby w każdej strefie z wybieraniem do zakładów po dwie liczby w strefie. To łatwo można wyliczyć w pamięci jeżeli z każdej trójki liczb do zakładów mają być wzięte po dwie liczby to aby zagrać o 10 kę należy takich dwójek wziąść z 5-ciu stref. A ponieważ w każdej strefie typujemy trzy liczby do dyspozycji mamy w sumie 15 liczb. Dla uproszczenia posłużę się przykładem że będzie to kolejnych 15 liczb :</p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;">wpisujemy kolejnych 15 liczb ( jeżeli produkujesz system do realnej gry liczby nie muszą być kolejne).</p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><img src="pole15.png" width="742" height="26" border="0" alt="pole15"></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">i tak ustalamy że:</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">strefa 1 to liczby &nbsp;1 &nbsp;2 &nbsp;3</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">strefa 2 to liczby &nbsp;4 &nbsp;5 &nbsp;6</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">strefa 3 to liczby &nbsp;7 &nbsp;8 &nbsp;9</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">strefa 4 to liczby 10 11 12</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">strefa 5 to liczby 13 14 15</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;">następnie z menu kombinacje ustawiam parametry systemu :</p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
-<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">w pole liczb w zakładzie wpisuję [ 10 ]</span></p>
-<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">w pole ilość liczb w strefie wpisuję [ 3 ]</span></p>
-<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">w pole poziom wybierania wpisuję [ 2 ]</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><img src="menu_comb.png" width="258" height="399" border="0" alt="MENU_COMB"></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">i</span> w tym samym menu wciskam przycisk generuj system strefowy.</p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;">I gotowe wygenerowanych będzie 243 zakłady systemu :</p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">1 2 4 5 7 8 10 11 13 14</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">1 3 4 5 7 8 10 11 13 14</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">2 3 4 5 7 8 10 11 13 14</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">1 2 4 6 7 8 10 11 13 14</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">...</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">...</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">2 3 4 6 8 9 11 12 14 15</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">1 2 5 6 8 9 11 12 14 15</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">1 3 5 6 8 9 11 12 14 15</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">2 3 5 6 8 9 11 12 14 15</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;">Aby sprawdzić gwarancję takiego systemu poprostu zasymulować trzeba &nbsp;losowanie wpisując liczby trafione w pole edycji a następnie &nbsp;wcisnąć przycisk &nbsp;sprawdzanie zakładów. W prawym polu wyniki pojawi się &nbsp;ilość trafień i zestawienie kosztów i zysków.</p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;">np : sprawdzić trzeba &nbsp;najpierw podstawową gwarancję tzn że trafienie w każdej ze stref po dwie liczby z każdej trójki trafisz główną wygraną czyli 10 kę:</p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
-<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">np w pole edycji wpiać należy [1 3 5 6 8 9 10 12 14 15]</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;">i następnie wcisnąć przycisk sprawdzania ( ikonka lupki na tle pola edycji) :</p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;">w polu wyniki pojawi się :</p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">...</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">...</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Traf. 10 z 10 liczb Wygr. 100000 zł</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Traf. 9 z 10 liczb Wygr. 5000 zł</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Traf. 6 z 10 liczb Wygr. 6 zł</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Traf. 7 z 10 liczb Wygr. 70 zł</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Traf. 6 z 10 liczb Wygr. 6 zł</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Traf. 6 z 10 liczb Wygr. 6 zł</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Traf. 7 z 10 liczb Wygr. 70 zł</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Traf. 6 z 10 liczb Wygr. 6 zł</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Traf. 7 z 10 liczb Wygr. 70 zł</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Traf. 8 z 10 liczb Wygr. 260 zł</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Traf. 7 z 10 liczb Wygr. 70 zł</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Traf. 6 z 10 liczb Wygr. 6 zł</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Traf. 7 z 10 liczb Wygr. 70 zł</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Traf. 6 z 10 liczb Wygr. 6 zł</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Traf. 6 z 10 liczb Wygr. 6 zł</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Traf. 7 z 10 liczb Wygr. 70 zł</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Traf. 6 z 10 liczb Wygr. 6 zł</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Traf. 7 z 10 liczb Wygr. 70 zł</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Traf. 8 z 10 liczb Wygr. 260 zł</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Traf. 7 z 10 liczb Wygr. 70 zł</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Traf. 7 z 10 liczb Wygr. 70 zł</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Traf. 8 z 10 liczb Wygr. 260 zł</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Traf. 7 z 10 liczb Wygr. 70 zł</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Traf. 7 z 10 liczb Wygr. 70 zł</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Traf. 8 z 10 liczb Wygr. 260 zł</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Traf. 7 z 10 liczb Wygr. 70 zł</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Traf. 8 z 10 liczb Wygr. 260 zł</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Traf. 9 z 10 liczb Wygr. 5000 zł</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Traf. 8 z 10 liczb Wygr. 260 zł</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">-----------------------------</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Suma wygranej= 166 544.00 zł</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Koszt= 291.60 zł</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Zysk= 166 252.40 zł</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">----------------------------------------------</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Razem na 15 unikalnych liczb trafiono 10 liczb</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Trafione liczby : 1 3 5 6 8 9 10 12 14 15</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Użyte liczby : 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">32 trafień 5 z 10 wygrana &nbsp; &nbsp; &nbsp;64.00 zł</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">80 trafień 6 z 10 wygrana &nbsp; &nbsp; 480.00 zł</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">80 trafień 7 z 10 wygrana &nbsp; 5 600.00 zł</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">40 trafień 8 z 10 wygrana &nbsp;10 400.00 zł</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">10 trafień 9 z 10 wygrana &nbsp;50 000.00 zł</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">1 trafień 10 z 10 wygrana 100 000.00 zł</span></p>
-<p style="text-indent: 0px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;">potem kolejno należy wyłączać liczby aż sprawdzi się do jakiego poziomu trafień system daje jeszcze zysk. I łatwo stwierdzisz że trafienie kolejno w strefach &nbsp;czyli w dwu strefach trafionych będą dwie z trzech liczb, w jednej trafiona będzie jedna liczba z trzech i można pozwolić na nietrafienie ani jednej liczby w dwu posostałych strefach i jeszcze nie ma tragedii traci się &nbsp;tylko 60 groszy.:</p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Razem na 15 unikalnych liczb trafiono 6 liczb</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Trafione liczby : 1 2 4 6 7 10</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Użyte liczby : 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">12 trafień 2 z 10</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">60 trafień 3 z 10</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">99 trafień 4 z 10 wygrana &nbsp;99.00 zł</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">60 trafień 5 z 10 wygrana 120.00 zł</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">12 trafień 6 z 10 wygrana &nbsp;72.00 zł</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;">a np trafienie w jednej strefie 2 liczb i w pozostałych po jednej jednej</p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;">liczbie daje zysk 20 zł</p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Razem na 15 unikalnych liczb trafiono 6 liczb</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Trafione liczby : 1 2 4 7 10 13</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Użyte liczby : 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">2 trafień 1 z 10</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">56 trafień 3 z 10</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">88 trafień 4 z 10 wygrana &nbsp;88.00 zł</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">64 trafień 5 z 10 wygrana 128.00 zł</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">16 trafień 6 z 10 wygrana &nbsp;96.00 zł</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;">wszystko co trafione zostanie więcej to czysty zysk!!!</p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;">no i optymistyczna wersja :))))</p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;">trafione zostaje 15 liczb z 20 w losowaniu w każdej strefie po trzy liczby.</p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Suma wygranej= 24 300 000.00 zł</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Koszt= 291.60 zł</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Zysk= 24 299 708.40 zł</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">----------------------------------------------</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Razem na 15 unikalnych liczb trafiono 15 liczb</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Trafione liczby : 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Użyte liczby : 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">243 trafień 10 z 10 wygrana 24 300 000.00 zł</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">No i TS idzie po pozyczkę do banku :)</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;">Systemami strefowymi można grać oczywiscie trochę skromniej np system gry o piatkę wówczas grasz systemem po dwie liczby w stefie z wybieraniem jednej liczby z każdej ze stref więc masz wówczas strefy:</p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">strefa 1 to liczby &nbsp;1 &nbsp;2</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">strefa 2 to liczby &nbsp;3 &nbsp;4</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">strefa 3 to liczby &nbsp;5 &nbsp;6</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">strefa 4 to liczby &nbsp;7 &nbsp;8</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">strefa 5 to liczby &nbsp;9 10</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
-<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">w pole edycji wpisujesz [ 1 2 3 4 5 6 7 8 9 10 ]</span></p>
-<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">&nbsp;</span></p>
-<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">poziom wybierania [ 1 ]</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;">i otrzymujesz 32 zakłady :</p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">1 3 5 7 &nbsp;9</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">2 3 5 7 &nbsp;9</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">1 4 5 7 &nbsp;9</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">2 4 5 7 &nbsp;9</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">1 3 6 7 &nbsp;9</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">2 3 6 7 &nbsp;9</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">1 4 6 7 &nbsp;9</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">2 4 6 7 &nbsp;9</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">2 3 5 8 &nbsp;9</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">1 4 5 8 &nbsp;9</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">2 4 5 8 &nbsp;9</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">1 3 6 8 &nbsp;9</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">2 3 6 8 &nbsp;9</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">1 4 6 8 &nbsp;9</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">2 4 6 8 &nbsp;9</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">1 3 5 7 10</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">2 3 5 7 10</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">1 4 5 7 10</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">2 4 5 7 10</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">1 3 6 7 10</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">2 3 6 7 10</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">1 4 6 7 10</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">2 4 6 7 10</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">1 3 5 8 10</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">2 3 5 8 10</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">1 4 5 8 10</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">2 4 5 8 10</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">1 3 6 8 10</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">2 3 6 8 10</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">1 4 6 8 10</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">2 4 6 8 10</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;">trafiasz podstawowe po jednej liczbie ze strefy i zgarniasz :</p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Suma wygranej= 400.00 zł</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Koszt= 38.40 zł</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Zysk= 361.60 zł</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">----------------------------------------------</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Trafione liczby : 2 4 6 8 10</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">Użyte liczby : 1 2 3 4 5 6 7 8 9 10</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 5 trafień &nbsp;1 z 5</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">10 trafień &nbsp;2 z 5</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">10 trafień &nbsp;3 z 5 wygrana &nbsp;20.00 zł</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 5 trafień &nbsp;4 z 5 wygrana &nbsp;50.00 zł</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code"> 1 trafień &nbsp;5 z 5 wygrana 330.00 zł</span></p>
-<p style="text-indent: 0px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;">ale nie trafienie jednej strefy to choć niewielka ale strata 2 zł.</p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;">wszystko co wyżej to Twój sukces.</p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;">To były przykłady stref równych ale można też kombinować ilością liczb w każdej ze stref a mianowicie np:</p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">strefa 1 to liczby 1 2 &nbsp;3 &nbsp;z wybieraniem 2 liczb</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">strefa 2 to liczby &nbsp; 4 &nbsp;5 &nbsp;z wybieranie &nbsp;1 liczby</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">strefa 3 to liczby 6 7 &nbsp;8 &nbsp;z wybieraniem 2 liczb</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">strefa 4 to liczby &nbsp; 9 10 &nbsp;z wybieraniem 1 liczby</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">strefa 5 to liczby &nbsp; &nbsp; 11 &nbsp;z wybieraniem 1 liczby / pewniak/</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;">przy projektowaniu systemu musisz pamiętać że poziom wybierania decyduje o ilości liczb w zakładzie. I jeżeli ustalisz tak jak wyżej to zaprojektujesz system z 2+1+2+1+1pewniak = 7 liczb w zakładzie.System strefowy mieszany generuje się trochę inaczej.</p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
-<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">w pole edycji wpisujesz kolejne strefy oddzielone przecinkami :</span></p>
-<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">[ 1 2 3, 4 5, 6 7 8, 9 10, 11 ]</span></p>
-<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">w menu kombinacje wpisujesz sekwencje poziomów wybierania ( bez przecinków )</span></p>
-<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">:pole o nazwie : poziomy wybierania stref [21211]</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;">i w tym samym menu wciskasz przycisk generuj system strefowy mieszany :</p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;">i z naszego przykładu otrzymasz system z 36 zakładów :</p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">1 2 4 6 7 9 11</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">1 3 4 6 7 9 11</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">2 3 4 6 7 9 11</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">1 2 5 6 7 9 11</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">1 3 5 6 7 9 11</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">2 3 5 6 7 9 11</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">1 3 4 6 8 9 11</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">2 3 4 6 8 9 11</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">1 2 5 6 8 9 11</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">1 3 5 6 8 9 11</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">2 3 5 6 8 9 11</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">1 2 4 7 8 9 11</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">1 3 4 7 8 9 11</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">2 3 4 7 8 9 11</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">1 2 5 7 8 9 11</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">1 3 5 7 8 9 11</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">2 3 5 7 8 9 11</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">1 2 4 6 7 10 11</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">1 3 4 6 7 10 11</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">2 3 4 6 7 10 11</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">1 2 5 6 7 10 11</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">1 3 5 6 7 10 11</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">2 3 5 6 7 10 11</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">1 2 4 6 8 10 11</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">2 3 4 6 8 10 11</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">1 2 5 6 8 10 11</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">1 3 5 6 8 10 11</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">2 3 5 6 8 10 11</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">1 2 4 7 8 10 11</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">1 3 4 7 8 10 11</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">2 3 4 7 8 10 11</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">1 2 5 7 8 10 11</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">1 3 5 7 8 10 11</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">2 3 5 7 8 10 11</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">&nbsp;</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;">sprawdzenie systemu pozostawiam Tobie jako zadanie domowe :)</p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;">Również poprzednie systemy można generować jako mieszane mimo ze są one</p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;">równomierne.</p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
-<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">np system nr jeden wpisujesz w pole edycji z przecinkami kolejne strefy :</span></p>
-<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">[ 1 2 3, 4 5 6, 7 8 9, 10 11 12, 13 14 15 ] a w pole poziomy wybierania ze</span></p>
-<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">stref wpsujemy sekwencję [22222] i wciskamy generuj system strefowy. I</span></p>
-<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">otrzymamy dokładnie taki sam system jak poprzednio.</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;">powodzenia</p>
-
-</div>
-</td></tr></table>
-</div>
-
-<!-- Placeholder for topic body end. -->
-</body>
+<!DOCTYPE html>
+<html lang="pl">
+ <head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>
+   3.2.1.4.11 Systemy strefowe
+  </title>
+  <link href="styl.css" rel="stylesheet">
+  
+ </head>
+ <body>
+  <nav class="menu-nawigacyjne">
+   <ul>
+    <li>
+     <a href="contents.htm">
+      1 Wprowadzenie
+     </a>
+    </li>
+    <li>
+     <a href="about.htm">
+      2 O Programie
+     </a>
+    </li>
+    <li class="dropdown">
+     <a class="dropbtn" href="main_panel.htm">
+      3 Panel g&lstrok;&oacute;wny programu
+     </a>
+     <div class="dropdown-content">
+       <ul><li class="dropdown">
+        <a href="formular_elements.htm">
+         3.1 Elementy Formularzy
+        </a>
+        <div class="dropdown-content">
+          <ul><li class="dropdown">
+           <a href="panel_text.htm">
+            3.1.1 Panele tekstowe
+           </a>
+           <div class="dropdown-content">
+             <ul><li>
+              <a href="panel_text_popmenu.htm">
+               3.1.1.1 Menu kontekstowe pola zaklady
+              </a>
+             </li>
+            </ul></div>
+          </li>
+          <li class="dropdown">
+           <a href="panel_wheels.htm">
+            3.1.2 Tabela losowan
+           </a>
+           <div class="dropdown-content">
+             <ul><li>
+              <a href="panel_wheels_highlight.htm">
+               3.1.2.1 zaznaczanie liczb
+              </a>
+             </li>
+             <li>
+              <a href="panel_wheels_selection.htm">
+               3.1.2.2 wybieranie liczb
+              </a>
+             </li>
+            </ul></div>
+          </li>
+          <li class="dropdown">
+           <a href="panel_tend.htm">
+            3.1.3 Tendencje
+           </a>
+           <div class="dropdown-content">
+             <ul><li>
+              <a href="panel_tend_descr.htm">
+               3.1.3.1 TENDENCJE
+              </a>
+             </li>
+            </ul></div>
+          </li>
+          <li class="dropdown">
+           <a href="panel_ticketbase.htm">
+            3.1.4 Baza zawartych zak&lstrok;ad&oacute;w
+           </a>
+           <div class="dropdown-content">
+             <ul><li>
+              <a href="panel_ticketbase_descr.htm">
+               3.1.4.1 BAZA ZAK&Lstrok;AD&Oacute;W
+              </a>
+             </li>
+            </ul></div>
+          </li>
+          <li>
+           <a href="quick_bar.htm">
+            3.1.5 Szybki pasek wyboru
+           </a>
+          </li>
+          <li>
+           <a href="panel_maps.htm">
+            3.1.6 Mapa liczb
+           </a>
+          </li>
+          <li class="dropdown">
+           <a href="panel_league.htm">
+            3.1.7 Liga liczb
+           </a>
+           <div class="dropdown-content">
+             <ul><li>
+              <a href="panel_league_descr.htm">
+               3.1.7.1 LIGA LICZB
+              </a>
+             </li>
+            </ul></div>
+          </li>
+         </ul></div>
+       </li>
+       <li class="dropdown">
+        <a href="menu_an_toolbar.htm">
+         3.2 Menu i paski narz&eogon;dziowe
+        </a>
+        <div class="dropdown-content">
+          <ul><li class="dropdown">
+           <a href="menu_main.htm">
+            3.2.1 Menu g&lstrok;&oacute;wne
+           </a>
+           <div class="dropdown-content">
+             <ul><li class="dropdown">
+              <a href="menu_file.htm">
+               3.2.1.1 Plik
+              </a>
+              <div class="dropdown-content">
+                <ul><li>
+                 <a href="menu_file_load_save_to_file.htm">
+                  3.2.1.1.1 Otw&oacute;rz z ... pliku tekstowego
+                 </a>
+                </li>
+                <li>
+                 <a href="menu_file_load_save_to_base.htm">
+                  3.2.1.1.2 Zapisz do ... bazy zak&lstrok;ad&oacute;w
+                 </a>
+                </li>
+                <li>
+                 <a href="menu_file_print.htm">
+                  3.2.1.1.3 Drukuj, podgl&aogon;d wydruku
+                 </a>
+                </li>
+                <li>
+                 <a href="menu_file_game_manager.htm">
+                  3.2.1.1.4 Menad&zdot;er gier liczbowych
+                 </a>
+                </li>
+               </ul></div>
+             </li>
+             <li class="dropdown">
+              <a href="menu_edit.htm">
+               3.2.1.2 Edycja
+              </a>
+              <div class="dropdown-content">
+                <ul><li>
+                 <a href="text_option.htm">
+                  3.2.1.2.1 Opcje pola tekstowego
+                 </a>
+                </li>
+               </ul></div>
+             </li>
+             <li class="dropdown">
+              <a href="menu_filters.htm">
+               3.2.1.3 Filtry
+              </a>
+              <div class="dropdown-content">
+                <ul><li class="dropdown">
+                 <a href="menu_filters_descr.htm">
+                  3.2.1.3.1 Filtry opis
+                 </a>
+                 <div class="dropdown-content">
+                   <ul><li>
+                    <a href="menu_filters_sum.htm">
+                     3.2.1.3.1.1 Sumy
+                    </a>
+                   </li>
+                   <li>
+                    <a href="menu_filters_parity.htm">
+                     3.2.1.3.1.2 Parzysto&sacute;ci
+                    </a>
+                   </li>
+                   <li>
+                    <a href="menu_filters_string.htm">
+                     3.2.1.3.1.3 Szeregu kolejnych liczb
+                    </a>
+                   </li>
+                   <li>
+                    <a href="menu_filters_diff.htm">
+                     3.2.1.3.1.4 Filtr r&oacute;znicy
+                    </a>
+                   </li>
+                   <li>
+                    <a href="menu_filters_what_use.htm">
+                     3.2.1.3.1.5 Przyklad filtracji SPS
+                    </a>
+                   </li>
+                   <li>
+                    <a href="menu_filters_hits.htm">
+                     3.2.1.3.1.6 Filtr Trafie&nacute;
+                    </a>
+                   </li>
+                   <li>
+                    <a href="filtrzakresow.htm">
+                     3.2.1.3.1.7 Filtr zakresow
+                    </a>
+                   </li>
+                   <li>
+                    <a href="filtravg.htm">
+                     3.2.1.3.1.8 FiltrAVG
+                    </a>
+                   </li>
+                   <li>
+                    <a href="filtrhd.htm">
+                     3.2.1.3.1.9 FiltrFHD
+                    </a>
+                   </li>
+                   <li>
+                    <a href="filtrmhd.htm">
+                     3.2.1.3.1.10 FiltrMHD
+                    </a>
+                   </li>
+                   <li>
+                    <a href="filter_przyklad.htm">
+                     3.2.1.3.1.11 Przyk&lstrok;ad filtracji
+                    </a>
+                   </li>
+                   <li>
+                    <a href="filtrspacji.htm">
+                     3.2.1.3.1.12 Filtr spacji
+                    </a>
+                   </li>
+                  </ul></div>
+                </li>
+               </ul></div>
+             </li>
+             <li class="dropdown">
+              <a href="menu_combine.htm">
+               3.2.1.4 Kombinacje
+              </a>
+              <div class="dropdown-content">
+                <ul><li>
+                 <a href="menu_combine_dialog.htm">
+                  3.2.1.4.1 Kombinacje liczb (tasowanie)
+                 </a>
+                </li>
+                <li>
+                 <a href="menu_combine_select_number.htm">
+                  3.2.1.4.2 Wyb&oacute;r liczb do kombinacji
+                 </a>
+                </li>
+                <li class="dropdown">
+                 <a href="combine_function.htm">
+                  3.2.1.4.3 Rodzaje funkcji losuj&aogon;cych (kombinacji)
+                 </a>
+                 <div class="dropdown-content">
+                   <ul><li>
+                    <a href="comb_equal.htm">
+                     3.2.1.4.3.1 Kombinacja R&oacute;wnomierna
+                    </a>
+                   </li>
+                   <li>
+                    <a href="comb_random.htm">
+                     3.2.1.4.3.2 Kombinacja Przypadkowa
+                    </a>
+                   </li>
+                   <li>
+                    <a href="comb_line.htm">
+                     3.2.1.4.3.3 Kombinacja Liniowa
+                    </a>
+                   </li>
+                   <li>
+                    <a href="comb_expotential.htm">
+                     3.2.1.4.3.4 Kombinacja Wyk&lstrok;adnicza
+                    </a>
+                   </li>
+                   <li>
+                    <a href="comb_quick_pick.htm">
+                     3.2.1.4.3.5 Kombinacja Chybi&lstrok;Trafi&lstrok; XX
+                    </a>
+                   </li>
+                   <li>
+                    <a href="comb_all.htm">
+                     3.2.1.4.3.6 Kombinacja wszystkich XX liczb
+                    </a>
+                   </li>
+                   <li>
+                    <a href="comb_line_xx.htm">
+                     3.2.1.4.3.7 Kombinacja Liniowa XX
+                    </a>
+                   </li>
+                   <li>
+                    <a href="comb_expotential_xx.htm">
+                     3.2.1.4.3.8 Kombinacja Wyk&lstrok;adnicza XX
+                    </a>
+                   </li>
+                   <li>
+                    <a href="comb_swap.htm">
+                     3.2.1.4.3.9 Kombinacje przemienne
+                    </a>
+                   </li>
+                   <li>
+                    <a href="comb_gauss.htm">
+                     3.2.1.4.3.10 Kombinacje Gaussa
+                    </a>
+                   </li>
+                   <li>
+                    <a href="comb_systems.htm">
+                     3.2.1.4.3.11 Kombinacje systemowe
+                    </a>
+                   </li>
+                   <li>
+                    <a href="comb_another.htm">
+                     3.2.1.4.3.12 Inne kombinacje
+                    </a>
+                   </li>
+                  </ul></div>
+                </li>
+                <li>
+                 <a href="option_spec_category.htm">
+                  3.2.1.4.4 Opcje dla kategorii liczb specjalnych
+                 </a>
+                </li>
+                <li>
+                 <a href="spec_numb_algorythm.htm">
+                  3.2.1.4.5 Algorytm podzia&lstrok;u liczb gry na kategorie specjalne.
+                 </a>
+                </li>
+                <li>
+                 <a href="options_limits.htm">
+                  3.2.1.4.6 Limity generacji zak&lstrok;adow
+                 </a>
+                </li>
+                <li>
+                 <a href="abbrev_brute.htm">
+                  3.2.1.4.7 Skr&oacute;&cacute; do gwarancji
+                 </a>
+                </li>
+                <li>
+                 <a href="menu_again_and_check.htm">
+                  3.2.1.4.8 Powt&oacute;rz i sprawd&zacute; z polem edycji
+                 </a>
+                </li>
+                <li>
+                 <a href="menu_again_and_check_history.htm">
+                  3.2.1.4.9 Powt&oacute;rz i sprawd&zacute; w historii
+                 </a>
+                </li>
+                <li>
+                 <a href="menu_full_syst_filtered.htm">
+                  3.2.1.4.10 Odfiltrowany system pe&lstrok;ny
+                 </a>
+                </li>
+                <li>
+                 <a href="systemystrefowekrokpokroku.htm">
+                  3.2.1.4.11 Systemy strefowe
+                 </a>
+                </li>
+                <li>
+                 <a href="combine_num_combine.htm">
+                  3.2.1.4.12 Kombinacja na jej numer
+                 </a>
+                </li>
+               </ul></div>
+             </li>
+             <li class="dropdown">
+              <a href="menu_report.htm">
+               3.2.1.5 Raporty
+              </a>
+              <div class="dropdown-content">
+                <ul><li>
+                 <a href="raportmapyliczb.htm">
+                  3.2.1.5.1 Raport mapy liczb
+                 </a>
+                </li>
+                <li>
+                 <a href="menu_report_whells.htm">
+                  3.2.1.5.2 Raport o filtach losowan
+                 </a>
+                </li>
+                <li>
+                 <a href="menu_report_traf_los.htm">
+                  3.2.1.5.3 Raport trafien &nbsp;liczb z g&lstrok;ownego pola edycji
+                 </a>
+                </li>
+                <li>
+                 <a href="menu_report_trafedit.htm">
+                  3.2.1.5.4 Raport trafien we wszystkich losowaniach
+                 </a>
+                </li>
+                <li>
+                 <a href="raportliczbstowarzyszonych.htm">
+                  3.2.1.5.5 Raport liczb stowarzyszonych
+                 </a>
+                </li>
+                <li>
+                 <a href="menu_report_stow.htm">
+                  3.2.1.5.6 Raport liczb stowarzyszonych-z poprzednim losowaniem
+                 </a>
+                </li>
+                <li>
+                 <a href="menu_report_tabskut.htm">
+                  3.2.1.5.7 Tabela skutecznosci typowania kategorii liczb specjalnych
+                 </a>
+                </li>
+                <li>
+                 <a href="raport_trafien_trendow_liczb.htm">
+                  3.2.1.5.8 Raport trafie&nacute; trend&oacute;w liczb
+                 </a>
+                </li>
+                <li>
+                 <a href="raportpewn.htm">
+                  3.2.1.5.9 Raport pewniakow
+                 </a>
+                </li>
+                <li class="dropdown">
+                 <a href="predictionsreport.htm">
+                  3.2.1.5.10 Raport Prognozy
+                 </a>
+                 <div class="dropdown-content">
+                   <ul><li>
+                    <a href="prognozyopis.htm">
+                     3.2.1.5.10.1 Prognozy opis
+                    </a>
+                   </li>
+                   <li>
+                    <a href="panelprognozy.htm">
+                     3.2.1.5.10.2 Panel Prognozy
+                    </a>
+                   </li>
+                   <li>
+                    <a href="prognozyopcje.htm">
+                     3.2.1.5.10.3 Panel Opcje
+                    </a>
+                   </li>
+                   <li>
+                    <a href="progn_what_select.htm">
+                     3.2.1.5.10.4 Jak wybiera&cacute; prognozy
+                    </a>
+                   </li>
+                   <li>
+                    <a href="prognozy_game_trick.htm">
+                     3.2.1.5.10.5 Prognozy przyk&lstrok;ad gry
+                    </a>
+                   </li>
+                  </ul></div>
+                </li>
+                <li class="dropdown">
+                 <a href="raportpozycji.htm">
+                  3.2.1.5.11 Raport pozycji
+                 </a>
+                 <div class="dropdown-content">
+                   <ul><li>
+                    <a href="mraportlosowan.htm">
+                     3.2.1.5.11.1 Raport Losowan
+                    </a>
+                   </li>
+                   <li>
+                    <a href="mraportkombinacji.htm">
+                     3.2.1.5.11.2 Raport kombinacji
+                    </a>
+                   </li>
+                   <li>
+                    <a href="mraportpozycji.htm">
+                     3.2.1.5.11.3 Raport pozycji
+                    </a>
+                   </li>
+                   <li>
+                    <a href="mmapaodstepow.htm">
+                     3.2.1.5.11.4 Mapa odstepow
+                    </a>
+                   </li>
+                   <li>
+                    <a href="mligapozycji.htm">
+                     3.2.1.5.11.5 Liga pozycji
+                    </a>
+                   </li>
+                   <li>
+                    <a href="mraportskutecznosci.htm">
+                     3.2.1.5.11.6 Raport skutecznosci
+                    </a>
+                   </li>
+                  </ul></div>
+                </li>
+               </ul></div>
+             </li>
+             <li class="dropdown">
+              <a href="menu_tool.htm">
+               3.2.1.6 Narz&eogon;dzia
+              </a>
+              <div class="dropdown-content">
+                <ul><li>
+                 <a href="menu_tool_organiser.htm">
+                  3.2.1.6.1 Pamietnik organizer
+                 </a>
+                </li>
+                <li>
+                 <a href="menu_tool_coverbat.htm">
+                  3.2.1.6.2 Przewodnik (wizard) po systemach skr&oacute;conych.
+                 </a>
+                </li>
+                <li>
+                 <a href="report_tickets_combine.htm">
+                  3.2.1.6.3 Raport wartosci filtrow zak&lstrok;adow
+                 </a>
+                </li>
+                <li>
+                 <a href="menu_tool_fast_combine.htm">
+                  3.2.1.6.4 Szybki pasek kombinacji
+                 </a>
+                </li>
+                <li>
+                 <a href="menu_tool_update.htm">
+                  3.2.1.6.5 Uzupelnianie Bazy
+                 </a>
+                </li>
+               </ul></div>
+             </li>
+             <li class="dropdown">
+              <a href="menu_stats.htm">
+               3.2.1.7 Menu Statystyki
+              </a>
+              <div class="dropdown-content">
+                <ul><li>
+                 <a href="statistics.htm">
+                  3.2.1.7.1 Statystyki wystepowania liczb
+                 </a>
+                </li>
+                <li>
+                 <a href="graph_whells.htm">
+                  3.2.1.7.2 Graf losowania
+                 </a>
+                </li>
+                <li>
+                 <a href="graph_pair.htm">
+                  3.2.1.7.3 Graf par liczb
+                 </a>
+                </li>
+                <li>
+                 <a href="graph_category.htm">
+                  3.2.1.7.4 Graf kategorii Liczb Specjalnych
+                 </a>
+                </li>
+               </ul></div>
+             </li>
+             <li class="dropdown">
+              <a href="menu_skrypty_php.htm">
+               3.2.1.8 Skrypty PHP
+              </a>
+              <div class="dropdown-content">
+                <ul><li>
+                 <a href="php.htm">
+                  3.2.1.8.1 PHP
+                 </a>
+                </li>
+                <li>
+                 <a href="edytorphp.htm">
+                  3.2.1.8.2 Edytor PHP
+                 </a>
+                </li>
+                <li>
+                 <a href="opcjephp.htm">
+                  3.2.1.8.3 Opcje PHP
+                 </a>
+                </li>
+                <li>
+                 <a href="php_opcje.htm">
+                  3.2.1.8.4 Serwer HTTP
+                 </a>
+                </li>
+                <li class="dropdown">
+                 <a href="lottocad_vs_php.htm">
+                  3.2.1.8.5 Komunikacja PHP-&gt;LottoCad
+                 </a>
+                 <div class="dropdown-content">
+                   <ul><li>
+                    <a href="zmienne_php.htm">
+                     3.2.1.8.5.1 Zmienne PHP
+                    </a>
+                   </li>
+                   <li>
+                    <a href="funkcje_wbudowane.htm">
+                     3.2.1.8.5.2 Funkcje wbudowane
+                    </a>
+                   </li>
+                   <li>
+                    <a href="funkcje_makr.htm">
+                     3.2.1.8.5.3 Funkcje makr
+                    </a>
+                   </li>
+                  </ul></div>
+                </li>
+               </ul></div>
+             </li>
+             <li>
+              <a href="menu_help.htm">
+               3.2.1.9 Pomoc
+              </a>
+             </li>
+            </ul></div>
+          </li>
+          <li class="dropdown">
+           <a href="toolbars.htm">
+            3.2.2 Paski narzedziowe
+           </a>
+           <div class="dropdown-content">
+             <ul><li>
+              <a href="tool_main.htm">
+               3.2.2.1 Pole edycji losowa&nacute;
+              </a>
+             </li>
+             <li class="dropdown">
+              <a href="tool_combine.htm">
+               3.2.2.2 kombinacje Liczb
+              </a>
+              <div class="dropdown-content">
+                <ul><li>
+                 <a href="again_and_check.htm">
+                  3.2.2.2.1 Powt&oacute;rz i sprawdz z polem edycji
+                 </a>
+                </li>
+                <li>
+                 <a href="check_tickets.htm">
+                  3.2.2.2.2 Z polem edycji
+                 </a>
+                </li>
+                <li>
+                 <a href="again_and_check_history.htm">
+                  3.2.2.2.3 Powt&oacute;rz i sprawdz w historii losowa&nacute;
+                 </a>
+                </li>
+                <li>
+                 <a href="check_in_history.htm">
+                  3.2.2.2.4 W historii losowa&nacute;
+                 </a>
+                </li>
+               </ul></div>
+             </li>
+             <li>
+              <a href="menu_tool_calculators.htm">
+               3.2.2.3 Kalkulatory
+              </a>
+             </li>
+            </ul></div>
+          </li>
+         </ul></div>
+       </li>
+      </ul></div>
+    </li>
+    <li class="dropdown">
+     <a class="dropbtn" href="programs_tool.htm">
+      4 Programy pomocnicze
+     </a>
+     <div class="dropdown-content">
+       <ul><li class="dropdown">
+        <a href="prog_sys_pro.htm">
+         4.1 Producent system&oacute;w
+        </a>
+        <div class="dropdown-content">
+          <ul><li>
+           <a href="prog_sys_new_system.htm">
+            4.1.1 Nowe systemy
+           </a>
+          </li>
+          <li>
+           <a href="prog_sys_check_system.htm">
+            4.1.2 Sprawdzanie systemu
+           </a>
+          </li>
+          <li>
+           <a href="prog_sys_save_to_file.htm">
+            4.1.3 Zapisywanie systemu do pliku
+           </a>
+          </li>
+          <li>
+           <a href="prog_sys_save_to_dbase.htm">
+            4.1.4 Zapisywanie systemu do bazy
+           </a>
+          </li>
+          <li>
+           <a href="prog_sys_load_f_file.htm">
+            4.1.5 Odczytanie systemu z pliku
+           </a>
+          </li>
+          <li>
+           <a href="prog_sys_load_f_dbase.htm">
+            4.1.6 Odczytanie systemu z bazy
+           </a>
+          </li>
+          <li>
+           <a href="prog_sys_shedule.htm">
+            4.1.7 Zadanie do wykonania
+           </a>
+          </li>
+         </ul></div>
+       </li>
+       <li>
+        <a href="cover_bat.htm">
+         4.2 Cover BAT
+        </a>
+       </li>
+      </ul></div>
+    </li>
+    <li class="dropdown">
+     <a class="dropbtn" href="sztuczkiikruczki.htm">
+      5 Sztuczki i kruczki
+     </a>
+     <div class="dropdown-content">
+       <ul><li>
+        <a href="another_upload_methods.htm">
+         5.1 Inne metody uzupelniania bazy losowa&nacute;
+        </a>
+       </li>
+       <li>
+        <a href="manipulacjebazydanych.htm">
+         5.2 Manipulacje bazy danych
+        </a>
+       </li>
+       <li>
+        <a href="tipsmemo.htm">
+         5.3 Pole tekstowe sposoby
+        </a>
+       </li>
+       <li class="dropdown">
+        <a href="program_configure_method.htm">
+         5.4 Konfigurowanie programu
+        </a>
+        <div class="dropdown-content">
+          <ul><li>
+           <a href="config_what_make.htm">
+            5.4.1 Jak to zrobic
+           </a>
+          </li>
+         </ul></div>
+       </li>
+      </ul></div>
+    </li>
+   </ul>
+  </nav>
+  <div class="kontener">
+   <main class="glowna-tresc">
+    <div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);">
+    </div>
+    <!-- Placeholder for topic body begin. -->
+    <div class="goog-trans-section" id="topic_body" lang="pl">
+     <table border="0" cellpadding="5" cellspacing="0" width="100%">
+      <tr valign="top">
+       <td align="left">
+        <div class="goog-trans-control">
+         <a class="goog-te-gadget-link" href="javascript:void(0)">
+          <span class="goog-te-sectional-gadget-link-text">
+          </span>
+         </a>
+        </div>
+        <div class="content">
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'Arial'; color: #000000;">
+           &nbsp;
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          Ciekawe uk&lstrok;ady mo&zdot;na osi&aogon;gn&aogon;&cacute; graj&aogon;c systemami strefowymi po trzy liczby w ka&zdot;dej strefie z wybieraniem do zak&lstrok;ad&oacute;w po dwie liczby w strefie. To &lstrok;atwo mo&zdot;na wyliczy&cacute; w pami&eogon;ci je&zdot;eli z ka&zdot;dej tr&oacute;jki liczb do zak&lstrok;ad&oacute;w maj&aogon; by&cacute; wzi&eogon;te po dwie liczby to aby zagra&cacute; o 10 k&eogon; nale&zdot;y takich dw&oacute;jek wzi&aogon;&sacute;&cacute; z 5-ciu stref. A poniewa&zdot; w ka&zdot;dej strefie typujemy trzy liczby do dyspozycji mamy w sumie 15 liczb. Dla uproszczenia pos&lstrok;u&zdot;&eogon; si&eogon; przyk&lstrok;adem &zdot;e b&eogon;dzie to kolejnych 15 liczb :
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          wpisujemy kolejnych 15 liczb ( je&zdot;eli produkujesz system do realnej gry liczby nie musz&aogon; by&cacute; kolejne).
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'Arial'; color: #000000;">
+           &nbsp;
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <img alt="pole15" border="0" height="26" src="pole15.png" width="742">
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'Arial'; color: #000000;">
+           &nbsp;
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'MS Shell Dlg';">
+           i tak ustalamy &zdot;e:
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'Arial'; color: #000000;">
+           &nbsp;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           strefa 1 to liczby &nbsp;1 &nbsp;2 &nbsp;3
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           strefa 2 to liczby &nbsp;4 &nbsp;5 &nbsp;6
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           strefa 3 to liczby &nbsp;7 &nbsp;8 &nbsp;9
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           strefa 4 to liczby 10 11 12
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           strefa 5 to liczby 13 14 15
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'Arial'; color: #000000;">
+           &nbsp;
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          nast&eogon;pnie z menu kombinacje ustawiam parametry systemu :
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'Arial'; color: #000000;">
+           &nbsp;
+          </span>
+         </p>
+         <p class="p_Code2" style="border-top: none; border-bottom: none;">
+          <span class="f_Code2">
+           w pole liczb w zak&lstrok;adzie wpisuj&eogon; [ 10 ]
+          </span>
+         </p>
+         <p class="p_Code2" style="border-top: none; border-bottom: none;">
+          <span class="f_Code2">
+           w pole ilo&sacute;&cacute; liczb w strefie wpisuj&eogon; [ 3 ]
+          </span>
+         </p>
+         <p class="p_Code2" style="border-top: none; border-bottom: none;">
+          <span class="f_Code2">
+           w pole poziom wybierania wpisuj&eogon; [ 2 ]
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'Arial'; color: #000000;">
+           &nbsp;
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <img alt="MENU_COMB" border="0" height="399" src="menu_comb.png" width="258">
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'Arial'; color: #000000;">
+           &nbsp;
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'MS Shell Dlg';">
+           i
+          </span>
+          w tym samym menu wciskam przycisk generuj system strefowy.
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'Arial'; color: #000000;">
+           &nbsp;
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          I gotowe wygenerowanych b&eogon;dzie 243 zak&lstrok;ady systemu :
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'Arial'; color: #000000;">
+           &nbsp;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           1 2 4 5 7 8 10 11 13 14
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           1 3 4 5 7 8 10 11 13 14
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           2 3 4 5 7 8 10 11 13 14
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           1 2 4 6 7 8 10 11 13 14
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           ...
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           ...
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           2 3 4 6 8 9 11 12 14 15
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           1 2 5 6 8 9 11 12 14 15
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           1 3 5 6 8 9 11 12 14 15
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           2 3 5 6 8 9 11 12 14 15
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'Arial'; color: #000000;">
+           &nbsp;
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          Aby sprawdzi&cacute; gwarancj&eogon; takiego systemu poprostu zasymulowa&cacute; trzeba &nbsp;losowanie wpisuj&aogon;c liczby trafione w pole edycji a nast&eogon;pnie &nbsp;wcisn&aogon;&cacute; przycisk &nbsp;sprawdzanie zak&lstrok;ad&oacute;w. W prawym polu wyniki pojawi si&eogon; &nbsp;ilo&sacute;&cacute; trafie&nacute; i zestawienie koszt&oacute;w i zysk&oacute;w.
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'Arial'; color: #000000;">
+           &nbsp;
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          np : sprawdzi&cacute; trzeba &nbsp;najpierw podstawow&aogon; gwarancj&eogon; tzn &zdot;e trafienie w ka&zdot;dej ze stref po dwie liczby z ka&zdot;dej tr&oacute;jki trafisz g&lstrok;&oacute;wn&aogon; wygran&aogon; czyli 10 k&eogon;:
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'Arial'; color: #000000;">
+           &nbsp;
+          </span>
+         </p>
+         <p class="p_Code2" style="border-top: none; border-bottom: none;">
+          <span class="f_Code2">
+           np w pole edycji wpia&cacute; nale&zdot;y [1 3 5 6 8 9 10 12 14 15]
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'Arial'; color: #000000;">
+           &nbsp;
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          i nast&eogon;pnie wcisn&aogon;&cacute; przycisk sprawdzania ( ikonka lupki na tle pola edycji) :
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          w polu wyniki pojawi si&eogon; :
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'Arial'; color: #000000;">
+           &nbsp;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           ...
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           ...
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           Traf. 10 z 10 liczb Wygr. 100000 z&lstrok;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           Traf. 9 z 10 liczb Wygr. 5000 z&lstrok;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           Traf. 6 z 10 liczb Wygr. 6 z&lstrok;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           Traf. 7 z 10 liczb Wygr. 70 z&lstrok;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           Traf. 6 z 10 liczb Wygr. 6 z&lstrok;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           Traf. 6 z 10 liczb Wygr. 6 z&lstrok;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           Traf. 7 z 10 liczb Wygr. 70 z&lstrok;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           Traf. 6 z 10 liczb Wygr. 6 z&lstrok;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           Traf. 7 z 10 liczb Wygr. 70 z&lstrok;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           Traf. 8 z 10 liczb Wygr. 260 z&lstrok;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           Traf. 7 z 10 liczb Wygr. 70 z&lstrok;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           Traf. 6 z 10 liczb Wygr. 6 z&lstrok;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           Traf. 7 z 10 liczb Wygr. 70 z&lstrok;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           Traf. 6 z 10 liczb Wygr. 6 z&lstrok;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           Traf. 6 z 10 liczb Wygr. 6 z&lstrok;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           Traf. 7 z 10 liczb Wygr. 70 z&lstrok;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           Traf. 6 z 10 liczb Wygr. 6 z&lstrok;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           Traf. 7 z 10 liczb Wygr. 70 z&lstrok;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           Traf. 8 z 10 liczb Wygr. 260 z&lstrok;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           Traf. 7 z 10 liczb Wygr. 70 z&lstrok;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           Traf. 7 z 10 liczb Wygr. 70 z&lstrok;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           Traf. 8 z 10 liczb Wygr. 260 z&lstrok;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           Traf. 7 z 10 liczb Wygr. 70 z&lstrok;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           Traf. 7 z 10 liczb Wygr. 70 z&lstrok;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           Traf. 8 z 10 liczb Wygr. 260 z&lstrok;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           Traf. 7 z 10 liczb Wygr. 70 z&lstrok;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           Traf. 8 z 10 liczb Wygr. 260 z&lstrok;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           Traf. 9 z 10 liczb Wygr. 5000 z&lstrok;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           Traf. 8 z 10 liczb Wygr. 260 z&lstrok;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           -----------------------------
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           Suma wygranej= 166 544.00 z&lstrok;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           Koszt= 291.60 z&lstrok;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           Zysk= 166 252.40 z&lstrok;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           ----------------------------------------------
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           Razem na 15 unikalnych liczb trafiono 10 liczb
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           Trafione liczby : 1 3 5 6 8 9 10 12 14 15
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           U&zdot;yte liczby : 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           &nbsp;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           &nbsp;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           32 trafie&nacute; 5 z 10 wygrana &nbsp; &nbsp; &nbsp;64.00 z&lstrok;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           80 trafie&nacute; 6 z 10 wygrana &nbsp; &nbsp; 480.00 z&lstrok;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           80 trafie&nacute; 7 z 10 wygrana &nbsp; 5 600.00 z&lstrok;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           40 trafie&nacute; 8 z 10 wygrana &nbsp;10 400.00 z&lstrok;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           10 trafie&nacute; 9 z 10 wygrana &nbsp;50 000.00 z&lstrok;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           1 trafie&nacute; 10 z 10 wygrana 100 000.00 z&lstrok;
+          </span>
+         </p>
+         <p style="text-indent: 0px;">
+          <span style="font-family: 'Arial'; color: #000000;">
+           &nbsp;
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'Arial'; color: #000000;">
+           &nbsp;
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          potem kolejno nale&zdot;y wy&lstrok;&aogon;cza&cacute; liczby a&zdot; sprawdzi si&eogon; do jakiego poziomu trafie&nacute; system daje jeszcze zysk. I &lstrok;atwo stwierdzisz &zdot;e trafienie kolejno w strefach &nbsp;czyli w dwu strefach trafionych b&eogon;d&aogon; dwie z trzech liczb, w jednej trafiona b&eogon;dzie jedna liczba z trzech i mo&zdot;na pozwoli&cacute; na nietrafienie ani jednej liczby w dwu pososta&lstrok;ych strefach i jeszcze nie ma tragedii traci si&eogon; &nbsp;tylko 60 groszy.:
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'Arial'; color: #000000;">
+           &nbsp;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           Razem na 15 unikalnych liczb trafiono 6 liczb
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           Trafione liczby : 1 2 4 6 7 10
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           U&zdot;yte liczby : 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           &nbsp;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           &nbsp;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           12 trafie&nacute; 2 z 10
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           60 trafie&nacute; 3 z 10
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           99 trafie&nacute; 4 z 10 wygrana &nbsp;99.00 z&lstrok;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           60 trafie&nacute; 5 z 10 wygrana 120.00 z&lstrok;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           12 trafie&nacute; 6 z 10 wygrana &nbsp;72.00 z&lstrok;
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'Arial'; color: #000000;">
+           &nbsp;
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          a np trafienie w jednej strefie 2 liczb i w pozosta&lstrok;ych po jednej jednej
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          liczbie daje zysk 20 z&lstrok;
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'Arial'; color: #000000;">
+           &nbsp;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           Razem na 15 unikalnych liczb trafiono 6 liczb
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           Trafione liczby : 1 2 4 7 10 13
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           U&zdot;yte liczby : 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           &nbsp;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           &nbsp;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           2 trafie&nacute; 1 z 10
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           &nbsp;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           56 trafie&nacute; 3 z 10
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           88 trafie&nacute; 4 z 10 wygrana &nbsp;88.00 z&lstrok;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           64 trafie&nacute; 5 z 10 wygrana 128.00 z&lstrok;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           16 trafie&nacute; 6 z 10 wygrana &nbsp;96.00 z&lstrok;
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'Arial'; color: #000000;">
+           &nbsp;
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          wszystko co trafione zostanie wi&eogon;cej to czysty zysk!!!
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'Arial'; color: #000000;">
+           &nbsp;
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          no i optymistyczna wersja :))))
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'Arial'; color: #000000;">
+           &nbsp;
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          trafione zostaje 15 liczb z 20 w losowaniu w ka&zdot;dej strefie po trzy liczby.
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'Arial'; color: #000000;">
+           &nbsp;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           Suma wygranej= 24 300 000.00 z&lstrok;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           Koszt= 291.60 z&lstrok;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           Zysk= 24 299 708.40 z&lstrok;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           ----------------------------------------------
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           Razem na 15 unikalnych liczb trafiono 15 liczb
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           Trafione liczby : 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           U&zdot;yte liczby : 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           &nbsp;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           &nbsp;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           243 trafie&nacute; 10 z 10 wygrana 24 300 000.00 z&lstrok;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           &nbsp;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           No i TS idzie po pozyczk&eogon; do banku :)
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'Arial'; color: #000000;">
+           &nbsp;
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'Arial'; color: #000000;">
+           &nbsp;
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          Systemami strefowymi mo&zdot;na gra&cacute; oczywiscie troch&eogon; skromniej np system gry o piatk&eogon; w&oacute;wczas grasz systemem po dwie liczby w stefie z wybieraniem jednej liczby z ka&zdot;dej ze stref wi&eogon;c masz w&oacute;wczas strefy:
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'Arial'; color: #000000;">
+           &nbsp;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           strefa 1 to liczby &nbsp;1 &nbsp;2
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           strefa 2 to liczby &nbsp;3 &nbsp;4
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           strefa 3 to liczby &nbsp;5 &nbsp;6
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           strefa 4 to liczby &nbsp;7 &nbsp;8
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           strefa 5 to liczby &nbsp;9 10
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'Arial'; color: #000000;">
+           &nbsp;
+          </span>
+         </p>
+         <p class="p_Code2" style="border-top: none; border-bottom: none;">
+          <span class="f_Code2">
+           w pole edycji wpisujesz [ 1 2 3 4 5 6 7 8 9 10 ]
+          </span>
+         </p>
+         <p class="p_Code2" style="border-top: none; border-bottom: none;">
+          <span class="f_Code2">
+           &nbsp;
+          </span>
+         </p>
+         <p class="p_Code2" style="border-top: none; border-bottom: none;">
+          <span class="f_Code2">
+           poziom wybierania [ 1 ]
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'Arial'; color: #000000;">
+           &nbsp;
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          i otrzymujesz 32 zak&lstrok;ady :
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'Arial'; color: #000000;">
+           &nbsp;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           1 3 5 7 &nbsp;9
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           2 3 5 7 &nbsp;9
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           1 4 5 7 &nbsp;9
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           2 4 5 7 &nbsp;9
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           1 3 6 7 &nbsp;9
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           2 3 6 7 &nbsp;9
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           1 4 6 7 &nbsp;9
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           2 4 6 7 &nbsp;9
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           &nbsp;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           2 3 5 8 &nbsp;9
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           1 4 5 8 &nbsp;9
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           2 4 5 8 &nbsp;9
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           1 3 6 8 &nbsp;9
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           2 3 6 8 &nbsp;9
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           1 4 6 8 &nbsp;9
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           2 4 6 8 &nbsp;9
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           1 3 5 7 10
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           2 3 5 7 10
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           1 4 5 7 10
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           2 4 5 7 10
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           1 3 6 7 10
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           2 3 6 7 10
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           1 4 6 7 10
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           2 4 6 7 10
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           1 3 5 8 10
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           2 3 5 8 10
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           1 4 5 8 10
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           2 4 5 8 10
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           1 3 6 8 10
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           2 3 6 8 10
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           1 4 6 8 10
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           2 4 6 8 10
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'Arial'; color: #000000;">
+           &nbsp;
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          trafiasz podstawowe po jednej liczbie ze strefy i zgarniasz :
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'Arial'; color: #000000;">
+           &nbsp;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           Suma wygranej= 400.00 z&lstrok;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           Koszt= 38.40 z&lstrok;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           Zysk= 361.60 z&lstrok;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           ----------------------------------------------
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           &nbsp;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           Trafione liczby : 2 4 6 8 10
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           U&zdot;yte liczby : 1 2 3 4 5 6 7 8 9 10
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           &nbsp;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           &nbsp;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           5 trafie&nacute; &nbsp;1 z 5
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           10 trafie&nacute; &nbsp;2 z 5
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           10 trafie&nacute; &nbsp;3 z 5 wygrana &nbsp;20.00 z&lstrok;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           5 trafie&nacute; &nbsp;4 z 5 wygrana &nbsp;50.00 z&lstrok;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           1 trafie&nacute; &nbsp;5 z 5 wygrana 330.00 z&lstrok;
+          </span>
+         </p>
+         <p style="text-indent: 0px;">
+          <span style="font-family: 'Arial'; color: #000000;">
+           &nbsp;
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'Arial'; color: #000000;">
+           &nbsp;
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          ale nie trafienie jednej strefy to cho&cacute; niewielka ale strata 2 z&lstrok;.
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          wszystko co wy&zdot;ej to Tw&oacute;j sukces.
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'Arial'; color: #000000;">
+           &nbsp;
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          To by&lstrok;y przyk&lstrok;ady stref r&oacute;wnych ale mo&zdot;na te&zdot; kombinowa&cacute; ilo&sacute;ci&aogon; liczb w ka&zdot;dej ze stref a mianowicie np:
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'Arial'; color: #000000;">
+           &nbsp;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           strefa 1 to liczby 1 2 &nbsp;3 &nbsp;z wybieraniem 2 liczb
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           strefa 2 to liczby &nbsp; 4 &nbsp;5 &nbsp;z wybieranie &nbsp;1 liczby
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           strefa 3 to liczby 6 7 &nbsp;8 &nbsp;z wybieraniem 2 liczb
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           strefa 4 to liczby &nbsp; 9 10 &nbsp;z wybieraniem 1 liczby
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           strefa 5 to liczby &nbsp; &nbsp; 11 &nbsp;z wybieraniem 1 liczby / pewniak/
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'Arial'; color: #000000;">
+           &nbsp;
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          przy projektowaniu systemu musisz pami&eogon;ta&cacute; &zdot;e poziom wybierania decyduje o ilo&sacute;ci liczb w zak&lstrok;adzie. I je&zdot;eli ustalisz tak jak wy&zdot;ej to zaprojektujesz system z 2+1+2+1+1pewniak = 7 liczb w zak&lstrok;adzie.System strefowy mieszany generuje si&eogon; troch&eogon; inaczej.
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'Arial'; color: #000000;">
+           &nbsp;
+          </span>
+         </p>
+         <p class="p_Code2" style="border-top: none; border-bottom: none;">
+          <span class="f_Code2">
+           w pole edycji wpisujesz kolejne strefy oddzielone przecinkami :
+          </span>
+         </p>
+         <p class="p_Code2" style="border-top: none; border-bottom: none;">
+          <span class="f_Code2">
+           [ 1 2 3, 4 5, 6 7 8, 9 10, 11 ]
+          </span>
+         </p>
+         <p class="p_Code2" style="border-top: none; border-bottom: none;">
+          <span class="f_Code2">
+           w menu kombinacje wpisujesz sekwencje poziom&oacute;w wybierania ( bez przecink&oacute;w )
+          </span>
+         </p>
+         <p class="p_Code2" style="border-top: none; border-bottom: none;">
+          <span class="f_Code2">
+           :pole o nazwie : poziomy wybierania stref [21211]
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'Arial'; color: #000000;">
+           &nbsp;
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          i w tym samym menu wciskasz przycisk generuj system strefowy mieszany :
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          i z naszego przyk&lstrok;adu otrzymasz system z 36 zak&lstrok;ad&oacute;w :
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'Arial'; color: #000000;">
+           &nbsp;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           1 2 4 6 7 9 11
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           1 3 4 6 7 9 11
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           2 3 4 6 7 9 11
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           1 2 5 6 7 9 11
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           1 3 5 6 7 9 11
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           2 3 5 6 7 9 11
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           &nbsp;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           1 3 4 6 8 9 11
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           2 3 4 6 8 9 11
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           1 2 5 6 8 9 11
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           1 3 5 6 8 9 11
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           2 3 5 6 8 9 11
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           1 2 4 7 8 9 11
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           1 3 4 7 8 9 11
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           2 3 4 7 8 9 11
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           1 2 5 7 8 9 11
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           1 3 5 7 8 9 11
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           2 3 5 7 8 9 11
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           1 2 4 6 7 10 11
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           1 3 4 6 7 10 11
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           2 3 4 6 7 10 11
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           1 2 5 6 7 10 11
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           1 3 5 6 7 10 11
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           2 3 5 6 7 10 11
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           1 2 4 6 8 10 11
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           &nbsp;
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           2 3 4 6 8 10 11
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           1 2 5 6 8 10 11
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           1 3 5 6 8 10 11
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           2 3 5 6 8 10 11
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           1 2 4 7 8 10 11
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           1 3 4 7 8 10 11
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           2 3 4 7 8 10 11
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           1 2 5 7 8 10 11
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           1 3 5 7 8 10 11
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           2 3 5 7 8 10 11
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           &nbsp;
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'Arial'; color: #000000;">
+           &nbsp;
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          sprawdzenie systemu pozostawiam Tobie jako zadanie domowe :)
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'Arial'; color: #000000;">
+           &nbsp;
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          R&oacute;wnie&zdot; poprzednie systemy mo&zdot;na generowa&cacute; jako mieszane mimo ze s&aogon; one
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          r&oacute;wnomierne.
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'Arial'; color: #000000;">
+           &nbsp;
+          </span>
+         </p>
+         <p class="p_Code2" style="border-top: none; border-bottom: none;">
+          <span class="f_Code2">
+           np system nr jeden wpisujesz w pole edycji z przecinkami kolejne strefy :
+          </span>
+         </p>
+         <p class="p_Code2" style="border-top: none; border-bottom: none;">
+          <span class="f_Code2">
+           [ 1 2 3, 4 5 6, 7 8 9, 10 11 12, 13 14 15 ] a w pole poziomy wybierania ze
+          </span>
+         </p>
+         <p class="p_Code2" style="border-top: none; border-bottom: none;">
+          <span class="f_Code2">
+           stref wpsujemy sekwencj&eogon; [22222] i wciskamy generuj system strefowy. I
+          </span>
+         </p>
+         <p class="p_Code2" style="border-top: none; border-bottom: none;">
+          <span class="f_Code2">
+           otrzymamy dok&lstrok;adnie taki sam system jak poprzednio.
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'Arial'; color: #000000;">
+           &nbsp;
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'Arial'; color: #000000;">
+           &nbsp;
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          powodzenia
+         </p>
+        </div>
+       </td>
+      </tr>
+     </table>
+    </div>
+    <!-- Placeholder for topic body end. -->
+   </main>
+  </div>
+ </body>
 </html>

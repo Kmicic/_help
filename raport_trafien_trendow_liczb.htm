@@ -1,214 +1,792 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
-<head>
-   <title>Raport trafien trendow liczb</title>
-   <meta name="keywords" content="" />
-   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-   <meta http-equiv="Content-Style-Type" content="text/css" />
-   <link type="text/css" href="default.css" rel="stylesheet" />
-   <style type="text/css">
-   <!--
-   .inline-button {
-   width:auto;
-   font: bold 90%/1 Verdana, sans-serif;
-   margin: 0 0.2em; padding: 0.1em 0; _padding:0;
-   border: 1px solid black;
-   white-space:nowrap;
-   text-decoration: none;
-   vertical-align:middle;
-   background: #ccc;
-   color: black;
-   }
-.inline-button em {
-   cursor:hand;
-   font-style: normal;
-   margin:0; padding: 0.1em 0.5em;
-   background: white;
-   color: black;
-   }
-.inline-button span {
-   cursor:hand;
-   margin:0; padding: 0.1em 0.5em 0.1em 0.3em;
-   }
-.inline-button:hover {
-   background: #666;
-   color: white;
-   }
-.inline-button:hover em {
-   background: black;
-   color: white;
-   }
-.s1 {
-	background-color: #FFFFFF;
-	color: #008000;
-}
-.s2 {
-	background-color: #FF8000;
-	color: #000000;
-}
-.s5 {
-	background-color: #FFFFFF;
-	color: #008000;
-}
-.s6 {
-	background-color: #FFFFFF;
-	color: #FF0000;
-}
-.s7 {
-	background-color: #FFFFFF;
-	color: #FF0000;
-}
-.s8 {
-	background-color: #FFFFFF;
-	color: #FF0000;
-}
-.s9 {
-	background-color: #FFFFFF;
-	color: #008000;
-}
-.s10 {
-	background-color: #FFFFFF;
-	color: #800000;
-}
-.s3 {
-	background-color: #FFFFFF;
-	color: #000000;
-}
-.s4 {
-	background-color: #FFFF00;
-	color: #0000FF;
-}
-.s11 {
-	background-color: #00FF00;
-	color: #000000;   }
-/* Horizontal lists
-----------------------------------------*/
-ul.linklist {
-	display: block;
-	margin: 0;
-}
-
-ul.linklist li {
-	display: block;
-	list-style-type: none;
-	float: left;
-	width: auto;
-	margin-right: 5px;
-	font-size: 1.1em;
-	line-height: 2.2em;
-}
-
-ul.linklist {
-	float: right;
-	margin-right: 0;
-	margin-left: 5px;
-	text-align: right;
-}
-
-ul.navlinks {
-	padding-bottom: 1px;
-	margin-bottom: 1px;
-	border-bottom: 1px solid #FFFFFF;
-	font-weight: bold;
-}
-
-a.flag {color: #AAA; font-size:0.8em;text-decoration:none;}
-a.flag:hover {color:#FFF;text-decoration:underline;}
-a.en-flag {padding-left:21px; background: url(images/flag/en.png) top left no-repeat;}
-a.de-flag {padding-left:21px; background: url(images/flag/de.png) top left no-repeat;}
-a.ru-flag {padding-left:21px; background: url(images/flag/ru.png) top left no-repeat;} 
-a.cs-flag {padding-left:21px; background: url(images/flag/cz.png) top left no-repeat;}
-a.fr-flag {padding-left:21px; background: url(images/flag/fr.png) top left no-repeat;}
-a.es-flag {padding-left:21px; background: url(images/flag/es.png) top left no-repeat;}
-a.it-flag {padding-left:21px; background: url(images/flag/it.png) top left no-repeat;}
-
--->   
-</style>
-
-<script type="text/javascript" src="jquery-1.7.1.min.js"></script>
-
-<script type="text/javascript">
-function trim11 (str) {
-str = str.replace(/^\s+/, '');
-for (var i = str.length - 1; i >= 0; i--) {
-if (/\S/.test(str.charAt(i))) {
-str = str.substring(0, i + 1);
-break;
-}
-}
-return str;
-}
-
-function _highlight(inp_id,out_id) {
-elm=document.getElementById(out_id);
-var inptxt = trim11(document.getElementById(inp_id).value);
-var inp_arr = inptxt.split(/[ :,;-]+/);
-var html=elm.innerHTML;
-text=trim11(html.replace(/<[^>]+>/g,''));
-lines=text.split(/\r?\n/g);
-
-html="<pre>";
-for (var i in lines) {
-var tic=lines[i];
-var line_arr=tic.split(' ');
-
-var item='';
-for (var j in line_arr) {
-var num=line_arr[j];
-var hits=false;
-for (var k in inp_arr) {
-var hit=inp_arr[k];
-if (hit==num) { 
-hits=true;
-break;
-}
-}
-var pads=(j<(line_arr.length-1)) ? ' ':'';
-item+= hits ? '<span class="s2">'+num+'</span>'+pads : num+pads;
-}
-html+=item+'\r\n';
-}
-elm.innerHTML=html+'</pre>';
-}
-</script>
-      
-<script type="text/javascript" src="helpman_topicinit.js"></script>
-<!-- Redirect browser to frame page if page is not in the content frame. -->
-<script type="text/javascript">
-<!--
-if (location.search.lastIndexOf("toc=0")<=0) {
-  if (parent.frames.length==0) { parent.location.href="index.html?raport_trafien_trendow_liczb.htm"; }
-  else { parent.quicksync('a3.2.1.5.8'); }
-}
-//-->
-</script>
-<script type="text/javascript" src="highlight.js"></script></head>
-<body style="margin: 0px 0px 0px 0px; background: #FFFFEF;" onload="highlight();">
-<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
-
-
-<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#000000">
-  <tr valign="middle">
-    <td align="left">
-      <p style="text-indent: 0px; margin: 0px 0px 0px 0px;"><span style="font-size: 12pt; color: #ffffff;">Raport trafień trendów liczb</span></p>
-
-    </td>
-    <td align="right">
-     <span style="font-size: 9pt">
-     <a class="inline-button" href="contents.htm"><em>LC</em><span>&lt;&lt;</span></a>&nbsp;
-     <!--<a href="contents.htm">Top</a>-->
-     <a class="inline-button" href="menu_report_tabskut.htm"><em>LC</em><span>&lt;</span></a>&nbsp;
-     <!--<a href="menu_report_tabskut.htm">Previous</a>&nbsp;-->
-     <a class="inline-button" href="raportpewn.htm"><em>LC</em><span>&gt;</span></a>&nbsp;     
-     <!--<a href="raportpewn.htm">Next</a>-->
-     </span>
-    </td>
-  </tr>
-    
-  <tr><td colspan="2">
-  <script>
-  function switchlang(lang) {
+<!DOCTYPE html>
+<html lang="pl">
+ <head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>
+   3.2.1.5.8 Raport trafie&nacute; trend&oacute;w liczb
+  </title>
+  <link href="styl.css" rel="stylesheet">
+  
+ </head>
+ <body>
+  <nav class="menu-nawigacyjne">
+   <ul>
+    <li>
+     <a href="contents.htm">
+      1 Wprowadzenie
+     </a>
+    </li>
+    <li>
+     <a href="about.htm">
+      2 O Programie
+     </a>
+    </li>
+    <li class="dropdown">
+     <a class="dropbtn" href="main_panel.htm">
+      3 Panel g&lstrok;&oacute;wny programu
+     </a>
+     <div class="dropdown-content">
+       <ul><li class="dropdown">
+        <a href="formular_elements.htm">
+         3.1 Elementy Formularzy
+        </a>
+        <div class="dropdown-content">
+          <ul><li class="dropdown">
+           <a href="panel_text.htm">
+            3.1.1 Panele tekstowe
+           </a>
+           <div class="dropdown-content">
+             <ul><li>
+              <a href="panel_text_popmenu.htm">
+               3.1.1.1 Menu kontekstowe pola zaklady
+              </a>
+             </li>
+            </ul></div>
+          </li>
+          <li class="dropdown">
+           <a href="panel_wheels.htm">
+            3.1.2 Tabela losowan
+           </a>
+           <div class="dropdown-content">
+             <ul><li>
+              <a href="panel_wheels_highlight.htm">
+               3.1.2.1 zaznaczanie liczb
+              </a>
+             </li>
+             <li>
+              <a href="panel_wheels_selection.htm">
+               3.1.2.2 wybieranie liczb
+              </a>
+             </li>
+            </ul></div>
+          </li>
+          <li class="dropdown">
+           <a href="panel_tend.htm">
+            3.1.3 Tendencje
+           </a>
+           <div class="dropdown-content">
+             <ul><li>
+              <a href="panel_tend_descr.htm">
+               3.1.3.1 TENDENCJE
+              </a>
+             </li>
+            </ul></div>
+          </li>
+          <li class="dropdown">
+           <a href="panel_ticketbase.htm">
+            3.1.4 Baza zawartych zak&lstrok;ad&oacute;w
+           </a>
+           <div class="dropdown-content">
+             <ul><li>
+              <a href="panel_ticketbase_descr.htm">
+               3.1.4.1 BAZA ZAK&Lstrok;AD&Oacute;W
+              </a>
+             </li>
+            </ul></div>
+          </li>
+          <li>
+           <a href="quick_bar.htm">
+            3.1.5 Szybki pasek wyboru
+           </a>
+          </li>
+          <li>
+           <a href="panel_maps.htm">
+            3.1.6 Mapa liczb
+           </a>
+          </li>
+          <li class="dropdown">
+           <a href="panel_league.htm">
+            3.1.7 Liga liczb
+           </a>
+           <div class="dropdown-content">
+             <ul><li>
+              <a href="panel_league_descr.htm">
+               3.1.7.1 LIGA LICZB
+              </a>
+             </li>
+            </ul></div>
+          </li>
+         </ul></div>
+       </li>
+       <li class="dropdown">
+        <a href="menu_an_toolbar.htm">
+         3.2 Menu i paski narz&eogon;dziowe
+        </a>
+        <div class="dropdown-content">
+          <ul><li class="dropdown">
+           <a href="menu_main.htm">
+            3.2.1 Menu g&lstrok;&oacute;wne
+           </a>
+           <div class="dropdown-content">
+             <ul><li class="dropdown">
+              <a href="menu_file.htm">
+               3.2.1.1 Plik
+              </a>
+              <div class="dropdown-content">
+                <ul><li>
+                 <a href="menu_file_load_save_to_file.htm">
+                  3.2.1.1.1 Otw&oacute;rz z ... pliku tekstowego
+                 </a>
+                </li>
+                <li>
+                 <a href="menu_file_load_save_to_base.htm">
+                  3.2.1.1.2 Zapisz do ... bazy zak&lstrok;ad&oacute;w
+                 </a>
+                </li>
+                <li>
+                 <a href="menu_file_print.htm">
+                  3.2.1.1.3 Drukuj, podgl&aogon;d wydruku
+                 </a>
+                </li>
+                <li>
+                 <a href="menu_file_game_manager.htm">
+                  3.2.1.1.4 Menad&zdot;er gier liczbowych
+                 </a>
+                </li>
+               </ul></div>
+             </li>
+             <li class="dropdown">
+              <a href="menu_edit.htm">
+               3.2.1.2 Edycja
+              </a>
+              <div class="dropdown-content">
+                <ul><li>
+                 <a href="text_option.htm">
+                  3.2.1.2.1 Opcje pola tekstowego
+                 </a>
+                </li>
+               </ul></div>
+             </li>
+             <li class="dropdown">
+              <a href="menu_filters.htm">
+               3.2.1.3 Filtry
+              </a>
+              <div class="dropdown-content">
+                <ul><li class="dropdown">
+                 <a href="menu_filters_descr.htm">
+                  3.2.1.3.1 Filtry opis
+                 </a>
+                 <div class="dropdown-content">
+                   <ul><li>
+                    <a href="menu_filters_sum.htm">
+                     3.2.1.3.1.1 Sumy
+                    </a>
+                   </li>
+                   <li>
+                    <a href="menu_filters_parity.htm">
+                     3.2.1.3.1.2 Parzysto&sacute;ci
+                    </a>
+                   </li>
+                   <li>
+                    <a href="menu_filters_string.htm">
+                     3.2.1.3.1.3 Szeregu kolejnych liczb
+                    </a>
+                   </li>
+                   <li>
+                    <a href="menu_filters_diff.htm">
+                     3.2.1.3.1.4 Filtr r&oacute;znicy
+                    </a>
+                   </li>
+                   <li>
+                    <a href="menu_filters_what_use.htm">
+                     3.2.1.3.1.5 Przyklad filtracji SPS
+                    </a>
+                   </li>
+                   <li>
+                    <a href="menu_filters_hits.htm">
+                     3.2.1.3.1.6 Filtr Trafie&nacute;
+                    </a>
+                   </li>
+                   <li>
+                    <a href="filtrzakresow.htm">
+                     3.2.1.3.1.7 Filtr zakresow
+                    </a>
+                   </li>
+                   <li>
+                    <a href="filtravg.htm">
+                     3.2.1.3.1.8 FiltrAVG
+                    </a>
+                   </li>
+                   <li>
+                    <a href="filtrhd.htm">
+                     3.2.1.3.1.9 FiltrFHD
+                    </a>
+                   </li>
+                   <li>
+                    <a href="filtrmhd.htm">
+                     3.2.1.3.1.10 FiltrMHD
+                    </a>
+                   </li>
+                   <li>
+                    <a href="filter_przyklad.htm">
+                     3.2.1.3.1.11 Przyk&lstrok;ad filtracji
+                    </a>
+                   </li>
+                   <li>
+                    <a href="filtrspacji.htm">
+                     3.2.1.3.1.12 Filtr spacji
+                    </a>
+                   </li>
+                  </ul></div>
+                </li>
+               </ul></div>
+             </li>
+             <li class="dropdown">
+              <a href="menu_combine.htm">
+               3.2.1.4 Kombinacje
+              </a>
+              <div class="dropdown-content">
+                <ul><li>
+                 <a href="menu_combine_dialog.htm">
+                  3.2.1.4.1 Kombinacje liczb (tasowanie)
+                 </a>
+                </li>
+                <li>
+                 <a href="menu_combine_select_number.htm">
+                  3.2.1.4.2 Wyb&oacute;r liczb do kombinacji
+                 </a>
+                </li>
+                <li class="dropdown">
+                 <a href="combine_function.htm">
+                  3.2.1.4.3 Rodzaje funkcji losuj&aogon;cych (kombinacji)
+                 </a>
+                 <div class="dropdown-content">
+                   <ul><li>
+                    <a href="comb_equal.htm">
+                     3.2.1.4.3.1 Kombinacja R&oacute;wnomierna
+                    </a>
+                   </li>
+                   <li>
+                    <a href="comb_random.htm">
+                     3.2.1.4.3.2 Kombinacja Przypadkowa
+                    </a>
+                   </li>
+                   <li>
+                    <a href="comb_line.htm">
+                     3.2.1.4.3.3 Kombinacja Liniowa
+                    </a>
+                   </li>
+                   <li>
+                    <a href="comb_expotential.htm">
+                     3.2.1.4.3.4 Kombinacja Wyk&lstrok;adnicza
+                    </a>
+                   </li>
+                   <li>
+                    <a href="comb_quick_pick.htm">
+                     3.2.1.4.3.5 Kombinacja Chybi&lstrok;Trafi&lstrok; XX
+                    </a>
+                   </li>
+                   <li>
+                    <a href="comb_all.htm">
+                     3.2.1.4.3.6 Kombinacja wszystkich XX liczb
+                    </a>
+                   </li>
+                   <li>
+                    <a href="comb_line_xx.htm">
+                     3.2.1.4.3.7 Kombinacja Liniowa XX
+                    </a>
+                   </li>
+                   <li>
+                    <a href="comb_expotential_xx.htm">
+                     3.2.1.4.3.8 Kombinacja Wyk&lstrok;adnicza XX
+                    </a>
+                   </li>
+                   <li>
+                    <a href="comb_swap.htm">
+                     3.2.1.4.3.9 Kombinacje przemienne
+                    </a>
+                   </li>
+                   <li>
+                    <a href="comb_gauss.htm">
+                     3.2.1.4.3.10 Kombinacje Gaussa
+                    </a>
+                   </li>
+                   <li>
+                    <a href="comb_systems.htm">
+                     3.2.1.4.3.11 Kombinacje systemowe
+                    </a>
+                   </li>
+                   <li>
+                    <a href="comb_another.htm">
+                     3.2.1.4.3.12 Inne kombinacje
+                    </a>
+                   </li>
+                  </ul></div>
+                </li>
+                <li>
+                 <a href="option_spec_category.htm">
+                  3.2.1.4.4 Opcje dla kategorii liczb specjalnych
+                 </a>
+                </li>
+                <li>
+                 <a href="spec_numb_algorythm.htm">
+                  3.2.1.4.5 Algorytm podzia&lstrok;u liczb gry na kategorie specjalne.
+                 </a>
+                </li>
+                <li>
+                 <a href="options_limits.htm">
+                  3.2.1.4.6 Limity generacji zak&lstrok;adow
+                 </a>
+                </li>
+                <li>
+                 <a href="abbrev_brute.htm">
+                  3.2.1.4.7 Skr&oacute;&cacute; do gwarancji
+                 </a>
+                </li>
+                <li>
+                 <a href="menu_again_and_check.htm">
+                  3.2.1.4.8 Powt&oacute;rz i sprawd&zacute; z polem edycji
+                 </a>
+                </li>
+                <li>
+                 <a href="menu_again_and_check_history.htm">
+                  3.2.1.4.9 Powt&oacute;rz i sprawd&zacute; w historii
+                 </a>
+                </li>
+                <li>
+                 <a href="menu_full_syst_filtered.htm">
+                  3.2.1.4.10 Odfiltrowany system pe&lstrok;ny
+                 </a>
+                </li>
+                <li>
+                 <a href="systemystrefowekrokpokroku.htm">
+                  3.2.1.4.11 Systemy strefowe
+                 </a>
+                </li>
+                <li>
+                 <a href="combine_num_combine.htm">
+                  3.2.1.4.12 Kombinacja na jej numer
+                 </a>
+                </li>
+               </ul></div>
+             </li>
+             <li class="dropdown">
+              <a href="menu_report.htm">
+               3.2.1.5 Raporty
+              </a>
+              <div class="dropdown-content">
+                <ul><li>
+                 <a href="raportmapyliczb.htm">
+                  3.2.1.5.1 Raport mapy liczb
+                 </a>
+                </li>
+                <li>
+                 <a href="menu_report_whells.htm">
+                  3.2.1.5.2 Raport o filtach losowan
+                 </a>
+                </li>
+                <li>
+                 <a href="menu_report_traf_los.htm">
+                  3.2.1.5.3 Raport trafien &nbsp;liczb z g&lstrok;ownego pola edycji
+                 </a>
+                </li>
+                <li>
+                 <a href="menu_report_trafedit.htm">
+                  3.2.1.5.4 Raport trafien we wszystkich losowaniach
+                 </a>
+                </li>
+                <li>
+                 <a href="raportliczbstowarzyszonych.htm">
+                  3.2.1.5.5 Raport liczb stowarzyszonych
+                 </a>
+                </li>
+                <li>
+                 <a href="menu_report_stow.htm">
+                  3.2.1.5.6 Raport liczb stowarzyszonych-z poprzednim losowaniem
+                 </a>
+                </li>
+                <li>
+                 <a href="menu_report_tabskut.htm">
+                  3.2.1.5.7 Tabela skutecznosci typowania kategorii liczb specjalnych
+                 </a>
+                </li>
+                <li>
+                 <a href="raport_trafien_trendow_liczb.htm">
+                  3.2.1.5.8 Raport trafie&nacute; trend&oacute;w liczb
+                 </a>
+                </li>
+                <li>
+                 <a href="raportpewn.htm">
+                  3.2.1.5.9 Raport pewniakow
+                 </a>
+                </li>
+                <li class="dropdown">
+                 <a href="predictionsreport.htm">
+                  3.2.1.5.10 Raport Prognozy
+                 </a>
+                 <div class="dropdown-content">
+                   <ul><li>
+                    <a href="prognozyopis.htm">
+                     3.2.1.5.10.1 Prognozy opis
+                    </a>
+                   </li>
+                   <li>
+                    <a href="panelprognozy.htm">
+                     3.2.1.5.10.2 Panel Prognozy
+                    </a>
+                   </li>
+                   <li>
+                    <a href="prognozyopcje.htm">
+                     3.2.1.5.10.3 Panel Opcje
+                    </a>
+                   </li>
+                   <li>
+                    <a href="progn_what_select.htm">
+                     3.2.1.5.10.4 Jak wybiera&cacute; prognozy
+                    </a>
+                   </li>
+                   <li>
+                    <a href="prognozy_game_trick.htm">
+                     3.2.1.5.10.5 Prognozy przyk&lstrok;ad gry
+                    </a>
+                   </li>
+                  </ul></div>
+                </li>
+                <li class="dropdown">
+                 <a href="raportpozycji.htm">
+                  3.2.1.5.11 Raport pozycji
+                 </a>
+                 <div class="dropdown-content">
+                   <ul><li>
+                    <a href="mraportlosowan.htm">
+                     3.2.1.5.11.1 Raport Losowan
+                    </a>
+                   </li>
+                   <li>
+                    <a href="mraportkombinacji.htm">
+                     3.2.1.5.11.2 Raport kombinacji
+                    </a>
+                   </li>
+                   <li>
+                    <a href="mraportpozycji.htm">
+                     3.2.1.5.11.3 Raport pozycji
+                    </a>
+                   </li>
+                   <li>
+                    <a href="mmapaodstepow.htm">
+                     3.2.1.5.11.4 Mapa odstepow
+                    </a>
+                   </li>
+                   <li>
+                    <a href="mligapozycji.htm">
+                     3.2.1.5.11.5 Liga pozycji
+                    </a>
+                   </li>
+                   <li>
+                    <a href="mraportskutecznosci.htm">
+                     3.2.1.5.11.6 Raport skutecznosci
+                    </a>
+                   </li>
+                  </ul></div>
+                </li>
+               </ul></div>
+             </li>
+             <li class="dropdown">
+              <a href="menu_tool.htm">
+               3.2.1.6 Narz&eogon;dzia
+              </a>
+              <div class="dropdown-content">
+                <ul><li>
+                 <a href="menu_tool_organiser.htm">
+                  3.2.1.6.1 Pamietnik organizer
+                 </a>
+                </li>
+                <li>
+                 <a href="menu_tool_coverbat.htm">
+                  3.2.1.6.2 Przewodnik (wizard) po systemach skr&oacute;conych.
+                 </a>
+                </li>
+                <li>
+                 <a href="report_tickets_combine.htm">
+                  3.2.1.6.3 Raport wartosci filtrow zak&lstrok;adow
+                 </a>
+                </li>
+                <li>
+                 <a href="menu_tool_fast_combine.htm">
+                  3.2.1.6.4 Szybki pasek kombinacji
+                 </a>
+                </li>
+                <li>
+                 <a href="menu_tool_update.htm">
+                  3.2.1.6.5 Uzupelnianie Bazy
+                 </a>
+                </li>
+               </ul></div>
+             </li>
+             <li class="dropdown">
+              <a href="menu_stats.htm">
+               3.2.1.7 Menu Statystyki
+              </a>
+              <div class="dropdown-content">
+                <ul><li>
+                 <a href="statistics.htm">
+                  3.2.1.7.1 Statystyki wystepowania liczb
+                 </a>
+                </li>
+                <li>
+                 <a href="graph_whells.htm">
+                  3.2.1.7.2 Graf losowania
+                 </a>
+                </li>
+                <li>
+                 <a href="graph_pair.htm">
+                  3.2.1.7.3 Graf par liczb
+                 </a>
+                </li>
+                <li>
+                 <a href="graph_category.htm">
+                  3.2.1.7.4 Graf kategorii Liczb Specjalnych
+                 </a>
+                </li>
+               </ul></div>
+             </li>
+             <li class="dropdown">
+              <a href="menu_skrypty_php.htm">
+               3.2.1.8 Skrypty PHP
+              </a>
+              <div class="dropdown-content">
+                <ul><li>
+                 <a href="php.htm">
+                  3.2.1.8.1 PHP
+                 </a>
+                </li>
+                <li>
+                 <a href="edytorphp.htm">
+                  3.2.1.8.2 Edytor PHP
+                 </a>
+                </li>
+                <li>
+                 <a href="opcjephp.htm">
+                  3.2.1.8.3 Opcje PHP
+                 </a>
+                </li>
+                <li>
+                 <a href="php_opcje.htm">
+                  3.2.1.8.4 Serwer HTTP
+                 </a>
+                </li>
+                <li class="dropdown">
+                 <a href="lottocad_vs_php.htm">
+                  3.2.1.8.5 Komunikacja PHP-&gt;LottoCad
+                 </a>
+                 <div class="dropdown-content">
+                   <ul><li>
+                    <a href="zmienne_php.htm">
+                     3.2.1.8.5.1 Zmienne PHP
+                    </a>
+                   </li>
+                   <li>
+                    <a href="funkcje_wbudowane.htm">
+                     3.2.1.8.5.2 Funkcje wbudowane
+                    </a>
+                   </li>
+                   <li>
+                    <a href="funkcje_makr.htm">
+                     3.2.1.8.5.3 Funkcje makr
+                    </a>
+                   </li>
+                  </ul></div>
+                </li>
+               </ul></div>
+             </li>
+             <li>
+              <a href="menu_help.htm">
+               3.2.1.9 Pomoc
+              </a>
+             </li>
+            </ul></div>
+          </li>
+          <li class="dropdown">
+           <a href="toolbars.htm">
+            3.2.2 Paski narzedziowe
+           </a>
+           <div class="dropdown-content">
+             <ul><li>
+              <a href="tool_main.htm">
+               3.2.2.1 Pole edycji losowa&nacute;
+              </a>
+             </li>
+             <li class="dropdown">
+              <a href="tool_combine.htm">
+               3.2.2.2 kombinacje Liczb
+              </a>
+              <div class="dropdown-content">
+                <ul><li>
+                 <a href="again_and_check.htm">
+                  3.2.2.2.1 Powt&oacute;rz i sprawdz z polem edycji
+                 </a>
+                </li>
+                <li>
+                 <a href="check_tickets.htm">
+                  3.2.2.2.2 Z polem edycji
+                 </a>
+                </li>
+                <li>
+                 <a href="again_and_check_history.htm">
+                  3.2.2.2.3 Powt&oacute;rz i sprawdz w historii losowa&nacute;
+                 </a>
+                </li>
+                <li>
+                 <a href="check_in_history.htm">
+                  3.2.2.2.4 W historii losowa&nacute;
+                 </a>
+                </li>
+               </ul></div>
+             </li>
+             <li>
+              <a href="menu_tool_calculators.htm">
+               3.2.2.3 Kalkulatory
+              </a>
+             </li>
+            </ul></div>
+          </li>
+         </ul></div>
+       </li>
+      </ul></div>
+    </li>
+    <li class="dropdown">
+     <a class="dropbtn" href="programs_tool.htm">
+      4 Programy pomocnicze
+     </a>
+     <div class="dropdown-content">
+       <ul><li class="dropdown">
+        <a href="prog_sys_pro.htm">
+         4.1 Producent system&oacute;w
+        </a>
+        <div class="dropdown-content">
+          <ul><li>
+           <a href="prog_sys_new_system.htm">
+            4.1.1 Nowe systemy
+           </a>
+          </li>
+          <li>
+           <a href="prog_sys_check_system.htm">
+            4.1.2 Sprawdzanie systemu
+           </a>
+          </li>
+          <li>
+           <a href="prog_sys_save_to_file.htm">
+            4.1.3 Zapisywanie systemu do pliku
+           </a>
+          </li>
+          <li>
+           <a href="prog_sys_save_to_dbase.htm">
+            4.1.4 Zapisywanie systemu do bazy
+           </a>
+          </li>
+          <li>
+           <a href="prog_sys_load_f_file.htm">
+            4.1.5 Odczytanie systemu z pliku
+           </a>
+          </li>
+          <li>
+           <a href="prog_sys_load_f_dbase.htm">
+            4.1.6 Odczytanie systemu z bazy
+           </a>
+          </li>
+          <li>
+           <a href="prog_sys_shedule.htm">
+            4.1.7 Zadanie do wykonania
+           </a>
+          </li>
+         </ul></div>
+       </li>
+       <li>
+        <a href="cover_bat.htm">
+         4.2 Cover BAT
+        </a>
+       </li>
+      </ul></div>
+    </li>
+    <li class="dropdown">
+     <a class="dropbtn" href="sztuczkiikruczki.htm">
+      5 Sztuczki i kruczki
+     </a>
+     <div class="dropdown-content">
+       <ul><li>
+        <a href="another_upload_methods.htm">
+         5.1 Inne metody uzupelniania bazy losowa&nacute;
+        </a>
+       </li>
+       <li>
+        <a href="manipulacjebazydanych.htm">
+         5.2 Manipulacje bazy danych
+        </a>
+       </li>
+       <li>
+        <a href="tipsmemo.htm">
+         5.3 Pole tekstowe sposoby
+        </a>
+       </li>
+       <li class="dropdown">
+        <a href="program_configure_method.htm">
+         5.4 Konfigurowanie programu
+        </a>
+        <div class="dropdown-content">
+          <ul><li>
+           <a href="config_what_make.htm">
+            5.4.1 Jak to zrobic
+           </a>
+          </li>
+         </ul></div>
+       </li>
+      </ul></div>
+    </li>
+   </ul>
+  </nav>
+  <div class="kontener">
+   <main class="glowna-tresc">
+    <div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);">
+    </div>
+    <table bgcolor="#000000" border="0" cellpadding="5" cellspacing="0" width="100%">
+     <tr valign="middle">
+      <td align="left">
+       <p style="text-indent: 0px; margin: 0px 0px 0px 0px;">
+        <span style="font-size: 12pt; color: #ffffff;">
+         Raport trafie&nacute; trend&oacute;w liczb
+        </span>
+       </p>
+      </td>
+      <td align="right">
+       <span style="font-size: 9pt">
+        <a class="inline-button" href="contents.htm">
+         <em>
+          LC
+         </em>
+         <span>
+          &lt;&lt;
+         </span>
+        </a>
+        &nbsp;
+        <!--<a href="contents.htm">Top</a>-->
+        <a class="inline-button" href="menu_report_tabskut.htm">
+         <em>
+          LC
+         </em>
+         <span>
+          &lt;
+         </span>
+        </a>
+        &nbsp;
+        <!--<a href="menu_report_tabskut.htm">Previous</a>&nbsp;-->
+        <a class="inline-button" href="raportpewn.htm">
+         <em>
+          LC
+         </em>
+         <span>
+          &gt;
+         </span>
+        </a>
+        &nbsp;
+        <!--<a href="raportpewn.htm">Next</a>-->
+       </span>
+      </td>
+     </tr>
+     <tr>
+      <td colspan="2">
+       <script>
+        function switchlang(lang) {
   $(".goog-te-sectional-gadget-link-text").html('');
   $.getScript("//translate.google.com/translate_a/element.js?cb=googleSectionalElementInit&ug=section&hl="+lang);
   }
@@ -220,78 +798,281 @@ if (location.search.lastIndexOf("toc=0")<=0) {
   }, 'google_sectional_element');
   }
   switchlang ('en');
-  </script>
-<div id="lang-menu">
-<ul class="linklist navlinks" style="font-size:12px";>
-<li class="icon_home"><a class="flag en-flag" href="javascript:void(0)" onclick="return switchlang('en');">English</a> &raquo;</li>
-<li class="icon_home"><a class="flag de-flag" href="javascript:void(0)" onclick="return switchlang('de');">Deutsch</a> &raquo;</li>
-<li class="icon_home"><a class="flag es-flag" href="javascript:void(0)" onclick="return switchlang('es');">Español</a> &raquo;</li>
-<li class="icon_home"><a class="flag fr-flag" href="javascript:void(0)" onclick="return switchlang('fr');">Français</a> &raquo;</li>
-<li class="icon_home"><a class="flag it-flag" href="javascript:void(0)" onclick="return switchlang('it');">Italiano</a> &raquo;</li>
-<li class="icon_home"><a class="flag ru-flag" href="javascript:void(0)" onclick="return switchlang('ru');">Rусский</a> &raquo;</li>
-</ul>
-</div>
-  </td></tr> 
-    
-</table>
-
-
-<!-- Placeholder for topic body begin. -->
-
-<div id="topic_body" class="goog-trans-section" lang="pl">
-<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
-<div class="goog-trans-control">
-<a class="goog-te-gadget-link" href="javascript:void(0)"><span class="goog-te-sectional-gadget-link-text"></span></a>
-</div>
-<div class="content">
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">Nowy raport trafień dla &nbsp;wyliczanych trendów liczb pomaga wytypować liczby na przyszłe losowanie. </span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">Na podstawie kolejnych wystąpień liczb w &nbsp;losowaniach, dla każdego losowania i z analizą dla określonej ilości losowań wstecz obliczany jest dla każdej liczby osobno jej trend. </span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">Trend jest to linia prosta która obrazuje tendencję (właśnie trend) dla danej liczby jej częstości i gęstości występowania w określonym zakresie losowań. Trend obliczany jest medodą najmniejszych kwadratów. Wynikiem obliczeń jest równanie linii prostej najlepiej dopasowane do funkcji częstości, gęstości i równomierności występowania liczb w kolejnych losowaniach. Prosta wyznaczana jest równaniem y=ax i obrazuje wektor (jakby wskażnik) umieszczony w punkcie (0,0) układu współrzędnych. Wartość dodatnia trendu wskazuje że liczba jest coraz rzadziej losowana, wartość ujemna że coraz częściej. Wartości zblizone do zera wskazują na stabilność liczby w zadanym okresie losowań.</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">Stabilność ta ma również swoje odbicie w statystykach trafień z zakresu trendów zblizonych do wartości zerowej.</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';"> W historii losowań zdarzają się trafienia o skuteczności przekraczającej 50%. Trafienia takie z całą pewnością zaowocują wygraną.</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">Raport rejestruje ilość trafień w kolejnych losowaniach dla trendów obliczanych za poprzednie ustawiane przez użytkownika okresy i grupuje je w 23 zakresach co 1/10 plus zakres który użytkownik może ustawić dla własnych obserwacji. Trendy liczb w większości mieszczą się w zakresie wartości od -1 do 1. Jeżeli ilość próbek (losowań) szczególnie dla trendów krótkookresowych jest niewielka, trend może przybierać wartości powyżej i poniżej jedności. Dzieje się to wtedy gdy określona liczba "czeka" długo na wylosowanie lub po długim okresie braku losowań występuje seria powtórzeń.</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">Ilość losowań dana do analizy jest bardzo ważnym parametrem i ma swoje odzwierciedlenie w statystykach. Przy zbyt małym zakresie losowań ( dla multilotka- 4-9 losowań) rozkład trafień jest szeroki i bardzo trudne jest wytypowanie liczb. Poprostu brakuje danych aby określić stabilność liczby. W zakresie tym lepsze wyniki statystyczne osiągają liczby których właśnie prosta trendu przyjmuje wartości powyżej i ponizej jedności. W ten sposób "wyłapywać" można tendencje krótkookresowe liczb. Wartości średnie dają typowy rozkład normalny (dzwon Gaussa) i wartości w poblizu zera trendu wyliczanego liczb dają w statystykach najwięcej trafień. Wartości duże (30-50 losowań) powodują że dzwon staje się bardzo wąski i statystyki trafień obejmują swym zakresem dwa, trzy zakresy zgrupowane w środku ( w poblizu zera trendów). Takie rozkłady trafień mają swoje uzasadnienie praktyczne. Tendencje liczb bardzo wyrażnie zarysowywują się w krótkich a przedewszystkiem średnich okresach. W okresach dłuższych wszelkie różnice dążą do zrównoważenia więc trendy stają się poziome i tracą na wartości aby uwzględniać je przy typowaniu(praktycznie się zrównują) . Ilość dni analizy dla każdej gry należy dobrać idywidualnie, wg oceny skuteczności trafiania w określone zakresy trafień trendów liczb.</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">&nbsp;</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><img src="menuraporttrend.png" width="278" height="180" border="0" alt="menuraporttrend"></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">Druga częśc raportu to spis zakresów przedziałów trendów a trzecia zawiera liczby które śię znalazły w określonych przedziałach trendów, średnią ilość trafień za okres wszystkich losowań oraz numer zakresu. Zakres pierwszy to zakres określony przez użytkownika i w wierszu pierwszym wypisane są średnia trafień i wszystkie liczby które znalazły się w tym zakresie na losowanie następne.</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">przykład dla trendów za 19 losowań gdzie wyrażnie widać dzwon rozkładu normalnego Gaussa:</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">średnia: &nbsp; 4.80 zakres: ( 1) liczby: &nbsp;6 12 17 19 20 37 39 40 48 49 62 64 65 70 71 76 78</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">średnia: &nbsp; 0.00 zakres: ( 2) liczby:</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">średnia: &nbsp; 0.10 zakres: ( 3) liczby: 80</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">średnia: &nbsp; 0.12 zakres: ( 4) liczby: &nbsp;7</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">&nbsp;</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">średnia: &nbsp; 0.18 zakres: ( 6) liczby:</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">średnia: &nbsp; 0.27 zakres: ( 7) liczby: 73</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">średnia: &nbsp; 0.43 zakres: ( 8) liczby: 55</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">średnia: &nbsp; 0.71 zakres: ( 9) liczby: 26 30 46 54</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">średnia: &nbsp; 1.25 zakres: (10) liczby: 16 21 50 59</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">średnia: &nbsp; 2.36 zakres: (11) liczby: &nbsp;2 24 25 35 38 43 44 52 69 72 75</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">średnia: &nbsp; 4.19 zakres: (12) liczby: &nbsp;1 &nbsp;3 &nbsp;6 12 14 17 20 28 36 37 40 48 51 64 67 76 79</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">średnia: &nbsp; 4.49 zakres: (13) liczby: &nbsp;4 10 19 27 39 42 49 56 57 58 61 62 65 70 71 74 78</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">średnia: &nbsp; 2.45 zakres: (14) liczby: 15 18 22 23 31 45 47 68 77</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">średnia: &nbsp; 1.22 zakres: (15) liczby: &nbsp;5 &nbsp;8 32 33 34 63</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">średnia: &nbsp; 0.64 zakres: (16) liczby: &nbsp;9 13 53</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">średnia: &nbsp; 0.45 zakres: (17) liczby: 41</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">średnia: &nbsp; 0.22 zakres: (18) liczby: 29 60</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">średnia: &nbsp; 0.20 zakres: (19) liczby:</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">średnia: &nbsp; 0.11 zakres: (20) liczby:</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">średnia: &nbsp; 0.09 zakres: (21) liczby:</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">średnia: &nbsp; 0.06 zakres: (22) liczby: 66</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">średnia: &nbsp; 0.12 zakres: (23) liczby:</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">średnia: &nbsp; 0.00 zakres: (24) liczby:</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">Ciekawostką jest że często liczby samotne umieszczone w wierszach gdzie średnia jest większa lub w pobliżu 0.5 często właśnie są losowane i można je potraktować jako liczby pewne. Doświadczalnie należy ustalić kiedy taką liczbę można uznać za "pewną".</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'Arial'; color: #000000;">&nbsp;</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">Po kilku próbach generacji raportu za różne zakresy losowań wstecz, można określić najwłaściwszy okres analizy i jego zakres. Ułatwiają to również obserwacje zarówno pierwsej części raportu jak również np wykres trendów liczb wylosowanych. Na wykresie tym można zaobserwować rozkład trafień trendów w losowaniach poprzednich i próbować na podstawie oscylacji tych zakresów przewidzieć np czy gęstość trafień losowania przyszłego w pobliżu trendu równego zero będzie większa po stronie trendów dodatnich czy po stronie trendów ujemnych.</span></p>
-<p style="text-indent: -19px; margin: 0px 19px 0px 38px;"><span style="font-family: 'MS Shell Dlg';">Raport jak zresztą większość raportów w LC posiada między kolumnami znaki oddzielające i po zapisaniu go do np. pliku tekstowego, bardzo łatwo można raport wprowadzić do arkusza programu Excel i dowolnie taki raport w arkuszu obrabiać. </span></p>
-
-</div>
-</td></tr></table>
-</div>
-
-<!-- Placeholder for topic body end. -->
-</body>
+       </script>
+       <div id="lang-menu">
+        <ul ; class="linklist navlinks" style="font-size:12px">
+         <li class="icon_home">
+          <a class="flag en-flag" href="javascript:void(0)" onclick="return switchlang('en');">
+           English
+          </a>
+          &raquo;
+         </li>
+         <li class="icon_home">
+          <a class="flag de-flag" href="javascript:void(0)" onclick="return switchlang('de');">
+           Deutsch
+          </a>
+          &raquo;
+         </li>
+         <li class="icon_home">
+          <a class="flag es-flag" href="javascript:void(0)" onclick="return switchlang('es');">
+           Espa&ntilde;ol
+          </a>
+          &raquo;
+         </li>
+         <li class="icon_home">
+          <a class="flag fr-flag" href="javascript:void(0)" onclick="return switchlang('fr');">
+           Fran&ccedil;ais
+          </a>
+          &raquo;
+         </li>
+         <li class="icon_home">
+          <a class="flag it-flag" href="javascript:void(0)" onclick="return switchlang('it');">
+           Italiano
+          </a>
+          &raquo;
+         </li>
+         <li class="icon_home">
+          <a class="flag ru-flag" href="javascript:void(0)" onclick="return switchlang('ru');">
+           R&ucy;&scy;&scy;&kcy;&icy;&jcy;
+          </a>
+          &raquo;
+         </li>
+        </ul></div>
+      </td>
+     </tr>
+    </table>
+    <!-- Placeholder for topic body begin. -->
+    <div class="goog-trans-section" id="topic_body" lang="pl">
+     <table border="0" cellpadding="5" cellspacing="0" width="100%">
+      <tr valign="top">
+       <td align="left">
+        <div class="goog-trans-control">
+         <a class="goog-te-gadget-link" href="javascript:void(0)">
+          <span class="goog-te-sectional-gadget-link-text">
+          </span>
+         </a>
+        </div>
+        <div class="content">
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'Arial'; color: #000000;">
+           &nbsp;
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'MS Shell Dlg';">
+           Nowy raport trafie&nacute; dla &nbsp;wyliczanych trend&oacute;w liczb pomaga wytypowa&cacute; liczby na przysz&lstrok;e losowanie.
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'MS Shell Dlg';">
+           Na podstawie kolejnych wyst&aogon;pie&nacute; liczb w &nbsp;losowaniach, dla ka&zdot;dego losowania i z analiz&aogon; dla okre&sacute;lonej ilo&sacute;ci losowa&nacute; wstecz obliczany jest dla ka&zdot;dej liczby osobno jej trend.
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'MS Shell Dlg';">
+           Trend jest to linia prosta kt&oacute;ra obrazuje tendencj&eogon; (w&lstrok;a&sacute;nie trend) dla danej liczby jej cz&eogon;sto&sacute;ci i g&eogon;sto&sacute;ci wyst&eogon;powania w okre&sacute;lonym zakresie losowa&nacute;. Trend obliczany jest medod&aogon; najmniejszych kwadrat&oacute;w. Wynikiem oblicze&nacute; jest r&oacute;wnanie linii prostej najlepiej dopasowane do funkcji cz&eogon;sto&sacute;ci, g&eogon;sto&sacute;ci i r&oacute;wnomierno&sacute;ci wyst&eogon;powania liczb w kolejnych losowaniach. Prosta wyznaczana jest r&oacute;wnaniem y=ax i obrazuje wektor (jakby wska&zdot;nik) umieszczony w punkcie (0,0) uk&lstrok;adu wsp&oacute;&lstrok;rz&eogon;dnych. Warto&sacute;&cacute; dodatnia trendu wskazuje &zdot;e liczba jest coraz rzadziej losowana, warto&sacute;&cacute; ujemna &zdot;e coraz cz&eogon;&sacute;ciej. Warto&sacute;ci zblizone do zera wskazuj&aogon; na stabilno&sacute;&cacute; liczby w zadanym okresie losowa&nacute;.
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'MS Shell Dlg';">
+           Stabilno&sacute;&cacute; ta ma r&oacute;wnie&zdot; swoje odbicie w statystykach trafie&nacute; z zakresu trend&oacute;w zblizonych do warto&sacute;ci zerowej.
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'MS Shell Dlg';">
+           W historii losowa&nacute; zdarzaj&aogon; si&eogon; trafienia o skuteczno&sacute;ci przekraczaj&aogon;cej 50%. Trafienia takie z ca&lstrok;&aogon; pewno&sacute;ci&aogon; zaowocuj&aogon; wygran&aogon;.
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'MS Shell Dlg';">
+           Raport rejestruje ilo&sacute;&cacute; trafie&nacute; w kolejnych losowaniach dla trend&oacute;w obliczanych za poprzednie ustawiane przez u&zdot;ytkownika okresy i grupuje je w 23 zakresach co 1/10 plus zakres kt&oacute;ry u&zdot;ytkownik mo&zdot;e ustawi&cacute; dla w&lstrok;asnych obserwacji. Trendy liczb w wi&eogon;kszo&sacute;ci mieszcz&aogon; si&eogon; w zakresie warto&sacute;ci od -1 do 1. Je&zdot;eli ilo&sacute;&cacute; pr&oacute;bek (losowa&nacute;) szczeg&oacute;lnie dla trend&oacute;w kr&oacute;tkookresowych jest niewielka, trend mo&zdot;e przybiera&cacute; warto&sacute;ci powy&zdot;ej i poni&zdot;ej jedno&sacute;ci. Dzieje si&eogon; to wtedy gdy okre&sacute;lona liczba "czeka" d&lstrok;ugo na wylosowanie lub po d&lstrok;ugim okresie braku losowa&nacute; wyst&eogon;puje seria powt&oacute;rze&nacute;.
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'MS Shell Dlg';">
+           Ilo&sacute;&cacute; losowa&nacute; dana do analizy jest bardzo wa&zdot;nym parametrem i ma swoje odzwierciedlenie w statystykach. Przy zbyt ma&lstrok;ym zakresie losowa&nacute; ( dla multilotka- 4-9 losowa&nacute;) rozk&lstrok;ad trafie&nacute; jest szeroki i bardzo trudne jest wytypowanie liczb. Poprostu brakuje danych aby okre&sacute;li&cacute; stabilno&sacute;&cacute; liczby. W zakresie tym lepsze wyniki statystyczne osi&aogon;gaj&aogon; liczby kt&oacute;rych w&lstrok;a&sacute;nie prosta trendu przyjmuje warto&sacute;ci powy&zdot;ej i ponizej jedno&sacute;ci. W ten spos&oacute;b "wy&lstrok;apywa&cacute;" mo&zdot;na tendencje kr&oacute;tkookresowe liczb. Warto&sacute;ci &sacute;rednie daj&aogon; typowy rozk&lstrok;ad normalny (dzwon Gaussa) i warto&sacute;ci w poblizu zera trendu wyliczanego liczb daj&aogon; w statystykach najwi&eogon;cej trafie&nacute;. Warto&sacute;ci du&zdot;e (30-50 losowa&nacute;) powoduj&aogon; &zdot;e dzwon staje si&eogon; bardzo w&aogon;ski i statystyki trafie&nacute; obejmuj&aogon; swym zakresem dwa, trzy zakresy zgrupowane w &sacute;rodku ( w poblizu zera trend&oacute;w). Takie rozk&lstrok;ady trafie&nacute; maj&aogon; swoje uzasadnienie praktyczne. Tendencje liczb bardzo wyra&zdot;nie zarysowywuj&aogon; si&eogon; w kr&oacute;tkich a przedewszystkiem &sacute;rednich okresach. W okresach d&lstrok;u&zdot;szych wszelkie r&oacute;&zdot;nice d&aogon;&zdot;&aogon; do zr&oacute;wnowa&zdot;enia wi&eogon;c trendy staj&aogon; si&eogon; poziome i trac&aogon; na warto&sacute;ci aby uwzgl&eogon;dnia&cacute; je przy typowaniu(praktycznie si&eogon; zr&oacute;wnuj&aogon;) . Ilo&sacute;&cacute; dni analizy dla ka&zdot;dej gry nale&zdot;y dobra&cacute; idywidualnie, wg oceny skuteczno&sacute;ci trafiania w okre&sacute;lone zakresy trafie&nacute; trend&oacute;w liczb.
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'MS Shell Dlg';">
+           &nbsp;
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <img alt="menuraporttrend" border="0" height="180" src="menuraporttrend.png" width="278">
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'MS Shell Dlg';">
+           Druga cz&eogon;&sacute;c raportu to spis zakres&oacute;w przedzia&lstrok;&oacute;w trend&oacute;w a trzecia zawiera liczby kt&oacute;re &sacute;i&eogon; znalaz&lstrok;y w okre&sacute;lonych przedzia&lstrok;ach trend&oacute;w, &sacute;redni&aogon; ilo&sacute;&cacute; trafie&nacute; za okres wszystkich losowa&nacute; oraz numer zakresu. Zakres pierwszy to zakres okre&sacute;lony przez u&zdot;ytkownika i w wierszu pierwszym wypisane s&aogon; &sacute;rednia trafie&nacute; i wszystkie liczby kt&oacute;re znalaz&lstrok;y si&eogon; w tym zakresie na losowanie nast&eogon;pne.
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'Arial'; color: #000000;">
+           &nbsp;
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'MS Shell Dlg';">
+           przyk&lstrok;ad dla trend&oacute;w za 19 losowa&nacute; gdzie wyra&zdot;nie wida&cacute; dzwon rozk&lstrok;adu normalnego Gaussa:
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'Arial'; color: #000000;">
+           &nbsp;
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'MS Shell Dlg';">
+           &sacute;rednia: &nbsp; 4.80 zakres: ( 1) liczby: &nbsp;6 12 17 19 20 37 39 40 48 49 62 64 65 70 71 76 78
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'MS Shell Dlg';">
+           &sacute;rednia: &nbsp; 0.00 zakres: ( 2) liczby:
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'MS Shell Dlg';">
+           &sacute;rednia: &nbsp; 0.10 zakres: ( 3) liczby: 80
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'MS Shell Dlg';">
+           &sacute;rednia: &nbsp; 0.12 zakres: ( 4) liczby: &nbsp;7
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'MS Shell Dlg';">
+           &nbsp;
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'MS Shell Dlg';">
+           &sacute;rednia: &nbsp; 0.18 zakres: ( 6) liczby:
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'MS Shell Dlg';">
+           &sacute;rednia: &nbsp; 0.27 zakres: ( 7) liczby: 73
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'MS Shell Dlg';">
+           &sacute;rednia: &nbsp; 0.43 zakres: ( 8) liczby: 55
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'MS Shell Dlg';">
+           &sacute;rednia: &nbsp; 0.71 zakres: ( 9) liczby: 26 30 46 54
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'MS Shell Dlg';">
+           &sacute;rednia: &nbsp; 1.25 zakres: (10) liczby: 16 21 50 59
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'MS Shell Dlg';">
+           &sacute;rednia: &nbsp; 2.36 zakres: (11) liczby: &nbsp;2 24 25 35 38 43 44 52 69 72 75
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'MS Shell Dlg';">
+           &sacute;rednia: &nbsp; 4.19 zakres: (12) liczby: &nbsp;1 &nbsp;3 &nbsp;6 12 14 17 20 28 36 37 40 48 51 64 67 76 79
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'MS Shell Dlg';">
+           &sacute;rednia: &nbsp; 4.49 zakres: (13) liczby: &nbsp;4 10 19 27 39 42 49 56 57 58 61 62 65 70 71 74 78
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'MS Shell Dlg';">
+           &sacute;rednia: &nbsp; 2.45 zakres: (14) liczby: 15 18 22 23 31 45 47 68 77
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'MS Shell Dlg';">
+           &sacute;rednia: &nbsp; 1.22 zakres: (15) liczby: &nbsp;5 &nbsp;8 32 33 34 63
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'MS Shell Dlg';">
+           &sacute;rednia: &nbsp; 0.64 zakres: (16) liczby: &nbsp;9 13 53
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'MS Shell Dlg';">
+           &sacute;rednia: &nbsp; 0.45 zakres: (17) liczby: 41
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'MS Shell Dlg';">
+           &sacute;rednia: &nbsp; 0.22 zakres: (18) liczby: 29 60
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'MS Shell Dlg';">
+           &sacute;rednia: &nbsp; 0.20 zakres: (19) liczby:
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'MS Shell Dlg';">
+           &sacute;rednia: &nbsp; 0.11 zakres: (20) liczby:
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'MS Shell Dlg';">
+           &sacute;rednia: &nbsp; 0.09 zakres: (21) liczby:
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'MS Shell Dlg';">
+           &sacute;rednia: &nbsp; 0.06 zakres: (22) liczby: 66
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'MS Shell Dlg';">
+           &sacute;rednia: &nbsp; 0.12 zakres: (23) liczby:
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'MS Shell Dlg';">
+           &sacute;rednia: &nbsp; 0.00 zakres: (24) liczby:
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'Arial'; color: #000000;">
+           &nbsp;
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'MS Shell Dlg';">
+           Ciekawostk&aogon; jest &zdot;e cz&eogon;sto liczby samotne umieszczone w wierszach gdzie &sacute;rednia jest wi&eogon;ksza lub w pobli&zdot;u 0.5 cz&eogon;sto w&lstrok;a&sacute;nie s&aogon; losowane i mo&zdot;na je potraktowa&cacute; jako liczby pewne. Do&sacute;wiadczalnie nale&zdot;y ustali&cacute; kiedy tak&aogon; liczb&eogon; mo&zdot;na uzna&cacute; za "pewn&aogon;".
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'Arial'; color: #000000;">
+           &nbsp;
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'MS Shell Dlg';">
+           Po kilku pr&oacute;bach generacji raportu za r&oacute;&zdot;ne zakresy losowa&nacute; wstecz, mo&zdot;na okre&sacute;li&cacute; najw&lstrok;a&sacute;ciwszy okres analizy i jego zakres. U&lstrok;atwiaj&aogon; to r&oacute;wnie&zdot; obserwacje zar&oacute;wno pierwsej cz&eogon;&sacute;ci raportu jak r&oacute;wnie&zdot; np wykres trend&oacute;w liczb wylosowanych. Na wykresie tym mo&zdot;na zaobserwowa&cacute; rozk&lstrok;ad trafie&nacute; trend&oacute;w w losowaniach poprzednich i pr&oacute;bowa&cacute; na podstawie oscylacji tych zakres&oacute;w przewidzie&cacute; np czy g&eogon;sto&sacute;&cacute; trafie&nacute; losowania przysz&lstrok;ego w pobli&zdot;u trendu r&oacute;wnego zero b&eogon;dzie wi&eogon;ksza po stronie trend&oacute;w dodatnich czy po stronie trend&oacute;w ujemnych.
+          </span>
+         </p>
+         <p style="text-indent: -19px; margin: 0px 19px 0px 38px;">
+          <span style="font-family: 'MS Shell Dlg';">
+           Raport jak zreszt&aogon; wi&eogon;kszo&sacute;&cacute; raport&oacute;w w LC posiada mi&eogon;dzy kolumnami znaki oddzielaj&aogon;ce i po zapisaniu go do np. pliku tekstowego, bardzo &lstrok;atwo mo&zdot;na raport wprowadzi&cacute; do arkusza programu Excel i dowolnie taki raport w arkuszu obrabia&cacute;.
+          </span>
+         </p>
+        </div>
+       </td>
+      </tr>
+     </table>
+    </div>
+    <!-- Placeholder for topic body end. -->
+   </main>
+  </div>
+ </body>
 </html>

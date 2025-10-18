@@ -1,214 +1,792 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
-<head>
-   <title>Inne metody uzupelniania bazy losowań</title>
-   <meta name="keywords" content="" />
-   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-   <meta http-equiv="Content-Style-Type" content="text/css" />
-   <link type="text/css" href="default.css" rel="stylesheet" />
-   <style type="text/css">
-   <!--
-   .inline-button {
-   width:auto;
-   font: bold 90%/1 Verdana, sans-serif;
-   margin: 0 0.2em; padding: 0.1em 0; _padding:0;
-   border: 1px solid black;
-   white-space:nowrap;
-   text-decoration: none;
-   vertical-align:middle;
-   background: #ccc;
-   color: black;
-   }
-.inline-button em {
-   cursor:hand;
-   font-style: normal;
-   margin:0; padding: 0.1em 0.5em;
-   background: white;
-   color: black;
-   }
-.inline-button span {
-   cursor:hand;
-   margin:0; padding: 0.1em 0.5em 0.1em 0.3em;
-   }
-.inline-button:hover {
-   background: #666;
-   color: white;
-   }
-.inline-button:hover em {
-   background: black;
-   color: white;
-   }
-.s1 {
-	background-color: #FFFFFF;
-	color: #008000;
-}
-.s2 {
-	background-color: #FF8000;
-	color: #000000;
-}
-.s5 {
-	background-color: #FFFFFF;
-	color: #008000;
-}
-.s6 {
-	background-color: #FFFFFF;
-	color: #FF0000;
-}
-.s7 {
-	background-color: #FFFFFF;
-	color: #FF0000;
-}
-.s8 {
-	background-color: #FFFFFF;
-	color: #FF0000;
-}
-.s9 {
-	background-color: #FFFFFF;
-	color: #008000;
-}
-.s10 {
-	background-color: #FFFFFF;
-	color: #800000;
-}
-.s3 {
-	background-color: #FFFFFF;
-	color: #000000;
-}
-.s4 {
-	background-color: #FFFF00;
-	color: #0000FF;
-}
-.s11 {
-	background-color: #00FF00;
-	color: #000000;   }
-/* Horizontal lists
-----------------------------------------*/
-ul.linklist {
-	display: block;
-	margin: 0;
-}
-
-ul.linklist li {
-	display: block;
-	list-style-type: none;
-	float: left;
-	width: auto;
-	margin-right: 5px;
-	font-size: 1.1em;
-	line-height: 2.2em;
-}
-
-ul.linklist {
-	float: right;
-	margin-right: 0;
-	margin-left: 5px;
-	text-align: right;
-}
-
-ul.navlinks {
-	padding-bottom: 1px;
-	margin-bottom: 1px;
-	border-bottom: 1px solid #FFFFFF;
-	font-weight: bold;
-}
-
-a.flag {color: #AAA; font-size:0.8em;text-decoration:none;}
-a.flag:hover {color:#FFF;text-decoration:underline;}
-a.en-flag {padding-left:21px; background: url(images/flag/en.png) top left no-repeat;}
-a.de-flag {padding-left:21px; background: url(images/flag/de.png) top left no-repeat;}
-a.ru-flag {padding-left:21px; background: url(images/flag/ru.png) top left no-repeat;} 
-a.cs-flag {padding-left:21px; background: url(images/flag/cz.png) top left no-repeat;}
-a.fr-flag {padding-left:21px; background: url(images/flag/fr.png) top left no-repeat;}
-a.es-flag {padding-left:21px; background: url(images/flag/es.png) top left no-repeat;}
-a.it-flag {padding-left:21px; background: url(images/flag/it.png) top left no-repeat;}
-
--->   
-</style>
-
-<script type="text/javascript" src="jquery-1.7.1.min.js"></script>
-
-<script type="text/javascript">
-function trim11 (str) {
-str = str.replace(/^\s+/, '');
-for (var i = str.length - 1; i >= 0; i--) {
-if (/\S/.test(str.charAt(i))) {
-str = str.substring(0, i + 1);
-break;
-}
-}
-return str;
-}
-
-function _highlight(inp_id,out_id) {
-elm=document.getElementById(out_id);
-var inptxt = trim11(document.getElementById(inp_id).value);
-var inp_arr = inptxt.split(/[ :,;-]+/);
-var html=elm.innerHTML;
-text=trim11(html.replace(/<[^>]+>/g,''));
-lines=text.split(/\r?\n/g);
-
-html="<pre>";
-for (var i in lines) {
-var tic=lines[i];
-var line_arr=tic.split(' ');
-
-var item='';
-for (var j in line_arr) {
-var num=line_arr[j];
-var hits=false;
-for (var k in inp_arr) {
-var hit=inp_arr[k];
-if (hit==num) { 
-hits=true;
-break;
-}
-}
-var pads=(j<(line_arr.length-1)) ? ' ':'';
-item+= hits ? '<span class="s2">'+num+'</span>'+pads : num+pads;
-}
-html+=item+'\r\n';
-}
-elm.innerHTML=html+'</pre>';
-}
-</script>
-      
-<script type="text/javascript" src="helpman_topicinit.js"></script>
-<!-- Redirect browser to frame page if page is not in the content frame. -->
-<script type="text/javascript">
-<!--
-if (location.search.lastIndexOf("toc=0")<=0) {
-  if (parent.frames.length==0) { parent.location.href="index.html?another_upload_methods.htm"; }
-  else { parent.quicksync('a5.1'); }
-}
-//-->
-</script>
-<script type="text/javascript" src="highlight.js"></script></head>
-<body style="margin: 0px 0px 0px 0px; background: #FFFFEF;" onload="highlight();">
-<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
-
-
-<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#000000">
-  <tr valign="middle">
-    <td align="left">
-      <p style="text-indent: 0px; margin: 0px 0px 0px 0px;"><span style="font-size: 12pt; color: #ffffff;">Inne metody uzupelniania bazy losowań</span></p>
-
-    </td>
-    <td align="right">
-     <span style="font-size: 9pt">
-     <a class="inline-button" href="contents.htm"><em>LC</em><span>&lt;&lt;</span></a>&nbsp;
-     <!--<a href="contents.htm">Top</a>-->
-     <a class="inline-button" href="sztuczkiikruczki.htm"><em>LC</em><span>&lt;</span></a>&nbsp;
-     <!--<a href="sztuczkiikruczki.htm">Previous</a>&nbsp;-->
-     <a class="inline-button" href="manipulacjebazydanych.htm"><em>LC</em><span>&gt;</span></a>&nbsp;     
-     <!--<a href="manipulacjebazydanych.htm">Next</a>-->
-     </span>
-    </td>
-  </tr>
-    
-  <tr><td colspan="2">
-  <script>
-  function switchlang(lang) {
+<!DOCTYPE html>
+<html lang="pl">
+ <head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>
+   5.1 Inne metody uzupelniania bazy losowa&nacute;
+  </title>
+  <link href="styl.css" rel="stylesheet">
+  
+ </head>
+ <body>
+  <nav class="menu-nawigacyjne">
+   <ul>
+    <li>
+     <a href="contents.htm">
+      1 Wprowadzenie
+     </a>
+    </li>
+    <li>
+     <a href="about.htm">
+      2 O Programie
+     </a>
+    </li>
+    <li class="dropdown">
+     <a class="dropbtn" href="main_panel.htm">
+      3 Panel g&lstrok;&oacute;wny programu
+     </a>
+     <div class="dropdown-content">
+       <ul><li class="dropdown">
+        <a href="formular_elements.htm">
+         3.1 Elementy Formularzy
+        </a>
+        <div class="dropdown-content">
+          <ul><li class="dropdown">
+           <a href="panel_text.htm">
+            3.1.1 Panele tekstowe
+           </a>
+           <div class="dropdown-content">
+             <ul><li>
+              <a href="panel_text_popmenu.htm">
+               3.1.1.1 Menu kontekstowe pola zaklady
+              </a>
+             </li>
+            </ul></div>
+          </li>
+          <li class="dropdown">
+           <a href="panel_wheels.htm">
+            3.1.2 Tabela losowan
+           </a>
+           <div class="dropdown-content">
+             <ul><li>
+              <a href="panel_wheels_highlight.htm">
+               3.1.2.1 zaznaczanie liczb
+              </a>
+             </li>
+             <li>
+              <a href="panel_wheels_selection.htm">
+               3.1.2.2 wybieranie liczb
+              </a>
+             </li>
+            </ul></div>
+          </li>
+          <li class="dropdown">
+           <a href="panel_tend.htm">
+            3.1.3 Tendencje
+           </a>
+           <div class="dropdown-content">
+             <ul><li>
+              <a href="panel_tend_descr.htm">
+               3.1.3.1 TENDENCJE
+              </a>
+             </li>
+            </ul></div>
+          </li>
+          <li class="dropdown">
+           <a href="panel_ticketbase.htm">
+            3.1.4 Baza zawartych zak&lstrok;ad&oacute;w
+           </a>
+           <div class="dropdown-content">
+             <ul><li>
+              <a href="panel_ticketbase_descr.htm">
+               3.1.4.1 BAZA ZAK&Lstrok;AD&Oacute;W
+              </a>
+             </li>
+            </ul></div>
+          </li>
+          <li>
+           <a href="quick_bar.htm">
+            3.1.5 Szybki pasek wyboru
+           </a>
+          </li>
+          <li>
+           <a href="panel_maps.htm">
+            3.1.6 Mapa liczb
+           </a>
+          </li>
+          <li class="dropdown">
+           <a href="panel_league.htm">
+            3.1.7 Liga liczb
+           </a>
+           <div class="dropdown-content">
+             <ul><li>
+              <a href="panel_league_descr.htm">
+               3.1.7.1 LIGA LICZB
+              </a>
+             </li>
+            </ul></div>
+          </li>
+         </ul></div>
+       </li>
+       <li class="dropdown">
+        <a href="menu_an_toolbar.htm">
+         3.2 Menu i paski narz&eogon;dziowe
+        </a>
+        <div class="dropdown-content">
+          <ul><li class="dropdown">
+           <a href="menu_main.htm">
+            3.2.1 Menu g&lstrok;&oacute;wne
+           </a>
+           <div class="dropdown-content">
+             <ul><li class="dropdown">
+              <a href="menu_file.htm">
+               3.2.1.1 Plik
+              </a>
+              <div class="dropdown-content">
+                <ul><li>
+                 <a href="menu_file_load_save_to_file.htm">
+                  3.2.1.1.1 Otw&oacute;rz z ... pliku tekstowego
+                 </a>
+                </li>
+                <li>
+                 <a href="menu_file_load_save_to_base.htm">
+                  3.2.1.1.2 Zapisz do ... bazy zak&lstrok;ad&oacute;w
+                 </a>
+                </li>
+                <li>
+                 <a href="menu_file_print.htm">
+                  3.2.1.1.3 Drukuj, podgl&aogon;d wydruku
+                 </a>
+                </li>
+                <li>
+                 <a href="menu_file_game_manager.htm">
+                  3.2.1.1.4 Menad&zdot;er gier liczbowych
+                 </a>
+                </li>
+               </ul></div>
+             </li>
+             <li class="dropdown">
+              <a href="menu_edit.htm">
+               3.2.1.2 Edycja
+              </a>
+              <div class="dropdown-content">
+                <ul><li>
+                 <a href="text_option.htm">
+                  3.2.1.2.1 Opcje pola tekstowego
+                 </a>
+                </li>
+               </ul></div>
+             </li>
+             <li class="dropdown">
+              <a href="menu_filters.htm">
+               3.2.1.3 Filtry
+              </a>
+              <div class="dropdown-content">
+                <ul><li class="dropdown">
+                 <a href="menu_filters_descr.htm">
+                  3.2.1.3.1 Filtry opis
+                 </a>
+                 <div class="dropdown-content">
+                   <ul><li>
+                    <a href="menu_filters_sum.htm">
+                     3.2.1.3.1.1 Sumy
+                    </a>
+                   </li>
+                   <li>
+                    <a href="menu_filters_parity.htm">
+                     3.2.1.3.1.2 Parzysto&sacute;ci
+                    </a>
+                   </li>
+                   <li>
+                    <a href="menu_filters_string.htm">
+                     3.2.1.3.1.3 Szeregu kolejnych liczb
+                    </a>
+                   </li>
+                   <li>
+                    <a href="menu_filters_diff.htm">
+                     3.2.1.3.1.4 Filtr r&oacute;znicy
+                    </a>
+                   </li>
+                   <li>
+                    <a href="menu_filters_what_use.htm">
+                     3.2.1.3.1.5 Przyklad filtracji SPS
+                    </a>
+                   </li>
+                   <li>
+                    <a href="menu_filters_hits.htm">
+                     3.2.1.3.1.6 Filtr Trafie&nacute;
+                    </a>
+                   </li>
+                   <li>
+                    <a href="filtrzakresow.htm">
+                     3.2.1.3.1.7 Filtr zakresow
+                    </a>
+                   </li>
+                   <li>
+                    <a href="filtravg.htm">
+                     3.2.1.3.1.8 FiltrAVG
+                    </a>
+                   </li>
+                   <li>
+                    <a href="filtrhd.htm">
+                     3.2.1.3.1.9 FiltrFHD
+                    </a>
+                   </li>
+                   <li>
+                    <a href="filtrmhd.htm">
+                     3.2.1.3.1.10 FiltrMHD
+                    </a>
+                   </li>
+                   <li>
+                    <a href="filter_przyklad.htm">
+                     3.2.1.3.1.11 Przyk&lstrok;ad filtracji
+                    </a>
+                   </li>
+                   <li>
+                    <a href="filtrspacji.htm">
+                     3.2.1.3.1.12 Filtr spacji
+                    </a>
+                   </li>
+                  </ul></div>
+                </li>
+               </ul></div>
+             </li>
+             <li class="dropdown">
+              <a href="menu_combine.htm">
+               3.2.1.4 Kombinacje
+              </a>
+              <div class="dropdown-content">
+                <ul><li>
+                 <a href="menu_combine_dialog.htm">
+                  3.2.1.4.1 Kombinacje liczb (tasowanie)
+                 </a>
+                </li>
+                <li>
+                 <a href="menu_combine_select_number.htm">
+                  3.2.1.4.2 Wyb&oacute;r liczb do kombinacji
+                 </a>
+                </li>
+                <li class="dropdown">
+                 <a href="combine_function.htm">
+                  3.2.1.4.3 Rodzaje funkcji losuj&aogon;cych (kombinacji)
+                 </a>
+                 <div class="dropdown-content">
+                   <ul><li>
+                    <a href="comb_equal.htm">
+                     3.2.1.4.3.1 Kombinacja R&oacute;wnomierna
+                    </a>
+                   </li>
+                   <li>
+                    <a href="comb_random.htm">
+                     3.2.1.4.3.2 Kombinacja Przypadkowa
+                    </a>
+                   </li>
+                   <li>
+                    <a href="comb_line.htm">
+                     3.2.1.4.3.3 Kombinacja Liniowa
+                    </a>
+                   </li>
+                   <li>
+                    <a href="comb_expotential.htm">
+                     3.2.1.4.3.4 Kombinacja Wyk&lstrok;adnicza
+                    </a>
+                   </li>
+                   <li>
+                    <a href="comb_quick_pick.htm">
+                     3.2.1.4.3.5 Kombinacja Chybi&lstrok;Trafi&lstrok; XX
+                    </a>
+                   </li>
+                   <li>
+                    <a href="comb_all.htm">
+                     3.2.1.4.3.6 Kombinacja wszystkich XX liczb
+                    </a>
+                   </li>
+                   <li>
+                    <a href="comb_line_xx.htm">
+                     3.2.1.4.3.7 Kombinacja Liniowa XX
+                    </a>
+                   </li>
+                   <li>
+                    <a href="comb_expotential_xx.htm">
+                     3.2.1.4.3.8 Kombinacja Wyk&lstrok;adnicza XX
+                    </a>
+                   </li>
+                   <li>
+                    <a href="comb_swap.htm">
+                     3.2.1.4.3.9 Kombinacje przemienne
+                    </a>
+                   </li>
+                   <li>
+                    <a href="comb_gauss.htm">
+                     3.2.1.4.3.10 Kombinacje Gaussa
+                    </a>
+                   </li>
+                   <li>
+                    <a href="comb_systems.htm">
+                     3.2.1.4.3.11 Kombinacje systemowe
+                    </a>
+                   </li>
+                   <li>
+                    <a href="comb_another.htm">
+                     3.2.1.4.3.12 Inne kombinacje
+                    </a>
+                   </li>
+                  </ul></div>
+                </li>
+                <li>
+                 <a href="option_spec_category.htm">
+                  3.2.1.4.4 Opcje dla kategorii liczb specjalnych
+                 </a>
+                </li>
+                <li>
+                 <a href="spec_numb_algorythm.htm">
+                  3.2.1.4.5 Algorytm podzia&lstrok;u liczb gry na kategorie specjalne.
+                 </a>
+                </li>
+                <li>
+                 <a href="options_limits.htm">
+                  3.2.1.4.6 Limity generacji zak&lstrok;adow
+                 </a>
+                </li>
+                <li>
+                 <a href="abbrev_brute.htm">
+                  3.2.1.4.7 Skr&oacute;&cacute; do gwarancji
+                 </a>
+                </li>
+                <li>
+                 <a href="menu_again_and_check.htm">
+                  3.2.1.4.8 Powt&oacute;rz i sprawd&zacute; z polem edycji
+                 </a>
+                </li>
+                <li>
+                 <a href="menu_again_and_check_history.htm">
+                  3.2.1.4.9 Powt&oacute;rz i sprawd&zacute; w historii
+                 </a>
+                </li>
+                <li>
+                 <a href="menu_full_syst_filtered.htm">
+                  3.2.1.4.10 Odfiltrowany system pe&lstrok;ny
+                 </a>
+                </li>
+                <li>
+                 <a href="systemystrefowekrokpokroku.htm">
+                  3.2.1.4.11 Systemy strefowe
+                 </a>
+                </li>
+                <li>
+                 <a href="combine_num_combine.htm">
+                  3.2.1.4.12 Kombinacja na jej numer
+                 </a>
+                </li>
+               </ul></div>
+             </li>
+             <li class="dropdown">
+              <a href="menu_report.htm">
+               3.2.1.5 Raporty
+              </a>
+              <div class="dropdown-content">
+                <ul><li>
+                 <a href="raportmapyliczb.htm">
+                  3.2.1.5.1 Raport mapy liczb
+                 </a>
+                </li>
+                <li>
+                 <a href="menu_report_whells.htm">
+                  3.2.1.5.2 Raport o filtach losowan
+                 </a>
+                </li>
+                <li>
+                 <a href="menu_report_traf_los.htm">
+                  3.2.1.5.3 Raport trafien &nbsp;liczb z g&lstrok;ownego pola edycji
+                 </a>
+                </li>
+                <li>
+                 <a href="menu_report_trafedit.htm">
+                  3.2.1.5.4 Raport trafien we wszystkich losowaniach
+                 </a>
+                </li>
+                <li>
+                 <a href="raportliczbstowarzyszonych.htm">
+                  3.2.1.5.5 Raport liczb stowarzyszonych
+                 </a>
+                </li>
+                <li>
+                 <a href="menu_report_stow.htm">
+                  3.2.1.5.6 Raport liczb stowarzyszonych-z poprzednim losowaniem
+                 </a>
+                </li>
+                <li>
+                 <a href="menu_report_tabskut.htm">
+                  3.2.1.5.7 Tabela skutecznosci typowania kategorii liczb specjalnych
+                 </a>
+                </li>
+                <li>
+                 <a href="raport_trafien_trendow_liczb.htm">
+                  3.2.1.5.8 Raport trafie&nacute; trend&oacute;w liczb
+                 </a>
+                </li>
+                <li>
+                 <a href="raportpewn.htm">
+                  3.2.1.5.9 Raport pewniakow
+                 </a>
+                </li>
+                <li class="dropdown">
+                 <a href="predictionsreport.htm">
+                  3.2.1.5.10 Raport Prognozy
+                 </a>
+                 <div class="dropdown-content">
+                   <ul><li>
+                    <a href="prognozyopis.htm">
+                     3.2.1.5.10.1 Prognozy opis
+                    </a>
+                   </li>
+                   <li>
+                    <a href="panelprognozy.htm">
+                     3.2.1.5.10.2 Panel Prognozy
+                    </a>
+                   </li>
+                   <li>
+                    <a href="prognozyopcje.htm">
+                     3.2.1.5.10.3 Panel Opcje
+                    </a>
+                   </li>
+                   <li>
+                    <a href="progn_what_select.htm">
+                     3.2.1.5.10.4 Jak wybiera&cacute; prognozy
+                    </a>
+                   </li>
+                   <li>
+                    <a href="prognozy_game_trick.htm">
+                     3.2.1.5.10.5 Prognozy przyk&lstrok;ad gry
+                    </a>
+                   </li>
+                  </ul></div>
+                </li>
+                <li class="dropdown">
+                 <a href="raportpozycji.htm">
+                  3.2.1.5.11 Raport pozycji
+                 </a>
+                 <div class="dropdown-content">
+                   <ul><li>
+                    <a href="mraportlosowan.htm">
+                     3.2.1.5.11.1 Raport Losowan
+                    </a>
+                   </li>
+                   <li>
+                    <a href="mraportkombinacji.htm">
+                     3.2.1.5.11.2 Raport kombinacji
+                    </a>
+                   </li>
+                   <li>
+                    <a href="mraportpozycji.htm">
+                     3.2.1.5.11.3 Raport pozycji
+                    </a>
+                   </li>
+                   <li>
+                    <a href="mmapaodstepow.htm">
+                     3.2.1.5.11.4 Mapa odstepow
+                    </a>
+                   </li>
+                   <li>
+                    <a href="mligapozycji.htm">
+                     3.2.1.5.11.5 Liga pozycji
+                    </a>
+                   </li>
+                   <li>
+                    <a href="mraportskutecznosci.htm">
+                     3.2.1.5.11.6 Raport skutecznosci
+                    </a>
+                   </li>
+                  </ul></div>
+                </li>
+               </ul></div>
+             </li>
+             <li class="dropdown">
+              <a href="menu_tool.htm">
+               3.2.1.6 Narz&eogon;dzia
+              </a>
+              <div class="dropdown-content">
+                <ul><li>
+                 <a href="menu_tool_organiser.htm">
+                  3.2.1.6.1 Pamietnik organizer
+                 </a>
+                </li>
+                <li>
+                 <a href="menu_tool_coverbat.htm">
+                  3.2.1.6.2 Przewodnik (wizard) po systemach skr&oacute;conych.
+                 </a>
+                </li>
+                <li>
+                 <a href="report_tickets_combine.htm">
+                  3.2.1.6.3 Raport wartosci filtrow zak&lstrok;adow
+                 </a>
+                </li>
+                <li>
+                 <a href="menu_tool_fast_combine.htm">
+                  3.2.1.6.4 Szybki pasek kombinacji
+                 </a>
+                </li>
+                <li>
+                 <a href="menu_tool_update.htm">
+                  3.2.1.6.5 Uzupelnianie Bazy
+                 </a>
+                </li>
+               </ul></div>
+             </li>
+             <li class="dropdown">
+              <a href="menu_stats.htm">
+               3.2.1.7 Menu Statystyki
+              </a>
+              <div class="dropdown-content">
+                <ul><li>
+                 <a href="statistics.htm">
+                  3.2.1.7.1 Statystyki wystepowania liczb
+                 </a>
+                </li>
+                <li>
+                 <a href="graph_whells.htm">
+                  3.2.1.7.2 Graf losowania
+                 </a>
+                </li>
+                <li>
+                 <a href="graph_pair.htm">
+                  3.2.1.7.3 Graf par liczb
+                 </a>
+                </li>
+                <li>
+                 <a href="graph_category.htm">
+                  3.2.1.7.4 Graf kategorii Liczb Specjalnych
+                 </a>
+                </li>
+               </ul></div>
+             </li>
+             <li class="dropdown">
+              <a href="menu_skrypty_php.htm">
+               3.2.1.8 Skrypty PHP
+              </a>
+              <div class="dropdown-content">
+                <ul><li>
+                 <a href="php.htm">
+                  3.2.1.8.1 PHP
+                 </a>
+                </li>
+                <li>
+                 <a href="edytorphp.htm">
+                  3.2.1.8.2 Edytor PHP
+                 </a>
+                </li>
+                <li>
+                 <a href="opcjephp.htm">
+                  3.2.1.8.3 Opcje PHP
+                 </a>
+                </li>
+                <li>
+                 <a href="php_opcje.htm">
+                  3.2.1.8.4 Serwer HTTP
+                 </a>
+                </li>
+                <li class="dropdown">
+                 <a href="lottocad_vs_php.htm">
+                  3.2.1.8.5 Komunikacja PHP-&gt;LottoCad
+                 </a>
+                 <div class="dropdown-content">
+                   <ul><li>
+                    <a href="zmienne_php.htm">
+                     3.2.1.8.5.1 Zmienne PHP
+                    </a>
+                   </li>
+                   <li>
+                    <a href="funkcje_wbudowane.htm">
+                     3.2.1.8.5.2 Funkcje wbudowane
+                    </a>
+                   </li>
+                   <li>
+                    <a href="funkcje_makr.htm">
+                     3.2.1.8.5.3 Funkcje makr
+                    </a>
+                   </li>
+                  </ul></div>
+                </li>
+               </ul></div>
+             </li>
+             <li>
+              <a href="menu_help.htm">
+               3.2.1.9 Pomoc
+              </a>
+             </li>
+            </ul></div>
+          </li>
+          <li class="dropdown">
+           <a href="toolbars.htm">
+            3.2.2 Paski narzedziowe
+           </a>
+           <div class="dropdown-content">
+             <ul><li>
+              <a href="tool_main.htm">
+               3.2.2.1 Pole edycji losowa&nacute;
+              </a>
+             </li>
+             <li class="dropdown">
+              <a href="tool_combine.htm">
+               3.2.2.2 kombinacje Liczb
+              </a>
+              <div class="dropdown-content">
+                <ul><li>
+                 <a href="again_and_check.htm">
+                  3.2.2.2.1 Powt&oacute;rz i sprawdz z polem edycji
+                 </a>
+                </li>
+                <li>
+                 <a href="check_tickets.htm">
+                  3.2.2.2.2 Z polem edycji
+                 </a>
+                </li>
+                <li>
+                 <a href="again_and_check_history.htm">
+                  3.2.2.2.3 Powt&oacute;rz i sprawdz w historii losowa&nacute;
+                 </a>
+                </li>
+                <li>
+                 <a href="check_in_history.htm">
+                  3.2.2.2.4 W historii losowa&nacute;
+                 </a>
+                </li>
+               </ul></div>
+             </li>
+             <li>
+              <a href="menu_tool_calculators.htm">
+               3.2.2.3 Kalkulatory
+              </a>
+             </li>
+            </ul></div>
+          </li>
+         </ul></div>
+       </li>
+      </ul></div>
+    </li>
+    <li class="dropdown">
+     <a class="dropbtn" href="programs_tool.htm">
+      4 Programy pomocnicze
+     </a>
+     <div class="dropdown-content">
+       <ul><li class="dropdown">
+        <a href="prog_sys_pro.htm">
+         4.1 Producent system&oacute;w
+        </a>
+        <div class="dropdown-content">
+          <ul><li>
+           <a href="prog_sys_new_system.htm">
+            4.1.1 Nowe systemy
+           </a>
+          </li>
+          <li>
+           <a href="prog_sys_check_system.htm">
+            4.1.2 Sprawdzanie systemu
+           </a>
+          </li>
+          <li>
+           <a href="prog_sys_save_to_file.htm">
+            4.1.3 Zapisywanie systemu do pliku
+           </a>
+          </li>
+          <li>
+           <a href="prog_sys_save_to_dbase.htm">
+            4.1.4 Zapisywanie systemu do bazy
+           </a>
+          </li>
+          <li>
+           <a href="prog_sys_load_f_file.htm">
+            4.1.5 Odczytanie systemu z pliku
+           </a>
+          </li>
+          <li>
+           <a href="prog_sys_load_f_dbase.htm">
+            4.1.6 Odczytanie systemu z bazy
+           </a>
+          </li>
+          <li>
+           <a href="prog_sys_shedule.htm">
+            4.1.7 Zadanie do wykonania
+           </a>
+          </li>
+         </ul></div>
+       </li>
+       <li>
+        <a href="cover_bat.htm">
+         4.2 Cover BAT
+        </a>
+       </li>
+      </ul></div>
+    </li>
+    <li class="dropdown">
+     <a class="dropbtn" href="sztuczkiikruczki.htm">
+      5 Sztuczki i kruczki
+     </a>
+     <div class="dropdown-content">
+       <ul><li>
+        <a href="another_upload_methods.htm">
+         5.1 Inne metody uzupelniania bazy losowa&nacute;
+        </a>
+       </li>
+       <li>
+        <a href="manipulacjebazydanych.htm">
+         5.2 Manipulacje bazy danych
+        </a>
+       </li>
+       <li>
+        <a href="tipsmemo.htm">
+         5.3 Pole tekstowe sposoby
+        </a>
+       </li>
+       <li class="dropdown">
+        <a href="program_configure_method.htm">
+         5.4 Konfigurowanie programu
+        </a>
+        <div class="dropdown-content">
+          <ul><li>
+           <a href="config_what_make.htm">
+            5.4.1 Jak to zrobic
+           </a>
+          </li>
+         </ul></div>
+       </li>
+      </ul></div>
+    </li>
+   </ul>
+  </nav>
+  <div class="kontener">
+   <main class="glowna-tresc">
+    <div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);">
+    </div>
+    <table bgcolor="#000000" border="0" cellpadding="5" cellspacing="0" width="100%">
+     <tr valign="middle">
+      <td align="left">
+       <p style="text-indent: 0px; margin: 0px 0px 0px 0px;">
+        <span style="font-size: 12pt; color: #ffffff;">
+         Inne metody uzupelniania bazy losowa&Lacute;
+        </span>
+       </p>
+      </td>
+      <td align="right">
+       <span style="font-size: 9pt">
+        <a class="inline-button" href="contents.htm">
+         <em>
+          LC
+         </em>
+         <span>
+          &lt;&lt;
+         </span>
+        </a>
+        &nbsp;
+        <!--<a href="contents.htm">Top</a>-->
+        <a class="inline-button" href="sztuczkiikruczki.htm">
+         <em>
+          LC
+         </em>
+         <span>
+          &lt;
+         </span>
+        </a>
+        &nbsp;
+        <!--<a href="sztuczkiikruczki.htm">Previous</a>&nbsp;-->
+        <a class="inline-button" href="manipulacjebazydanych.htm">
+         <em>
+          LC
+         </em>
+         <span>
+          &gt;
+         </span>
+        </a>
+        &nbsp;
+        <!--<a href="manipulacjebazydanych.htm">Next</a>-->
+       </span>
+      </td>
+     </tr>
+     <tr>
+      <td colspan="2">
+       <script>
+        function switchlang(lang) {
   $(".goog-te-sectional-gadget-link-text").html('');
   $.getScript("//translate.google.com/translate_a/element.js?cb=googleSectionalElementInit&ug=section&hl="+lang);
   }
@@ -220,100 +798,313 @@ if (location.search.lastIndexOf("toc=0")<=0) {
   }, 'google_sectional_element');
   }
   switchlang ('en');
-  </script>
-<div id="lang-menu">
-<ul class="linklist navlinks" style="font-size:12px";>
-<li class="icon_home"><a class="flag en-flag" href="javascript:void(0)" onclick="return switchlang('en');">English</a> &raquo;</li>
-<li class="icon_home"><a class="flag de-flag" href="javascript:void(0)" onclick="return switchlang('de');">Deutsch</a> &raquo;</li>
-<li class="icon_home"><a class="flag es-flag" href="javascript:void(0)" onclick="return switchlang('es');">Español</a> &raquo;</li>
-<li class="icon_home"><a class="flag fr-flag" href="javascript:void(0)" onclick="return switchlang('fr');">Français</a> &raquo;</li>
-<li class="icon_home"><a class="flag it-flag" href="javascript:void(0)" onclick="return switchlang('it');">Italiano</a> &raquo;</li>
-<li class="icon_home"><a class="flag ru-flag" href="javascript:void(0)" onclick="return switchlang('ru');">Rусский</a> &raquo;</li>
-</ul>
-</div>
-  </td></tr> 
-    
-</table>
-
-
-<!-- Placeholder for topic body begin. -->
-
-<div id="topic_body" class="goog-trans-section" lang="pl">
-<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
-<div class="goog-trans-control">
-<a class="goog-te-gadget-link" href="javascript:void(0)"><span class="goog-te-sectional-gadget-link-text"></span></a>
-</div>
-<div class="content">
-<p>Istnieje kilka sposobów wprowadzania danych jeżeli nie posiadasz łącza internetowego lub połaczenie nie działa:</p>
-<p>&nbsp;</p>
-<p class="p_Headingredunderlined"><span class="f_Headingredunderlined">Sposób 1 :</span></p>
-<p>&nbsp;</p>
-<p>1. Uruchamiamy program LottoCad</p>
-<p>&nbsp;</p>
-<p>2. Z bocznej zakładki wybieramy opcję baza losowań</p>
-<p>&nbsp;</p>
-<p>3. Umieszczmy kursor na ostatnim losowaniu</p>
-<p>&nbsp;</p>
-<p>4. Na lewym bocznym pasku ostatniego losowania powinien się znajdować symbol strzałki skierowanej w prawo lub jak kto woli symbol trójkąta z wierzchołkiem skierowanym w lewo <img src="strza�ka.png" width="15" height="17" border="0" alt="strzałka"> &nbsp; symbol ten oznacza że baza znajduje się w stanie przeglądania. Jeżeli na lewym szarym bocznym pasku tabeli losowań znajduje się symbol gwiazdki który, oznacza ze baza znajduje się w stanie wprowadzania (wstawiania) danych. Przy nieprawidłowym wciskaniu klawiszy &nbsp;w pasku tym może pojawić się symbol przypominający kształtem dużą literę I oznacza on że baza jest w stanie edycji i dane są właśnie modyfikowane. Aby przywrócić &nbsp; stan przeglądania i ewentualnie unieważnić wprowadzone zmiany należy wcisnąć przycisk ESC (nawet dwukrotnie). Wówczas stan bazy przywrócimy do stanu przeglądania a wprowadzone żle dane zostaną unieważnione.</p>
-<p>&nbsp;</p>
-<p>5. Aby wprowadzić nowy wiersz można użyć klawisza strzałki w dół (Down) &nbsp;lub wcisnąć klawisz INSERT (wstaw), winien się pojawić w tabeli nowy wiersz gotowy do wprowadzania danych z symbolem gwiazdki.6. Należy ustawić kursor na pierwszym polu i wprowadzić kolejny numer losowania i kolejno datę w obowiązującym w tabeli formacie RR-MM-DD oraz w kolejnych komórkach liczby losowania. Do następnej komórki &nbsp;przechodzi się za pomocą klawisza ENTER lub kursorem myszki. &nbsp; Po wprowadzeniu ostatniego ( dla Multilotka 20-ej liczby losowania) i wciśnoięciu Enter losowanie zostanie dopisane do bazy i w bocznym pasku pojawi się symbol trójkąta lub strzałki.</p>
-<p>&nbsp;</p>
-<p class="p_ImageCaption"><span class="f_ImageCaption">Inne porady związane z arkuszem bazy losowań :</span></p>
-<p class="p_ImageCaption"><span class="f_ImageCaption">&nbsp;</span></p>
-<p> &nbsp; Jeżeli w bocznym szarym pasku znajduje się symbol trójkąta lub strzałki można usunąć nieprawidłowe wiersze przez wciśnięcie jednocześnie klawiszy &nbsp;CTRL i DEL. Pojawi się wówczas zapytanie "Czy usunąć zaznaczony rekord ?" które należy potwierdzić lub zrezygnować z usuwania rekordu.</p>
-<p> &nbsp; Z menu podręcznego (prawy myszki) &nbsp;można wybrać lub zgasić &nbsp;opcję "zaznaczanie wielu rekordów dozwolone". Ocja zaznaczanie wielu dozwolone &nbsp;pozwala zaznaczać (np do usunięcia) wiele rekordów bazy. Zaznaczanie wielu </p>
-<p> &nbsp; przeprowadza się w następujący sposób: zaznaczamy kliknięciem myszki pierwszy wiersz &nbsp;tabeli a następnie z jednocześnie wciśniętym klawiszem SHIFT zaznaczamy wiersz ostatni. &nbsp; Lub zaznaczamy wiersz pierwszy i z wciśniętym klawiszem SHIFT klawiszami strzałka w dół &nbsp; &nbsp;(DOWN) lub strzałka w górę (UP) przeciągamy zaznaczenie do wiersza końcowego zaznaczania. &nbsp;Po zaznaczeniu wielu rekordów możliwe jest ich jednoczesne usuniecie z pomocą &nbsp;jednoczesnego wciśnięcia klawiszy CTRL i DEL. Wówczas zamiast pytania o usunięcie &nbsp; pojedynczego rekordu pojawi się pytanie :" usunąć wszystkie zaznaczone rekordy?".</p>
-<p class="p_Headingredunderlined"><span class="f_Headingredunderlined">&nbsp;</span></p>
-<p class="p_Headingredunderlined"><span class="f_Headingredunderlined">Sposób 2: </span></p>
-<p class="p_Headingredunderlined"><span class="f_Headingredunderlined">&nbsp;</span></p>
-<p>Uzupełnianie bazy losowań przez import z pliku tekstowego: &nbsp; </p>
-<p>&nbsp;</p>
-<p>Najszybciej i najprościej można to zrobić tworząc plik tekstowy trzymając się określonych zasad:</p>
-<p>&nbsp;</p>
-<p>Do pliku należy wpisywać dane posługując się np. Notepadem lub panelem tekstowym "zakłady" z programu LottoCAD. Przy użyciu panela tekstowego z programu LottoCAD należy najpierw posługując się podręcznym menu </p>
-<p>panela tekstowego (prawy myszki) wyłączyć opcję "sprawdzanie skłądni wyłączone". Jeżeli używamy edytora poprostu wpisujemy kolejno numer losowania datę w formacie RR-MM-DD lub RRRR-MM-DD i kolejne numery losowań jako oddzielenie kolejnych kolumn można użyć dowolnego znaku z ;:' lub poprostu spacji &nbsp;(zaleca się średnik ;). Plik ten zapisujemy w dowolnym miejscu na dysku jako plik z rozszeżeniem txt ( przykład: losowanie1.txt). Po zapisaniu pliku dla wersji po 1 marca 2009 wybieramy z menu "narzędzia" opcję aktualizuj bazę losowań. W formularzu importu rozwijamy opcje dodatkowe przyciskiem "pokaż opcje" i zaznaczamy import z pliku i opcję TXT. Po wciśnięciu klawisza import zostaniemy zapytani o lokalizację pliku tekstowego który wczesniej utworzyliśmy i zapisalismy na dysku. Program automatycznie dopisze losowania do bazy. jeżeli posiadasz wersję programu z przed 1 marca 2009 importu z pliku tekstowego &nbsp;można dokonać w ten sam sposób co wyżej lecz należy wyłączyć program LottoCAd i wybrać program "Obsługa baz danych" (BaseDriver.exe) i otworzyć plik bazy z wynikami losowań ( z rozszerzeniem *,dat) dla multilotka jest to plik "multi.dat". W programie tym można również wprowadzać losowania w sposób ręczny podany wyżej. Import z pliku uruchamia się wybierając z menu opcję "Import". Tworzenie pliku tekstowego można sobie ułatwić uruchamiając najpierw opcję "export" i zapisać plik tekstowy na dysku z istniejących rekordów bazy danych a następnie w edytorze tekstowym dopisać losowania które chcemy dołozyć do bazy trzymając się zasad wprowadzania które program wyeksportował. Wybierz taki format eksportu który zapewni Ci łatwe wpisywanie np. nie eksportuj pliku w formacie z ogranicznikami pól w postaci "pole". Unikniesz wtedy żmudnego dopisywania wyników i wielokrotnego wprowadzania symbolu (").</p>
-<p>Łatwo plik tekstowy zrobisz używając excela. Przed wpisywaniem kolumnę drugą w excelu Po wypełnieniu kolumn kolejno numer losowania, data losowania, liczba 1, liczba 2 ..... , należy wyeksportować plik w formacie csv ( tekst rozdzielany średnikami). I plik do importu gotowy bez zwracania uwagi na formatowanie.</p>
-<p>&nbsp;</p>
-<p>Przykład: fragment prawidłowego pliku importu wormat CSV pola oddzielane średnikami:</p>
-<p>&nbsp;</p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">1725;02-04-07;1;6;11;16;21;26;31;36;41;46;51;56;61;66;71;76;77,78;79;80</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">1726;02-04-08;2;7;12;17;22;27;32;37;42;47;52;57;62;67;72;76;77;78;79;80</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">1727;02-04-09;3;8;13;18;23;28;33;38;43;48;53;58;63;68;73;76;78;78;79;80</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">1728;02-04-10;4;9;14;19;24;29;34;39;44;49;54;59;64;69;74;76;79;78;79;80</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">1729;02-04-11;5;10;15;20;25;30;35;40;45;50;55;60;65;70;74;75;76;78;79;80</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">1730;02-04-12;6;11;16;21;26;31;36;41;46;51;56;61;66;71;73;76;77;78;79;80</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">1731;02-04-13;7;12;17;22;27;32;37;42;47;52;57;62;67;70;72;77;77;78;79;80</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">1732;02-04-14;8;13;18;23;28;33;38;43;48;53;58;63;68;69;73;78;77;78;79;80</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">1733;02-04-15;9;14;19;24;29;34;39;44;49;54;59;64;65;69;74;79;77;78;79;80</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">1734;02-04-16;10;15;20;25;30;35;40;45;50;55;60;61;65;70;75;80;77;78;79;80</span></p>
-<p class="p_Code" style="border-top: none; border-bottom: none;"><span class="f_Code">1735;02-04-17;11;16;21;26;31;36;41;46;51;56;57;61;66;71;76;81;77;78;79;80</span></p>
-<p>&nbsp;</p>
-<p class="p_Headingredunderlined"><span class="f_Headingredunderlined">Sposób 3 : </span></p>
-<p class="p_Headingredunderlined"><span class="f_Headingredunderlined">&nbsp;</span></p>
-<p>W programie LottoCAD znajduje się główne pole edycji losowań. Pole to wykorzystywane jest przez bardzo wiele opcji programu między innymi słuzy do wprowadzania aktualnego losowania.Losowanie automatycznie wpisywane jest do bazy danych po wciśnięciu zielonego przycisku obok pola edycji. W czasie losowania gry wpisujemy w to pole kolejne wylosowane liczby podczas losowania w studio telewizyjnym. Po wciśnięciu przycisku obok pola zawartośc pola zostaje posortowana i dopisana do bazy z numerewm losowania następnym i aktualną (dzisiejszą) datą. Po wpisaniu losowania przycisk staje się nieaktywny. Znaczy to że losowanie z dzisiejszą datą już w bazie istnieje. Zapobiega to podwójnemu wpisowi losowania. Ale można program oszukać:</p>
-<p>&nbsp;</p>
-<p>Przykład :</p>
-<p>Jako ostatnie losowanie mamy w bazie losowanie np. z dnia 02-03-03 dziś jest np. 02-03-07 z kolektury wzieliśmy wyniki losowań od dnia 4 do 6 marca i robimy to tak :</p>
-<p>1. Wybieramy z bocznego paska wyboru panel "Baza Losowań".</p>
-<p>2. wpisujemy do pola edycji losowanie z 4 marca 2009</p>
-<p>3. Wciskamy zielony przycisk obok pola edycji jest aktywny bo ostatnie losowanie jest &nbsp;z mniejszą datą niż data aktualna.</p>
-<p>5. W tabeli losowań pojawi się nowy wiersz z losowaniem które właśnie wprowadziliśmy. Z pomocą myszki rozwijamy w tym wierszu kalendarz z pola daty losowania które &nbsp;wprowadziliśmy i poprawiamy datę na własciwą i wybieramy datę 02-03-04.</p>
-<p>6. Ponieważ zielony przycisk jest w dalszym ciągu nieaktywny musimy odświerzyć całą &nbsp;bazę gry. Można to zrobić w następujący sposób: należy wybrać z bocznego paska &nbsp;zakładkę innej gry np. "Express Lotek" i jeszcze raz ponownie w ten sam sposób &nbsp;wrócić do gry "Multilotek". Zielony przycisk będzie już aktywny i umożliwi &nbsp; &nbsp;wprowadzenie następnego losowania w tym celu należy powtórzyć poprzednie kroki &nbsp; poczynając od pkt.1</p>
-<p>&nbsp;</p>
-<p>Jest to trochę uciążliwy sposób ale dla kilku losowań możliwy do stosowania.</p>
-<p class="p_Headingredunderlined"><span class="f_Headingredunderlined">&nbsp;</span></p>
-<p class="p_Headingredunderlined"><span class="f_Headingredunderlined">Sposób 4 :</span></p>
-<p class="p_Headingredunderlined"><span class="f_Headingredunderlined">&nbsp;</span></p>
-<p>Każdy program wyposażony jest w program narzedziowy do obsługi wszystkich baz danych "Base Driver.exe". Programem tym można edytowac i uzupełniać dowolną bazę danych gry a w szczególności bazę wyników losowań.</p>
-<p>&nbsp;</p>
-<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">&nbsp;</span></p>
-<p class="p_Code2" style="border-top: none; border-bottom: none;"><span class="f_Code2">Uwaga : Manipulację zawartością baz danych zaleca się tylko doświadczonym uzytkownikom. Jeżeli chcesz coś zmieniać w bazach danych, pamiętaj że dobrym zwtczajem jest zrobienie kopii roboczrj katalogu Databases.</span></p>
-<p>&nbsp;</p>
-
-</div>
-</td></tr></table>
-</div>
-
-<!-- Placeholder for topic body end. -->
-</body>
+       </script>
+       <div id="lang-menu">
+        <ul ; class="linklist navlinks" style="font-size:12px">
+         <li class="icon_home">
+          <a class="flag en-flag" href="javascript:void(0)" onclick="return switchlang('en');">
+           English
+          </a>
+          &raquo;
+         </li>
+         <li class="icon_home">
+          <a class="flag de-flag" href="javascript:void(0)" onclick="return switchlang('de');">
+           Deutsch
+          </a>
+          &raquo;
+         </li>
+         <li class="icon_home">
+          <a class="flag es-flag" href="javascript:void(0)" onclick="return switchlang('es');">
+           Espa&Abreve;&aogon;ol
+          </a>
+          &raquo;
+         </li>
+         <li class="icon_home">
+          <a class="flag fr-flag" href="javascript:void(0)" onclick="return switchlang('fr');">
+           Fran&Abreve;&sect;ais
+          </a>
+          &raquo;
+         </li>
+         <li class="icon_home">
+          <a class="flag it-flag" href="javascript:void(0)" onclick="return switchlang('it');">
+           Italiano
+          </a>
+          &raquo;
+         </li>
+         <li class="icon_home">
+          <a class="flag ru-flag" href="javascript:void(0)" onclick="return switchlang('ru');">
+           R&Nacute;&Nacute;&Nacute;&Dstrok;&scedil;&Dstrok;&cedil;&Dstrok;&scaron;
+          </a>
+          &raquo;
+         </li>
+        </ul></div>
+      </td>
+     </tr>
+    </table>
+    <!-- Placeholder for topic body begin. -->
+    <div class="goog-trans-section" id="topic_body" lang="pl">
+     <table border="0" cellpadding="5" cellspacing="0" width="100%">
+      <tr valign="top">
+       <td align="left">
+        <div class="goog-trans-control">
+         <a class="goog-te-gadget-link" href="javascript:void(0)">
+          <span class="goog-te-sectional-gadget-link-text">
+          </span>
+         </a>
+        </div>
+        <div class="content">
+         <p>
+          Istnieje kilka sposob&Abreve;&lstrok;w wprowadzania danych je&Lacute;&zacute;eli nie posiadasz &Lacute;&Auml;cza internetowego lub po&Lacute;aczenie nie dzia&Lacute;a:
+         </p>
+         <p>
+          &nbsp;
+         </p>
+         <p class="p_Headingredunderlined">
+          <span class="f_Headingredunderlined">
+           Spos&Abreve;&lstrok;b 1 :
+          </span>
+         </p>
+         <p>
+          &nbsp;
+         </p>
+         <p>
+          1. Uruchamiamy program LottoCad
+         </p>
+         <p>
+          &nbsp;
+         </p>
+         <p>
+          2. Z bocznej zak&Lacute;adki wybieramy opcj&Auml; baza losowa&Lacute;
+         </p>
+         <p>
+          &nbsp;
+         </p>
+         <p>
+          3. Umieszczmy kursor na ostatnim losowaniu
+         </p>
+         <p>
+          &nbsp;
+         </p>
+         <p>
+          4. Na lewym bocznym pasku ostatniego losowania powinien si&Auml; znajdowa&Auml; symbol strza&Lacute;ki skierowanej w prawo lub jak kto woli symbol tr&Abreve;&lstrok;jk&Auml;ta z wierzcho&Lacute;kiem skierowanym w lewo
+          <img alt="strza&Lacute;ka" border="0" height="17" src="strza&lstrok;ka.png" width="15">
+          &nbsp; symbol ten oznacza &Lacute;&zacute;e baza znajduje si&Auml; w stanie przegl&Auml;dania. Je&Lacute;&zacute;eli na lewym szarym bocznym pasku tabeli losowa&Lacute; znajduje si&Auml; symbol gwiazdki kt&Abreve;&lstrok;ry, oznacza ze baza znajduje si&Auml; w stanie wprowadzania (wstawiania) danych. Przy nieprawid&Lacute;owym wciskaniu klawiszy &nbsp;w pasku tym mo&Lacute;&zacute;e pojawi&Auml; si&Auml; symbol przypominaj&Auml;cy kszta&Lacute;tem du&Lacute;&zacute;&Auml; liter&Auml; I oznacza on &Lacute;&zacute;e baza jest w stanie edycji i dane s&Auml; w&Lacute;a&Lacute;nie modyfikowane. Aby przywr&Abreve;&lstrok;ci&Auml; &nbsp; stan przegl&Auml;dania i ewentualnie uniewa&Lacute;&zacute;ni&Auml; wprowadzone zmiany nale&Lacute;&zacute;y wcisn&Auml;&Auml; przycisk ESC (nawet dwukrotnie). W&Abreve;&lstrok;wczas stan bazy przywr&Abreve;&lstrok;cimy do stanu przegl&Auml;dania a wprowadzone &Lacute;&zacute;le dane zostan&Auml; uniewa&Lacute;&zacute;nione.
+         </p>
+         <p>
+          &nbsp;
+         </p>
+         <p>
+          5. Aby wprowadzi&Auml; nowy wiersz mo&Lacute;&zacute;na u&Lacute;&zacute;y&Auml; klawisza strza&Lacute;ki w d&Abreve;&lstrok;&Lacute; (Down) &nbsp;lub wcisn&Auml;&Auml; klawisz INSERT (wstaw), winien si&Auml; pojawi&Auml; w tabeli nowy wiersz gotowy do wprowadzania danych z symbolem gwiazdki.6. Nale&Lacute;&zacute;y ustawi&Auml; kursor na pierwszym polu i wprowadzi&Auml; kolejny numer losowania i kolejno dat&Auml; w obowi&Auml;zuj&Auml;cym w tabeli formacie RR-MM-DD oraz w kolejnych kom&Abreve;&lstrok;rkach liczby losowania. Do nast&Auml;pnej kom&Abreve;&lstrok;rki &nbsp;przechodzi si&Auml; za pomoc&Auml; klawisza ENTER lub kursorem myszki. &nbsp; Po wprowadzeniu ostatniego ( dla Multilotka 20-ej liczby losowania) i wci&Lacute;noi&Auml;ciu Enter losowanie zostanie dopisane do bazy i w bocznym pasku pojawi si&Auml; symbol tr&Abreve;&lstrok;jk&Auml;ta lub strza&Lacute;ki.
+         </p>
+         <p>
+          &nbsp;
+         </p>
+         <p class="p_ImageCaption">
+          <span class="f_ImageCaption">
+           Inne porady zwi&Auml;zane z arkuszem bazy losowa&Lacute; :
+          </span>
+         </p>
+         <p class="p_ImageCaption">
+          <span class="f_ImageCaption">
+           &nbsp;
+          </span>
+         </p>
+         <p>
+          &nbsp; Je&Lacute;&zacute;eli w bocznym szarym pasku znajduje si&Auml; symbol tr&Abreve;&lstrok;jk&Auml;ta lub strza&Lacute;ki mo&Lacute;&zacute;na usun&Auml;&Auml; nieprawid&Lacute;owe wiersze przez wci&Lacute;ni&Auml;cie jednocze&Lacute;nie klawiszy &nbsp;CTRL i DEL. Pojawi si&Auml; w&Abreve;&lstrok;wczas zapytanie "Czy usun&Auml;&Auml; zaznaczony rekord ?" kt&Abreve;&lstrok;re nale&Lacute;&zacute;y potwierdzi&Auml; lub zrezygnowa&Auml; z usuwania rekordu.
+         </p>
+         <p>
+          &nbsp; Z menu podr&Auml;cznego (prawy myszki) &nbsp;mo&Lacute;&zacute;na wybra&Auml; lub zgasi&Auml; &nbsp;opcj&Auml; "zaznaczanie wielu rekord&Abreve;&lstrok;w dozwolone". Ocja zaznaczanie wielu dozwolone &nbsp;pozwala zaznacza&Auml; (np do usuni&Auml;cia) wiele rekord&Abreve;&lstrok;w bazy. Zaznaczanie wielu
+         </p>
+         <p>
+          &nbsp; przeprowadza si&Auml; w nast&Auml;puj&Auml;cy spos&Abreve;&lstrok;b: zaznaczamy klikni&Auml;ciem myszki pierwszy wiersz &nbsp;tabeli a nast&Auml;pnie z jednocze&Lacute;nie wci&Lacute;ni&Auml;tym klawiszem SHIFT zaznaczamy wiersz ostatni. &nbsp; Lub zaznaczamy wiersz pierwszy i z wci&Lacute;ni&Auml;tym klawiszem SHIFT klawiszami strza&Lacute;ka w d&Abreve;&lstrok;&Lacute; &nbsp; &nbsp;(DOWN) lub strza&Lacute;ka w g&Abreve;&lstrok;r&Auml; (UP) przeci&Auml;gamy zaznaczenie do wiersza ko&Lacute;cowego zaznaczania. &nbsp;Po zaznaczeniu wielu rekord&Abreve;&lstrok;w mo&Lacute;&zacute;liwe jest ich jednoczesne usuniecie z pomoc&Auml; &nbsp;jednoczesnego wci&Lacute;ni&Auml;cia klawiszy CTRL i DEL. W&Abreve;&lstrok;wczas zamiast pytania o usuni&Auml;cie &nbsp; pojedynczego rekordu pojawi si&Auml; pytanie :" usun&Auml;&Auml; wszystkie zaznaczone rekordy?".
+         </p>
+         <p class="p_Headingredunderlined">
+          <span class="f_Headingredunderlined">
+           &nbsp;
+          </span>
+         </p>
+         <p class="p_Headingredunderlined">
+          <span class="f_Headingredunderlined">
+           Spos&Abreve;&lstrok;b 2:
+          </span>
+         </p>
+         <p class="p_Headingredunderlined">
+          <span class="f_Headingredunderlined">
+           &nbsp;
+          </span>
+         </p>
+         <p>
+          Uzupe&Lacute;nianie bazy losowa&Lacute; przez import z pliku tekstowego: &nbsp;
+         </p>
+         <p>
+          &nbsp;
+         </p>
+         <p>
+          Najszybciej i najpro&Lacute;ciej mo&Lacute;&zacute;na to zrobi&Auml; tworz&Auml;c plik tekstowy trzymaj&Auml;c si&Auml; okre&Lacute;lonych zasad:
+         </p>
+         <p>
+          &nbsp;
+         </p>
+         <p>
+          Do pliku nale&Lacute;&zacute;y wpisywa&Auml; dane pos&Lacute;uguj&Auml;c si&Auml; np. Notepadem lub panelem tekstowym "zak&Lacute;ady" z programu LottoCAD. Przy u&Lacute;&zacute;yciu panela tekstowego z programu LottoCAD nale&Lacute;&zacute;y najpierw pos&Lacute;uguj&Auml;c si&Auml; podr&Auml;cznym menu
+         </p>
+         <p>
+          panela tekstowego (prawy myszki) wy&Lacute;&Auml;czy&Auml; opcj&Auml; "sprawdzanie sk&Lacute;&Auml;dni wy&Lacute;&Auml;czone". Je&Lacute;&zacute;eli u&Lacute;&zacute;ywamy edytora poprostu wpisujemy kolejno numer losowania dat&Auml; w formacie RR-MM-DD lub RRRR-MM-DD i kolejne numery losowa&Lacute; jako oddzielenie kolejnych kolumn mo&Lacute;&zacute;na u&Lacute;&zacute;y&Auml; dowolnego znaku z ;:' lub poprostu spacji &nbsp;(zaleca si&Auml; &Lacute;rednik ;). Plik ten zapisujemy w dowolnym miejscu na dysku jako plik z rozsze&Lacute;&zacute;eniem txt ( przyk&Lacute;ad: losowanie1.txt). Po zapisaniu pliku dla wersji po 1 marca 2009 wybieramy z menu "narz&Auml;dzia" opcj&Auml; aktualizuj baz&Auml; losowa&Lacute;. W formularzu importu rozwijamy opcje dodatkowe przyciskiem "poka&Lacute;&zacute; opcje" i zaznaczamy import z pliku i opcj&Auml; TXT. Po wci&Lacute;ni&Auml;ciu klawisza import zostaniemy zapytani o lokalizacj&Auml; pliku tekstowego kt&Abreve;&lstrok;ry wczesniej utworzyli&Lacute;my i zapisalismy na dysku. Program automatycznie dopisze losowania do bazy. je&Lacute;&zacute;eli posiadasz wersj&Auml; programu z przed 1 marca 2009 importu z pliku tekstowego &nbsp;mo&Lacute;&zacute;na dokona&Auml; w ten sam spos&Abreve;&lstrok;b co wy&Lacute;&zacute;ej lecz nale&Lacute;&zacute;y wy&Lacute;&Auml;czy&Auml; program LottoCAd i wybra&Auml; program "Obs&Lacute;uga baz danych" (BaseDriver.exe) i otworzy&Auml; plik bazy z wynikami losowa&Lacute; ( z rozszerzeniem *,dat) dla multilotka jest to plik "multi.dat". W programie tym mo&Lacute;&zacute;na r&Abreve;&lstrok;wnie&Lacute;&zacute; wprowadza&Auml; losowania w spos&Abreve;&lstrok;b r&Auml;czny podany wy&Lacute;&zacute;ej. Import z pliku uruchamia si&Auml; wybieraj&Auml;c z menu opcj&Auml; "Import". Tworzenie pliku tekstowego mo&Lacute;&zacute;na sobie u&Lacute;atwi&Auml; uruchamiaj&Auml;c najpierw opcj&Auml; "export" i zapisa&Auml; plik tekstowy na dysku z istniej&Auml;cych rekord&Abreve;&lstrok;w bazy danych a nast&Auml;pnie w edytorze tekstowym dopisa&Auml; losowania kt&Abreve;&lstrok;re chcemy do&Lacute;ozy&Auml; do bazy trzymaj&Auml;c si&Auml; zasad wprowadzania kt&Abreve;&lstrok;re program wyeksportowa&Lacute;. Wybierz taki format eksportu kt&Abreve;&lstrok;ry zapewni Ci &Lacute;atwe wpisywanie np. nie eksportuj pliku w formacie z ogranicznikami p&Abreve;&lstrok;l w postaci "pole". Unikniesz wtedy &Lacute;&zacute;mudnego dopisywania wynik&Abreve;&lstrok;w i wielokrotnego wprowadzania symbolu (").
+         </p>
+         <p>
+          &Lacute;atwo plik tekstowy zrobisz u&Lacute;&zacute;ywaj&Auml;c excela. Przed wpisywaniem kolumn&Auml; drug&Auml; w excelu Po wype&Lacute;nieniu kolumn kolejno numer losowania, data losowania, liczba 1, liczba 2 ..... , nale&Lacute;&zacute;y wyeksportowa&Auml; plik w formacie csv ( tekst rozdzielany &Lacute;rednikami). I plik do importu gotowy bez zwracania uwagi na formatowanie.
+         </p>
+         <p>
+          &nbsp;
+         </p>
+         <p>
+          Przyk&Lacute;ad: fragment prawid&Lacute;owego pliku importu wormat CSV pola oddzielane &Lacute;rednikami:
+         </p>
+         <p>
+          &nbsp;
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           1725;02-04-07;1;6;11;16;21;26;31;36;41;46;51;56;61;66;71;76;77,78;79;80
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           1726;02-04-08;2;7;12;17;22;27;32;37;42;47;52;57;62;67;72;76;77;78;79;80
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           1727;02-04-09;3;8;13;18;23;28;33;38;43;48;53;58;63;68;73;76;78;78;79;80
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           1728;02-04-10;4;9;14;19;24;29;34;39;44;49;54;59;64;69;74;76;79;78;79;80
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           1729;02-04-11;5;10;15;20;25;30;35;40;45;50;55;60;65;70;74;75;76;78;79;80
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           1730;02-04-12;6;11;16;21;26;31;36;41;46;51;56;61;66;71;73;76;77;78;79;80
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           1731;02-04-13;7;12;17;22;27;32;37;42;47;52;57;62;67;70;72;77;77;78;79;80
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           1732;02-04-14;8;13;18;23;28;33;38;43;48;53;58;63;68;69;73;78;77;78;79;80
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           1733;02-04-15;9;14;19;24;29;34;39;44;49;54;59;64;65;69;74;79;77;78;79;80
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           1734;02-04-16;10;15;20;25;30;35;40;45;50;55;60;61;65;70;75;80;77;78;79;80
+          </span>
+         </p>
+         <p class="p_Code" style="border-top: none; border-bottom: none;">
+          <span class="f_Code">
+           1735;02-04-17;11;16;21;26;31;36;41;46;51;56;57;61;66;71;76;81;77;78;79;80
+          </span>
+         </p>
+         <p>
+          &nbsp;
+         </p>
+         <p class="p_Headingredunderlined">
+          <span class="f_Headingredunderlined">
+           Spos&Abreve;&lstrok;b 3 :
+          </span>
+         </p>
+         <p class="p_Headingredunderlined">
+          <span class="f_Headingredunderlined">
+           &nbsp;
+          </span>
+         </p>
+         <p>
+          W programie LottoCAD znajduje si&Auml; g&Lacute;&Abreve;&lstrok;wne pole edycji losowa&Lacute;. Pole to wykorzystywane jest przez bardzo wiele opcji programu mi&Auml;dzy innymi s&Lacute;uzy do wprowadzania aktualnego losowania.Losowanie automatycznie wpisywane jest do bazy danych po wci&Lacute;ni&Auml;ciu zielonego przycisku obok pola edycji. W czasie losowania gry wpisujemy w to pole kolejne wylosowane liczby podczas losowania w studio telewizyjnym. Po wci&Lacute;ni&Auml;ciu przycisku obok pola zawarto&Lacute;c pola zostaje posortowana i dopisana do bazy z numerewm losowania nast&Auml;pnym i aktualn&Auml; (dzisiejsz&Auml;) dat&Auml;. Po wpisaniu losowania przycisk staje si&Auml; nieaktywny. Znaczy to &Lacute;&zacute;e losowanie z dzisiejsz&Auml; dat&Auml; ju&Lacute;&zacute; w bazie istnieje. Zapobiega to podw&Abreve;&lstrok;jnemu wpisowi losowania. Ale mo&Lacute;&zacute;na program oszuka&Auml;:
+         </p>
+         <p>
+          &nbsp;
+         </p>
+         <p>
+          Przyk&Lacute;ad :
+         </p>
+         <p>
+          Jako ostatnie losowanie mamy w bazie losowanie np. z dnia 02-03-03 dzi&Lacute; jest np. 02-03-07 z kolektury wzieli&Lacute;my wyniki losowa&Lacute; od dnia 4 do 6 marca i robimy to tak :
+         </p>
+         <p>
+          1. Wybieramy z bocznego paska wyboru panel "Baza Losowa&Lacute;".
+         </p>
+         <p>
+          2. wpisujemy do pola edycji losowanie z 4 marca 2009
+         </p>
+         <p>
+          3. Wciskamy zielony przycisk obok pola edycji jest aktywny bo ostatnie losowanie jest &nbsp;z mniejsz&Auml; dat&Auml; ni&Lacute;&zacute; data aktualna.
+         </p>
+         <p>
+          5. W tabeli losowa&Lacute; pojawi si&Auml; nowy wiersz z losowaniem kt&Abreve;&lstrok;re w&Lacute;a&Lacute;nie wprowadzili&Lacute;my. Z pomoc&Auml; myszki rozwijamy w tym wierszu kalendarz z pola daty losowania kt&Abreve;&lstrok;re &nbsp;wprowadzili&Lacute;my i poprawiamy dat&Auml; na w&Lacute;asciw&Auml; i wybieramy dat&Auml; 02-03-04.
+         </p>
+         <p>
+          6. Poniewa&Lacute;&zacute; zielony przycisk jest w dalszym ci&Auml;gu nieaktywny musimy od&Lacute;wierzy&Auml; ca&Lacute;&Auml; &nbsp;baz&Auml; gry. Mo&Lacute;&zacute;na to zrobi&Auml; w nast&Auml;puj&Auml;cy spos&Abreve;&lstrok;b: nale&Lacute;&zacute;y wybra&Auml; z bocznego paska &nbsp;zak&Lacute;adk&Auml; innej gry np. "Express Lotek" i jeszcze raz ponownie w ten sam spos&Abreve;&lstrok;b &nbsp;wr&Abreve;&lstrok;ci&Auml; do gry "Multilotek". Zielony przycisk b&Auml;dzie ju&Lacute;&zacute; aktywny i umo&Lacute;&zacute;liwi &nbsp; &nbsp;wprowadzenie nast&Auml;pnego losowania w tym celu nale&Lacute;&zacute;y powt&Abreve;&lstrok;rzy&Auml; poprzednie kroki &nbsp; poczynaj&Auml;c od pkt.1
+         </p>
+         <p>
+          &nbsp;
+         </p>
+         <p>
+          Jest to troch&Auml; uci&Auml;&Lacute;&zacute;liwy spos&Abreve;&lstrok;b ale dla kilku losowa&Lacute; mo&Lacute;&zacute;liwy do stosowania.
+         </p>
+         <p class="p_Headingredunderlined">
+          <span class="f_Headingredunderlined">
+           &nbsp;
+          </span>
+         </p>
+         <p class="p_Headingredunderlined">
+          <span class="f_Headingredunderlined">
+           Spos&Abreve;&lstrok;b 4 :
+          </span>
+         </p>
+         <p class="p_Headingredunderlined">
+          <span class="f_Headingredunderlined">
+           &nbsp;
+          </span>
+         </p>
+         <p>
+          Ka&Lacute;&zacute;dy program wyposa&Lacute;&zacute;ony jest w program narzedziowy do obs&Lacute;ugi wszystkich baz danych "Base Driver.exe". Programem tym mo&Lacute;&zacute;na edytowac i uzupe&Lacute;nia&Auml; dowoln&Auml; baz&Auml; danych gry a w szczeg&Abreve;&lstrok;lno&Lacute;ci baz&Auml; wynik&Abreve;&lstrok;w losowa&Lacute;.
+         </p>
+         <p>
+          &nbsp;
+         </p>
+         <p class="p_Code2" style="border-top: none; border-bottom: none;">
+          <span class="f_Code2">
+           &nbsp;
+          </span>
+         </p>
+         <p class="p_Code2" style="border-top: none; border-bottom: none;">
+          <span class="f_Code2">
+           Uwaga : Manipulacj&Auml; zawarto&Lacute;ci&Auml; baz danych zaleca si&Auml; tylko do&Lacute;wiadczonym uzytkownikom. Je&Lacute;&zacute;eli chcesz co&Lacute; zmienia&Auml; w bazach danych, pami&Auml;taj &Lacute;&zacute;e dobrym zwtczajem jest zrobienie kopii roboczrj katalogu Databases.
+          </span>
+         </p>
+         <p>
+          &nbsp;
+         </p>
+        </div>
+       </td>
+      </tr>
+     </table>
+    </div>
+    <!-- Placeholder for topic body end. -->
+   </main>
+  </div>
+ </body>
 </html>
