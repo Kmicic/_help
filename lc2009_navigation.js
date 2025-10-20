@@ -1,8 +1,8 @@
-/* ---------------- Script © 2005-2009 EC Software -----------------
+/* ---------------- Script ï¿½ 2005-2009 EC Software -----------------
    This script was created by Help & Manual and is part of the      
    "Browser-based Help" export format. This script is designed for  
    use in combination with the output of Help & Manual and must not 
-   be used outside this context.     http://www.helpandmanual.com   
+   be used outside this context.     http://#   
                                                                     
    Do not modify this file! It will be overwritten by Help & Manual.
 ----------------------------------------------------------------- */

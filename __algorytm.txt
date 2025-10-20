@@ -1,0 +1,79 @@
+# zmienne z tekstem przycisków
+top_button ='''
+       <span class="top_button">
+        <a href="{link}"><img alt="First" border="0" src="images/left_left_button.png"/></a>
+       </span>
+	   '''
+prev_button ='''
+       <span class="prev_button">
+        <a href="{link}"><img alt="Prev" border="0" src="images/left_button.png"/></a>
+       </span>
+	   '''
+next_button ='''
+       <span class="next_button">
+        <a href="{link}"><img alt="Prev" border="0" src="images/right_button.png"/></a>
+       </span>
+	   '''
+	   
+str_build = "<span>" # string do budowy tagu
+Jeżeli we fragmencie:
+
+```html
+<span style="font-size: 9pt">
+        <a class="inline-button" href="contents.htm">
+         <em>
+          LC
+         </em>
+         <span>
+          &lt;&lt;
+         </span>
+        </a>
+        &nbsp;
+        <!--<a href="contents.htm">Top</a>-->
+        <a class="inline-button" href="toolbars.htm">
+         <em>
+          LC
+         </em>
+         <span>
+          &lt;
+         </span>
+        </a>
+        &nbsp;
+        <!--<a href="toolbars.htm">Previous</a>&nbsp;-->
+        <a class="inline-button" href="tool_combine.htm">
+         <em>
+          LC
+         </em>
+         <span>
+          &gt;
+         </span>
+        </a>
+        &nbsp;
+        <!--<a href="tool_combine.htm">Next</a>-->
+       </span>
+```
+	znajdziesz pattern : 
+        "nav-top": str_build.add(top_button)
+        "nav-prev": str_build.add(prev_button)
+        "nav-next": str_build.add(next_button)
+    }
+	
+atr_build.add("</span>")
+zamień cały fragment na str_build 
+wówczas otrzymamy pewną statyczną zawartość tagu html:
+
+```html
+   <span>
+       <span class="top_button">
+        <a href="contents.htm"><img alt="First" border="0" src="images/left_left_button.png"/></a>
+       </span>
+        &nbsp;
+        <span class="prev_button">
+        <a href="toolbars.htm"><img alt="Back" border="0" src="images/left_button.png"/></a>
+        </span>
+        &nbsp;
+        <span class="next_button">
+        <a href="tool_combine.htm"><img alt="Next" border="0" src="images/right_button.png"/></a>
+        </span>
+	</span>
+```	

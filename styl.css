@@ -1,13 +1,16 @@
-/* 
-  ==========================================================================
+@import url("default.css");
+/*
+==========================================================================
+
   WERSJA OSTATECZNA (2024-07-29 - Uproszczona logika)
   - Wszystkie podmenu otwierają się w prawo z 90% nachodzeniem na rodzica.
   - Usunięto skomplikowane wyjątki dla ostatnich elementów.
   - To rozwiązanie jest najprostsze i najbardziej stabilne.
   ==========================================================================
+
 */
 body {
-    font-family: sans-serif;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
     margin: 0;
     background-color: #f4f4f4; /* Jasnoszare tło dla całej strony */
 }
@@ -23,12 +26,15 @@ body {
 }
 
 /* ==========================================================================
+
    NOWE STYLE MENU NAWIGACYJNEGO (z nachodzeniem)
+
    ========================================================================== */
 
 /* --- Kontener Głównego Menu --- */
 .menu-nawigacyjne {
     width: 100%;
+    font-size: small;
     background-color: #343a40; /* Ciemnoszary */
     border-bottom: 3px solid #007bff; /* Niebieski akcent */
     box-sizing: border-box;
@@ -147,12 +153,18 @@ body {
 }
 
 /* ==========================================================================
+
    POZOSTAŁE STYLE
+
    ========================================================================== */
 
 .glowna-tresc, .glowna-tresc p, .glowna-tresc font {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, serif;
     font-size: 12pt;
+}
+
+.f_Heading1 {
+    color: #ffffff; /* Ustawia kolor czcionki nagłówka na biały */
 }
 
 .inline-button {
@@ -185,6 +197,7 @@ body {
    background: black;
    color: white;
 }
+
 
 /* --- Style kolorów --- */
 .s1, .s5, .s9 { background-color: #FFFFFF; color: #008000; }
@@ -221,6 +234,23 @@ ul.navlinks {
     border-bottom: 1px solid #FFFFFF;
     font-weight: bold;
 }
+
+img.left {
+    float: left;
+    margin: 0 10px 10px 0;
+    border: 1px solid #CCCCCC;
+    padding: 2px;
+    background-color: #F8F8F8;
+}
+
+img.right {
+    float: right;
+    margin: 0 0 10px 10px;
+    border: 1px solid #CCCCCC;
+    padding: 2px;
+    background-color: #F8F8F8;
+}   
+
 a.flag {color: #AAA; font-size:0.8em;text-decoration:none;}
 a.flag:hover {color:#FFF;text-decoration:underline;}
 a.en-flag {padding-left:21px; background: url(images/flag/en.png) top left no-repeat;}

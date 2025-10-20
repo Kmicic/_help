@@ -1,0 +1,135 @@
+Title,Url
+1 LottoCAD,http://lc.yum.pl/
+1.1 Wprowadzenie,http://lc.yum.pl/_help/contents.htm
+1.2 O Programie,http://lc.yum.pl/_help/about.htm
+2 Panel główny programu,http://lc.yum.pl/_help/main_panel.htm
+2.1 Elementy Formularzy,http://lc.yum.pl/_help/formular_elements.htm
+2.1.1 Panele tekstowe,http://lc.yum.pl/_help/panel_text.htm
+2.1.1.1 Menu kontekstowe pola zaklady,http://lc.yum.pl/_help/panel_text_popmenu.htm
+2.1.2 Tabela losowan,http://lc.yum.pl/_help/panel_wheels.htm
+2.1.2.1 zaznaczanie liczb,http://lc.yum.pl/_help/panel_wheels_highlight.htm
+2.1.2.2 wybieranie liczb,http://lc.yum.pl/_help/panel_wheels_selection.htm
+2.1.3 Tendencje,http://lc.yum.pl/_help/panel_tend.htm
+2.1.3.1 TENDENCJE,http://lc.yum.pl/_help/panel_tend_descr.htm
+2.1.4 Baza zawartych zakładów,http://lc.yum.pl/_help/panel_ticketbase.htm
+2.1.4.1 BAZA ZAKŁADÓW,http://lc.yum.pl/_help/panel_ticketbase_descr.htm
+2.1.5 Szybki pasek wyboru,http://lc.yum.pl/_help/quick_bar.htm
+2.1.6 Mapa liczb,http://lc.yum.pl/_help/panel_maps.htm
+2.1.7 Liga liczb,http://lc.yum.pl/_help/panel_league.htm
+2.1.7.1 LIGA LICZB,http://lc.yum.pl/_help/panel_league_descr.htm
+2.2 Menu i paski narzędziowe,http://lc.yum.pl/_help/menu_an_toolbar.htm
+2.2.1 Menu główne,http://lc.yum.pl/_help/menu_main.htm
+2.2.1.1 Plik,http://lc.yum.pl/_help/menu_file.htm
+2.2.1.1.1 Otwórz z ... pliku tekstowego,http://lc.yum.pl/_help/menu_file_load_save_to_file.htm
+2.2.1.1.2 Zapisz do ... bazy zakładów,http://lc.yum.pl/_help/menu_file_load_save_to_base.htm
+2.2.1.1.3 Drukuj, podgląd wydruku,http://lc.yum.pl/_help/menu_file_print.htm
+2.2.1.1.4 Menadżer gier liczbowych,http://lc.yum.pl/_help/menu_file_game_manager.htm
+2.2.1.2 Edycja,http://lc.yum.pl/_help/menu_edit.htm
+2.2.1.2.1 Opcje pola tekstowego,http://lc.yum.pl/_help/text_option.htm
+2.2.1.3 Filtry,http://lc.yum.pl/_help/menu_filters.htm
+2.2.1.3.1 Filtry opis,http://lc.yum.pl/_help/menu_filters_descr.htm
+2.2.1.3.1.1 Sumy,http://lc.yum.pl/_help/menu_filters_sum.htm
+2.2.1.3.1.2 Parzystości,http://lc.yum.pl/_help/menu_filters_parity.htm
+2.2.1.3.1.3 Szeregu kolejnych liczb,http://lc.yum.pl/_help/menu_filters_string.htm
+2.2.1.3.1.4 Filtr róznicy,http://lc.yum.pl/_help/menu_filters_diff.htm
+2.2.1.3.1.5 Przyklad filtracji SPS,http://lc.yum.pl/_help/menu_filters_what_use.htm
+2.2.1.3.1.6 Filtr Trafień,http://lc.yum.pl/_help/menu_filters_hits.htm
+2.2.1.3.1.7 Filtr zakresow,http://lc.yum.pl/_help/filtrzakresow.htm
+2.2.1.3.1.8 FiltrAVG,http://lc.yum.pl/_help/filtravg.htm
+2.2.1.3.1.9 FiltrFHD,http://lc.yum.pl/_help/filtrhd.htm
+2.2.1.3.1.10 FiltrMHD,http://lc.yum.pl/_help/filtrmhd.htm
+2.2.1.3.1.11 Przykład filtracji,http://lc.yum.pl/_help/filter_przyklad.htm
+2.2.1.3.1.12 Filtr spacji,http://lc.yum.pl/_help/filtrspacji.htm
+2.2.1.4 Kombinacje,http://lc.yum.pl/_help/menu_combine.htm
+2.2.1.4.1 Kombinacje liczb (tasowanie),http://lc.yum.pl/_help/menu_combine_dialog.htm
+2.2.1.4.2 Wybór liczb do kombinacji,http://lc.yum.pl/_help/menu_combine_select_number.htm
+2.2.1.4.3 Rodzaje funkcji losujących (kombinacji),http://lc.yum.pl/_help/combine_function.htm
+2.2.1.4.3.1 Kombinacja Równomierna,http://lc.yum.pl/_help/comb_equal.htm
+2.2.1.4.3.2 Kombinacja Przypadkowa,http://lc.yum.pl/_help/comb_random.htm
+2.2.1.4.3.3 Kombinacja Liniowa,http://lc.yum.pl/_help/comb_line.htm
+2.2.1.4.3.4 Kombinacja Wykładnicza,http://lc.yum.pl/_help/comb_expotential.htm
+2.2.1.4.3.5 Kombinacja ChybiłTrafił XX,http://lc.yum.pl/_help/comb_quick_pick.htm
+2.2.1.4.3.6 Kombinacja wszystkich XX liczb,http://lc.yum.pl/_help/comb_all.htm
+2.2.1.4.3.7 Kombinacja Liniowa XX,http://lc.yum.pl/_help/comb_line_xx.htm
+2.2.1.4.3.8 Kombinacja Wykładnicza XX,http://lc.yum.pl/_help/comb_expotential_xx.htm
+2.2.1.4.3.9 Kombinacje przemienne,http://lc.yum.pl/_help/comb_swap.htm
+2.2.1.4.3.10 Kombinacje Gaussa,http://lc.yum.pl/_help/comb_gauss.htm
+2.2.1.4.3.11 Kombinacje systemowe,http://lc.yum.pl/_help/comb_systems.htm
+2.2.1.4.3.12 Inne kombinacje,http://lc.yum.pl/_help/comb_another.htm
+2.2.1.4.4 Opcje dla kategorii liczb specjalnych,http://lc.yum.pl/_help/option_spec_category.htm
+2.2.1.4.5 Algorytm podziału liczb gry na kategorie specjalne.,http://lc.yum.pl/_help/spec_numb_algorythm.htm
+2.2.1.4.6 Limity generacji zakładow,http://lc.yum.pl/_help/options_limits.htm
+2.2.1.4.7 Skróć do gwarancji,http://lc.yum.pl/_help/abbrev_brute.htm
+2.2.1.4.8 Powtórz i sprawdź z polem edycji,http://lc.yum.pl/_help/menu_again_and_check.htm
+2.2.1.4.9 Powtórz i sprawdź w historii,http://lc.yum.pl/_help/menu_again_and_check_history.htm
+2.2.1.4.10 Odfiltrowany system pełny,http://lc.yum.pl/_help/menu_full_syst_filtered.htm
+2.2.1.4.11 Systemy strefowe,http://lc.yum.pl/_help/systemystrefowekrokpokroku.htm
+2.2.1.4.12 Kombinacja na jej numer,http://lc.yum.pl/_help/combine_num_combine.htm
+2.2.1.5 Raporty,http://lc.yum.pl/_help/menu_report.htm
+2.2.1.5.1 Raport mapy liczb,http://lc.yum.pl/_help/raportmapyliczb.htm
+2.2.1.5.2 Raport o filtach losowan,http://lc.yum.pl/_help/menu_report_whells.htm
+2.2.1.5.3 Raport trafien  liczb z głownego pola edycji,http://lc.yum.pl/_help/menu_report_traf_los.htm
+2.2.1.5.4 Raport trafien we wszystkich losowaniach,http://lc.yum.pl/_help/menu_report_trafedit.htm
+2.2.1.5.5 Raport liczb stowarzyszonych,http://lc.yum.pl/_help/raportliczbstowarzyszonych.htm
+2.2.1.5.6 Raport liczb stowarzyszonych-z poprzednim losowaniem,http://lc.yum.pl/_help/menu_report_stow.htm
+2.2.1.5.7 Tabela skutecznosci typowania kategorii liczb specjalnych,http://lc.yum.pl/_help/menu_report_tabskut.htm
+2.2.1.5.8 Raport trafień trendów liczb,http://lc.yum.pl/_help/raport_trafien_trendow_liczb.htm
+2.2.1.5.9 Raport pewniakow,http://lc.yum.pl/_help/raportpewn.htm
+2.2.1.5.10 Raport Prognozy,http://lc.yum.pl/_help/predictionsreport.htm
+2.2.1.5.10.1 Prognozy opis,http://lc.yum.pl/_help/prognozyopis.htm
+2.2.1.5.10.2 Panel Prognozy,http://lc.yum.pl/_help/panelprognozy.htm
+2.2.1.5.10.3 Panel Opcje,http://lc.yum.pl/_help/prognozyopcje.htm
+2.2.1.5.10.4 Jak wybierać prognozy,http://lc.yum.pl/_help/progn_what_select.htm
+2.2.1.5.10.5 Prognozy przykład gry,http://lc.yum.pl/_help/prognozy_game_trick.htm
+2.2.1.5.11 Raport pozycji,http://lc.yum.pl/_help/raportpozycji.htm
+2.2.1.5.11.1 Raport Losowan,http://lc.yum.pl/_help/mraportlosowan.htm
+2.2.1.5.11.2 Raport kombinacji,http://lc.yum.pl/_help/mraportkombinacji.htm
+2.2.1.5.11.3 Raport pozycji,http://lc.yum.pl/_help/mraportpozycji.htm
+2.2.1.5.11.4 Mapa odstepow,http://lc.yum.pl/_help/mmapaodstepow.htm
+2.2.1.5.11.5 Liga pozycji,http://lc.yum.pl/_help/mligapozycji.htm
+2.2.1.5.11.6 Raport skutecznosci,http://lc.yum.pl/_help/mraportskutecznosci.htm
+2.2.1.6 Narzędzia,http://lc.yum.pl/_help/menu_tool.htm
+2.2.1.6.1 Pamietnik organizer,http://lc.yum.pl/_help/menu_tool_organiser.htm
+2.2.1.6.2 Przewodnik (wizard) po systemach skróconych.,http://lc.yum.pl/_help/menu_tool_coverbat.htm
+2.2.1.6.3 Raport wartosci filtrow zakładow,http://lc.yum.pl/_help/report_tickets_combine.htm
+2.2.1.6.4 Szybki pasek kombinacji,http://lc.yum.pl/_help/menu_tool_fast_combine.htm
+2.2.1.6.5 Uzupelnianie Bazy,http://lc.yum.pl/_help/menu_tool_update.htm
+2.2.1.7 Menu Statystyki,http://lc.yum.pl/_help/menu_stats.htm
+2.2.1.7.1 Statystyki wystepowania liczb,http://lc.yum.pl/_help/statistics.htm
+2.2.1.7.2 Graf losowania,http://lc.yum.pl/_help/graph_whells.htm
+2.2.1.7.3 Graf par liczb,http://lc.yum.pl/_help/graph_pair.htm
+2.2.1.7.4 Graf kategorii Liczb Specjalnych,http://lc.yum.pl/_help/graph_category.htm
+2.2.1.8 Skrypty PHP,http://lc.yum.pl/_help/menu_skrypty_php.htm
+2.2.1.8.1 PHP,http://lc.yum.pl/_help/php.htm
+2.2.1.8.2 Edytor PHP,http://lc.yum.pl/_help/edytorphp.htm
+2.2.1.8.3 Opcje PHP,http://lc.yum.pl/_help/opcjephp.htm
+2.2.1.8.4 Serwer HTTP,http://lc.yum.pl/_help/php_opcje.htm
+2.2.1.8.5 Komunikacja PHP->LottoCad,http://lc.yum.pl/_help/lottocad_vs_php.htm
+2.2.1.8.5.1 Zmienne PHP,http://lc.yum.pl/_help/zmienne_php.htm
+2.2.1.8.5.2 Funkcje wbudowane,http://lc.yum.pl/_help/funkcje_wbudowane.htm
+2.2.1.8.5.3 Funkcje makr,http://lc.yum.pl/_help/funkcje_makr.htm
+2.2.1.9 Pomoc,http://lc.yum.pl/_help/menu_help.htm
+2.2.2 Paski narzedziowe,http://lc.yum.pl/_help/toolbars.htm
+2.2.2.1 Pole edycji losowań,http://lc.yum.pl/_help/tool_main.htm
+2.2.2.2 kombinacje Liczb,http://lc.yum.pl/_help/tool_combine.htm
+2.2.2.2.1 Powtórz i sprawdz z polem edycji,http://lc.yum.pl/_help/again_and_check.htm
+2.2.2.2.2 Z polem edycji,http://lc.yum.pl/_help/check_tickets.htm
+2.2.2.2.3 Powtórz i sprawdz w historii losowań,http://lc.yum.pl/_help/again_and_check_history.htm
+2.2.2.2.4 W historii losowań,http://lc.yum.pl/_help/check_in_history.htm
+2.2.2.3 Kalkulatory,http://lc.yum.pl/_help/menu_tool_calculators.htm
+3 Programy pomocnicze,http://lc.yum.pl/_help/programs_tool.htm
+3.1 Producent systemów,http://lc.yum.pl/_help/prog_sys_pro.htm
+3.1.1 Nowe systemy,http://lc.yum.pl/_help/prog_sys_new_system.htm
+3.1.2 Sprawdzanie systemu,http://lc.yum.pl/_help/prog_sys_check_system.htm
+3.1.3 Zapisywanie systemu do pliku,http://lc.yum.pl/_help/prog_sys_save_to_file.htm
+3.1.4 Zapisywanie systemu do bazy,http://lc.yum.pl/_help/prog_sys_save_to_dbase.htm
+3.1.5 Odczytanie systemu z pliku,http://lc.yum.pl/_help/prog_sys_load_f_file.htm
+3.1.6 Odczytanie systemu z bazy,http://lc.yum.pl/_help/prog_sys_load_f_dbase.htm
+3.1.7 Zadanie do wykonania,http://lc.yum.pl/_help/prog_sys_shedule.htm
+3.2 Cover BAT,http://lc.yum.pl/_help/cover_bat.htm
+4 Sztuczki i kruczki,http://lc.yum.pl/_help/sztuczkiikruczki.htm
+4.1 Inne metody uzupelniania bazy losowań,http://lc.yum.pl/_help/another_upload_methods.htm
+4.2 Manipulacje bazy danych,http://lc.yum.pl/_help/manipulacjebazydanych.htm
+4.3 Pole tekstowe sposoby,http://lc.yum.pl/_help/tipsmemo.htm
+4.4 Konfigurowanie programu,http://lc.yum.pl/_help/program_configure_method.htm
+4.4.1 Jak to zrobic,http://lc.yum.pl/_help/config_what_make.htm

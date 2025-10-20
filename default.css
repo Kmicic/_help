@@ -22,9 +22,6 @@ span.f_Code2 /* Code2 */
 {
  font-family: 'Courier New';
 }
-span.f_Comment /* Comment */
-{
-}
 span.f_Courier /* Courier */
 {
  font-family: 'Courier New';
@@ -55,7 +52,7 @@ span.f_Heading1 /* Heading1 */
 {
  font-size: 14pt;
  font-weight: bold;
- color: #ffffff;
+ color: #dedede;
 }
 span.f_ImageCaption /* Image Caption */
 {
@@ -71,16 +68,13 @@ span.f_NormalCourier /* NormalCourier */
  font-size: 11pt;
  font-family: 'Courier New';
 }
-span.f_Notes /* Notes */
-{
-}
 /* Paragraph styles */
 p /* Normal */
 {
  text-align: left;
  text-indent: 19px;
- padding: 0px 0px 0px 0px;
- margin: 0px 19px 0px 19px;
+ padding: 5px;
+ margin: 0px 5px 0px 5px;
 }
 .p_Code /* Code */
 {
@@ -115,9 +109,6 @@ p /* Normal */
  padding: 5px 5px 5px 5px;
  margin: -5px 10px -5px 10px;
 }
-.p_Comment /* Comment */
-{
-}
 .p_Courier /* Courier */
 {
  margin: 0px 19px 0px 0px;
@@ -150,9 +141,6 @@ p /* Normal */
  text-indent: 20px;
  margin: 0px 19px 0px 20px;
 }
-.p_ImageCaption /* Image Caption */
-{
-}
 .p_Leftindentto50 /* Left indent to 50 */
 {
  margin: 0px 19px 0px 38px;
@@ -162,6 +150,4 @@ p /* Normal */
  text-indent: 8px;
  margin: 0px 0px 0px 11px;
 }
-.p_Notes /* Notes */
-{
-}
+
